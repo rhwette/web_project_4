@@ -1,0 +1,28 @@
+.intro {
+  font-family: 'Inter' Arial sans-serif;
+  color: #FFFFFF;
+  /* text-align: left; */
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  /* min-width: 600px; */
+  /* max-width: 785px; */
+  margin-top: 36.25px;
+  margin-left: 177.5px;
+}
+
+/* @media screen and (max-width: 768px){
+  .intro{
+    max-width: 720px;
+    margin: 88px 24px 90px 24px;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .intro{
+    max-width: 288px;
+    min-width: 200px;
+    margin: 64px 16px 90px 16px;
+  }
+} */

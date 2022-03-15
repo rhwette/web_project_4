@@ -1,0 +1,16 @@
+.card-grid {
+  width: 100%;
+  max-width: 880px;
+  margin-left: 200px;
+  /* outline: 1px dotted yellow; */
+font-family: "Inter", Arial, sans-serif;
+/* display: grid;
+grid-template-areas:
+  "one two three"
+  "four five six";
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 361px);
+column-gap: 17px; */
+  /* "card card card"; */
+  /* "card card card"; */
+}

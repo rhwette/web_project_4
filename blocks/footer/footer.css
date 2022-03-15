@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  text-align: left;
+  margin:0;
+  margin-left: 200px;
+  margin-top: 68px;
+}
+

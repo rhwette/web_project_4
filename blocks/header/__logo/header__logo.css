@@ -1,0 +1,21 @@
+.header__logo {
+  width: 100%;
+  max-width: 173px;
+  /* height: 33px; */
+  margin-top: 45px;
+  margin-left: 200px;
+  /* outline: 1px solid yellow; */
+}
+
+/* @media screen and (max-width: 768px) {
+  .header__logo {
+  } 
+}
+
+@media screen and (max-width: 320px) {
+  .header__logo {
+    max-width: 200px;
+    height: 52px;
+    margin-top: 20px;
+  }
+} */

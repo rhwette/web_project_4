@@ -1,0 +1,7 @@
+.card-grid__info{
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  justify-content: space-between;
+  align-items: center;
+}

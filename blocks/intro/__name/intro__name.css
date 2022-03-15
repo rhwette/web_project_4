@@ -1,0 +1,17 @@
+.intro__name {
+  font-size: 42px;
+  line-height: 48px;
+  font-style: normal;
+  font-weight: 500;
+  color: #FFFFFF;
+  width: 373px; 
+  /* width: 100%; */
+  /* max-width: 373px; */
+  text-align: left;
+  /* margin-top: 62px; */
+  margin-top: 25.75px;
+  /*need to add distance to top
+  because of q hanging down */
+  margin-bottom: 7px;
+  margin-left: 3.75px;
+}
