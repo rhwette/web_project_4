@@ -1,17 +1,8 @@
 .card-grid__style {
-    list-style: none;
-  background-color: #FFFFFF;
-  border-radius: 10px;
+  list-style: none;
+  /* background-color: #FFFFFF; */
+  background-color: #000000;
+  /* border-radius: 10px; */
   width: 282px;
   height: 361px;
 }
-/* 
-.card-grid__styleOne {
-  grid-area: one;
-}
-.card-grid__styleTwo {
-  grid-area: two;
-}
-.card-grid__styleThree {
-  grid-area: three;
-} */

@@ -1,0 +1,13 @@
+.popup-form {
+  width:30%;
+  height:30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  background-color: #FFFFFF;
+  /* outline:2px solid green; */
+  border-radius: 10px;
+  /* visibility: hidden; */
+
+}
