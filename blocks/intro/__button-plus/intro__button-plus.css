@@ -1,8 +1,44 @@
 .intro__button-plus {
   width: 22px;
-  height: 22px;
+  min-height: 22px;
   padding: 14px 64px 14px 64px;
   margin-left: 165px;
   margin-top: 38px;
   border: 2px solid #FFFFFF;
 } 
+
+.intro__button-plus:hover {
+  opacity: 0.6;
+  cursor:grab;
+}
+
+@media screen and (max-width: 1120) {
+  .intro__button-plus {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width:775px) {
+  .intro__button-plus {
+    font-size: 22px;
+    line-height: 26.63px;
+    padding: 14px 133px 17px 133px;
+    /* margin-left: 65px; */
+    margin-left: 8.3870vw;
+    
+  }
+}
+@media screen and (max-width:320px) {
+  .intro__button-plus {
+    font-size: 14px;
+    line-height: 16.94px;
+    padding: 17px 133px 17px 133px;
+    /* margin: 0 19px 0 19px; */
+    /* margin-left: 48px; */
+    /* margin-left: 8vw; */
+    margin-left: 0;
+    margin-top: 22px;
+    margin-bottom: 36px;
+
+  }
+}

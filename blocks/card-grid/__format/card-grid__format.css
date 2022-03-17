@@ -10,3 +10,28 @@
      /* margin: 118px 48px 12px 48px; */
   /* padding-left: 0px; */
 }
+
+@media screen and (max-width: 1120px) {
+  .card-grid__format {
+    /* max-width: 600px; */
+    max-width: 53.5716vw;
+    /* max-width: 300px; */
+    grid-template-columns: 1fr 1fr;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .card-grid__format {
+    /* max-width: 300px; */
+    max-width: 38.709vw;
+    grid-template-columns: 1fr;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card-grid__format {
+  margin-top: 0;
+  }
+}

@@ -5,3 +5,17 @@
   margin-right: 20.625px;
   /* margin-top: 36.25px; */
 }
+
+@media screen and (max-width: 775px) {
+.intro__image {
+/* margin-left: 150px; */
+margin-left: 19.3545vw;
+ }
+}
+
+@media screen and (max-width: 320px) {
+  .intro__image {
+  /* margin-left: 77.5px; */
+  margin-left: 24.2188vw;
+   }
+  }

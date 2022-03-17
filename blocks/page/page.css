@@ -1,9 +1,18 @@
 .page {
   width: 100%;
   max-width: 1280px;
+  /* margin: auto; */
+  /* margin: 0; */
   margin: auto;
   box-sizing: content-box;
   /* background-color: #2A2C2F; */
   background-color: #000000;
   /* outline: 1px dashed yellow; */
+}
+
+@media screen and (max-width: 1120px){
+  .page {
+    max-width: 1120px;
+    /* min-width: 600px; */
+  }
 }

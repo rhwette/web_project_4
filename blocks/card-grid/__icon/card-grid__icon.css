@@ -3,3 +3,12 @@
   height: 19px;
   margin-right: 15px;
 }
+
+.card-grid__icon:hover {
+  opacity: .6;
+  cursor:grab;
+}
+
+.card-grid__icon:active {
+fill: black;
+}

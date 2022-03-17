@@ -7,6 +7,9 @@
   width: 373px; 
   /* width: 100%; */
   /* max-width: 373px; */
+  width: min-content;
+  white-space: nowrap;
+  /* width: 373px; */
   text-align: left;
   /* margin-top: 62px; */
   margin-top: 25.75px;
@@ -14,4 +17,23 @@
   because of q hanging down */
   margin-bottom: 7px;
   margin-left: 3.75px;
+}
+
+@media screen and (max-width:775px) {
+  .intro__name {
+    font-size: 22px;
+    line-height: 26.63px;
+    /* margin-left: 120px; */
+    margin-left: 15.4836vw;
+    
+  }
+}
+@media screen and (max-width:320px) {
+  .intro__name {
+    font-size: 22px;
+    line-height: 26.63px;
+    /* margin-left: 48px; */
+    margin-left: 15vw;
+
+  }
 }

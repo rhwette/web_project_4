@@ -25,8 +25,8 @@
             <h1 class="intro__name">Jacques Cousteau</h1>
             <p class="intro__occupation">Explorer</p>
           </div>
-          <img class="intro__button-pencil" src="./images/pencil.png" alt="pencil icon" title="pencil" />
-          <img class="intro__button-plus" src="./images/plus.png" alt="plus sign" title="plus icon" />
+            <img class="intro__button-pencil" src="./images/pencil.png" alt="pencil icon" title="pencil" /> 
+            <img class="intro__button-plus" src="./images/plus.png" alt="plus sign" title="plus icon" />
         </section>
 
         <!--CARD GRID-->
@@ -77,20 +77,36 @@
           </ul>
         </section>
 
-      <div class="popup-container">
-        <div class="popup-form">
-          <h2 class="popup-form__title">Edit Profile</h2>
-          <p class="popup-form__name">Name:</p>
-          <p class="popup-form__about">About Me:</p>
-          <button class="popup-form__button">Save</button>
-        </div>
-      </div>
+
+     
+      <form class="popup-container">
+        <ul class="popup-form">
+
+          <img class="popup-form__button-close" src="./images/close.png" alt="close symbol"/>
+          <li>
+            <label for="title" class="popup-form__title">Edit Profile</label>
+            <!-- <input class="input input_title" id="title" name="title" type="text"/> -->
+          </li>
+          <li>
+            <!-- <label for="name" class="popup-form__name">Name</label> -->
+            <input class="popup-form__name" type="text" id="name"/>
+          </li>
+          <li>
+            <label for="about-me">About Me</label>
+            <!-- <input type="text-area" id="about-me"/> -->
+          </li>
+          <button type="submit" class="popup-form__button">Save</button>
+          
+        </ul>
+      </form>
 
       </main>
 
       <footer class="footer">
         <p class="footer__text">&copy;2021 Around The U.S.</p>
       </footer>
+
+      <script src="index.js"></script>
 
 
 
