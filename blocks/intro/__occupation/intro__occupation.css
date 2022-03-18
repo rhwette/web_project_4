@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 1120px) {
 .intro__occupation {
-  max-width: 415px;
+  /* max-width: 415px; */
   text-align: center;
 }
  }
