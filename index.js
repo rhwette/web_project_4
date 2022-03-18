@@ -70,7 +70,37 @@ function closeModal() {
 popupFormButtonClose.addEventListener('click', closeModal);
 console.log('big x was clicked');
 //------------------------------------------------
+
+
 //------------------------------------------------
+//  Below code will handle the 'heart' status
+//------------------------------------------------
+
+const cardGridInfo = document.querySelectorAll('.card-grid__icon');
+console.log('cardGridInfo:', cardGridInfo);
+for(let i=0; i<cardGridInfo.length; i++){
+  console.log('cardGridInfo at index i:',cardGridInfo[i])
+  cardGridInfo[i].addEventListener('click',changeHeartColor);
+}
+
+// cardGridInfo.forEach((anyElement) => {
+//   console.log('anyElement:', anyElement);
+// })
+
+console.log('cardGridInfo after listen:', cardGridInfo);
+
+
+function changeHeartColor(anynameEvent) {
+  console.log('event:',anynameEvent.target.id)
+  console.log('test:',(document.getElementById(anynameEvent.target.id).src))
+  if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.png") {
+    document.getElementById(anynameEvent.target.id).src="./images/Union.png";
+  } else {
+    document.getElementById(anynameEvent.target.id).src="./images/heart.png";
+  }
+}
+
+
 
 
 
