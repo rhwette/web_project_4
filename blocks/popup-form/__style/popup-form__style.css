@@ -1,0 +1,11 @@
+.popup-form__style {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  height: 100px;
+  list-style: none;
+  margin-left: 50px;
+  margin-top: 34px;
+}
