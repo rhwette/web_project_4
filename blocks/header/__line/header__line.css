@@ -1,11 +1,9 @@
 .header__line {
   border-top: 1px solid #545454;
-  /* opacity: .3; */
   opacity: .7;
   width: 100%;
   max-width: 68.75vw;
   /* max-width: 880px; */
-  /* width: 880px; */
   margin-top: 41px;
   /* margin-left: 200px; */
   margin-left: 15.625vw;
@@ -15,7 +13,6 @@
   .header__line {
     max-width: 51.8752vw;
     /* max-width: 581px; */
-    /* border-top: 1px solid red; */
     margin-left: 17.857vw;
   }
 }
@@ -24,7 +21,6 @@
   .header__line {
     max-width: 74.9664vw;
     /* max-width: 581px; */
-    /* border-top: 1px solid yellow; */
     margin-left: 17.857vw;
   }
 }

@@ -1,18 +1,36 @@
 console.log('hello world');
 
-// let artistName = document.querySelector(".intro__name").textContent;
+
 
 //-----------------------------------------------
 // open form when click on pencil
 const introButtonPencilElement = document.querySelector('.intro__button-pencil');
+console.log("test=", introButtonPencilElement);
+const nameVariable = document.querySelector(".intro__name");
+const aboutmeVariable = document.querySelector(".intro__occupation");
+const popupFormButtonVariable = document.querySelector(".popup-form__button");
+const popupFormName= document.querySelector(".popup-form__name");
+const popupFormAboutMe=document.querySelector(".popup-form__aboutme");
 
+console.log("popupFormName=",popupFormName);
 function openModal() {
+  popupFormName.value=nameVariable.textContent;
+  popupFormAboutMe.value=aboutmeVariable.textContent;
   const containerElement = document.querySelector('.popup-container');
   containerElement.classList.add('popup-container_visible');
 }
 
+function  saveButton (evt) {
+  console.log("evt=", evt);
+ evt.preventDefault();
+ console.log("button clickedddee");
+ nameVariable.textContent = popupFormName.value;
+ aboutmeVariable.textContent = popupFormAboutMe.value;
+ closeModal();
+}
 introButtonPencilElement.addEventListener('click', openModal);
-console.log('button was clicked');
+popupFormButtonVariable.addEventListener('click', saveButton);
+// console.log('button was clicked');
 //------------------------------------------------
 
 //------------------------------------------------
@@ -28,14 +46,9 @@ popupFormButtonClose.addEventListener('click', closeModal);
 console.log('big x was clicked');
 //------------------------------------------------
 //------------------------------------------------
-const popupFormName = document.querySelector(".popup-form__name");
-console.log(popupFormName);
 
-const nameVariable = document.querySelector(".intro__name");
-console.log(nameVariable);
-nameVariable.setAttribute('name', popupFormName);
 
-console.log(nameVariable);
+
 
 
 

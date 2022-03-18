@@ -24,7 +24,6 @@
     line-height: 26.63px;
     /* margin-left: 65px; */
     margin-left: 8.3870vw;
-    
   }
 }
 @media screen and (max-width:320px) {
@@ -33,6 +32,5 @@
     line-height: 16.94px;
     /* margin-left: 48px; */
     margin-left: 8vw;
-
   }
 }

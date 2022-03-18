@@ -4,20 +4,7 @@
   margin-left: 15.625vw;
   margin-right: 15.625vw;
   margin-top: 50px;
-  /* margin-right: 0; */
-  /* margin-right: auto; */
-  /* background-color: blue; */
-  /* outline: 1px dotted yellow; */
-font-family: "Inter", Arial, sans-serif;
-/* display: grid;
-grid-template-areas:
-  "one two three"
-  "four five six";
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(2, 361px);
-column-gap: 17px; */
-  /* "card card card"; */
-  /* "card card card"; */
+  font-family: "Inter", Arial, sans-serif;
 }
 
 @media screen and (max-width: 1120px) {
@@ -25,7 +12,6 @@ column-gap: 17px; */
     /* max-width: 581px; */
     max-width: 51.8752vw;
     margin-left: 17.857vw;
-
   }
 }
 
@@ -34,7 +20,6 @@ column-gap: 17px; */
     /* max-width: 300px; */
     max-width: 38.709vw;
     margin-left: 17.857vw;
-
   }
 }
 
@@ -42,7 +27,5 @@ column-gap: 17px; */
   .card-grid {
     /* max-width: 300px; */
     max-width: 38.709vw;
-    /* margin-left: 17.857vw; */
-
   }
 }

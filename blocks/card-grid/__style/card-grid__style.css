@@ -1,8 +1,6 @@
 .card-grid__style {
   list-style: none;
-  /* background-color: #FFFFFF; */
   background-color: #000000;
-  /* border-radius: 10px; */
   width: 282px;
   height: 361px;
 }
