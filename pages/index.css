@@ -1,6 +1,8 @@
 
 /* VENDOR */
 @import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
 
 /* CONTENT */
 @import url(../blocks/content/content.css);
