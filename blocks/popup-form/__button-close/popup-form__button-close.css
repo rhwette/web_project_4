@@ -1,9 +1,11 @@
 .popup-form__button-close {
   align-self: flex-end;
-  margin-top: -5vw;
+  /* margin-top: -5vw; */
+    margin-top: -50vw;
   margin-right: -3vw;
   width: 3.125vw;
   height: 3.125vw;
+  outline:1px solid red;
 }
 .popup-form__button-close:hover {
   opacity: 0.6;

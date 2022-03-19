@@ -2,10 +2,19 @@
   font-family: 'Inter', Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content:space-around; */
   align-items: left;
-  height: 100px;
+  /* height: 330px; */
+  /* max-height: 330px; */
+  min-height: 330px;
+  /* min-height: 25.78125vh; */
   list-style: none;
-  margin-left: 50px;
+  margin:0;
   margin-top: 34px;
+  padding:0;
+  /* margin-left: 36px;
+  margin-top: 34px;
+  margin-right: 36px;
+  margin-bottom: 36.51px; */
+  /* outline:5px dashed red; */
 }
