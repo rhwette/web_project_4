@@ -7,7 +7,8 @@
   /* border-top: 1px solid #000000; */
 /* opacity: 1; */
 width: 100%;
-max-width: 358px;
+/* max-width: 358px; */
+max-width: 27.9688vw;
 /* max-width: 68.75vw; */
 margin-top: 54px;
 margin-left: 36px;
@@ -21,3 +22,24 @@ margin-bottom: 13.26px;
   outline: none;
 }
 
+@media screen and (max-width: 1120px) {
+  .popup-form__name {
+    /* max-width: 300px; */
+    max-width: 26.7858vw;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .popup-form__name {
+    /* max-width: 200px; */
+    max-width: 25.806vw;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .popup-form__name {
+    /* max-width: 238px; */
+    max-width: 75.565vw;
+  }
+}

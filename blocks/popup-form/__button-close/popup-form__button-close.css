@@ -1,12 +1,10 @@
 .popup-form__button-close {
-  align-self: flex-end;
-  /* margin-top: -5vw; */
-    margin-top: -50vw;
-  margin-right: -3vw;
+  margin-top: -2vw;
+  margin-right: -35vw;
   width: 3.125vw;
   height: 3.125vw;
-  outline:1px solid red;
-}
+} 
+
 .popup-form__button-close:hover {
   opacity: 0.6;
   cursor:grab;
@@ -14,7 +12,9 @@
 
 @media screen and (max-width: 320px) {
   .popup-form__button-close {
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 8.255vw;
+    height: 26px;
+    margin-top: -2vw;
+    margin-right: -95vw;
   }
 }

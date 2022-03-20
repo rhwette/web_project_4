@@ -6,7 +6,8 @@
   border-top: 1px solid #000000;
 opacity: .2;
 width: 100%;
-max-width: 358px;
+/* max-width: 358px; */
+max-width: 28.0135vw;;
 margin-left: 36px;
 /* max-width: 68.75vw; */
 /* margin-top: 54px;
@@ -18,4 +19,11 @@ margin-bottom: 25px; */
   border-left: hidden;
   border-right: hidden;
   outline: none;
+}
+
+@media screen and (max-width: 1120px) {
+  .popup-form__line{
+  /* max-width: 300px; */
+  max-width: 26.7858vw;
+  }
 }

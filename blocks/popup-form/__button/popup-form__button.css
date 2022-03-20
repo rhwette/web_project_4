@@ -14,9 +14,11 @@
   font-weight: 400;
   font-style: normal;
   text-align: center;
-  margin-top:50px;
+  /* margin-top:50px; */
+  margin-top: 3.90625vw;
   margin-left:36px;
   margin-right: 36px;
+  margin-bottom: 36.51px;
   /* margin-left: 10px; */
 }
 
@@ -24,6 +26,16 @@
   opacity: 0.8;
   cursor:grab;
 }
+
+@media screen and (max-width: 1120px) {
+  .popup-form__button {
+    /* width: 300px; */
+    width: 26.7858vw;
+
+  }
+}
+
+
 
 @media screen and (max-width: 320px) {
   .popup-form__button{

@@ -6,8 +6,8 @@
   align-items: left;
   /* height: 330px; */
   /* max-height: 330px; */
-  min-height: 330px;
-  /* min-height: 25.78125vh; */
+  /* min-height: 330px; */
+  min-height: 25.78125vh;
   list-style: none;
   margin:0;
   margin-top: 34px;
@@ -17,4 +17,18 @@
   margin-right: 36px;
   margin-bottom: 36.51px; */
   /* outline:5px dashed red; */
+}
+
+@media screen and (max-width:775px) {
+  .popup-form__style{
+    /* min-height: 282px; */
+    min-height: 81.8646vw;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .popup-form__style{
+    /* min-height: 282px; */
+    min-height: 89.535vw;
+  }
 }
