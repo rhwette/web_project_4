@@ -40,8 +40,6 @@
 @media screen and (max-width: 500px) {
   .popup-form__button-close {
     /* width: 26px; */
-    /* width:3.35478vw;
-    height: 26px; */
     width: 5.2vw;
     margin-top: -2vw;
     margin-right: -87vw;
@@ -52,8 +50,6 @@
   .popup-form__button-close {
     /* width: 26px; */
     width: 8.255vw;
-    /* height: 26px; */
-    /* margin-top: -2vw; */
     margin-right: -95vw;
   }
 }
