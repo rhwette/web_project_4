@@ -7,7 +7,7 @@
   /* height: 330px; */
   /* max-height: 330px; */
   /* min-height: 330px; */
-  min-height: 25.78125vh;
+  min-height: 25.78125vw;
   list-style: none;
   margin:0;
   margin-top: 34px;
@@ -22,13 +22,35 @@
 @media screen and (max-width:775px) {
   .popup-form__style{
     /* min-height: 282px; */
-    min-height: 81.8646vw;
+    /* min-height: 81.8646vw; */
+    min-height: 322px;
+  }
+}
+
+@media screen and (max-width:625px) {
+  .popup-form__style{
+    min-height: 282px;
+    /* min-height: 81.8646vw; */
+    /* min-width: 45.12vw; */
+  }
+}
+
+@media screen and (max-width:500px) {
+  .popup-form__style{
+    /* min-width: 282px; */
+    /* min-width: 56.4vw; */
+    /* min-height: 322px; */
+    /* min-height: 64.4vw; */
+    min-height: 322px;
+    max-height: 322px;
   }
 }
 
 @media screen and (max-width:320px) {
   .popup-form__style{
-    /* min-height: 282px; */
-    min-height: 89.535vw;
-  }
+    /* min-width: 282px; */
+    min-width: 89.535vw;
+    margin-bottom: 25px;
+    max-height: 272px;
+}
 }

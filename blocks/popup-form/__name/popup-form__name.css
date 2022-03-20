@@ -36,6 +36,14 @@ margin-bottom: 13.26px;
   }
 }
 
+@media screen and (max-width: 500px) {
+  .popup-form__name {
+    /* max-width: 200px; */
+    /* max-width: 25.806vw; */
+    max-width: 50vw;
+  }
+}
+
 
 @media screen and (max-width: 320px) {
   .popup-form__name {

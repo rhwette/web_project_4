@@ -10,11 +10,50 @@
   cursor:grab;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1120px) {
   .popup-form__button-close {
-    width: 8.255vw;
+    margin-top: -2vw;
+    margin-right: -40vw;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .popup-form__button-close {
+    /* width: 26px; */
+    width:3.35478vw;
     height: 26px;
     margin-top: -2vw;
+    margin-right: -58vw;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .popup-form__button-close {
+    /* width: 26px; */
+    width: 4.16vw;
+    height: 26px; 
+    margin-top: -2vw;
+    margin-right: -70vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-form__button-close {
+    /* width: 26px; */
+    /* width:3.35478vw;
+    height: 26px; */
+    width: 5.2vw;
+    margin-top: -2vw;
+    margin-right: -87vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup-form__button-close {
+    /* width: 26px; */
+    width: 8.255vw;
+    /* height: 26px; */
+    /* margin-top: -2vw; */
     margin-right: -95vw;
   }
 }

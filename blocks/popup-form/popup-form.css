@@ -5,7 +5,8 @@
   max-width:33.59375vw;
   /* height: 330px; */
   /* max-height: 330px; */
-  min-height: 330px;
+  /* min-height: 330px; */
+  min-height: 25.78125vw;
   /* max-height:25.78125vw; */
   display: flex;
   /* flex-direction: column; */
@@ -21,24 +22,48 @@
 @media screen and (max-width: 1120px) {
   .popup-form {
     max-width: 38.39298vw;
-    height: 29.46438vw;
+    /* min-height: 330px; */
+    min-height: 29.46438vw;
   }
 }
 
 @media screen and (max-width: 775px) {
   .popup-form {
+    /* max-width: 430px; */
     max-width: 55.4829vw;
-    height: 42.5799vw;
+     /* max-height: 330px; */
+     min-height: 330px;
+    /* max-height: 42.5799vw; */
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .popup-form {
+    /* max-width: 430px; */
+    max-width: 68.8vw;
+    /* max-height: 52.89vw; */
+    min-height: 356px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-form {
+    /* max-width: 430px; */
+    max-width: 86vw;
+    /* height: 42.5799vw; */
+    /* min-height: 64.4vw; */
+    min-height: 356px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .popup-form {
-    /* width: 89.535vw; */
     /* max-width:282px ; */
-    max-width:89.535vw
-    /* min-width:89.535vw; */
-    /* height: 102.235hw; */
-    /* min-height:322px; */
+    max-width:89.535vw;
+    margin-left: 19px;
+    margin-right: 19px;
+    /* min-height: 322px; */
+    min-height: 102.235vw;
+
   }
 }
