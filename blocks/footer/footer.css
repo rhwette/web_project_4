@@ -6,10 +6,10 @@
   align-items: center;
   justify-content: start;
   text-align: left;
-  margin-top: 68px auto 0;
+  margin: 68px auto 0;
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 980px) {
   .footer {
     max-width: 581px;
   }

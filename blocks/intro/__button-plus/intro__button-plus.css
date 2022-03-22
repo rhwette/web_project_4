@@ -16,22 +16,16 @@
   cursor: url("../../../images/Layer14.png") 15 0, auto;
 }
 
-@media screen and (max-width: 1120) {
-  .intro__button-plus {
-    margin-left: 0px;
-  }
-}
-
-@media screen and (max-width:775px) {
+@media screen and (max-width:980px) {
   .intro__button-plus {
     font-size: 22px;
     line-height: 26.63px;
     padding: 14px 133px 17px 133px;
-    /* margin-left: 65px; */
     margin-left: 8.3870vw;
     
   }
 }
+
 @media screen and (max-width:320px) {
   .intro__button-plus {
     font-size: 14px;

@@ -1,13 +1,13 @@
 .card-grid {
   width: 100%;
   max-width: 880px;
-  margin: 50px auto 0;
+  margin: 46.25px auto 0;
   font-family: "Inter", Arial, sans-serif;
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 980px) {
   .card-grid {
-    max-width: 581px;
+    max-width: 580px;
   }
 }
 

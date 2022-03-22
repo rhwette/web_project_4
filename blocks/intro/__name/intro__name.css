@@ -16,7 +16,7 @@
   margin-left: 3.75px;
 }
 
-@media screen and (max-width:775px) {
+@media screen and (max-width:980px) {
   .intro__name {
     font-size: 22px;
     line-height: 26.63px;

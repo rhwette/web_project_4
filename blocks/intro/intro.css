@@ -8,13 +8,13 @@
   align-items: start;
   margin-top: 36.25px;
   margin: 2.8320vw auto 0;
-  outline: 2px dashed white;
 }
 
-@media screen and (max-width: 781px){
+@media screen and (max-width: 980px){
   .intro{
     max-width: 581px;
     margin: 0 auto;
+    flex-wrap: wrap;
   }
 }
 

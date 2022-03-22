@@ -11,19 +11,14 @@
   margin-left: 3.75px;
 }
 
-@media screen and (max-width: 1120px) {
-.intro__occupation {
-  /* max-width: 415px; */
-  text-align: center;
-}
- }
-
- @media screen and (max-width:775px) {
+ @media screen and (max-width:980px) {
   .intro__occupation {
-    font-size: 22px;
-    line-height: 26.63px;
-    /* margin-left: 65px; */
-    margin-left: 8.3870vw;
+    font-size: 14px;
+    line-height: 16.94px;
+    max-width:200px;
+    margin-left: 65px;
+    /* margin-left: 8.3870vw; */
+    text-align: center;
   }
 }
 @media screen and (max-width:320px) {

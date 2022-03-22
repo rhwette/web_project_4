@@ -8,7 +8,7 @@
   row-gap: 21px;
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 980px) {
   .card-grid__format {
     grid-template-columns: 1fr 1fr;
   }
