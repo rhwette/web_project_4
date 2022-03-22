@@ -4,11 +4,13 @@
   width: 22px;
   min-height: 22px;
   padding: 14px 64px 14px 64px;
-  margin-left: 161px;
+  /* margin-left: 161px; */
+  margin-left: 50px;
   /* 165-4 = 161 (account 4px for border)*/
   margin-right: 0;
   margin-top: 38px;
   border: 2px solid #FFFFFF;
+  grid-area: plus;
 } 
 
 .intro__button-plus:hover {
@@ -21,7 +23,8 @@
     font-size: 22px;
     line-height: 26.63px;
     padding: 14px 133px 17px 133px;
-    margin-left: 8.3870vw;
+    margin-left: 145px;
+    /* margin-left: 8.3870vw; */
     
   }
 }

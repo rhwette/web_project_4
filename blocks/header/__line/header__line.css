@@ -7,18 +7,16 @@
   margin-top: 41px;
 }
 
-@media screen and (max-width: 1120px) {
+/* @media screen and (max-width: 1120px) {
   .header__line {
     max-width: 51.8752vw;
-    /* max-width: 581px; */
-    /* margin-left: 17.857vw; */
   }
-}
+} */
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 980px) {
   .header__line {
-    max-width: 74.9664vw;
-    /* max-width: 581px; */
+    /* max-width: 74.9664vw; */
+    max-width: 581px;
   }
 }
 
@@ -26,6 +24,7 @@
   .header__line {
     /* max-width: 74.9664vw; */
     max-width: 320px;
+    margin-top: 32px;
     /* max-width: 581px; */
   }
 }

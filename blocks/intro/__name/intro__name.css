@@ -14,14 +14,16 @@
   because of q hanging down */
   margin-bottom: 7px;
   margin-left: 3.75px;
+  grid-area: name;
 }
 
 @media screen and (max-width:980px) {
   .intro__name {
     font-size: 22px;
     line-height: 26.63px;
+    margin-left: 190px;
     /* margin-left: 120px; */
-    margin-left: 15.4836vw;
+    /* margin-left: 15.4836vw; */
     
   }
 }
@@ -29,6 +31,7 @@
   .intro__name {
     /* margin-left: 48px; */
     margin-left: 15vw;
+    margin-bottom: 14px;
 
   }
 }

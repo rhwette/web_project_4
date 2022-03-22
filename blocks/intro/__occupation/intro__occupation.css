@@ -9,6 +9,7 @@
   text-align: left;
   margin-top: 0px;
   margin-left: 3.75px;
+  grid-area: occup;
 }
 
  @media screen and (max-width:980px) {
@@ -16,7 +17,9 @@
     font-size: 14px;
     line-height: 16.94px;
     max-width:200px;
-    margin-left: 65px;
+    /* margin-left: 65px; */
+    /* margin-left: 150px; */
+    margin-left: 190px;
     /* margin-left: 8.3870vw; */
     text-align: center;
   }
@@ -25,7 +28,7 @@
   .intro__occupation {
     font-size: 14px;
     line-height: 16.94px;
-    /* margin-left: 48px; */
-    margin-left: 8vw;
+    margin-left: 40px;
+    /* margin-left: 8vw; */
   }
 }

@@ -4,8 +4,10 @@
   padding: 7px 7px 7px 7px;
   margin-left: 18px;
   /* margin-top: 47.75px; */
-  margin-top: 38px;
+  /* margin-top: 38px; */
+  margin-top: 45px;
   border: 1px solid #FFFFFF;
+  grid-area: pen;
 }
 
 .intro__button-pencil:hover {
@@ -17,7 +19,8 @@
 @media screen and (max-width: 980px) {
   .intro__button-pencil {
      height: 10px;
-      margin-left: 10px;
+      /* margin-left: 10px; */
+      margin-left:1px;
     margin-top: 2.83866vw;
    }
   }
