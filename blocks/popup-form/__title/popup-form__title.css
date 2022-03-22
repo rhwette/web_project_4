@@ -6,4 +6,12 @@
     color: #000000;
     margin-left: 36px;
     margin-right: 64px;
+    margin-top: 34px;
+  }
+
+  @media screen and (max-width:320px) {
+    .popup-form__title {
+      font-size: 18px;
+      line-height: 21.78px;
+    }
   }

@@ -8,25 +8,14 @@
   row-gap: 21px;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 781px) {
   .card-grid__format {
-    /* max-width: 600px; */
-    max-width: 53.5716vw;
     grid-template-columns: 1fr 1fr;
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 775px) {
-  .card-grid__format {
-    /* max-width: 300px; */
-    max-width: 38.709vw;
-    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 320px) {
   .card-grid__format {
-  margin-top: 0;
+    grid-template-columns: 1fr;
   }
 }

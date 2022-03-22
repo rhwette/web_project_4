@@ -1,10 +1,9 @@
 .popup-form {
   position: relative;
-  /* width: 430px; */
   width:100%;
-  max-width:33.59375vw;
-  /* min-height: 330px; */
-  min-height: 25.78125vw;
+  /* max-width:33.59375vw; */
+  max-width: 430px;
+  max-height: 330px;
   display: flex;
   flex-direction: row;
   align-items:flex-start;
@@ -18,7 +17,7 @@
   .popup-form {
     max-width: 38.39298vw;
     /* min-height: 330px; */
-    min-height: 29.46438vw;
+    /* min-height: 29.46438vw; */
   }
 }
 
@@ -26,7 +25,7 @@
   .popup-form {
     /* max-width: 430px; */
     max-width: 55.4829vw;
-     min-height: 330px;
+     /* min-height: 330px; */
   }
 }
 
@@ -34,7 +33,7 @@
   .popup-form {
     /* max-width: 430px; */
     max-width: 68.8vw;
-    min-height: 356px;
+    /* min-height: 356px; */
   }
 }
 
@@ -43,17 +42,20 @@
     /* max-width: 430px; */
     max-width: 86vw;
     /* min-height: 64.4vw; */
-    min-height: 356px;
+    /* min-height: 356px; */
   }
 }
 
 @media screen and (max-width: 320px) {
   .popup-form {
-    /* max-width:282px ; */
-    max-width:89.535vw;
+    max-width:282px ;
+    max-height: 322px;
+    /* max-width:89.535vw; */
+    padding:0;
     margin-left: 19px;
     margin-right: 19px;
-    /* min-height: 322px; */
-    min-height: 102.235vw;
+    /* min-height: 102.235vw; */
   }
 }
+
+

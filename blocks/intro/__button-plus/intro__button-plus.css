@@ -1,15 +1,19 @@
 .intro__button-plus {
+  max-width: 22px;
+  width: 100%;
   width: 22px;
   min-height: 22px;
   padding: 14px 64px 14px 64px;
-  margin-left: 165px;
+  margin-left: 161px;
+  /* 165-4 = 161 (account 4px for border)*/
+  margin-right: 0;
   margin-top: 38px;
   border: 2px solid #FFFFFF;
 } 
 
 .intro__button-plus:hover {
   opacity: 0.6;
-  cursor:grab;
+  cursor: url("../../../images/Layer14.png") 15 0, auto;
 }
 
 @media screen and (max-width: 1120) {
@@ -35,7 +39,7 @@
     padding: 17px 133px 17px 133px;
     margin-left: 0;
     margin-top: 22px;
-    margin-bottom: 36px;
+    /* margin-bottom: 36px; */
 
   }
 }

@@ -1,19 +1,18 @@
 .header__line {
-  border-top: 1px solid #545454;
+  /* border-top: 1px solid #545454; */
+    border-top: 5px solid red;
   opacity: .7;
   width: 100%;
-  max-width: 68.75vw;
-  /* max-width: 880px; */
+  /* max-width: 68.75vw; */
+  max-width: 880px;
   margin-top: 41px;
-  /* margin-left: 200px; */
-  margin-left: 15.625vw;
 }
 
 @media screen and (max-width: 1120px) {
   .header__line {
     max-width: 51.8752vw;
     /* max-width: 581px; */
-    margin-left: 17.857vw;
+    /* margin-left: 17.857vw; */
   }
 }
 
@@ -24,3 +23,10 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .header__line {
+    /* max-width: 74.9664vw; */
+    max-width: 320px;
+    /* max-width: 581px; */
+  }
+}

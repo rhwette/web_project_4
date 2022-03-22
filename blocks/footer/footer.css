@@ -6,13 +6,19 @@
   align-items: center;
   justify-content: start;
   text-align: left;
-  margin:0;
-  margin-top: 68px;
+  margin-top: 68px auto 0;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 781px) {
   .footer {
-    max-width: 500px;
+    max-width: 581px;
   }
 }
 
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 100%;
+    max-width: 282px;
+    margin: 50px 19px 0;
+  }
+}

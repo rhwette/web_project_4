@@ -1,13 +1,17 @@
 .popup-form__button-close {
-  margin-top: -2vw;
-  margin-right: -35vw;
-  width: 3.125vw;
-  height: 3.125vw;
+  /* margin-top: -2vw; */
+  margin-top: 25.6px;
+  /* margin-right: -35vw; */
+  margin-right: -448px;
+  /* width: 3.125vw; */
+  width: 40px;
+  /* height: 3.125vw; */
+  height: 40px;
 } 
 
 .popup-form__button-close:hover {
   opacity: 0.6;
-  cursor:grab;
+  cursor: url("../../../images/Layer14.png") 10 0, auto;
 }
 
 @media screen and (max-width: 1120px) {
@@ -50,6 +54,6 @@
   .popup-form__button-close {
     /* width: 26px; */
     width: 8.255vw;
-    margin-right: -95vw;
+    margin-right: -75vw;
   }
 }

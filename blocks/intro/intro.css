@@ -7,28 +7,20 @@
   flex-direction: row;
   align-items: start;
   margin-top: 36.25px;
-  margin: 2.8320vw 15.625vw 0 13.8672vw;
+  margin: 2.8320vw auto 0;
+  outline: 2px dashed white;
 }
 
-@media screen and (max-width: 1120px){
+@media screen and (max-width: 781px){
   .intro{
-    max-width: 600px;
-    margin-right: 0;
-    margin: 3.2366vw 17.8572vw 0 15.8483vw;
-    min-width: 300px;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 775px){
-  .intro{
-    max-width: 400px;
-    margin: 4.6773vw 25.806vw 0 9.9998vw;
+    max-width: 581px;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 320px){
   .intro{
-    margin: 42px 19px 0 19px;
+    margin: 42px auto;
+    max-width: 282px;
   }
 }

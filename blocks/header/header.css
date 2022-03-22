@@ -1,13 +1,17 @@
 .header {
-  max-width: 1280px;
+  max-width: 880px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
+  /* margin: 0 200px 0 200px; */
   display: flex;
   flex-direction: column;
+  outline: 1px solid rgb(107, 107, 85);
 }
 
 @media screen and (max-width:1120px) {
   .header {
+    /* max-width: 580px; */
+    /* max-width: 78.57vw; */
 
   }
 }
@@ -15,5 +19,12 @@
 @media screen and (max-width:775px) {
   .header {
 
+  }
+}
+
+@media screen and (max-width:320px) {
+  .header {
+    max-width: 320px;
+    margin:0;
   }
 }
