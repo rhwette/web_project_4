@@ -10,6 +10,7 @@
     max-width: 17.8572vw;
     /* max-width: 200px; */
     margin-top: 28px;
+    margin-bottom: 41px;
   }
 } 
 
@@ -24,6 +25,7 @@
   .header__logo {
     max-width: 39.375vw;
     margin-left: 27px;
+    margin-bottom: 32px;
     /* max-width: 126px; */
   }
 } 
