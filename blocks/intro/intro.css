@@ -1,19 +1,16 @@
 .intro {
   max-width: 880px;
   width: 100%;
-  font-family: 'Inter' Arial sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   color: #FFFFFF;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 17px;
-  /* flex-direction: row; */
-  /* align-items: start; */
   margin-top: 36.25px;
   margin: 2.8320vw auto 0;
   grid-template-areas: 
   "pic descript pen plus";
 }
-
 
 @media screen and (max-width: 980px){
   .intro{
@@ -24,13 +21,11 @@
     "pic ."
     "descript pen"
     "plus plus";
-    /* flex-wrap: wrap; */
   }
 }
 
 @media screen and (max-width: 320px){
   .intro{
-    /* margin: 42px auto; */
     margin:38.25px auto;
     max-width: 282px;
     grid-template-columns: 1fr;
