@@ -7,6 +7,12 @@
   width: 40px;
   /* height: 3.125vw; */
   height: 40px;
+  background-color: black;
+  border:none;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
 } 
 
 .popup-form__button-close:hover {
