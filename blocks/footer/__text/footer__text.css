@@ -5,37 +5,12 @@
   line-height: 21.78px;
   font-style: normal;
   margin: 0;
-  /* margin-left: 200px; */
-  /* padding-bottom: 24px; */
-  /* margin-top: 68px; */
   padding-bottom: 60px;
   color: #545454;
 }
 
-@media screen and (max-width:1120px) {
-  .footer__text {
-    /* margin-left: 130px; */
-    /* margin-left: 25.80645vw; */
-  }
-}
-@media screen and (max-width:775px) {
-  .footer__text {
-    /* margin-left: 130px; */
-    /* margin-left: 25.80645vw; */
-  }
-}
-
-@media screen and (max-width:500px) {
-  .footer__text {
-    /* margin-left: 85px; */
-    /* margin-left: 40 vw; */
-  }
-}
-
 @media screen and (max-width:320px) {
   .footer__text {
-    /* margin-left: 19px; */
-    /* margin-top:50px; */
     padding-bottom: 36px;
     font-size: 14px;
     line-height: 16.94px;

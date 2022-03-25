@@ -21,11 +21,6 @@ const popupFormAboutMe=document.querySelector('input[name="aboutme"]');
 //-----------------------------------------------
 
 //-----------------------------------------------
-//  verify working correctly 
-console.log("popupFormName=",popupFormName);
-//-----------------------------------------------
-
-//-----------------------------------------------
 //  define function to open the Modal
 //-----------------------------------------------  
 function openModal() {
@@ -40,9 +35,7 @@ function openModal() {
 //  define function that controls form input and SAVE event
 //-----------------------------------------------
 function  saveButton (evt) {
-   console.log("evt=", evt);
  evt.preventDefault();
-   console.log("button clicked");
  nameVariable.textContent = popupFormName.value;
  aboutmeVariable.textContent = popupFormAboutMe.value;
  closeModal();
@@ -58,8 +51,8 @@ popupFormButtonVariable.addEventListener('click', saveButton);
 
 //------------------------------------------------
 // define variable for closing Modal
-// const popupFormButtonClose = document.querySelector('.popup-form__button-close');
-const popupContainerButtonClose = document.querySelector('.popup-container__button-close');
+const popupFormButtonClose = document.querySelector('.popup-form__button-close');
+// const popupContainerButtonClose = document.querySelector('.popup-container__button-close');
 //-----------------------------------------------
 
 //-----------------------------------------------
@@ -72,7 +65,8 @@ function closeModal() {
 
 //-----------------------------------------------
 //  listen for click on big X
-popupContainerButtonClose.addEventListener('click', closeModal);
+popupFormButtonClose.addEventListener('click', closeModal);
+// popupContainerButtonClose.addEventListener('click', closeModal);
 console.log('big x was clicked');
 //------------------------------------------------
 

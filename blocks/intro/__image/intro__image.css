@@ -1,7 +1,6 @@
 .intro__image {
   border-radius: 50%;
   width:127.5px;
-  /* margin-left: 20.625px; */
   margin-right: 20.625px;
   grid-area: pic;
 }
@@ -10,13 +9,11 @@
 .intro__image {
 margin-left: 225px;
 margin-top: 38.25px;
-/* margin-left: 19.3545vw; */
  }
 }
 
 @media screen and (max-width: 320px) {
   .intro__image {
-  /* margin-left: 77.5px; */
   margin-left: 24.2188vw;
   margin-top: 0;
    }

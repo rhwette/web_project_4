@@ -3,8 +3,6 @@
   height: 10px;
   padding: 7px 7px 7px 7px;
   margin-left: 18px;
-  /* margin-top: 47.75px; */
-  /* margin-top: 38px; */
   margin-top: 45px;
   border: 1px solid #FFFFFF;
   background-color: black;
@@ -24,7 +22,6 @@
 @media screen and (max-width: 980px) {
   .intro__button-pencil {
      height: 10px;
-      /* margin-left: 10px; */
       margin-left:1px;
     margin-top: 2.83866vw;
    }
@@ -33,7 +30,6 @@
   @media screen and (max-width: 320px) {
     .intro__button-pencil {
       margin-top: 25px;
-      /* margin-top: 6.875vw; */
       width: 7.5px;
       height: 7.5px;
       padding: 5.25px 5.25px 5.25px 5.25px;

@@ -1,7 +1,6 @@
 .popup-form {
   position: relative;
   width:100%;
-  /* max-width:33.59375vw; */
   max-width: 430px;
   max-height: 330px;
   display: flex;
@@ -15,34 +14,25 @@
 
 @media screen and (max-width: 1120px) {
   .popup-form {
-    max-width: 38.39298vw;
-    /* min-height: 330px; */
-    /* min-height: 29.46438vw; */
+    max-width: 350px;
   }
 }
 
 @media screen and (max-width: 775px) {
   .popup-form {
-    /* max-width: 430px; */
-    max-width: 55.4829vw;
-     /* min-height: 330px; */
+    max-width: 350px;
   }
 }
 
 @media screen and (max-width: 625px) {
   .popup-form {
-    /* max-width: 430px; */
-    max-width: 68.8vw;
-    /* min-height: 356px; */
+    max-width: 300px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .popup-form {
-    /* max-width: 430px; */
-    max-width: 86vw;
-    /* min-height: 64.4vw; */
-    /* min-height: 356px; */
+    max-width: 275px;
   }
 }
 
@@ -50,11 +40,9 @@
   .popup-form {
     max-width:282px ;
     max-height: 322px;
-    /* max-width:89.535vw; */
     padding:0;
     margin-left: 19px;
     margin-right: 19px;
-    /* min-height: 102.235vw; */
   }
 }
 

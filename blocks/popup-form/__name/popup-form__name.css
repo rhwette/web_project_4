@@ -6,7 +6,6 @@
   color:#000000;
   width: 100%;
   max-width: 358px;
-  /* max-width: 27.9688vw; */
   margin-top: 54px;
   margin-left: 36px;
   margin-right: 36px;
@@ -20,28 +19,24 @@
 
 @media screen and (max-width: 1120px) {
   .popup-form__name {
-    /* max-width: 300px; */
     max-width: 26.7858vw;
   }
 }
 
 @media screen and (max-width: 775px) {
   .popup-form__name {
-    /* max-width: 200px; */
     max-width: 25.806vw;
   }
 }
 
 @media screen and (max-width: 500px) {
   .popup-form__name {
-    /* max-width: 200px; */
     max-width: 50vw;
   }
 }
 
 @media screen and (max-width: 320px) {
   .popup-form__name {
-    /* max-width: 238px; */
     max-width: 75.565vw;
     margin-top: 76px;
     margin-bottom: 9px;

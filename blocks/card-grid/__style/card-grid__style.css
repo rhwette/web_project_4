@@ -1,8 +1,6 @@
 .card-grid__style {
   list-style: none;
   width: 282px;
-  /* height: 361px; */
-  /* do not use height with text elements*/
   display:flex;
   flex-direction: column;
 }
