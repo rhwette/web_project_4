@@ -20,7 +20,6 @@
 
 @media screen and (max-width: 980px) {
   .intro__button-pencil {
-     /* height: 10px; */
       margin-left:1px;
       margin-top: 24px;
    }
@@ -29,11 +28,8 @@
   @media screen and (max-width: 320px) {
     .intro__button-pencil {
       margin-top: 30px;
-      /* width: 7.5px;
-      height: 7.5px; */
       width: 18px;
       height: 18px;
-      /* padding: 5.25px 5.25px 5.25px 5.25px; */
       padding: 4.25px;
       margin-left: 10px;
      }

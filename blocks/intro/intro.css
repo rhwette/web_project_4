@@ -28,11 +28,5 @@
     margin:38.25px auto;
     max-width: 282px;
     column-gap:0px;
-    /* column-gap: 9px; */
-    /* grid-template-columns: 1fr; */
-    /* grid-template-areas: 
-    "pic"
-    "descript"
-    "plus"; */
   }
 }
