@@ -16,11 +16,12 @@
   margin-left:36px;
   margin-right: 36px;
   margin-bottom: 36.51px;
+  padding:0;
 }
 
 .popup-form__button:hover {
   opacity: 0.8;
-  cursor: url("../../../images/Layer14.png") 10 0, auto;
+  cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
 @media screen and (max-width: 1120px) {
@@ -31,11 +32,13 @@
 
 @media screen and (max-width: 320px) {
   .popup-form__button{
-    width: 75.565vw;
-  height: 14.605vw;
+  width: 238px;
+  font-size: 14px;
+  line-height: 16.948px;
   margin-left: 22px;
   margin-right: 22px;
   margin-top: 0px;
-  padding-bottom: 25px;
+  padding-bottom: 14px;
+  padding-top: 14px;
   }
 }

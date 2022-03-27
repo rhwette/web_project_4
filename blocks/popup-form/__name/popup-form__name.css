@@ -7,7 +7,7 @@
   width: 100%;
   max-width: 358px;
   margin-top: 54px;
-  margin-left: 36px;
+  /* margin-left: 36px; */
   margin-right: 36px;
   margin-bottom: 13.26px;
   border-top: hidden;
@@ -37,7 +37,8 @@
 
 @media screen and (max-width: 320px) {
   .popup-form__name {
-    max-width: 75.565vw;
+    /* max-width: 75.565vw; */
+    width: 238px;
     margin-top: 76px;
     margin-bottom: 9px;
   }

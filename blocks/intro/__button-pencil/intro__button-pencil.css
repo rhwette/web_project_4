@@ -1,37 +1,40 @@
 .intro__button-pencil {
-  width: 10px;
-  height: 10px;
-  padding: 7px 7px 7px 7px;
-  margin-left: 18px;
-  margin-top: 45px;
-  border: 1px solid #FFFFFF;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  align-items: center;
+  background-image: url("../../../images/pencil.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  margin-left: 1px;
+  margin-top: 42px;
+  border: 1px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0);
   grid-area: pen;
 }
 
 .intro__button-pencil:hover {
   opacity: 0.6;
-  cursor: url("../../../images/Layer14.png") 15 5, auto;
+  cursor: url("../../../images/pointer.svg") 15 5, auto;
 }
 
 
 @media screen and (max-width: 980px) {
   .intro__button-pencil {
-     height: 10px;
+     /* height: 10px; */
       margin-left:1px;
-    margin-top: 2.83866vw;
+      margin-top: 24px;
    }
   }
 
   @media screen and (max-width: 320px) {
     .intro__button-pencil {
-      margin-top: 25px;
-      width: 7.5px;
-      height: 7.5px;
-      padding: 5.25px 5.25px 5.25px 5.25px;
+      margin-top: 30px;
+      /* width: 7.5px;
+      height: 7.5px; */
+      width: 18px;
+      height: 18px;
+      /* padding: 5.25px 5.25px 5.25px 5.25px; */
+      padding: 4.25px;
+      margin-left: 10px;
      }
     }

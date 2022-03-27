@@ -1,4 +1,7 @@
 .intro__button-plus {
+  background-image: url("../../../images/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   width: 150px;
   height: 50px;
   padding: 14px 64px 14px 64px;
@@ -6,18 +9,14 @@
   margin-right: 0;
   margin-top: 38px;
   border: 2px solid #FFFFFF;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 2px;
   grid-area: plus;
 } 
 
 .intro__button-plus:hover {
   opacity: 0.6;
-  cursor: url("../../../images/Layer14.png") 15 0, auto;
+  cursor: url("../../../images/pointer.svg") 15 0, auto;
 }
 
 @media screen and (max-width:980px) {
@@ -25,16 +24,19 @@
     font-size: 22px;
     line-height: 26.63px;
     padding: 14px 133px 17px 133px;
-    margin-left: 145px;
+    margin-left: 154px;
+    margin-top: 0;
+    margin-bottom: 36px;
   }
 }
 
 @media screen and (max-width:320px) {
   .intro__button-plus {
+    width: 282px;
     font-size: 14px;
     line-height: 16.94px;
     padding: 17px 133px 17px 133px;
-    margin-left: 0;
-    margin-top: 22px;
+    margin:0;
+    margin-top: 0;
   }
 }

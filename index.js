@@ -12,11 +12,7 @@ const introButtonPencilElement = document.querySelector('.intro__button-pencil')
 const nameVariable = document.querySelector(".intro__name");
 const aboutmeVariable = document.querySelector(".intro__occupation");
 const popupFormButtonVariable = document.querySelector(".popup-form__button");
-// const popupFormName= document.querySelector(".popup-form__name");
-// const popupFormName= document.querySelector("name"/"name");
 const popupFormName=document.querySelector('input[name="name"]');
-
-// const popupFormAboutMe=document.querySelector(".popup-form__aboutme");
 const popupFormAboutMe=document.querySelector('input[name="aboutme"]');
 //-----------------------------------------------
 
@@ -52,7 +48,6 @@ popupFormButtonVariable.addEventListener('click', saveButton);
 //------------------------------------------------
 // define variable for closing Modal
 const popupFormButtonClose = document.querySelector('.popup-form__button-close');
-// const popupContainerButtonClose = document.querySelector('.popup-container__button-close');
 //-----------------------------------------------
 
 //-----------------------------------------------
@@ -66,40 +61,7 @@ function closeModal() {
 //-----------------------------------------------
 //  listen for click on big X
 popupFormButtonClose.addEventListener('click', closeModal);
-// popupContainerButtonClose.addEventListener('click', closeModal);
-console.log('big x was clicked');
 //------------------------------------------------
-
-
-//------------------------------------------------
-//  Below code will handle the 'heart' status
-//------------------------------------------------
-
-const cardGridInfo = document.querySelectorAll('.card-grid__icon');
-console.log('cardGridInfo:', cardGridInfo);
-for(let i=0; i<cardGridInfo.length; i++){
-  console.log('cardGridInfo at index i:',cardGridInfo[i])
-  cardGridInfo[i].addEventListener('click',changeHeartColor);
-}
-
-// cardGridInfo.forEach((anyElement) => {
-//   console.log('anyElement:', anyElement);
-// })
-
-console.log('cardGridInfo after listen:', cardGridInfo);
-
-
-function changeHeartColor(anynameEvent) {
-  console.log('event:',anynameEvent.target.id)
-  console.log('test:',(document.getElementById(anynameEvent.target.id).src))
-  if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.svg") {
-    document.getElementById(anynameEvent.target.id).src="./images/Union.svg";
-  } else {
-    document.getElementById(anynameEvent.target.id).src="./images/heart.svg";
-  }
-}
-
-
 
 
 

@@ -12,5 +12,5 @@
 
 .card-grid__icon:hover {
   opacity: .5;
-  cursor: url("../../../images/Layer14.png") 10 0, auto;
+  cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
