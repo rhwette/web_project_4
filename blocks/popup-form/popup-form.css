@@ -15,21 +15,9 @@
   padding:0;
 }
 
-@media screen and (max-width: 1120px) {
-  .popup-form {
-    max-width: 350px;
-  }
-}
-
-@media screen and (max-width: 625px) {
-  .popup-form {
-    max-width: 300px;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .popup-form {
-    max-width: 275px;
+    max-width: 350px;
   }
 }
 

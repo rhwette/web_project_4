@@ -18,21 +18,15 @@
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
-@media screen and (max-width: 1120px) {
-  .popup-form__button-close {
-    margin-left: 345px;
-  }
-}
-
 @media screen and (max-width: 625px) {
   .popup-form__button-close {
-    margin-left: 300px;
+    margin-left: 425px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .popup-form__button-close {
-    margin-left: 275px;
+    margin-left: 350px;
   }
 } 
 

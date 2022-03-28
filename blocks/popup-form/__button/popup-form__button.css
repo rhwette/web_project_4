@@ -24,9 +24,9 @@
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 500px) {
   .popup-form__button {
-    width: 80%;
+    max-width:278px;
   }
 }
 

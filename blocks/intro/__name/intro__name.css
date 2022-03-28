@@ -12,18 +12,26 @@
   margin-bottom: 7px;
   margin-left: 3.75px;
   grid-area: name;
+  max-width: 373px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width:980px) {
   .intro__name {
-    font-size: 22px;
-    line-height: 26.63px;
-    margin-left: 190px;
+    line-height: 36px;
+    margin-left: 110px;
+    padding-bottom: 24px;
   }
 }
+
 @media screen and (max-width:320px) {
   .intro__name {
     margin-left: 15vw;
     margin-bottom: 14px;
+    font-size: 22px;
+    line-height: 27px;
+    max-width: 200px;
   }
 }

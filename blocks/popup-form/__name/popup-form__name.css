@@ -1,13 +1,12 @@
 .popup-form__name {
-  font-size: 14px;
-  line-height: 16.94px;
-  font-weight: 400;
+  font-size: 42px;
+  line-height: 48px;
+  font-weight: 500;
   font-style: normal;
   color:#000000;
   width: 100%;
-  max-width: 358px;
+   max-width: 373px;
   margin-top: 54px;
-  margin-right: 36px;
   margin-bottom: 13.26px;
   border-top: hidden;
   border-left: hidden;
@@ -16,28 +15,18 @@
   outline: none;
 }
 
-@media screen and (max-width: 1120px) {
-  .popup-form__name {
-    max-width: 26.7858vw;
-  }
-}
-
-@media screen and (max-width: 775px) {
-  .popup-form__name {
-    max-width: 25.806vw;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .popup-form__name {
-    max-width: 50vw;
   }
 }
 
 @media screen and (max-width: 320px) {
   .popup-form__name {
-    width: 238px;
-    margin-top: 76px;
+    max-width: 238px;
+     margin-top: 76px;
     margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 400;
   }
 }
