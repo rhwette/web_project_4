@@ -23,6 +23,14 @@
   }
 }
 
+@media screen and (max-width: 650px){
+  .intro{
+    margin:38.25px auto;
+    max-width: 282px;
+        column-gap:0px;
+  }
+}
+
 @media screen and (max-width: 320px){
   .intro{
     margin:38.25px auto;

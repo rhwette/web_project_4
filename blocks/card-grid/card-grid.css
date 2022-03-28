@@ -11,6 +11,13 @@
   }
 }
 
+@media screen and (max-width: 650px) {
+  .card-grid {
+    max-width: 282px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media screen and (max-width: 320px) {
   .card-grid {
     max-width: 282px;

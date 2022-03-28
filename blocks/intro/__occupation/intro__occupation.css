@@ -27,6 +27,13 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .intro__occupation {
+    margin-left: 40px;
+    font-size: 20px;
+  }
+}
 @media screen and (max-width:320px) {
   .intro__occupation {
     font-size: 14px;

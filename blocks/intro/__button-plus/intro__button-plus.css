@@ -30,6 +30,12 @@
   }
 }
 
+@media screen and (max-width: 650px) {
+  .intro__button-plus {
+    margin-left: 5px;
+  }
+}
+
 @media screen and (max-width:320px) {
   .intro__button-plus {
     width: 282px;

@@ -9,6 +9,12 @@
   color: #545454;
 }
 
+@media screen and (max-width: 650px) {
+  .footer__text {
+    margin-left: 145px;
+  }
+}
+
 @media screen and (max-width:320px) {
   .footer__text {
     padding-bottom: 36px;
