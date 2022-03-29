@@ -23,6 +23,7 @@
     line-height: 36px;
     margin-left: 110px;
     padding-bottom: 24px;
+    /* max-width:200px; */
   }
 }
 
@@ -30,11 +31,13 @@
   .intro__name {
     margin-left: 30px;
     font-size: 22px;
+    max-width: 200px;
   }
 }
 
 @media screen and (max-width:320px) {
   .intro__name {
+    padding: 0;
     margin-left: 15vw;
     margin-bottom: 14px;
     font-size: 22px;
