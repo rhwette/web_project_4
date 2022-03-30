@@ -11,7 +11,11 @@
 
 @media screen and (max-width: 650px) {
   .footer__text {
-    margin-left: 145px;
+   }
+}
+
+@media screen and (max-width: 500px) {
+  .footer__text {
   }
 }
 

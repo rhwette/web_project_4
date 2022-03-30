@@ -11,18 +11,17 @@
 const introButtonPencilElement = document.querySelector('.intro__button-pencil');
 const nameVariable = document.querySelector(".intro__name");
 const aboutmeVariable = document.querySelector(".intro__occupation");
-// const popupFormButtonVariable = document.querySelector(".popup-form__button");
-const popupFormButtonVariable = document.querySelector(".popup__form_button");
-const popupFormName=document.querySelector('input[name="name"]');
-const popupFormAboutMe=document.querySelector('input[name="aboutme"]');
+const popupButtonVariable = document.querySelector(".popup__button");
+const popupName=document.querySelector('input[name="name"]');
+const popupAboutMe=document.querySelector('input[name="aboutme"]');
 //-----------------------------------------------
 
 //-----------------------------------------------
 //  define function to open the Modal
 //-----------------------------------------------  
 function openModal() {
-  popupFormName.value=nameVariable.textContent;
-  popupFormAboutMe.value=aboutmeVariable.textContent;
+  popupName.value=nameVariable.textContent;
+  popupAboutMe.value=aboutmeVariable.textContent;
   const containerElement = document.querySelector('.popup-container');
   containerElement.classList.add('popup-container_visible');
 }
@@ -33,8 +32,8 @@ function openModal() {
 //-----------------------------------------------
 function  saveButton (evt) {
  evt.preventDefault();
- nameVariable.textContent = popupFormName.value;
- aboutmeVariable.textContent = popupFormAboutMe.value;
+ nameVariable.textContent = popupName.value;
+ aboutmeVariable.textContent = popupAboutMe.value;
  closeModal();
 }
 //-----------------------------------------------
@@ -42,13 +41,12 @@ function  saveButton (evt) {
 //-----------------------------------------------
 //  listen for clicks on Pencil and on SAVE
 introButtonPencilElement.addEventListener('click', openModal);
-popupFormButtonVariable.addEventListener('click', saveButton);
+popupButtonVariable.addEventListener('click', saveButton);
 //-----------------------------------------------
 
 
 //------------------------------------------------
 // define variable for closing Modal
-// const popupFormButtonClose = document.querySelector('.popup-form__button-close');
 const popupButtonClose = document.querySelector('.popup__button-close');
 //-----------------------------------------------
 
@@ -62,7 +60,6 @@ function closeModal() {
 
 //-----------------------------------------------
 //  listen for click on big X
-// popupFormButtonClose.addEventListener('click', closeModal);
 popupButtonClose.addEventListener('click', closeModal);
 //------------------------------------------------
 

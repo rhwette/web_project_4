@@ -18,11 +18,21 @@
     cursor: url("../../../images/pointer.svg") 10 0, auto;
   }
   
-  @media screen and (max-width: 625px) {
+  /* @media screen and (max-width: 625px) {
     .popup__button-close {
       margin-left: 425px;
     }
-  }
+  } */
+
+  @media screen and (max-width: 650px) {
+    .popup__button-close {
+      margin-left: 255px;
+      margin-top: -42px;
+      width: 18.38px;
+      height: 18.38px;
+      overflow: hidden;
+    }
+  } 
   
   @media screen and (max-width: 500px) {
     .popup__button-close {
