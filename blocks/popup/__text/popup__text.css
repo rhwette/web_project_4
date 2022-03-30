@@ -1,28 +1,31 @@
-.popup__aboutme {
+.popup__text {
   width: 100%;
   max-width: 358px;
   margin-top: 29.74px;
-  margin-bottom: 0.08px;
   padding-bottom: 10px;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0,0,0,.2);
   outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__aboutme {
+  .popup__text {
     max-width: 238px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup__aboutme {
-    margin-top: 30px;
-    margin-bottom: 0px;
+  .popup__text {
+    margin: 0;
+    margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 30px;
     padding-bottom: 9px;
   }
 }
