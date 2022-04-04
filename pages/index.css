@@ -32,6 +32,7 @@
 @import url(../blocks/card-grid/__style/card-grid__style.css);
 @import url(../blocks/card-grid/__text/card-grid__text.css);
 @import url(../blocks/card-grid/__icon/card-grid__icon.css);
+@import url(../blocks/card-grid/__garbage/card-grid__garbage.css);
 
 /* FOOTER*/
 @import url(../blocks/footer/footer.css);
