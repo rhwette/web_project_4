@@ -2,8 +2,8 @@
 //-----------------------------------------------
 // associate variables with classes or ID's
 //    introButtonPencilElement = button that activates form "Edit Profile"
-//    nameVariable = starting name on form
-//    aboutMeVariable = starting occupation on form
+//    nameVariable = starting name on page
+//    aboutMeVariable = starting occupation on page
 //    popupButtonSave = the 'SAVE' button on 'editProfile' form
 //    popupButtonCreate = the 'Create' button on 'newPlace' Form
 //    popupButtonCloseEditProfile = 'big X' on 'editProfile' form
@@ -14,16 +14,26 @@
 //-----------------------------------------------
 
 const introButtonPencilElement = document.querySelector('.intro__button-pencil');
+console.log('introButtonPencilElement', introButtonPencilElement);
 const nameVariable = document.querySelector(".intro__name");
+console.log('nameVariable', nameVariable);
 const aboutmeVariable = document.querySelector(".intro__occupation");
+console.log('aboutmeVariable', aboutmeVariable);
 const popupButtonSave= document.querySelector("#popupButtonSave");
+console.log('popupButtonSave', popupButtonSave);
 const popupButtonCloseEditProfile = document.querySelector('#popupButtonCloseEditProfile');
+console.log('popupButtonCloseEditProfile', popupButtonCloseEditProfile);
 const popupButtonCreate= document.querySelector("#popupButtonCreate");
+console.log('popupButtonCreate', popupButtonCreate);
 const popupButtonCloseNewPlace = document.querySelector('#popupButtonCloseNewPlace');
+console.log('popupButtonCloseNewPlace', popupButtonCloseNewPlace);
 const popupName=document.querySelector('input[name="name"]');
+console.log('popupName', popupName);
 const popupAboutMe=document.querySelector('input[name="aboutme"]');
+console.log('popupAboutMe', popupAboutMe);
 const introButtonPlusElement = document.querySelector('.intro__button-plus');
-const cardGridGarbage= document.querySelector('.card-grid__garbage');
+console.log('introButtonPlusElement', introButtonPlusElement);
+console.log('++++++++++++++++++++++++++++++++++++++');
 
 
 //  ARRAY of OBJECTS containing image links
@@ -54,31 +64,52 @@ const initialCards = [
   }
 ]; 
 
-//***********************************************
-//-----------------------------------------------
-//  INITIAL STATE OF PAGE
-//-----------------------------------------------
-//***********************************************
 
-//-----------------------------------------------
-//  FUNCTION 'drawPics' - draws initial six cards
-//----------------------------------------------- 
+
+// //-----------------------------------------------
+// //  FUNCTION 'removePic'
+// //-----------------------------------------------
+
 function drawPics() {
   document.querySelector('.card-grid__format').innerHTML = "";
-
+      // console.log('++++++++++++++++++++++++++++++++++++++');
   for(let i=0; i< initialCards.length; i++) {
-    const listElement = document.createElement("li");
+      // console.log('xxxxxxxxxxxxxxxxx start loop', i , 'xxxxxxxxxxxxxxxx');
+    listElement = document.createElement("li");
+      // console.log(' listElement', i, listElement);
     listElement.className = "card-grid__style";
+      // console.log(' listElement.classname', i, listElement.className);
+    // listElement.id = `${cardGridGarbageButton[i]}Style`;
+    listElement.id = `Style${[i]}`;
     listElement.innerHTML= `<img class="card-grid__picture" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
-    <button type="button" class="card-grid__garbage" id="cardGridGarbageButton"><img src="./images/garbage.svg" alt="garbage symbol"/></button>
+    <button type="button" class="card-grid__garbage" ><img id="Button${[i]}" src="./images/garbage.svg" alt="garbage symbol"/></button>
     <div class="card-grid__info">
       <h2 class="card-grid__text block">${initialCards[i].name}</h2>
       <button type="button" class="card-grid__icon"><img id="place ${i}" src="./images/heart.svg" alt="heart" title="heart"/></button>
     </div>`
-  document.querySelector('.card-grid__format').append(listElement)
-    }
-  };
+      console.log('YYYYYYYYYYYYYYYYYYYYYYYYYY');
+   
+  document.querySelector('.card-grid__format').append(listElement);
 
+      // const currentGarbageCan = document.querySelector(`#${cardGridGarbageButton[i]}Button`);
+      const currentGarbageCan = document.querySelector(`#Button${[i]}`);
+      console.log('currentGarbageCan', currentGarbageCan);
+
+      currentGarbageCan.addEventListener('click', removePic);
+
+    }
+ 
+  };
+  function removePic(evtRemove) {
+    let buttonID = evtRemove.target.id;
+    let picIndex = buttonID.charAt(buttonID.length-1);
+    console.log('picIndex', picIndex);
+
+    initialCards.splice(picIndex,1);
+    console.log('array at picindex', initialCards);
+    drawPics();
+  }
+  
   drawPics();
 
 //***********************************************
@@ -143,11 +174,13 @@ popupButtonCreate.addEventListener('click', createButton);
 //  FUNCTION 'openModal2'
 //-----------------------------------------------  
 function openModal2(evtNewPlace) {
+  console.log( 'evtNewPlace:', evtNewPlace);
   const popupTitle= document.querySelector('#place');
   const popupLink= document.querySelector('#link');
   popupTitle.value = "";
   popupLink.value= "";
   const containerElement = document.querySelector('#picture-popup-container');
+  console.log("popup container:" , containerElement);
   containerElement.classList.add('popup-container_visible');
   }
 
@@ -163,6 +196,7 @@ function  createButton (evtCreate) {
     if (initialCards.length > 6) {
       initialCards.pop()
     };
+    console.log('entire array',initialCards);
   drawPics();
   closeModal2();
  }
@@ -178,11 +212,12 @@ popupButtonCloseNewPlace.addEventListener('click', closeModal2);
 function closeModal2() {
   const containerElement = document.querySelector('#picture-popup-container');
   containerElement.classList.remove('popup-container_visible');
+  console.log('close modal2');
 }
 
-//------------------------------------------------
-//  HEART ICON
-//------------------------------------------------
+// //------------------------------------------------
+// //  HEART ICON
+// //------------------------------------------------
 
 const cardGridInfo = document.querySelectorAll('.card-grid__icon');
 for(let i=0; i<cardGridInfo.length; i++){
@@ -201,26 +236,3 @@ function changeHeartColor(anynameEvent) {
     document.getElementById(anynameEvent.target.id).src="./images/heart.svg";
   }
 }
-
-
-//-----------------------------------------------
-//  LISTEN - click on garbage can
-//-----------------------------------------------
-cardGridGarbage.addEventListener('click', removePic);
-
-
-//-----------------------------------------------
-//  FUNCTION 'removePic'
-//-----------------------------------------------
-function removePic() {
-  const pictureElement = document.querySelector('.card-grid__garbage');
-  pictureElement.remove();
-}
-
-
-
-
-
-
-
-
