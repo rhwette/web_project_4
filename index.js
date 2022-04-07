@@ -27,6 +27,8 @@ const popupButtonCreate= document.querySelector("#popupButtonCreate");
 console.log('popupButtonCreate', popupButtonCreate);
 const popupButtonCloseNewPlace = document.querySelector('#popupButtonCloseNewPlace');
 console.log('popupButtonCloseNewPlace', popupButtonCloseNewPlace);
+const popupButtonCloseZoomPic = document.querySelector('#popupButtonCloseZoomPic');
+console.log('popupButtonCloseZoomPic', popupButtonCloseZoomPic);
 const popupName=document.querySelector('input[name="name"]');
 console.log('popupName', popupName);
 const popupAboutMe=document.querySelector('input[name="aboutme"]');
@@ -80,12 +82,14 @@ function drawPics() {
     listElement.className = "card-grid__style";
       // console.log(' listElement.className', i, listElement.className);
     listElement.id = `Style${[i]}`;
-    listElement.innerHTML= `<img class="card-grid__picture" id="image${[i]}" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
-    <button type="button" class="card-grid__garbage" ><img id="Button${[i]}" src="./images/garbage.svg" alt="garbage symbol"/></button>
+    listElement.innerHTML= ` <img class="card-grid__picture" id="image${[i]}" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
+    <button type="button" class="card-grid__garbage" id="Button${[i]}"><img src="./images/garbage.svg" alt="garbage symbol"/></button>
     <div class="card-grid__info">
-      <h2 class="card-grid__text block">${initialCards[i].name}</h2>
+      <h2 class="card-grid__text block" id="Text${[i]}">${initialCards[i].name}</h2>
       <button type="button" class="card-grid__icon"><img id="place ${i}" src="./images/heart.svg" alt="heart" title="heart"/></button>
     </div>`;
+    
+    console.log('button id', `Button${[i]}`);
     console.log('listElement', listElement);
       console.log('YYYYYYYYYYYYYYYYYYYYYYYYYY');
    
@@ -93,20 +97,23 @@ function drawPics() {
 
 
       const currentGarbageCan = document.querySelector(`#Button${[i]}`);
+      console.log(' can id', `Button${[i]}`);
       console.log('currentGarbageCan', currentGarbageCan);
       currentGarbageCan.addEventListener('click', removePic);
 
-      const currentImage = document.querySelector(`#Style${[i]}`);
+      const currentImage = document.querySelector(`#Text${[i]}`);
       console.log('currentImage', currentImage);
       currentImage.addEventListener('click', zoomPic);
 
     }
   };
 
+
 // //-----------------------------------------------
 // //  FUNCTION 'removePic'
 // //-----------------------------------------------
   function removePic(evtRemove) {
+    console.log('clicked on can');
     let buttonID = evtRemove.target.id;
     let picIndex = buttonID.charAt(buttonID.length-1);
     console.log('picIndex', picIndex);
@@ -127,20 +134,39 @@ function drawPics() {
   function zoomPic (evtZoom) {
     console.log('evt', evtZoom);
     console.log('zoompic invoked');
-    imgElement = document.createElement("img");
-    console.log('imgElement', imgElement);
-    imgElement.className = "card-grid__style";
-    console.log('imgElement.className', imgElement.className);
-    imgElement.id = `popup-Pic`;
-    console.log('imgElement.id', imgElement.id);
-      document.querySelector('.card-grid__format').append(imgElement);
+    let textId = evtZoom.target.id;
+    let pictureIndex= textId.charAt(textId.length-1);
+    console.log('pictureIndex', pictureIndex);
+    zoomElement = document.createElement("img");
+    console.log('zoomElement', zoomElement);
+    zoomElement.className = "card-grid__picture-zoom";
+    console.log('zoomElement.className', zoomElement.className);
+    zoomElement.id = 'picture' + pictureIndex;
+    console.log('zoomElement.id', zoomElement.id);
+    zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
+    zoomElement.alt="locationx";
+    zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
+    document.querySelector('.image-popup').append(zoomElement);
 
-    const containerElement = document.querySelector('#image-popup-container');
-
+    const containerElement = document.querySelector('.image-popup');
+ 
     console.log("popup container:" , containerElement);
     containerElement.classList.add('popup-container_visible');
 
   }
+
+//-----------------------------------------------
+//  LISTEN - click on big X 'zoomPic
+//-----------------------------------------------
+popupButtonCloseZoomPic.addEventListener('click', closeZoom);
+
+//-----------------------------------------------
+//  FUNCTION 'closeZoom'
+//-----------------------------------------------
+function closeZoom() {
+  const containerElement = document.querySelector('.image-popup');
+    containerElement.classList.remove('popup-container_visible');
+}
 
 
 //***********************************************

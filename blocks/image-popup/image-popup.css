@@ -1,14 +1,13 @@
 .image-popup {
   position: relative;
   background-color: green;
-  background-image: url("https://code.s3.yandex.net/web-code/yosemite.jpg"); 
   background-repeat: no-repeat;
   background-position: center; 
   /* font-family: 'Inter', Arial, sans-serif; */
   width:100%; 
-  max-width: 400px;
+  max-width: 600px;
   height: 600px;
-  max-height: 7400px;
+  max-height: 800px;
   /* height: 330px; */
   /* display: flex; */
   /* flex-direction: column; */

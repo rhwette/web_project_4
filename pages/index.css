@@ -29,6 +29,7 @@
 @import url(../blocks/card-grid/__format/card-grid__format.css);
 @import url(../blocks/card-grid/__info/card-grid__info.css);
 @import url(../blocks/card-grid/__picture/card-grid__picture.css);
+@import url(../blocks/card-grid/__picture-zoom/card-grid__picture-zoom.css);
 @import url(../blocks/card-grid/__style/card-grid__style.css);
 @import url(../blocks/card-grid/__text/card-grid__text.css);
 @import url(../blocks/card-grid/__icon/card-grid__icon.css);
@@ -45,6 +46,7 @@
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__button-close/popup__button-close.css);
+@import url(../blocks/popup/__button-close-zoom/popup__button-close-zoom.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__text/popup__text.css);
 
