@@ -33,6 +33,7 @@ const popupAboutMe=document.querySelector('input[name="aboutme"]');
 console.log('popupAboutMe', popupAboutMe);
 const introButtonPlusElement = document.querySelector('.intro__button-plus');
 console.log('introButtonPlusElement', introButtonPlusElement);
+// const imagePlace=document.querySelector(image id goes here);
 console.log('++++++++++++++++++++++++++++++++++++++');
 
 
@@ -65,9 +66,8 @@ const initialCards = [
 ]; 
 
 
-
 // //-----------------------------------------------
-// //  FUNCTION 'removePic'
+// //  FUNCTION 'drawPics'
 // //-----------------------------------------------
 
 function drawPics() {
@@ -78,28 +78,34 @@ function drawPics() {
     listElement = document.createElement("li");
       // console.log(' listElement', i, listElement);
     listElement.className = "card-grid__style";
-      // console.log(' listElement.classname', i, listElement.className);
-    // listElement.id = `${cardGridGarbageButton[i]}Style`;
+      // console.log(' listElement.className', i, listElement.className);
     listElement.id = `Style${[i]}`;
-    listElement.innerHTML= `<img class="card-grid__picture" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
+    listElement.innerHTML= `<img class="card-grid__picture" id="image${[i]}" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
     <button type="button" class="card-grid__garbage" ><img id="Button${[i]}" src="./images/garbage.svg" alt="garbage symbol"/></button>
     <div class="card-grid__info">
       <h2 class="card-grid__text block">${initialCards[i].name}</h2>
       <button type="button" class="card-grid__icon"><img id="place ${i}" src="./images/heart.svg" alt="heart" title="heart"/></button>
-    </div>`
+    </div>`;
+    console.log('listElement', listElement);
       console.log('YYYYYYYYYYYYYYYYYYYYYYYYYY');
    
   document.querySelector('.card-grid__format').append(listElement);
 
-      // const currentGarbageCan = document.querySelector(`#${cardGridGarbageButton[i]}Button`);
+
       const currentGarbageCan = document.querySelector(`#Button${[i]}`);
       console.log('currentGarbageCan', currentGarbageCan);
-
       currentGarbageCan.addEventListener('click', removePic);
 
+      const currentImage = document.querySelector(`#Style${[i]}`);
+      console.log('currentImage', currentImage);
+      currentImage.addEventListener('click', zoomPic);
+
     }
- 
   };
+
+// //-----------------------------------------------
+// //  FUNCTION 'removePic'
+// //-----------------------------------------------
   function removePic(evtRemove) {
     let buttonID = evtRemove.target.id;
     let picIndex = buttonID.charAt(buttonID.length-1);
@@ -111,6 +117,31 @@ function drawPics() {
   }
   
   drawPics();
+
+
+
+// //-----------------------------------------------
+// //  FUNCTION 'zoomPic'
+// //-----------------------------------------------
+
+  function zoomPic (evtZoom) {
+    console.log('evt', evtZoom);
+    console.log('zoompic invoked');
+    imgElement = document.createElement("img");
+    console.log('imgElement', imgElement);
+    imgElement.className = "card-grid__style";
+    console.log('imgElement.className', imgElement.className);
+    imgElement.id = `popup-Pic`;
+    console.log('imgElement.id', imgElement.id);
+      document.querySelector('.card-grid__format').append(imgElement);
+
+    const containerElement = document.querySelector('#image-popup-container');
+
+    console.log("popup container:" , containerElement);
+    containerElement.classList.add('popup-container_visible');
+
+  }
+
 
 //***********************************************
 //-----------------------------------------------
