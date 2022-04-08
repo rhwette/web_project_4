@@ -5,13 +5,13 @@
 
 * responsive, single page website with active javascript form   
 * follows Figma specifications provided by P-Y  
-* [Link to the project on Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1) 
+* [Link to the project on Figma](https://www.figma.com/file/m79HxYeZpOXRw0Tz2eZGOV/Sprint-5%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1) 
   
 ### Technologies
 
+* utilizes Javascript to add interactivity to website 
 * utilizes BEM file structure  
-* media at-rules facilitate responsiveness at three breakpoints
-     (1120, 775, 320) 
+* media at-rules at several breakpoints facilitate responsiveness 
 * flexbox assist with positioning 
 * images compressed using https://tinypng.com/
 * the "Inter" font is included (style:normal at weights: 400, 500, and 900) 
