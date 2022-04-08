@@ -1,4 +1,4 @@
-.popup__button-close-zoom {
+.image-popup__button-closezoom {
   position: absolute;
   margin:0;
   margin-left: 600px;
@@ -13,31 +13,31 @@
   align-items: center;
 } 
 
-.popup__button-close-zoom:hover {
+.image-popup__button-closezoom {
   opacity: 0.6;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
 @media screen and (max-width: 700px) {
-  .popup__button-close-zoom {
+  .image-popup__button-closezoom {
     margin-left: 500px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .popup__button-close-zoom {
+  .image-popup__button-closezoom {
     margin-left: 400px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .popup__button-close-zoom {
+  .image-popup__button-closezoom {
     margin-left: 300px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .popup__button-close-zoom {
+  .image-popup__button-closezoom {
     margin-left: 200px;
   }
 }
