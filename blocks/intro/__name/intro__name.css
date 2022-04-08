@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 500;
   color: #FFFFFF;
-  width: 373px; 
+  width: 373px;
   width: min-content;
   white-space: nowrap;
   text-align: left;
@@ -14,7 +14,6 @@
   grid-area: name;
   max-width: 373px;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
 }
 
