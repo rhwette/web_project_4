@@ -13,7 +13,7 @@
   align-items: center;
 } 
 
-.image-popup__button-closezoom {
+.image-popup__button-closezoom:hover {
   opacity: 0.6;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
