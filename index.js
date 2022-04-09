@@ -161,9 +161,11 @@ function openModal1(evtEditProfile) {
 //-----------------------------------------------
 function  saveButton (evtSave) {
   evtSave.preventDefault();
-  nameElement.textContent = popupName.value;
-  aboutMeElement.textContent = popupAboutMe.value;
-  closeModal1();
+  if (popupName.value === "" || popupAboutMe.value === "") {
+    alert("please fill out the form before submitting");
+  } else {  nameElement.textContent = popupName.value;
+    aboutMeElement.textContent = popupAboutMe.value;
+    closeModal1()}
 }
 
 //-----------------------------------------------
