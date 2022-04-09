@@ -211,7 +211,14 @@ function openModal2(evtNewPlace) {
 function  createButton (evtCreate) {
   evtCreate.preventDefault();
   const popupTitle= document.querySelector('#place');
+  console.log('popupTitle', popupTitle);
+  console.log('popupTitle.value', popupTitle.value);
   const popupLink= document.querySelector('#link');
+  console.log('popupLink', popupLink);
+  console.log('popupLink.value', popupLink.value);
+  if (popupTitle.value === "" || popupLink.value === "") {
+    alert("please fill out the form before submitting");
+  } else {
  
   initialCards.unshift({name: popupTitle.value, link: popupLink.value});
     if (initialCards.length > 6) {
@@ -219,6 +226,7 @@ function  createButton (evtCreate) {
     };
   drawPics();
   closeModal2();
+  }
  }
 
 //-----------------------------------------------
