@@ -16,13 +16,13 @@
 const introButtonPencilElement = document.querySelector('.intro__button-pencil');
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
-const popupButtonSave= document.querySelector("#popupButtonSave");
+const popupButtonSave = document.querySelector("#popupButtonSave");
 const popupButtonCloseEditProfile = document.querySelector('#popupButtonCloseEditProfile');
-const popupButtonCreate= document.querySelector("#popupButtonCreate");
+const popupButtonCreate = document.querySelector("#popupButtonCreate");
 const popupButtonCloseNewPlace = document.querySelector('#popupButtonCloseNewPlace');
 const popupButtonCloseZoomPic = document.querySelector('#popupButtonCloseZoomPic');
-const popupName=document.querySelector('input[name="name"]');
-const popupAboutMe=document.querySelector('input[name="aboutme"]');
+const popupName = document.querySelector('input[name ="name"]');
+const popupAboutMe = document.querySelector('input[name = "aboutme"]');
 const introButtonPlusElement = document.querySelector('.intro__button-plus');
 
 
@@ -61,15 +61,15 @@ const initialCards = [
 
 function drawPics() {
   document.querySelector('.card-grid__format').innerHTML = "";
-  for(let i=0; i< initialCards.length; i++) {
+  for(let i = 0; i< initialCards.length; i++) {
     listElement = document.createElement("li");
     listElement.className = "card-grid__style";
     listElement.id = `Style${[i]}`;
-    listElement.innerHTML= ` <img class="card-grid__picture" id="image${[i]}" src="${initialCards[i]["link"]}" alt="location" title="${initialCards[i]['name']}"/>
-    <button type="button" class="card-grid__garbage" ><img id="Button${[i]}" src="./images/garbage.svg" alt="garbage symbol"/></button>
-    <div class="card-grid__info">
-      <h2 class="card-grid__text block" id="Text${[i]}">${initialCards[i].name}</h2>
-      <button type="button" class="card-grid__icon"><img id="place ${i}" src="./images/heart.svg" alt="heart" title="heart"/></button>
+    listElement.innerHTML = ` <img class = "card-grid__picture" id = "image${[i]}" src = "${initialCards[i]["link"]}" alt = "location" title = "${initialCards[i]['name']}"/>
+    <button type = "button" class = "card-grid__garbage" ><img id = "Button${[i]}" src = "./images/garbage.svg" alt = "garbage symbol"/></button>
+    <div class = "card-grid__info">
+      <h2 class = "card-grid__text block" id = "Text${[i]}">${initialCards[i].name}</h2>
+      <button type = "button" class = "card-grid__icon"><img id = "place ${i}" src = "./images/heart.svg" alt = "heart" title = "heart"/></button>
     </div>`;
     
    
@@ -110,9 +110,9 @@ function drawPics() {
     zoomElement = document.createElement("img");
     zoomElement.className = "card-grid__picture-zoom";
     zoomElement.id = 'picture';
-    zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
-    zoomElement.alt="locationx";
-    zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
+    zoomElement.src = `${initialCards[pictureIndex]["link"]}`;
+    zoomElement.alt = "locationx";
+    zoomElement.title = `"${initialCards[pictureIndex]['name']}"`;
     document.querySelector('.image-popup').append(zoomElement);
     const containerElement = document.querySelector('#image-popup-container');
     containerElement.classList.add('popup-container_visible');
@@ -151,8 +151,8 @@ popupButtonSave.addEventListener('click', saveButton);
 //  FUNCTION 'openModal1'
 //-----------------------------------------------  
 function openModal1(evtEditProfile) {
-  popupName.value=nameElement.textContent;
-  popupAboutMe.value=aboutMeElement.textContent;
+  popupName.value = nameElement.textContent;
+  popupAboutMe.value = aboutMeElement.textContent;
   const containerElement = document.querySelector('#person-popup-container');
   containerElement.classList.add('popup-container_visible');
 }
@@ -197,10 +197,10 @@ popupButtonCreate.addEventListener('click', createButton);
 //  FUNCTION 'openModal2'
 //-----------------------------------------------  
 function openModal2(evtNewPlace) {
-  const popupTitle= document.querySelector('#place');
-  const popupLink= document.querySelector('#link');
+  const popupTitle = document.querySelector('#place');
+  const popupLink = document.querySelector('#link');
   popupTitle.value = "";
-  popupLink.value= "";
+  popupLink.value = "";
   const containerElement = document.querySelector('#picture-popup-container');
   containerElement.classList.add('popup-container_visible');
   }
@@ -210,10 +210,10 @@ function openModal2(evtNewPlace) {
 //-----------------------------------------------
 function  createButton (evtCreate) {
   evtCreate.preventDefault();
-  const popupTitle= document.querySelector('#place');
+  const popupTitle = document.querySelector('#place');
   console.log('popupTitle', popupTitle);
   console.log('popupTitle.value', popupTitle.value);
-  const popupLink= document.querySelector('#link');
+  const popupLink = document.querySelector('#link');
   console.log('popupLink', popupLink);
   console.log('popupLink.value', popupLink.value);
   if (popupTitle.value === "" || popupLink.value === "") {
@@ -248,7 +248,7 @@ function closeModal2() {
 // //------------------------------------------------
 
 const cardGridInfo = document.querySelectorAll('.card-grid__icon');
-for(let i=0; i<cardGridInfo.length; i++){
+for(let i = 0; i<cardGridInfo.length; i++){
   cardGridInfo[i].addEventListener('click',changeHeartColor);
 }
 
@@ -257,8 +257,8 @@ cardGridInfo.forEach((anyElement) => {
 
 function changeHeartColor(anynameEvent) {
   if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.svg") {
-    document.getElementById(anynameEvent.target.id).src="./images/Union.svg";
+    document.getElementById(anynameEvent.target.id).src ="./images/Union.svg";
   } else {
-    document.getElementById(anynameEvent.target.id).src="./images/heart.svg";
+    document.getElementById(anynameEvent.target.id).src ="./images/heart.svg";
   }
 }

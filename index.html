@@ -1,80 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang ="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content= "width = device-width, initial-scale = 1.0" />
         <title>Around the U.S.</title>
-        <link rel="stylesheet" href="./pages/index.css" />
+        <link rel = "stylesheet" href = "./pages/index.css" />
         
     </head>
 
-  <body class="page">
+  <body class = "page">
       <!--HEADER-->
-      <header class="header">
+      <header class = "header">
         <!--LOGO-->
-        <img class="header__logo" src="./images/logo.svg" alt="Around the US" title="logo" />
+        <img class = "header__logo" src = "./images/logo.svg" alt = "Around the US" title = "logo" />
       </header>
 
-      <main class="content">
+      <main class = "content">
         <!--INTRO-->
-        <section class="intro">
-          <img class="intro__image" src="./images/jacques-cousteau.jpg" alt="jacques cousteau" title="cousteau"/>
-          <div class="intro__description">
-            <h1 class="intro__name">Jacques Cousteau</h1>
-            <p class="intro__occupation">Explorer</p>
+        <section class = "intro">
+          <img class = "intro__image" src = "./images/jacques-cousteau.jpg" alt = "jacques cousteau" title = "cousteau"/>
+          <div class = "intro__description">
+            <h1 class = "intro__name">Jacques Cousteau</h1>
+            <p class = "intro__occupation">Explorer</p>
           </div>
-            <button type="button" class="intro__button-pencil" title="pencil button"></button>
-            <button type="button" class="intro__button-plus" title="plus button"> </button>
+            <button type = "button" class = "intro__button-pencil" title = "pencil button"></button>
+            <button type = "button" class = "intro__button-plus" title = "plus button"> </button>
         </section>
 
         <!--CARD GRID-->
-        <section class="card-grid">
-          <ul class="card-grid__format">
+        <section class = "card-grid">
+          <ul class = "card-grid__format">
             
           </ul>
         </section>
 
          <!--POPUP AND FORM for name and occupation-->
-      <div class="popup-container" id="person-popup-container">
-        <div class="popup">
-          <h2 class="popup__title">Edit Profile</h2>
-          <button type="button" class="popup__button-close" id="popupButtonCloseEditProfile"><img src="./images/close.svg" alt="close symbol"/></button>
-          <form name="form" class="popup__form">
-            <input name="name"  class="popup__text" type="text" id="name" required/> 
-            <input name="aboutme" class="popup__text" type="text" id="aboutme" required/>
-            <button type="submit" class="popup__button" id="popupButtonSave" >Save</button>
+      <div class = "popup-container" id = "person-popup-container">
+        <div class = "popup">
+          <h2 class = "popup__title">Edit Profile</h2>
+          <button type = "button" class = "popup__button-close" id = "popupButtonCloseEditProfile"><img src = "./images/close.svg" alt = "close symbol"/></button>
+          <form name = "form" class = "popup__form">
+            <input name = "name"  class = "popup__text" type = "text" id = "name" required/> 
+            <input name = "aboutme" class = "popup__text" type = "text" id = "aboutme" required/>
+            <button type = "submit" class = "popup__button" id = "popupButtonSave" >Save</button>
           </form>
         </div>
       </div>
 
 
         <!--POPUP AND FORM for new location and link-->
-        <div class="popup-container" id="picture-popup-container">
-        <div class="popup">
-          <h2 class="popup__title">New Place</h2>
-          <button type="button" class="popup__button-close" id="popupButtonCloseNewPlace"><img src="./images/close.svg" alt="close symbol"/></button>
-          <form name="form" class="popup__form">
-            <input name="place" placeholder="Title" class="popup__text" type="text" id="place" required/>
-            <input name="link" placeholder="Image link" class="popup__text" type="text" id="link" required/>
-            <button type="submit" class="popup__button" id="popupButtonCreate">Create</button>
+        <div class = "popup-container" id = "picture-popup-container">
+        <div class = "popup">
+          <h2 class = "popup__title">New Place</h2>
+          <button type = "button" class = "popup__button-close" id = "popupButtonCloseNewPlace"><img src = "./images/close.svg" alt = "close symbol"/></button>
+          <form name = "form" class = "popup__form">
+            <input name = "place" placeholder = "Title" class = "popup__text" type = "text" id = "place" required/>
+            <input name = "link" placeholder = "Image link" class = "popup__text" type = "text" id = "link" required/>
+            <button type = "submit" class = "popup__button" id = "popupButtonCreate">Create</button>
           </form>
         </div>
       </div>
 
               <!--POPUP AND BUTTON for IMAGE ZOOM-->
-        <div class="popup-container" id="image-popup-container">
-          <div class="image-popup">
-            <button type="button" class="image-popup__button-closezoom" id="popupButtonCloseZoomPic"><img src="./images/close.svg" alt="close symbol"/></button>
+        <div class = "popup-container" id = "image-popup-container">
+          <div class = "image-popup">
+            <button type = "button" class = "image-popup__button-closezoom" id = "popupButtonCloseZoomPic"><img src = "./images/close.svg" alt = "close symbol"/></button>
           </div>
         </div>
       </main>
 
         <!--FOOTER-->
       <footer class="footer">
-        <p class="footer__text">&copy;2021 Around The U.S.</p>
+        <p class = "footer__text">&copy;2021 Around The U.S.</p>
       </footer>
 
         <!--JAVASCRIPT-->
-      <script src="index.js"></script>
+      <script src = "index.js"></script>
   </body>
 </html>
