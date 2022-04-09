@@ -1,9 +1,9 @@
 
 //-----------------------------------------------
-// associate variables with classes or ID's
+// associate Elements with classes or ID's
 //    introButtonPencilElement = button that activates form "Edit Profile"
-//    nameVariable = starting name on page
-//    aboutMeVariable = starting occupation on page
+//    nameElement = starting name on page
+//    aboutMeElement = starting occupation on page
 //    popupButtonSave = the 'SAVE' button on 'editProfile' form
 //    popupButtonCreate = the 'Create' button on 'newPlace' Form
 //    popupButtonCloseEditProfile = 'big X' on 'editProfile' form
@@ -14,8 +14,8 @@
 //-----------------------------------------------
 
 const introButtonPencilElement = document.querySelector('.intro__button-pencil');
-const nameVariable = document.querySelector(".intro__name");
-const aboutmeVariable = document.querySelector(".intro__occupation");
+const nameElement = document.querySelector(".intro__name");
+const aboutMeElement = document.querySelector(".intro__occupation");
 const popupButtonSave= document.querySelector("#popupButtonSave");
 const popupButtonCloseEditProfile = document.querySelector('#popupButtonCloseEditProfile');
 const popupButtonCreate= document.querySelector("#popupButtonCreate");
@@ -151,8 +151,8 @@ popupButtonSave.addEventListener('click', saveButton);
 //  FUNCTION 'openModal1'
 //-----------------------------------------------  
 function openModal1(evtEditProfile) {
-  popupName.value=nameVariable.textContent;
-  popupAboutMe.value=aboutmeVariable.textContent;
+  popupName.value=nameElement.textContent;
+  popupAboutMe.value=aboutMeElement.textContent;
   const containerElement = document.querySelector('#person-popup-container');
   containerElement.classList.add('popup-container_visible');
 }
@@ -161,8 +161,8 @@ function openModal1(evtEditProfile) {
 //-----------------------------------------------
 function  saveButton (evtSave) {
   evtSave.preventDefault();
-  nameVariable.textContent = popupName.value;
-  aboutmeVariable.textContent = popupAboutMe.value;
+  nameElement.textContent = popupName.value;
+  aboutMeElement.textContent = popupAboutMe.value;
   closeModal1();
 }
 
