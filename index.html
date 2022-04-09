@@ -40,9 +40,9 @@
           <h2 class="popup__title">Edit Profile</h2>
           <button type="button" class="popup__button-close" id="popupButtonCloseEditProfile"><img src="./images/close.svg" alt="close symbol"/></button>
           <form name="form" class="popup__form">
-            <input name="name" class="popup__text" type="text" id="name"/>
-            <input name="aboutme" class="popup__text" type="text" id="aboutme"/>
-            <button type="submit" class="popup__button" id="popupButtonSave">Save</button>
+            <input name="name"  class="popup__text" type="text" id="name" required/> 
+            <input name="aboutme" class="popup__text" type="text" id="aboutme" required/>
+            <button type="submit" class="popup__button" id="popupButtonSave" >Save</button>
           </form>
         </div>
       </div>
@@ -54,8 +54,8 @@
           <h2 class="popup__title">New Place</h2>
           <button type="button" class="popup__button-close" id="popupButtonCloseNewPlace"><img src="./images/close.svg" alt="close symbol"/></button>
           <form name="form" class="popup__form">
-            <input name="place" placeholder="Title" class="popup__text" type="text" id="place"/>
-            <input name="link" placeholder="Image link" class="popup__text" type="text" id="link"/>
+            <input name="place" placeholder="Title" class="popup__text" type="text" id="place" required/>
+            <input name="link" placeholder="Image link" class="popup__text" type="text" id="link" required/>
             <button type="submit" class="popup__button" id="popupButtonCreate">Create</button>
           </form>
         </div>
