@@ -27,14 +27,25 @@
             <button type = "button" class = "intro__button-plus" title = "plus button"> </button>
         </section>
 
-        <!--CARD GRID-->
-        <section class = "card-grid">
-          <ul class = "card-grid__format">
-            
-          </ul>
-        </section>
 
-         <!--POPUP AND FORM for name and occupation-->
+      <!--myTEMPLATE TO DRAW INITIAL CARDS-->
+      <section class="card-grid">
+        <ul class="card-grid__format">
+          <template id="myTemplate">
+            <li class="card-grid__style">
+              <img  class = "" src = "" alt = "" /> 
+              <button type = "button"  class = "card-grid__garbage" ><img  src = "images/garbage.svg" alt = "garbage symbol"/></button>
+              <div class = "card-grid__info">
+                <h2></h2>
+                <button type = "button" class = "card-grid__icon"><img  src = "./images/heart.svg" alt = "heart" title = "heart"/></button>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </section>
+      
+      
+      <!--POPUP AND FORM for name and occupation-->
       <div class = "popup-container" id = "person-popup-container">
         <div class = "popup">
           <h2 class = "popup__title">Edit Profile</h2>
@@ -46,10 +57,10 @@
           </form>
         </div>
       </div>
-
-
-        <!--POPUP AND FORM for new location and link-->
-        <div class = "popup-container" id = "picture-popup-container">
+      
+      
+      <!--POPUP AND FORM for new location and link-->
+      <div class = "popup-container" id = "picture-popup-container">
         <div class = "popup">
           <h2 class = "popup__title">New Place</h2>
           <button type = "button" class = "popup__button-close" id = "popupButtonCloseNewPlace"><img src = "./images/close.svg" alt = "close symbol"/></button>
@@ -61,20 +72,26 @@
         </div>
       </div>
 
-              <!--POPUP AND BUTTON for IMAGE ZOOM-->
-        <div class = "popup-container" id = "image-popup-container">
-          <div class = "image-popup">
-            <button type = "button" class = "image-popup__button-closezoom" id = "popupButtonCloseZoomPic"><img src = "./images/close.svg" alt = "close symbol"/></button>
+      <!--POPUP AND BUTTON for IMAGE ZOOM-->
+      <div class = "popup-container" id = "image-popup-container">
+        <div class = "image-popup">
+          <button type = "button" class = "image-popup__button-closezoom" id = "popupButtonCloseZoomPic"><img src = "./images/close.svg" alt = "close symbol"/></button>
           </div>
         </div>
       </main>
 
-        <!--FOOTER-->
+
+      
+      <!--JAVASCRIPT-->
+      <script src = "index.js"></script>
+      
+      
+      
+      <!--FOOTER-->
       <footer class="footer">
         <p class = "footer__text">&copy;2021 Around The U.S.</p>
       </footer>
 
-        <!--JAVASCRIPT-->
-      <script src = "index.js"></script>
-  </body>
+      
+    </body>
 </html>
