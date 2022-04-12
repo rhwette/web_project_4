@@ -56,41 +56,60 @@ const initialCards = [
 
 //  myTEMPLATE TO DRAW INITIAL CARDS
    const userTemplate = document.querySelector('#myTemplate');
-   console.log( '#0 userTemplate', userTemplate);
     for (let i = 0; i < initialCards.length; i++) {
+
+      // li element
+    userTemplate.content.querySelector('li').id = `listElement${[i]}`;
+    const listElement = userTemplate.content.querySelector('li');
     
       // card image
-    console.log('#1 initialCards[i]["link"] ', initialCards[i]["link"]);
     userTemplate.content.querySelector('img').className = 'card-grid__picture';
     userTemplate.content.querySelector('img').src = initialCards[i]["link"];
     userTemplate.content.querySelector('img').alt = initialCards[i]["name"];
     userTemplate.content.querySelector('img').id = `image${[i]}`;
     const image = userTemplate.content.querySelector('img');
-    console.log('#2 img id', image.id);
-
       // card can  
-    userTemplate.content.querySelector('.card-grid__garbage').id = `canButton${[i]}`;
+    userTemplate.content.querySelector('.can-image').id = `canButton${[i]}`;
     const canButton = userTemplate.content.querySelector('.card-grid__garbage');
-    console.log('#3a canButton id', canButton.id);
-    console.log('#3b canButton className', canButton.className);
 
       // card words
      userTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
      userTemplate.content.querySelector('h2').className = "card-grid__text block";
 
-      // // card heart
+      // card heart
       userTemplate.content.querySelector('.card-grid__icon').id = `heartButton${[i]}`;
       userTemplate.content.querySelector('.card-grid__icon').name = 'heartButton';
       const heartButton = userTemplate.content.querySelector('.card-grid__icon');
-      console.log('#4a heartButton id', heartButton.id);
-      console.log('#4b heartButton className', heartButton.className);
+       
+      const clone = document.importNode(userTemplate.content, true);
+      document.querySelector('ul').appendChild(clone);
+
+      const currentCanId = document.querySelector(`#canButton${[i]}`);
+  
+      const currentListElement = document.querySelector(`#listElement${[i]}`).id;
+ 
     
+      document.querySelector('ul').appendChild(clone);
+      currentCanId.addEventListener('click', removePic);
+        }
 
-    const clone = document.importNode(userTemplate.content, true);
+//-----------------------------------------------
+//  FUNCTION 'removePic'
+//-----------------------------------------------
 
-    document.querySelector('ul').appendChild(clone);
-  }
+function removePic(evtRemove) {
+  console.log('clicked');
+  console.log(evtRemove);
+let canId = evtRemove.target.id;
 
+let pictureId = canId.charAt(canId.length-1);
+console.log('pic id', pictureId);
+
+const picToDelete = document.querySelector(`#listElement${[pictureId]}`);
+
+console.log('#7 picToDelete', picToDelete);
+picToDelete.remove();
+}
 
 
 // //-----------------------------------------------
@@ -118,27 +137,16 @@ const initialCards = [
 
   // console.log('can id', `Button${[i]}`);
 
-  //     const currentGarbageCan = document.querySelector(`#Button${[i]}`);
-  //     currentGarbageCan.addEventListener('click', removePic);
-
+  
   //     const currentImage = document.querySelector(`#image${[i]}`);
   //     currentImage.addEventListener('click', zoomPic);
-
+  
   //   }
   // };
   // drawPics();
+  
+  // //-----------------------------------------------
 
-// //-----------------------------------------------
-// //  FUNCTION 'removePic'
-// //-----------------------------------------------
-  // function removePic(evtRemove) {
-  //   let buttonID = evtRemove.target.id;
-  //   let picIndex = buttonID.charAt(buttonID.length-1);
-  //   initialCards.splice(picIndex,1);
-  //   drawPics();
-  // }
- 
-  // drawPics();
 
   
 // //-----------------------------------------------
@@ -284,9 +292,9 @@ const initialCards = [
 //   containerElement.classList.remove('popup-container_visible');
 // }
 
-// //------------------------------------------------
-// //  HEART ICON
-// //------------------------------------------------
+//------------------------------------------------
+//  HEART ICON
+//------------------------------------------------
 
 // const cardGridInfo = document.querySelectorAll('.card-grid__icon');
 // for(let i = 0; i<cardGridInfo.length; i++){
