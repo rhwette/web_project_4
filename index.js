@@ -130,12 +130,11 @@ function removePic(evtRemove) {
 // //  FUNCTION 'zoomPic'
 // //-----------------------------------------------
 
-  function zoomPic (evtZoom) {
+    function zoomPic (evtZoom) {
     let imageId = evtZoom.target.id;
     let imageIndex= imageId.charAt(imageId.length-1);
     zoomElement = document.createElement("img");
     zoomElement.className = "card-grid__picture-zoom";
-    // zoomElement.id = 'picture';
     zoomElement.src = `${initialCards[imageIndex]["link"]}`;
     zoomElement.alt = "location";
     zoomElement.title = `"${initialCards[imageIndex]['name']}"`;
@@ -167,13 +166,13 @@ popupButtonCloseZoomPic.addEventListener('click', closeZoom);
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
 //-----------------------------------------------
-introButtonPencilElement.addEventListener('click', openModal1);
+introButtonPencilElement.addEventListener('click', openProfilePopup);
 popupButtonSave.addEventListener('click', saveButton);
 
 //-----------------------------------------------
-//  FUNCTION 'openModal1'
+//  FUNCTION 'openProfilePopup'
 //-----------------------------------------------  
-function openModal1(evtEditProfile) {
+function openProfilePopup(evtEditProfile) {
   popupName.value = nameElement.textContent;
   popupAboutMe.value = aboutMeElement.textContent;
   const containerElement = document.querySelector('#person-popup-container');
@@ -188,18 +187,18 @@ function  saveButton (evtSave) {
     alert("please fill out the form before submitting");
   } else {  nameElement.textContent = popupName.value;
     aboutMeElement.textContent = popupAboutMe.value;
-    closeModal1()}
+    closeProfilePopup()}
 }
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
-popupButtonCloseEditProfile.addEventListener('click', closeModal1);
+popupButtonCloseEditProfile.addEventListener('click', closeProfilePopup);
 
 //-----------------------------------------------
-//  FUNCTION 'closeModal1'
+//  FUNCTION 'closeProfilePopup'
 //-----------------------------------------------
-function closeModal1() {
+function closeProfilePopup() {
   const containerElement = document.querySelector('#person-popup-container');
   containerElement.classList.remove('popup-container_visible');
 }
@@ -213,13 +212,13 @@ function closeModal1() {
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus and on popupButtonCreate
 //-----------------------------------------------
-introButtonPlusElement.addEventListener('click', openModal2);
+introButtonPlusElement.addEventListener('click', openAddCardPopup);
 popupButtonCreate.addEventListener('click', createButton);
 
 //-----------------------------------------------
-//  FUNCTION 'openModal2'
+//  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------  
-function openModal2(evtNewPlace) {
+function openAddCardPopup(evtNewPlace) {
   const popupTitle = document.querySelector('#place');
   const popupLink = document.querySelector('#link');
   popupTitle.value = "";
@@ -284,7 +283,7 @@ function  createButton (evtCreate) {
   currentCanElement.addEventListener('click', removePic);
   currentHeartElement.addEventListener('click', changeHeartColor);
 
-  closeModal2();
+  closeAddCardPopup();
   }
 }
  
@@ -292,13 +291,13 @@ function  createButton (evtCreate) {
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
-popupButtonCloseNewPlace.addEventListener('click', closeModal2);
+popupButtonCloseNewPlace.addEventListener('click', closeAddCardPopup);
 
 
 //-----------------------------------------------
-//  FUNCTION 'closeModal2'
+//  FUNCTION 'closeAddCardPopup'
 //-----------------------------------------------
-function closeModal2() {
+function closeAddCardPopup() {
   const containerElement = document.querySelector('#picture-popup-container');
   containerElement.classList.remove('popup-container_visible');
 }
