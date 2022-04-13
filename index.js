@@ -60,7 +60,6 @@ const initialCards = [
 // use cardIndex as permanent ID for all elements in Template
 //    including initial cards and any added cards
 // note: element id's must not start with a number, so will need a prefix for each 
-
 //
   
 
@@ -130,8 +129,8 @@ function removePic(evtRemove) {
 // //  FUNCTION 'zoomPic'
 // //-----------------------------------------------
 
-    function zoomPic (evtZoom) {
-    let imageId = evtZoom.target.id;
+    function zoomPic (currentImage) {
+    let imageId = currentImage.target.id;
     let imageIndex= imageId.charAt(imageId.length-1);
     zoomElement = document.createElement("img");
     zoomElement.className = "card-grid__picture-zoom";
