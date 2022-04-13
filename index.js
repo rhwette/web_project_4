@@ -166,7 +166,7 @@ popupButtonCloseZoomPic.addEventListener('click', closeZoom);
 //  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
 //-----------------------------------------------
 introButtonPencilElement.addEventListener('click', openProfilePopup);
-popupButtonSave.addEventListener('click', saveButton);
+popupButtonSave.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
@@ -178,9 +178,9 @@ function openProfilePopup(evtEditProfile) {
   containerElement.classList.add('popup-container_visible');
 }
 //-----------------------------------------------
-//  FUNCTION 'saveButton'
+//  FUNCTION 'saveProfile'
 //-----------------------------------------------
-function  saveButton (evtSave) {
+function  saveProfile (evtSave) {
   evtSave.preventDefault();
   if (popupName.value === "" || popupAboutMe.value === "") {
     alert("please fill out the form before submitting");
