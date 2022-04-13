@@ -220,7 +220,6 @@ popupButtonCreate.addEventListener('click', createButton);
 //  FUNCTION 'openModal2'
 //-----------------------------------------------  
 function openModal2(evtNewPlace) {
-  // console.log('clicked');
   const popupTitle = document.querySelector('#place');
   const popupLink = document.querySelector('#link');
   popupTitle.value = "";
@@ -235,6 +234,7 @@ function openModal2(evtNewPlace) {
 function  createButton (evtCreate) {
   evtCreate.preventDefault();
   const popupTitle = document.querySelector('#place');
+  console.log('aaaaaaaa  popupTitle', popupTitle.value);
   const popupLink = document.querySelector('#link');
   if (popupTitle.value === "" || popupLink.value === "") {
     alert("please fill out the form before submitting");
@@ -253,15 +253,14 @@ function  createButton (evtCreate) {
 
   // card image
 
-  const popupLink2 = document.querySelector('#link');
-  const popupTitle2 = document.querySelector('#place');
+  const popupLink = document.querySelector('#link');
+  const popupTitle = document.querySelector('#place');
 
   userTemplate.content.querySelector('img').className = 'card-grid__picture';
-  userTemplate.content.querySelector('img').src = popupLink2.value;
-  userTemplate.content.querySelector('img').alt = popupTitle2.value;
+  userTemplate.content.querySelector('img').src = popupLink.value;
+  userTemplate.content.querySelector('img').alt = popupTitle.value;
   userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
   const newImageId =  userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
-  // userTemplate.content.querySelector('img').id = 'newImage0';
   const image = userTemplate.content.querySelector('img');
 
   // card can  
@@ -269,7 +268,7 @@ function  createButton (evtCreate) {
   const canButton = userTemplate.content.querySelector('.card-grid__garbage');
 
   // card words
-  userTemplate.content.querySelector('h2').textContent = 'popupTitle.value';
+  userTemplate.content.querySelector('h2').textContent = popupTitle.value;
   userTemplate.content.querySelector('h2').className = "card-grid__text block";
 
   // card heart
@@ -278,13 +277,10 @@ function  createButton (evtCreate) {
  
 
   const clone = document.importNode(userTemplate.content, true);
-  document.querySelector('ul').appendChild(clone);
-
+  document.querySelector('ul').prepend(clone);
   const currentHeartElement = document.querySelector(`#newHeart${cardIndex}`);
   const currentCanElement = document.querySelector(`#newCan${cardIndex}`);
 
-
-  // document.querySelector('ul').appendChild(clone);
   currentCanElement.addEventListener('click', removePic);
   currentHeartElement.addEventListener('click', changeHeartColor);
 
@@ -317,13 +313,9 @@ for(let i = 0; i < cardGridIcon.length; i++){
   cardGridIcon[i].addEventListener('click',changeHeartColor);
 }
 
-// cardGridInfo.forEach((anyElement) => {
-// })
-
 function changeHeartColor(anynameEvent) {
 
   if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.svg") {
-    // if(document.getElementById(anynameEvent.target.id).src==="./images/heart.svg") {
     document.getElementById(anynameEvent.target.id).src = "images/Union.svg";
   } else {
     document.getElementById(anynameEvent.target.id).src = "images/heart.svg";
