@@ -57,7 +57,6 @@ const initialCards = [
 //  myTEMPLATE TO DRAW INITIAL CARDS
    const userTemplate = document.querySelector('#myTemplate');
     for (let i = 0; i < initialCards.length; i++) {
-
       // li element
     userTemplate.content.querySelector('li').id = `listElement${[i]}`;
     const listElement = userTemplate.content.querySelector('li');
@@ -68,6 +67,8 @@ const initialCards = [
     userTemplate.content.querySelector('img').alt = initialCards[i]["name"];
     userTemplate.content.querySelector('img').id = `image${[i]}`;
     const image = userTemplate.content.querySelector('img');
+    console.log(userTemplate.content.querySelector('img').id);
+
       // card can  
     userTemplate.content.querySelector('.can-image').id = `canButton${[i]}`;
     const canButton = userTemplate.content.querySelector('.card-grid__garbage');
@@ -77,20 +78,21 @@ const initialCards = [
      userTemplate.content.querySelector('h2').className = "card-grid__text block";
 
       // card heart
-      userTemplate.content.querySelector('.card-grid__icon').id = `heartButton${[i]}`;
-      userTemplate.content.querySelector('.card-grid__icon').name = 'heartButton';
-      const heartButton = userTemplate.content.querySelector('.card-grid__icon');
+      userTemplate.content.querySelector('.heart-image').id = `heartButton${[i]}`;
+      userTemplate.content.querySelector('.heart-image').name = 'heartButton';
+      const heartButton = userTemplate.content.querySelector('.heart-image');
+      console.log('#8888 heartButton', heartButton);
+
        
       const clone = document.importNode(userTemplate.content, true);
       document.querySelector('ul').appendChild(clone);
 
       const currentCanId = document.querySelector(`#canButton${[i]}`);
   
-      const currentListElement = document.querySelector(`#listElement${[i]}`).id;
- 
-    
       document.querySelector('ul').appendChild(clone);
       currentCanId.addEventListener('click', removePic);
+      const currentImage = document.querySelector(`#image${[i]}`);
+      currentImage.addEventListener('click', zoomPic);
         }
 
 //-----------------------------------------------
@@ -111,78 +113,38 @@ console.log('#7 picToDelete', picToDelete);
 picToDelete.remove();
 }
 
-
-// //-----------------------------------------------
-// //  FUNCTION 'drawPics'
-// //-----------------------------------------------
-
-// function drawPics() {
-//   const template = document.querySelector('template');
-//   const content = template.content.cloneNode(true);
-//   document.div.append(content);
-  // document.querySelector('.card-grid__format').innerHTML = "";
-  // for(let i = 0; i< initialCards.length; i++) {
-  //   listElement = document.createElement("li");
-  //   listElement.className = "card-grid__style";
-  //   listElement.id = `Style${[i]}`;
-  //   listElement.innerHTML = ` <img class = "card-grid__picture" id = "image${[i]}" src = "${initialCards[i]["link"]}" alt = "location" title = "${initialCards[i]['name']}"/>
-  //   <button type = "button" class = "card-grid__garbage" ><img id = "Button${[i]}" src = "./images/garbage.svg" alt = "garbage symbol"/></button>
-  //   <div class = "card-grid__info">
-  //     <h2 class = "card-grid__text block" id = "Text${[i]}">${initialCards[i].name}</h2>
-  //     <button type = "button" class = "card-grid__icon"><img id = "place ${i}" src = "./images/heart.svg" alt = "heart" title = "heart"/></button>
-  //   </div>`;
-    
-   
-  // document.querySelector('.card-grid__format').append(listElement);
-
-  // console.log('can id', `Button${[i]}`);
-
-  
-  //     const currentImage = document.querySelector(`#image${[i]}`);
-  //     currentImage.addEventListener('click', zoomPic);
-  
-  //   }
-  // };
-  // drawPics();
-  
-  // //-----------------------------------------------
-
-
-  
+ 
 // //-----------------------------------------------
 // //  FUNCTION 'zoomPic'
 // //-----------------------------------------------
 
-  // function zoomPic (evtZoom) {
-  //   let textId = evtZoom.target.id;
-  //   let pictureIndex= textId.charAt(textId.length-1);
-  //   zoomElement = document.createElement("img");
-  //   zoomElement.className = "card-grid__picture-zoom";
-  //   zoomElement.id = 'picture';
-  //   zoomElement.src = `${initialCards[pictureIndex]["link"]}`;
-  //   zoomElement.alt = "locationx";
-  //   zoomElement.title = `"${initialCards[pictureIndex]['name']}"`;
-  //   document.querySelector('.image-popup').append(zoomElement);
-  //   const containerElement = document.querySelector('#image-popup-container');
-  //   containerElement.classList.add('popup-container_visible');
-  //   drawPics();
-  // }
+  function zoomPic (evtZoom) {
+    let textId = evtZoom.target.id;
+    let pictureIndex= textId.charAt(textId.length-1);
+    zoomElement = document.createElement("img");
+    zoomElement.className = "card-grid__picture-zoom";
+    zoomElement.id = 'picture';
+    zoomElement.src = `${initialCards[pictureIndex]["link"]}`;
+    zoomElement.alt = "locationx";
+    zoomElement.title = `"${initialCards[pictureIndex]['name']}"`;
+    document.querySelector('.image-popup').append(zoomElement);
+    const containerElement = document.querySelector('#image-popup-container');
+    containerElement.classList.add('popup-container_visible');
+  }
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-// popupButtonCloseZoomPic.addEventListener('click', closeZoom);
+popupButtonCloseZoomPic.addEventListener('click', closeZoom);
 
 //-----------------------------------------------
 //  FUNCTION 'closeZoom'
 //-----------------------------------------------
-// function closeZoom() {
-//     const containerElement = document.querySelector('#image-popup-container');
-//     containerElement.classList.remove('popup-container_visible');
-//     zoomElement.remove();
-//     drawPics();
-// }
-
+function closeZoom() {
+    const containerElement = document.querySelector('#image-popup-container');
+    containerElement.classList.remove('popup-container_visible');
+    zoomElement.remove();
+}
 
 //***********************************************
 //-----------------------------------------------
@@ -193,42 +155,42 @@ picToDelete.remove();
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
 //-----------------------------------------------
-// introButtonPencilElement.addEventListener('click', openModal1);
-// popupButtonSave.addEventListener('click', saveButton);
+introButtonPencilElement.addEventListener('click', openModal1);
+popupButtonSave.addEventListener('click', saveButton);
 
 //-----------------------------------------------
 //  FUNCTION 'openModal1'
 //-----------------------------------------------  
-// function openModal1(evtEditProfile) {
-//   popupName.value = nameElement.textContent;
-//   popupAboutMe.value = aboutMeElement.textContent;
-//   const containerElement = document.querySelector('#person-popup-container');
-//   containerElement.classList.add('popup-container_visible');
-// }
+function openModal1(evtEditProfile) {
+  popupName.value = nameElement.textContent;
+  popupAboutMe.value = aboutMeElement.textContent;
+  const containerElement = document.querySelector('#person-popup-container');
+  containerElement.classList.add('popup-container_visible');
+}
 //-----------------------------------------------
 //  FUNCTION 'saveButton'
 //-----------------------------------------------
-// function  saveButton (evtSave) {
-//   evtSave.preventDefault();
-//   if (popupName.value === "" || popupAboutMe.value === "") {
-//     alert("please fill out the form before submitting");
-//   } else {  nameElement.textContent = popupName.value;
-//     aboutMeElement.textContent = popupAboutMe.value;
-//     closeModal1()}
-// }
+function  saveButton (evtSave) {
+  evtSave.preventDefault();
+  if (popupName.value === "" || popupAboutMe.value === "") {
+    alert("please fill out the form before submitting");
+  } else {  nameElement.textContent = popupName.value;
+    aboutMeElement.textContent = popupAboutMe.value;
+    closeModal1()}
+}
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
-// popupButtonCloseEditProfile.addEventListener('click', closeModal1);
+popupButtonCloseEditProfile.addEventListener('click', closeModal1);
 
 //-----------------------------------------------
 //  FUNCTION 'closeModal1'
 //-----------------------------------------------
-// function closeModal1() {
-//   const containerElement = document.querySelector('#person-popup-container');
-//     containerElement.classList.remove('popup-container_visible');
-// }
+function closeModal1() {
+  const containerElement = document.querySelector('#person-popup-container');
+    containerElement.classList.remove('popup-container_visible');
+}
 
 //***********************************************
 //-----------------------------------------------
@@ -239,75 +201,125 @@ picToDelete.remove();
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus and on popupButtonCreate
 //-----------------------------------------------
-// introButtonPlusElement.addEventListener('click', openModal2);
-// popupButtonCreate.addEventListener('click', createButton);
+introButtonPlusElement.addEventListener('click', openModal2);
+popupButtonCreate.addEventListener('click', createButton);
 
 //-----------------------------------------------
 //  FUNCTION 'openModal2'
 //-----------------------------------------------  
-// function openModal2(evtNewPlace) {
-//   const popupTitle = document.querySelector('#place');
-//   const popupLink = document.querySelector('#link');
-//   popupTitle.value = "";
-//   popupLink.value = "";
-//   const containerElement = document.querySelector('#picture-popup-container');
-//   containerElement.classList.add('popup-container_visible');
-//   }
+function openModal2(evtNewPlace) {
+  // console.log('clicked');
+  const popupTitle = document.querySelector('#place');
+  const popupLink = document.querySelector('#link');
+  popupTitle.value = "";
+  popupLink.value = "";
+  console.log('#111 new link', popupLink.value);
+  const containerElement = document.querySelector('#picture-popup-container');
+  containerElement.classList.add('popup-container_visible');
+  }
 
 //-----------------------------------------------
 //  FUNCTION 'createButton'
 //-----------------------------------------------
-// function  createButton (evtCreate) {
-//   evtCreate.preventDefault();
-//   const popupTitle = document.querySelector('#place');
-//   console.log('popupTitle', popupTitle);
-//   console.log('popupTitle.value', popupTitle.value);
-//   const popupLink = document.querySelector('#link');
-//   console.log('popupLink', popupLink);
-//   console.log('popupLink.value', popupLink.value);
-//   if (popupTitle.value === "" || popupLink.value === "") {
-//     alert("please fill out the form before submitting");
-//   } else {
+function  createButton (evtCreate) {
+  console.log('clicked Create button');
+  evtCreate.preventDefault();
+  console.log('#999 event', evtCreate);
+  const popupTitle = document.querySelector('#place');
+  console.log('#222 popupTitle', popupTitle);
+  console.log('#333 popupTitle.value', popupTitle.value);
+  const popupLink = document.querySelector('#link');
+  console.log('#444 popupLink', popupLink);
+  console.log('#555 popupLink.value', popupLink.value);
+  if (popupTitle.value === "" || popupLink.value === "") {
+    alert("please fill out the form before submitting");
+  } else {
  
-//   initialCards.unshift({name: popupTitle.value, link: popupLink.value});
-//     if (initialCards.length > 6) {
-//       initialCards.pop()
-//     };
-//   drawPics();
-//   closeModal2();
-//   }
-//  }
+//****************************************************************** */
+// DRAW NEW CARD 
+  console.log(' entering drawNewPic now');
+  // const userNewTemplate = document.querySelector('#myNewTemplate');
+  const userNewTemplate = document.querySelector('#myTemplate');
+
+  // li element
+  userNewTemplate.content.querySelector('li').id = `newListElement0`;
+  const listElementNew = userNewTemplate.content.querySelector('li');
+
+  // card image
+
+  const popupLink2 = document.querySelector('#link');
+  const popupTitle2 = document.querySelector('#place');
+  console.log('popup link2', popupLink2);
+
+  userNewTemplate.content.querySelector('img').className = 'card-grid__picture';
+  userNewTemplate.content.querySelector('img').src = popupLink2.value;
+  userNewTemplate.content.querySelector('img').alt = popupTitle2.value;
+  userNewTemplate.content.querySelector('img').id = 'newImage0';
+  const image = userNewTemplate.content.querySelector('img');
+
+  // card can  
+  userNewTemplate.content.querySelector('.can-image').id = 'newCan0';
+  const canButton = userNewTemplate.content.querySelector('.card-grid__garbage');
+
+  // card words
+  userNewTemplate.content.querySelector('h2').textContent = 'popupTitle.value';
+  userNewTemplate.content.querySelector('h2').className = "card-grid__text block";
+
+  // card heart
+  userNewTemplate.content.querySelector('.heart-image').id = `newHeart0`;
+  userNewTemplate.content.querySelector('.heart-image').name = 'heartButton';
+  // const heartButton = userNewTemplate.content.querySelector('.card-grid__icon');
+
+  const clone = document.importNode(userNewTemplate.content, true);
+  document.querySelector('ul').appendChild(clone);
+
+  const currentCanId = document.querySelector(`#newCan0`);
+  const currentHeartElement = document.querySelector(`#newHeart0`);
+
+  document.querySelector('ul').appendChild(clone);
+  currentCanId.addEventListener('click', removePic);
+  currentHeartElement.addEventListener('click', changeHeartColor);
+
+  closeModal2();
+  }
+}
+ 
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
-// popupButtonCloseNewPlace.addEventListener('click', closeModal2);
+popupButtonCloseNewPlace.addEventListener('click', closeModal2);
 
 
 //-----------------------------------------------
 //  FUNCTION 'closeModal2'
 //-----------------------------------------------
-// function closeModal2() {
-//   const containerElement = document.querySelector('#picture-popup-container');
-//   containerElement.classList.remove('popup-container_visible');
-// }
+function closeModal2() {
+  const containerElement = document.querySelector('#picture-popup-container');
+  containerElement.classList.remove('popup-container_visible');
+}
 
 //------------------------------------------------
 //  HEART ICON
 //------------------------------------------------
 
-// const cardGridInfo = document.querySelectorAll('.card-grid__icon');
-// for(let i = 0; i<cardGridInfo.length; i++){
-//   cardGridInfo[i].addEventListener('click',changeHeartColor);
-// }
+const cardGridIcon = document.querySelectorAll('.heart-image');
+console.log('cardGridInfo', cardGridIcon);
+
+for(let i = 0; i < cardGridIcon.length; i++){
+  cardGridIcon[i].addEventListener('click',changeHeartColor);
+}
 
 // cardGridInfo.forEach((anyElement) => {
 // })
 
-// function changeHeartColor(anynameEvent) {
-//   if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.svg") {
-//     document.getElementById(anynameEvent.target.id).src ="./images/Union.svg";
-//   } else {
-//     document.getElementById(anynameEvent.target.id).src ="./images/heart.svg";
-//   }
-// }
+function changeHeartColor(anynameEvent) {
+  console.log('ccccc anyEvent', anynameEvent);
+
+  if(document.getElementById(anynameEvent.target.id).src==="http://127.0.0.1:5500/images/heart.svg") {
+    // if(document.getElementById(anynameEvent.target.id).src==="./images/heart.svg") {
+    document.getElementById(anynameEvent.target.id).src = "images/Union.svg";
+  } else {
+    document.getElementById(anynameEvent.target.id).src = "images/heart.svg";
+  }
+}
