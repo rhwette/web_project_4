@@ -82,10 +82,11 @@ const initialCards = [
     const cardCan = userTemplate.content.querySelector('.card-grid__garbage');
 
       // card words
-    userTemplate.content.querySelector('#cardName').id = `cardName${[i]}`;
     userTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
     userTemplate.content.querySelector('h2').className = "card-grid__text block";
-
+    //  not acceptable....throws an error
+    // userTemplate.content.querySelector('#cardName').id = `cardPlace${[i]}`;
+    
       // card heart
     userTemplate.content.querySelector('.heartSymbol').id = `heartButton${[i]}`;
     userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
@@ -125,20 +126,34 @@ const initialCards = [
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
+function zoomPic (evtZoom) {
+  let textId = evtZoom.target.id;
+  let pictureIndex= textId.charAt(textId.length-1);
+  const zoomElement = document.querySelector("img");
+  zoomElement.className = "card-grid__picture-zoom";
+  // zoomElement.id = 'picture';
+  zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
+  zoomElement.alt="locationx";
+  zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
+  document.querySelector('.image-popup').append(zoomElement);
+  const containerElement = document.querySelector('#image-popup-container');
+  containerElement.classList.add('popup-container_visible');
+  drawPics();
+}
+  //   function zoomPic (currentCardImage) {
+  //   let cardImageId = currentCardImage.target.id;
+  //   let cardImageIndex= cardImageId.charAt(cardImageId.length-1);
 
-    function zoomPic (currentImage) {
-    let cardImageId = currentImage.target.id;
-    let cardImageIndex= cardImageId.charAt(imageId.length-1);
-    const zoomElement = document.querySelector(".image-popup");
+  //   const zoomElement = document.querySelector(".image-popup");
 
-    zoomElement.querySelector('#image-zoom').className = "card-grid__picture";
-
-    zoomElement.querySelector('#image-zoom').src = `url(${popupLink.value.imageIndex})`; 
+  //   zoomElement.querySelector('#image-zoom').className = "card-grid__picture-zoom";
+  //   // zoomElement.querySelector('#image-zoom').src = `url(${popupLink.value.imageIndex})`; 
+  //   zoomElement.querySelector('img').src = `url='https://code.s3.yandex.net/web-code/latemar.jpg'`;
         
-    document.querySelector('.image-zoom').append(zoomElement);
-    const containerElement = document.querySelector('#image-popup-container');
-    containerElement.classList.add('popup-container_visible');
-  }
+  //   document.querySelector('.image-zoom').append(zoomElement);
+  //   const containerElement = document.querySelector('#image-popup-container');
+  //   containerElement.classList.add('popup-container_visible');
+  // }
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
@@ -311,7 +326,7 @@ const initialCards = [
 //  HEART ICON
 //------------------------------------------------
 
-    const cardGridIcon = document.querySelectorAll('.heart-image');
+    const cardGridIcon = document.querySelectorAll('.heartSymbol');
     for (let i = 0; i < cardGridIcon.length; i++) {
     cardGridIcon[i].addEventListener('click',changeHeartColor);
 }
