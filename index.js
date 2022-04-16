@@ -66,7 +66,7 @@ const initialCards = [
     for (let i = 0; i < initialCards.length; i++) {
 
       // li element
-    userTemplate.content.querySelector('li').id = `listElement${[i]}`;
+    userTemplate.content.querySelector('li').id = `listElement${i}`;
     const listElement = userTemplate.content.querySelector('li');
     
       // card image
@@ -119,7 +119,7 @@ const initialCards = [
     function removePic(evtRemove) {
     let canId = evtRemove.target.id;
     let cardCanId = canId.charAt(canId.length-1);
-    const cardToDelete = document.querySelector(`#listElement${[cardCanId]}`);
+    const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
     cardToDelete.remove();
 }
  
@@ -131,22 +131,22 @@ function zoomPic (evtZoom) {
   let pictureIndex= textId.charAt(textId.length-1);
 
   if (pictureIndex < initialCards.length) {
-  const zoomElement = document.querySelector(".card-grid__style");
+  const zoomElement = document.querySelector("#image-zoom");
   zoomElement.className = "card-grid__picture-zoom";
   zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
   zoomElement.alt="locationx";
   zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
   } else {
 
-  const zoomElement = document.querySelector(".card-grid__style");
+  const zoomElement = document.querySelector("#image-zoom");
   zoomElement.className = "card-grid__picture-zoom";
   zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
   zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
   zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
   }
   
-  const clone = document.importNode(userTemplate.content, true);
-  document.querySelector('.image-popup').append(clone);
+  // const clone = document.importNode(userTemplate.content, true);
+  // document.querySelector('.image-popup').append(clone);
   const containerElement = document.querySelector('#image-popup-container');
   containerElement.classList.add('popup-container_visible');
 }
@@ -229,6 +229,8 @@ function zoomPic (evtZoom) {
 //  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------  
     function openAddCardPopup(evtNewPlace) {
+      console.log('aaaaaaaaa click on add card popup');
+
     const popupTitle = document.querySelector('#place');
     const popupLink = document.querySelector('#link');
 
@@ -248,6 +250,7 @@ function zoomPic (evtZoom) {
 //-----------------------------------------------
     function  createButton (evtCreate) {
       console.log('aaaaaaa enter createButton function');
+      console.log('xxxxxxx  evtcreate', evtCreate);
     evtCreate.preventDefault();
     const popupTitle = document.querySelector('#place');
     const popupLink = document.querySelector('#link');
