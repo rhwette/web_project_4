@@ -229,28 +229,17 @@ function zoomPic (evtZoom) {
 //  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------  
     function openAddCardPopup(evtNewPlace) {
-      console.log('aaaaaaaaa click on add card popup');
-
+    document.querySelector('#newPlaceForm').reset();
     const popupTitle = document.querySelector('#place');
     const popupLink = document.querySelector('#link');
-
-    // popupTitle.value = "";
-    // popupLink.value = "";
-    // popupTitle.value.reset();
-    // popupLink.value.reset();
-
     const containerElement = document.querySelector('#picture-popup-container');
     containerElement.classList.add('popup-container_visible');
-    //   popupTitle.value.reset();
-    // popupLink.value.reset();
   }
 
 //-----------------------------------------------
 //  FUNCTION 'createButton'
 //-----------------------------------------------
     function  createButton (evtCreate) {
-      console.log('aaaaaaa enter createButton function');
-      console.log('xxxxxxx  evtcreate', evtCreate);
     evtCreate.preventDefault();
     const popupTitle = document.querySelector('#place');
     const popupLink = document.querySelector('#link');
@@ -270,18 +259,13 @@ function zoomPic (evtZoom) {
   // card image
     const popupLink = document.querySelector('#link');
     const popupTitle = document.querySelector('#place');
-    console.log('xxxxxxxxxx popupLink.value', popupLink.value);
     userTemplate.content.querySelector('img').className = 'card-grid__picture';
     // userTemplate.content.querySelector('img').src = ` url(${popupLink.value}) `;
     userTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
-    // userTemplate.content.querySelector('img').src = "time out";
-    console.log('xxxxxxxxxx popupLink.value', popupLink.value);
-    console.log(userTemplate.content.querySelector('img').src);
     userTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
     // userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
     userTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
 
-    console.log("bbbbbbb userTemplate.content.querySelector('img').id ", userTemplate.content.querySelector('img').id) ;
     // const newImageId =  userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
     const cardPicture = userTemplate.content.querySelector('img');
 
@@ -331,13 +315,9 @@ function zoomPic (evtZoom) {
     const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
     // ..........
         // const currentCardPicture = document.querySelector('.card-grid__picture').src ;
-    console.log('currentCardPicture', currentCardPicture);
     // currentCanElement.addEventListener('click', removePic);
     // currentHeartElement.addEventListener('click', changeHeartColor);
-    currentCardPicture.addEventListener('click', zoomPic);
-    
-
-
+    currentCardPicture.addEventListener('click', zoomPic); 
     
     closeAddCardPopup();
   }
