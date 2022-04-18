@@ -148,7 +148,14 @@ function zoomPic (evtZoom) {
   // const clone = document.importNode(userTemplate.content, true);
   // document.querySelector('.image-popup').append(clone);
   const containerElement = document.querySelector('#image-popup-container');
+
   containerElement.classList.add('popup-container_visible');
+  popupButtonCloseZoomPic.addEventListener('click', closeZoom);
+  function closeZoom() {
+    const containerElement = document.querySelector('#image-popup-container');
+    containerElement.classList.remove('popup-container_visible');
+    // zoomElement.remove();
+}
 }
 
 
