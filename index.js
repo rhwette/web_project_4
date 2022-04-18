@@ -293,12 +293,12 @@ function zoomPic (evtZoom) {
     // document.querySelector('ul').prepend(clone);
     
     // // const currentHeartElement = document.querySelector(`#newHeart${cardIndex}`);
-    // const currentHeartElement = document.querySelector(`#heartButton${cardIndex}`);
+    const currentHeartElement = document.querySelector(`#heartButton${cardIndex}`);
     // const currentCanElement = document.querySelector(`#newCan${cardIndex}`);
     // const currentCanElement = document.querySelector(`#canButton${cardIndex}`);
-    // const currentCanElement = document.querySelector(`#cardCan${cardIndex}`);
-    // console.log('currentCanElement', currentCanElement);
-    // console.log('cardIndex = ', cardIndex);
+    const currentCanElement = document.querySelector(`#cardCan${cardIndex}`);
+    console.log('currentCanElement', currentCanElement);
+    console.log('cardIndex = ', cardIndex);
     // let uniqueId = `cardImage${cardIndex}`;
     // console.log ('uniqueId', uniqueId);
     // const currentCardPicture = document.querySelector('#uniqueId');
@@ -315,8 +315,8 @@ function zoomPic (evtZoom) {
     const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
     // ..........
         // const currentCardPicture = document.querySelector('.card-grid__picture').src ;
-    // currentCanElement.addEventListener('click', removePic);
-    // currentHeartElement.addEventListener('click', changeHeartColor);
+    currentCanElement.addEventListener('click', removePic);
+    currentHeartElement.addEventListener('click', changeHeartColor);
     currentCardPicture.addEventListener('click', zoomPic); 
     
     closeAddCardPopup();
