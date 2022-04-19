@@ -4,3 +4,9 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
+.card-grid__picture:hover {
+  opacity: .5;
+  cursor: url("../../../images/pointer.svg") 10 0, auto;
+}
+
