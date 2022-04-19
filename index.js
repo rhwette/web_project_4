@@ -141,8 +141,8 @@ const initialCards = [
 //-----------------------------------------------
 
     function removePic(evtRemove) {
-    let canId = evtRemove.target.id;
-    let cardCanId = canId.charAt(canId.length-1);
+    const canId = evtRemove.target.id;
+    const cardCanId = canId.charAt(canId.length-1);
     const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
     cardToDelete.remove();
 }
@@ -151,8 +151,8 @@ const initialCards = [
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
     function zoomPic(evtZoom) {
-    let textId = evtZoom.target.id;
-    let pictureIndex= textId.charAt(textId.length-1);
+    const textId = evtZoom.target.id;
+    const pictureIndex= textId.charAt(textId.length-1);
 
     if (pictureIndex < initialCards.length) {
     const zoomElement = document.querySelector("#image-zoom");
