@@ -113,6 +113,20 @@ const initialCards = [
     }
 
 //-----------------------------------------------
+//  FUNCTION 'openPopup' 
+//-----------------------------------------------
+    function openPopup(containerElement) {
+    containerElement.classList.add('popup-container_visible');
+}
+
+//-----------------------------------------------
+//  FUNCTION 'closePopup'
+//-----------------------------------------------
+    function closePopup(containerElement) {
+    containerElement.classList.remove('popup-container_visible')
+    }
+
+//-----------------------------------------------
 //  FUNCTION 'removePic'
 //-----------------------------------------------
 
@@ -126,8 +140,9 @@ const initialCards = [
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
-function zoomPic (evtZoom) {
+function zoomPic(evtZoom) {
   let textId = evtZoom.target.id;
+  console.log('aaaaaaa textId', textId);
   let pictureIndex= textId.charAt(textId.length-1);
 
   if (pictureIndex < initialCards.length) {
@@ -148,16 +163,9 @@ function zoomPic (evtZoom) {
   // const clone = document.importNode(userTemplate.content, true);
   // document.querySelector('.image-popup').append(clone);
   const containerElement = document.querySelector('#image-popup-container');
-
-  containerElement.classList.add('popup-container_visible');
-  popupButtonCloseZoomPic.addEventListener('click', closeZoom);
-  function closeZoom() {
-    const containerElement = document.querySelector('#image-popup-container');
-    containerElement.classList.remove('popup-container_visible');
-    // zoomElement.remove();
+  openPopup(containerElement);
+  // containerElement.classList.add('popup-container_visible');
 }
-}
-
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
@@ -169,8 +177,9 @@ function zoomPic (evtZoom) {
 //-----------------------------------------------
     function closeZoom() {
     const containerElement = document.querySelector('#image-popup-container');
-    containerElement.classList.remove('popup-container_visible');
-    zoomElement.remove();
+    // containerElement.classList.remove('popup-container_visible');
+    // zoomElement.remove();
+    closePopup(containerElement);
 }
 
 //***********************************************
@@ -182,18 +191,20 @@ function zoomPic (evtZoom) {
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
 //-----------------------------------------------
+    // introButtonPencilElement.addEventListener('click', openProfilePopup);
     introButtonPencilElement.addEventListener('click', openProfilePopup);
     popupButtonSave.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
 //-----------------------------------------------  
-    function openProfilePopup(evtEditProfile) {
+    function openProfilePopup() {
     popupName.value = nameElement.textContent;
     popupAboutMe.value = aboutMeElement.textContent;
     const containerElement = document.querySelector('#person-popup-container');
-    containerElement.classList.add('popup-container_visible');
+    openPopup(containerElement);
 }
+
 //-----------------------------------------------
 //  FUNCTION 'saveProfile'
 //-----------------------------------------------
@@ -204,7 +215,9 @@ function zoomPic (evtZoom) {
     } else {  
     nameElement.textContent = popupName.value;
     aboutMeElement.textContent = popupAboutMe.value;
-    closeProfilePopup()}
+    const containerElement = document.querySelector('#person-popup-container');
+    closePopup(containerElement);
+    }
 }
 
 //-----------------------------------------------
@@ -217,7 +230,8 @@ function zoomPic (evtZoom) {
 //-----------------------------------------------
     function closeProfilePopup() {
     const containerElement = document.querySelector('#person-popup-container');
-    containerElement.classList.remove('popup-container_visible');
+    // containerElement.classList.remove('popup-container_visible');
+    closePopup(containerElement);
 }
 
 //***********************************************
@@ -240,8 +254,8 @@ function zoomPic (evtZoom) {
     const popupTitle = document.querySelector('#place');
     const popupLink = document.querySelector('#link');
     const containerElement = document.querySelector('#picture-popup-container');
-    containerElement.classList.add('popup-container_visible');
-  }
+    openPopup(containerElement);
+   }
 
 //-----------------------------------------------
 //  FUNCTION 'createButton'
@@ -292,12 +306,8 @@ function zoomPic (evtZoom) {
   userTemplate.content.querySelector('.heartSymbol').id = `heartButton${cardIndex}`;
   userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
   
-  
   const clone = document.importNode(userTemplate.content, true);
   document.querySelector('ul').prepend(clone);
-  
-    // const clone = document.importNode(userTemplate.content, true);
-    // document.querySelector('ul').prepend(clone);
     
     // // const currentHeartElement = document.querySelector(`#newHeart${cardIndex}`);
     const currentHeartElement = document.querySelector(`#heartButton${cardIndex}`);
@@ -325,8 +335,10 @@ function zoomPic (evtZoom) {
     currentCanElement.addEventListener('click', removePic);
     currentHeartElement.addEventListener('click', changeHeartColor);
     currentCardPicture.addEventListener('click', zoomPic); 
-    
-    closeAddCardPopup();
+
+    const containerElement = document.querySelector('#picture-popup-container');
+    closePopup(containerElement);
+    // closeAddCardPopup();
   }
 }
  
@@ -341,7 +353,8 @@ function zoomPic (evtZoom) {
 //-----------------------------------------------
     function closeAddCardPopup() {
     const containerElement = document.querySelector('#picture-popup-container');
-    containerElement.classList.remove('popup-container_visible');
+    // containerElement.classList.remove('popup-container_visible');
+    closePopup(containerElement);
 }
 
 //------------------------------------------------
