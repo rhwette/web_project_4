@@ -84,7 +84,6 @@ const initialCards = [
     const listElement = cardTemplate.content.querySelector('li');
     
       // card image
-      // cardTemplate.content.querySelector('img').className = 'card-grid__picture';
       cardTemplate.content.querySelector('img').src = initialCards[i]["link"];
       cardTemplate.content.querySelector('img').alt = initialCards[i]["name"];
       cardTemplate.content.querySelector('img').id = `cardImage${[i]}`;
@@ -96,7 +95,6 @@ const initialCards = [
 
       // card words
       cardTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
-      cardTemplate.content.querySelector('h2').className = "card-grid__text block";
       cardTemplate.content.querySelector('h2').id = `cardName${[i]}`;
     
       // card heart
@@ -158,14 +156,12 @@ const initialCards = [
 
     if (pictureIndex < initialCards.length) {
     const zoomElement = document.querySelector("#image-zoom");
-    // zoomElement.className = "card-grid__picture-zoom";
     zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
     zoomElement.alt="locationx";
     zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
     } else {
 
     const zoomElement = document.querySelector("#image-zoom");
-    // zoomElement.className = "card-grid__picture-zoom";
     zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
     zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
     zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
@@ -284,7 +280,6 @@ const initialCards = [
   // card image
     const popupLink = document.querySelector('#link');
     const popupTitle = document.querySelector('#place');
-    // cardTemplate.content.querySelector('img').className = 'card-grid__picture';
     cardTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
     cardTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
     cardTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
@@ -297,7 +292,6 @@ const initialCards = [
 
   // card words
   cardTemplate.content.querySelector('h2').textContent = popupTitle.value;
-  cardTemplate.content.querySelector('h2').className = "card-grid__text block";
   cardTemplate.content.querySelector('h2').id = `cardName${[cardIndex]}`;
 
 
