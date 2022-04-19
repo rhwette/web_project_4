@@ -37,6 +37,7 @@ const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
 const listElement = cardTemplate.content.querySelector('li');
+const imageElement = cardTemplate.content.querySelector('img');
 
 
 
@@ -84,14 +85,20 @@ const initialCards = [
     const listElement = cardTemplate.content.querySelector('li');
     
       // card image
-      cardTemplate.content.querySelector('img').src = initialCards[i]["link"];
-      cardTemplate.content.querySelector('img').alt = initialCards[i]["name"];
-      cardTemplate.content.querySelector('img').id = `cardImage${[i]}`;
-    const cardPicture = cardTemplate.content.querySelector('img');
+      // const imageElement = cardTemplate.content.querySelector('img');
+      imageElement.src = initialCards[i]["link"];
+      imageElement.alt = initialCards[i]["name"];
+      imageElement.id = `cardImage${[i]}`;
+
+      // cardTemplate.content.querySelector('img').src = initialCards[i]["link"];
+      // cardTemplate.content.querySelector('img').alt = initialCards[i]["name"];
+      // cardTemplate.content.querySelector('img').id = `cardImage${[i]}`;
+      // const cardPicture = cardTemplate.content.querySelector('img');
     
-      // card can  
+      // card can 
+      // buttonCardCan.id = `buttonCardCan${[i]}`;
       cardTemplate.content.querySelector('.canSymbol').id = `buttonCardCan${[i]}`;
-    const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
+      // const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
 
       // card words
       cardTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
@@ -100,7 +107,7 @@ const initialCards = [
       // card heart
       cardTemplate.content.querySelector('.heartSymbol').id = `buttonHeart${[i]}`;
       cardTemplate.content.querySelector('.heartSymbol').name = 'buttonHeart';
-    const buttonHeart = cardTemplate.content.querySelector('.card-grid__icon');
+    // const buttonHeart = cardTemplate.content.querySelector('.card-grid__icon');
       
       // assign clone
     const clone = document.importNode(cardTemplate.content, true);
@@ -155,13 +162,13 @@ const initialCards = [
     const pictureIndex= textId.charAt(textId.length-1);
 
     if (pictureIndex < initialCards.length) {
-    const zoomElement = document.querySelector("#image-zoom");
+    // const zoomElement = document.querySelector("#image-zoom");
     zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
     zoomElement.alt="locationx";
     zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
     } else {
 
-    const zoomElement = document.querySelector("#image-zoom");
+    // const zoomElement = document.querySelector("#image-zoom");
     zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
     zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
     zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
@@ -266,7 +273,8 @@ const initialCards = [
     const popupLink = document.querySelector('#link');
     if (popupTitle.value === "" || popupLink.value === "") {
     alert("please fill out the form before submitting");
-    } else {
+      } else 
+    {
    //--------------------------------------------
    // DRAW NEW CARD 
    //--------------------------------------------
@@ -278,17 +286,17 @@ const initialCards = [
     const listElement = cardTemplate.content.querySelector('li');
 
   // card image
-    const popupLink = document.querySelector('#link');
-    const popupTitle = document.querySelector('#place');
+    // const popupLink = document.querySelector('#link');
+    // const popupTitle = document.querySelector('#place');
     cardTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
     cardTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
     cardTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
 
-    const cardPicture = cardTemplate.content.querySelector('img');
+    // const cardPicture = cardTemplate.content.querySelector('img');
 
   // card can  
   cardTemplate.content.querySelector('.canSymbol').id = `buttonCardCan${cardIndex}`;
-    const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
+    // const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
 
   // card words
   cardTemplate.content.querySelector('h2').textContent = popupTitle.value;
