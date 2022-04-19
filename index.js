@@ -1,29 +1,44 @@
 
 //-----------------------------------------------
-// associate Elements with classes or ID's
-//    introButtonPencilElement = button that activates form "Edit Profile"
+// associate Buttons, Popups and Elements with classes or ID's
+//    buttonPencil = button to activate "Edit Profile" form
+//    buttonCreateCard = the 'Create' button on 'newPlace' Form
+//    buttonSaveProfile = button to 'SAVE' "Edit Profile" form
+//    buttonCloseProfile = 'big X' on 'editProfile' form
+//    buttonCloseCard = 'big X' on 'newPlace' form
+//    buttonCardCan = garbage can icon
+//    buttonHeart = "like" icon
+//    buttonPlus = button that activates form "New Place"
+//    buttonCloseZoomPic = 'big X' on 'zoomPic' 
+//    popupProfileName = the name entered on "Edit Profile" form
+//    popupProfileAboutMe = the occupation entered on "Edit Profile" form
+//    popupLink = card url
+//    popupTitle = card location
 //    nameElement = starting name on page
 //    aboutMeElement = starting occupation on page
-//    popupButtonSave = the 'SAVE' button on 'editProfile' form
-//    popupButtonCreate = the 'Create' button on 'newPlace' Form
-//    popupButtonCloseEditProfile = 'big X' on 'editProfile' form
-//    popupButtonCloseNewPlace = 'big X' on 'newPlace' form
-//    popupName = the name entered on form
-//    popupAboutMe = the occupation enterd on form
-//    introButtonPlusElement = button that activates form "New Place"
-//-----------------------------------------------
+//    zoomElement = card that is zoomed-up
+//    listElement = card object
 
-const introButtonPencilElement = document.querySelector('.intro__button-pencil');
+const cardTemplate = document.querySelector('#myTemplate');
+const buttonPencil = document.querySelector('.intro__button-pencil');
+const buttonCreateCard = document.querySelector("#buttonCreateCard");
+const buttonSaveProfile = document.querySelector("#buttonSaveProfile");
+const buttonCloseProfile = document.querySelector('#buttonCloseProfile');
+const buttonCloseCard = document.querySelector('#buttonCloseCard');
+const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
+const buttonHeart = cardTemplate.content.querySelector('.card-grid__icon');
+const buttonPlus = document.querySelector('.intro__button-plus');
+const buttonCloseZoomPic = document.querySelector('#buttonCloseZoomPic');
+const popupProfileName = document.querySelector('input[name ="name"]');
+const popupProfileAboutMe = document.querySelector('input[name = "aboutme"]');
+const popupLink = document.querySelector('#link');
+const popupTitle = document.querySelector('#place');
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
-const popupButtonSave = document.querySelector("#popupButtonSave");
-const popupButtonCloseEditProfile = document.querySelector('#popupButtonCloseEditProfile');
-const popupButtonCreate = document.querySelector("#popupButtonCreate");
-const popupButtonCloseNewPlace = document.querySelector('#popupButtonCloseNewPlace');
-const popupButtonCloseZoomPic = document.querySelector('#popupButtonCloseZoomPic');
-const popupName = document.querySelector('input[name ="name"]');
-const popupAboutMe = document.querySelector('input[name = "aboutme"]');
-const introButtonPlusElement = document.querySelector('.intro__button-plus');
+const zoomElement = document.querySelector("#image-zoom");
+const listElement = cardTemplate.content.querySelector('li');
+
+
 
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
@@ -62,42 +77,41 @@ const initialCards = [
 //-----------------------------------------------  
 //  myTEMPLATE TO DRAW INITIAL CARDS
 //-----------------------------------------------
-   const userTemplate = document.querySelector('#myTemplate');
     for (let i = 0; i < initialCards.length; i++) {
 
       // li element
-    userTemplate.content.querySelector('li').id = `listElement${i}`;
-    const listElement = userTemplate.content.querySelector('li');
+      cardTemplate.content.querySelector('li').id = `listElement${i}`;
+    const listElement = cardTemplate.content.querySelector('li');
     
       // card image
-    userTemplate.content.querySelector('img').className = 'card-grid__picture';
-    userTemplate.content.querySelector('img').src = initialCards[i]["link"];
-    userTemplate.content.querySelector('img').alt = initialCards[i]["name"];
-    userTemplate.content.querySelector('img').id = `cardImage${[i]}`;
-    const cardPicture = userTemplate.content.querySelector('img');
+      cardTemplate.content.querySelector('img').className = 'card-grid__picture';
+      cardTemplate.content.querySelector('img').src = initialCards[i]["link"];
+      cardTemplate.content.querySelector('img').alt = initialCards[i]["name"];
+      cardTemplate.content.querySelector('img').id = `cardImage${[i]}`;
+    const cardPicture = cardTemplate.content.querySelector('img');
     
       // card can  
-    userTemplate.content.querySelector('.canSymbol').id = `cardCan${[i]}`;
-    const cardCan = userTemplate.content.querySelector('.card-grid__garbage');
+      cardTemplate.content.querySelector('.canSymbol').id = `buttonCardCan${[i]}`;
+    const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
 
       // card words
-    userTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
-    userTemplate.content.querySelector('h2').className = "card-grid__text block";
-    userTemplate.content.querySelector('h2').id = `cardName${[i]}`;
+      cardTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
+      cardTemplate.content.querySelector('h2').className = "card-grid__text block";
+      cardTemplate.content.querySelector('h2').id = `cardName${[i]}`;
     
       // card heart
-    userTemplate.content.querySelector('.heartSymbol').id = `heartButton${[i]}`;
-    userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
-    const heartButton = userTemplate.content.querySelector('.card-grid__icon');
+      cardTemplate.content.querySelector('.heartSymbol').id = `buttonHeart${[i]}`;
+      cardTemplate.content.querySelector('.heartSymbol').name = 'buttonHeart';
+    const buttonHeart = cardTemplate.content.querySelector('.card-grid__icon');
       
       // assign clone
-    const clone = document.importNode(userTemplate.content, true);
+    const clone = document.importNode(cardTemplate.content, true);
 
       // append clone to ul element within the list elements
     document.querySelector('ul').appendChild(clone);
 
-      // add EventListeners for all cardCan and cardPicture
-    const currentCan = document.querySelector(`#cardCan${[i]}`);
+      // add EventListeners for all buttonCardCan and cardPicture
+    const currentCan = document.querySelector(`#buttonCardCan${[i]}`);
     currentCan.addEventListener('click', removePic);
 
     const currentCardPicture = document.querySelector(`#cardImage${[i]}`);
@@ -164,7 +178,7 @@ const initialCards = [
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-    popupButtonCloseZoomPic.addEventListener('click', closeZoom);
+    buttonCloseZoomPic.addEventListener('click', closeZoom);
 
 //-----------------------------------------------
 //  FUNCTION 'closeZoom'
@@ -181,17 +195,17 @@ const initialCards = [
 //***********************************************
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
+//  LISTEN for clicks on introButtonPencil and on buttonSaveProfile
 //-----------------------------------------------
-    introButtonPencilElement.addEventListener('click', openProfilePopup);
-    popupButtonSave.addEventListener('click', saveProfile);
+    buttonPencil.addEventListener('click', openProfilePopup);
+    buttonSaveProfile.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
 //-----------------------------------------------  
     function openProfilePopup() {
-    popupName.value = nameElement.textContent;
-    popupAboutMe.value = aboutMeElement.textContent;
+    popupProfileName.value = nameElement.textContent;
+    popupProfileAboutMe.value = aboutMeElement.textContent;
     const containerElement = document.querySelector('#person-popup-container');
     openPopup(containerElement);
 }
@@ -201,11 +215,11 @@ const initialCards = [
 //-----------------------------------------------
     function  saveProfile (evtSave) {
     evtSave.preventDefault();
-    if (popupName.value === "" || popupAboutMe.value === "") {
+    if (popupProfileName.value === "" || popupProfileAboutMe.value === "") {
     alert("please fill out the form before submitting");
     } else {  
-    nameElement.textContent = popupName.value;
-    aboutMeElement.textContent = popupAboutMe.value;
+    nameElement.textContent = popupProfileName.value;
+    aboutMeElement.textContent = popupProfileAboutMe.value;
     const containerElement = document.querySelector('#person-popup-container');
     closePopup(containerElement);
     }
@@ -214,7 +228,7 @@ const initialCards = [
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
-    popupButtonCloseEditProfile.addEventListener('click', closeProfilePopup);
+    buttonCloseProfile.addEventListener('click', closeProfilePopup);
 
 //-----------------------------------------------
 //  FUNCTION 'closeProfilePopup'
@@ -231,10 +245,10 @@ const initialCards = [
 //***********************************************
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPlus and on popupButtonCreate
+//  LISTEN for clicks on introButtonPlus and on buttonCreateCard
 //-----------------------------------------------
-    introButtonPlusElement.addEventListener('click', openAddCardPopup);
-    popupButtonCreate.addEventListener('click', createButton);
+    buttonPlus.addEventListener('click', openAddCardPopup);
+    buttonCreateCard.addEventListener('click', createButton);
 
 //-----------------------------------------------
 //  FUNCTION 'openAddCardPopup'
@@ -261,41 +275,41 @@ const initialCards = [
    // DRAW NEW CARD 
    //--------------------------------------------
     cardIndex = cardIndex + 1;
-    const userTemplate = document.querySelector('#myTemplate');
+    const cardTemplate = document.querySelector('#myTemplate');
 
   // li element
-    userTemplate.content.querySelector('li').id = `listElement${cardIndex}`;
-    const listElement = userTemplate.content.querySelector('li');
+  cardTemplate.content.querySelector('li').id = `listElement${cardIndex}`;
+    const listElement = cardTemplate.content.querySelector('li');
 
   // card image
     const popupLink = document.querySelector('#link');
     const popupTitle = document.querySelector('#place');
-    userTemplate.content.querySelector('img').className = 'card-grid__picture';
-    userTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
-    userTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
-    userTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
+    cardTemplate.content.querySelector('img').className = 'card-grid__picture';
+    cardTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
+    cardTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
+    cardTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
 
-    const cardPicture = userTemplate.content.querySelector('img');
+    const cardPicture = cardTemplate.content.querySelector('img');
 
   // card can  
-    userTemplate.content.querySelector('.canSymbol').id = `cardCan${cardIndex}`;
-    const cardCan = userTemplate.content.querySelector('.card-grid__garbage');
+  cardTemplate.content.querySelector('.canSymbol').id = `buttonCardCan${cardIndex}`;
+    const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
 
   // card words
-    userTemplate.content.querySelector('h2').textContent = popupTitle.value;
-    userTemplate.content.querySelector('h2').className = "card-grid__text block";
-    userTemplate.content.querySelector('h2').id = `cardName${[cardIndex]}`;
+  cardTemplate.content.querySelector('h2').textContent = popupTitle.value;
+  cardTemplate.content.querySelector('h2').className = "card-grid__text block";
+  cardTemplate.content.querySelector('h2').id = `cardName${[cardIndex]}`;
 
 
   // card heart
-    userTemplate.content.querySelector('.heartSymbol').id = `heartButton${cardIndex}`;
-    userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
+  cardTemplate.content.querySelector('.heartSymbol').id = `buttonHeart${cardIndex}`;
+  cardTemplate.content.querySelector('.heartSymbol').name = 'buttonHeart';
   
-    const clone = document.importNode(userTemplate.content, true);
+    const clone = document.importNode(cardTemplate.content, true);
     document.querySelector('ul').prepend(clone);
     
-    const currentHeartElement = document.querySelector(`#heartButton${cardIndex}`);
-    const currentCanElement = document.querySelector(`#cardCan${cardIndex}`);
+    const currentHeartElement = document.querySelector(`#buttonHeart${cardIndex}`);
+    const currentCanElement = document.querySelector(`#buttonCardCan${cardIndex}`);
     console.log('currentCanElement', currentCanElement);
     console.log('cardIndex = ', cardIndex);
 
@@ -313,7 +327,7 @@ const initialCards = [
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
-    popupButtonCloseNewPlace.addEventListener('click', closeAddCardPopup);
+buttonCloseCard.addEventListener('click', closeAddCardPopup);
 
 //-----------------------------------------------
 //  FUNCTION 'closeAddCardPopup'
