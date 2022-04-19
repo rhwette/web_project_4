@@ -140,31 +140,28 @@ const initialCards = [
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
-function zoomPic(evtZoom) {
-  let textId = evtZoom.target.id;
-  console.log('aaaaaaa textId', textId);
-  let pictureIndex= textId.charAt(textId.length-1);
+    function zoomPic(evtZoom) {
+    let textId = evtZoom.target.id;
+    console.log('aaaaaaa textId', textId);
+    let pictureIndex= textId.charAt(textId.length-1);
 
-  if (pictureIndex < initialCards.length) {
-  const zoomElement = document.querySelector("#image-zoom");
-  zoomElement.className = "card-grid__picture-zoom";
-  zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
-  zoomElement.alt="locationx";
-  zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
-  } else {
+    if (pictureIndex < initialCards.length) {
+    const zoomElement = document.querySelector("#image-zoom");
+    zoomElement.className = "card-grid__picture-zoom";
+    zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
+    zoomElement.alt="locationx";
+    zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
+    } else {
 
-  const zoomElement = document.querySelector("#image-zoom");
-  zoomElement.className = "card-grid__picture-zoom";
-  zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
-  zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
-  zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
-  }
+    const zoomElement = document.querySelector("#image-zoom");
+    zoomElement.className = "card-grid__picture-zoom";
+    zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
+    zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
+    zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
+    }
   
-  // const clone = document.importNode(userTemplate.content, true);
-  // document.querySelector('.image-popup').append(clone);
-  const containerElement = document.querySelector('#image-popup-container');
-  openPopup(containerElement);
-  // containerElement.classList.add('popup-container_visible');
+    const containerElement = document.querySelector('#image-popup-container');
+    openPopup(containerElement);
 }
 
 //-----------------------------------------------
@@ -177,8 +174,6 @@ function zoomPic(evtZoom) {
 //-----------------------------------------------
     function closeZoom() {
     const containerElement = document.querySelector('#image-popup-container');
-    // containerElement.classList.remove('popup-container_visible');
-    // zoomElement.remove();
     closePopup(containerElement);
 }
 
@@ -191,7 +186,6 @@ function zoomPic(evtZoom) {
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil and on popupButtonSAVE
 //-----------------------------------------------
-    // introButtonPencilElement.addEventListener('click', openProfilePopup);
     introButtonPencilElement.addEventListener('click', openProfilePopup);
     popupButtonSave.addEventListener('click', saveProfile);
 
@@ -230,7 +224,6 @@ function zoomPic(evtZoom) {
 //-----------------------------------------------
     function closeProfilePopup() {
     const containerElement = document.querySelector('#person-popup-container');
-    // containerElement.classList.remove('popup-container_visible');
     closePopup(containerElement);
 }
 
@@ -281,17 +274,13 @@ function zoomPic(evtZoom) {
     const popupLink = document.querySelector('#link');
     const popupTitle = document.querySelector('#place');
     userTemplate.content.querySelector('img').className = 'card-grid__picture';
-    // userTemplate.content.querySelector('img').src = ` url(${popupLink.value}) `;
     userTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
     userTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
-    // userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
     userTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
 
-    // const newImageId =  userTemplate.content.querySelector('img').id = `newImage${cardIndex}`;
     const cardPicture = userTemplate.content.querySelector('img');
 
   // card can  
-    // userTemplate.content.querySelector('.canSymbol').id = `newCan${cardIndex}`;
     userTemplate.content.querySelector('.canSymbol').id = `cardCan${cardIndex}`;
     const cardCan = userTemplate.content.querySelector('.card-grid__garbage');
 
@@ -302,43 +291,24 @@ function zoomPic(evtZoom) {
 
 
   // card heart
-  // userTemplate.content.querySelector('.heartSymbol').id = `newHeart${cardIndex}`;
-  userTemplate.content.querySelector('.heartSymbol').id = `heartButton${cardIndex}`;
-  userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
+    userTemplate.content.querySelector('.heartSymbol').id = `heartButton${cardIndex}`;
+    userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
   
-  const clone = document.importNode(userTemplate.content, true);
-  document.querySelector('ul').prepend(clone);
+    const clone = document.importNode(userTemplate.content, true);
+    document.querySelector('ul').prepend(clone);
     
-    // // const currentHeartElement = document.querySelector(`#newHeart${cardIndex}`);
     const currentHeartElement = document.querySelector(`#heartButton${cardIndex}`);
-    // const currentCanElement = document.querySelector(`#newCan${cardIndex}`);
-    // const currentCanElement = document.querySelector(`#canButton${cardIndex}`);
     const currentCanElement = document.querySelector(`#cardCan${cardIndex}`);
     console.log('currentCanElement', currentCanElement);
     console.log('cardIndex = ', cardIndex);
-    // let uniqueId = `cardImage${cardIndex}`;
-    // console.log ('uniqueId', uniqueId);
-    // const currentCardPicture = document.querySelector('#uniqueId');
-    // const currentCardPicture = document.querySelector(`#image${cardIndex}`);
-    // const currentCardPicture = document.querySelector('img')`image${cardIndex}`;
 
-    // this one works...but gives the wrong img...gets the intro icon
-    // const currentCardPicture = document.querySelector('img');
-    // ..................
-
-    // const currentCardPicture = userTemplate.querySelector('img');
-    // this one works..important to look in 'document' not in userTemplate
-    // const currentCardPicture = userTemplate.querySelector(`#cardImage${cardIndex}`);
     const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
-    // ..........
-        // const currentCardPicture = document.querySelector('.card-grid__picture').src ;
     currentCanElement.addEventListener('click', removePic);
     currentHeartElement.addEventListener('click', changeHeartColor);
     currentCardPicture.addEventListener('click', zoomPic); 
 
     const containerElement = document.querySelector('#picture-popup-container');
     closePopup(containerElement);
-    // closeAddCardPopup();
   }
 }
  
@@ -353,7 +323,6 @@ function zoomPic(evtZoom) {
 //-----------------------------------------------
     function closeAddCardPopup() {
     const containerElement = document.querySelector('#picture-popup-container');
-    // containerElement.classList.remove('popup-container_visible');
     closePopup(containerElement);
 }
 
