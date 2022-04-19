@@ -18,6 +18,7 @@
 //    aboutMeElement = starting occupation on page
 //    zoomElement = card that is zoomed-up
 //    listElement = card object
+//    cardElement = clone of card object
 
 const cardTemplate = document.querySelector('#myTemplate');
 const buttonPencil = document.querySelector('.intro__button-pencil');
@@ -36,7 +37,7 @@ const popupTitle = document.querySelector('#place');
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
-const listElement = cardTemplate.content.querySelector('li');
+const listElement = cardTemplate.content.querySelector('.card-grid__style');
 const imageElement = cardTemplate.content.querySelector('img');
 
 
@@ -82,7 +83,9 @@ const initialCards = [
 
       // li element
       cardTemplate.content.querySelector('li').id = `listElement${i}`;
-    const listElement = cardTemplate.content.querySelector('li');
+
+    // const listElement = cardTemplate.content.querySelector('li');
+      const cardElement = cardTemplate.cloneNode(true).querySelector('.card-grid__style');
     
       // card image
       // const imageElement = cardTemplate.content.querySelector('img');
@@ -149,8 +152,9 @@ const initialCards = [
 
     function removePic(evtRemove) {
     const canId = evtRemove.target.id;
-    const cardCanId = canId.charAt(canId.length-1);
-    const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
+    // const cardCanId = canId.charAt(canId.length-1);
+    // const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
+    const cardToDelete = evtRemove.target.closest('.card-grid__style');
     cardToDelete.remove();
 }
  
