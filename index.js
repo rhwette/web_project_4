@@ -83,13 +83,11 @@ const initialCards = [
       // card words
     userTemplate.content.querySelector('h2').textContent = initialCards[i]["name"];
     userTemplate.content.querySelector('h2').className = "card-grid__text block";
-    //  not acceptable....throws an error
     userTemplate.content.querySelector('h2').id = `cardName${[i]}`;
     
       // card heart
     userTemplate.content.querySelector('.heartSymbol').id = `heartButton${[i]}`;
     userTemplate.content.querySelector('.heartSymbol').name = 'heartButton';
-    // const heartButton = userTemplate.content.querySelector('.heartSymbol');
     const heartButton = userTemplate.content.querySelector('.card-grid__icon');
       
       // assign clone
@@ -142,7 +140,6 @@ const initialCards = [
 //-----------------------------------------------
     function zoomPic(evtZoom) {
     let textId = evtZoom.target.id;
-    console.log('aaaaaaa textId', textId);
     let pictureIndex= textId.charAt(textId.length-1);
 
     if (pictureIndex < initialCards.length) {
