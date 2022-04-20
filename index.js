@@ -48,33 +48,6 @@ const zoomElement = document.querySelector("#image-zoom");
 const listElement = cardTemplate.content.querySelector('.card-grid__style');
 const imageElement = cardTemplate.content.querySelector('img');
 
-// FUNCTION LIST
-//  openPopup
-//  closePopup
-//  removePic
-//  openProfilePopup
-//  saveProfile
-//  closeProfilePopup
-//  zoomPic
-//  closeZoomPopup
-//  openAddCardPopup
-//  createButton
-//  closeAddCardPopup
-//  changeHeartColor
-
-// LISTENER LIST
-//  click on big X zoomPic
-//  clicks on introButtonPencil
-//  clicks on buttonSaveProfile
-//  click on big X 'editProfile' form
-//  clicks on introButtonPlus
-//  clicks on buttonCreateCard
-//  click on big X 'newPlace' form
-//  click heart button
-
-
-
-
 
 
 //  ARRAY of OBJECTS containing image links
@@ -107,7 +80,7 @@ const initialCards = [
 
 //-----------------------------------------------
 //-----------------------------------------------
-//  FUNCTIONS ARE COLLECTED BELOW
+//  FUNCTION ARE COLLECTED BELOW
 //-----------------------------------------------
 //-----------------------------------------------
 
@@ -297,13 +270,9 @@ function changeHeartColor(anynameEvent) {
 buttonCloseZoomPic.addEventListener('click', closeZoom);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPencil
+//  LISTEN for clicks on introButtonPencil and on buttonSaveProfile
 //-----------------------------------------------
 buttonPencil.addEventListener('click', openProfilePopup);
-
-//-----------------------------------------------
-//  LISTEN for clicks on buttonSaveProfile
-//-----------------------------------------------
 buttonSaveProfile.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
@@ -312,13 +281,9 @@ buttonSaveProfile.addEventListener('click', saveProfile);
 buttonCloseProfile.addEventListener('click', closeProfilePopup);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPlus
+//  LISTEN for clicks on introButtonPlus and on buttonCreateCard
 //-----------------------------------------------
 buttonPlus.addEventListener('click', openAddCardPopup);
-
-//-----------------------------------------------
-//  LISTEN for clicks on buttonCreateCard
-//-----------------------------------------------
 buttonCreateCard.addEventListener('click', createButton);
 
 //-----------------------------------------------
@@ -334,6 +299,12 @@ for (let i = 0; i < cardGridIcon.length; i++) {
 cardGridIcon[i].addEventListener('click',changeHeartColor);
 }
 
+
+//-----------------------------------------------
+//-----------------------------------------------
+//  TEMPLATES ARE COLLECTED BELOW
+//-----------------------------------------------
+//----------------------------------------------- 
 
 //-----------------------------------------------  
 //  myTEMPLATE TO DRAW INITIAL CARDS
