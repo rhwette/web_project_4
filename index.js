@@ -16,6 +16,7 @@
 //    popupTitle = card location
 //    profilePopup = "Edit Profile" popup 
 //    picturePopup = "New Place" popup
+//    zoomPopup = "Zoom Pic" popup"
 //    imagePopup = "Zoom Pic" popup
 //    nameElement = starting name on page
 //    aboutMeElement = starting occupation on page
@@ -39,6 +40,7 @@ const popupLink = document.querySelector('#link');
 const popupTitle = document.querySelector('#place');
 const profilePopup = document.querySelector('#person-popup-container');
 const picturePopup = document.querySelector('#picture-popup-container');
+const zoomPopup = document.querySelector('#image-popup-container');
 const imagePopup = document.querySelector('#image-popup-container');
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
@@ -109,6 +111,39 @@ console.log('bbbbb cardToDelete', cardToDelete);
 cardToDelete.remove();
 }
 
+
+//-----------------------------------------------
+//  FUNCTION 'openProfilePopup'
+//-----------------------------------------------  
+function openProfilePopup() {
+  popupProfileName.value = nameElement.textContent;
+  popupProfileAboutMe.value = aboutMeElement.textContent;
+  const containerElement = document.querySelector('#person-popup-container');
+  openPopup(containerElement);
+}
+
+//-----------------------------------------------
+//  FUNCTION 'saveProfile'
+//-----------------------------------------------
+function  saveProfile (evtSave) {
+  evtSave.preventDefault();
+  if (popupProfileName.value === "" || popupProfileAboutMe.value === "") {
+  alert("please fill out the form before submitting");
+  } else {  
+  nameElement.textContent = popupProfileName.value;
+  aboutMeElement.textContent = popupProfileAboutMe.value;
+  const containerElement = document.querySelector('#person-popup-container');
+  closePopup(containerElement);
+  }
+}
+
+//-----------------------------------------------
+//  FUNCTION 'closeProfilePopup'
+//----------------------------------------------- 
+function closeProfilePopup() {
+  closePopup(profilePopup);
+}
+
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
@@ -132,47 +167,11 @@ cardToDelete.remove();
   const containerElement = document.querySelector('#image-popup-container');
     openPopup(containerElement);
 }
-
 //-----------------------------------------------
-//  FUNCTION 'closeZoom'
+//  FUNCTION 'closeZoomPopup'
 //-----------------------------------------------
 function closeZoom() {
-  const containerElement = document.querySelector('#image-popup-container');
-  closePopup(containerElement);
-}
-
-//-----------------------------------------------
-//  FUNCTION 'openProfilePopup'
-//-----------------------------------------------  
-function openProfilePopup() {
-  popupProfileName.value = nameElement.textContent;
-  popupProfileAboutMe.value = aboutMeElement.textContent;
-  const containerElement = document.querySelector('#person-popup-container');
-  openPopup(containerElement);
-}
-
-//-----------------------------------------------
-//  FUNCTION 'closeProfilePopup'
-//----------------------------------------------- 
-  function closeProfilePopup() {
-    closePopup(profilePopup);
-  }
-
-
-
-//-----------------------------------------------
-//  FUNCTION 'saveProfile'
-//-----------------------------------------------
-function  saveProfile (evtSave) {
-  evtSave.preventDefault();
-  if (popupProfileName.value === "" || popupProfileAboutMe.value === "") {
-  alert("please fill out the form before submitting");
-  } else {  
-  nameElement.textContent = popupProfileName.value;
-  aboutMeElement.textContent = popupProfileAboutMe.value;
-  const containerElement = document.querySelector('#person-popup-container');
-  closePopup(containerElement);
-  }
+  closePopup(zoomPopup);
 }
 
 //-----------------------------------------------
