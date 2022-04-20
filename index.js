@@ -245,18 +245,7 @@ function closeAddCardPopup() {
   closePopup(containerElement);
 }
 
-//-----------------------------------------------
-//  FUNCTION 'changeHeartColor'
-//-----------------------------------------------
-function changeHeartColor(anynameEvent) {
 
-  if (document.getElementById(anynameEvent.target.id).src===
-    "http://127.0.0.1:5500/images/heart.svg") {
-  document.getElementById(anynameEvent.target.id).src = "images/Union.svg";
-  } else {
-  document.getElementById(anynameEvent.target.id).src = "images/heart.svg";
-  }
-}
 
 //-----------------------------------------------
 //-----------------------------------------------
@@ -291,13 +280,7 @@ buttonCreateCard.addEventListener('click', createButton);
 //-----------------------------------------------
 buttonCloseCard.addEventListener('click', closeAddCardPopup);
 
-//-----------------------------------------------
-//  LISTEN - click heart button
-//-----------------------------------------------
-const cardGridIcon = document.querySelectorAll('.heartSymbol');
-for (let i = 0; i < cardGridIcon.length; i++) {
-cardGridIcon[i].addEventListener('click',changeHeartColor);
-}
+
 
 
 //-----------------------------------------------
@@ -361,6 +344,25 @@ cardGridIcon[i].addEventListener('click',changeHeartColor);
 
     }
 
+//-----------------------------------------------
+//  LISTEN - click heart button
+//-----------------------------------------------
+const cardGridIcon = document.querySelectorAll('.heartSymbol');
+for (let i = 0; i < cardGridIcon.length; i++) {
+cardGridIcon[i].addEventListener('click',changeHeartColor);
+}
 
+//-----------------------------------------------
+//  FUNCTION 'changeHeartColor'
+//-----------------------------------------------
+function changeHeartColor(anynameEvent) {
+
+  if (document.getElementById(anynameEvent.target.id).src===
+    "http://127.0.0.1:5500/images/heart.svg") {
+  document.getElementById(anynameEvent.target.id).src = "images/Union.svg";
+  } else {
+  document.getElementById(anynameEvent.target.id).src = "images/heart.svg";
+  }
+}
 
 
