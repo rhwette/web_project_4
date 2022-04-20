@@ -109,7 +109,6 @@ const cardToDelete = evtRemove.target.closest('.card-grid__style');
 cardToDelete.remove();
 }
 
-
 //-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
 //-----------------------------------------------  
@@ -190,6 +189,7 @@ function  createButton (evtCreate) {
   alert("please fill out the form before submitting");
     } else 
   {
+
  //--------------------------------------------
  // DRAW NEW CARD 
  //--------------------------------------------
@@ -245,8 +245,6 @@ function closeAddCardPopup() {
   closePopup(containerElement);
 }
 
-
-
 //-----------------------------------------------
 //-----------------------------------------------
 //  EVENTLISTENERS ARE COLLECTED BELOW
@@ -259,9 +257,13 @@ function closeAddCardPopup() {
 buttonCloseZoomPic.addEventListener('click', closeZoom);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPencil and on buttonSaveProfile
+//  LISTEN for clicks on introButtonPencil 
 //-----------------------------------------------
 buttonPencil.addEventListener('click', openProfilePopup);
+
+//-----------------------------------------------
+//  LISTEN for clicks on buttonSaveProfile
+//-----------------------------------------------
 buttonSaveProfile.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
@@ -270,9 +272,13 @@ buttonSaveProfile.addEventListener('click', saveProfile);
 buttonCloseProfile.addEventListener('click', closeProfilePopup);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPlus and on buttonCreateCard
+//  LISTEN for clicks on introButtonPlus
 //-----------------------------------------------
 buttonPlus.addEventListener('click', openAddCardPopup);
+
+//-----------------------------------------------
+//  LISTEN for clicks on buttonCreateCard
+//-----------------------------------------------
 buttonCreateCard.addEventListener('click', createButton);
 
 //-----------------------------------------------
