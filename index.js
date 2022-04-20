@@ -48,6 +48,33 @@ const zoomElement = document.querySelector("#image-zoom");
 const listElement = cardTemplate.content.querySelector('.card-grid__style');
 const imageElement = cardTemplate.content.querySelector('img');
 
+// FUNCTION LIST
+//  openPopup
+//  closePopup
+//  removePic
+//  openProfilePopup
+//  saveProfile
+//  closeProfilePopup
+//  zoomPic
+//  closeZoomPopup
+//  openAddCardPopup
+//  createButton
+//  closeAddCardPopup
+//  changeHeartColor
+
+// LISTENER LIST
+//  click on big X zoomPic
+//  clicks on introButtonPencil
+//  clicks on buttonSaveProfile
+//  click on big X 'editProfile' form
+//  clicks on introButtonPlus
+//  clicks on buttonCreateCard
+//  click on big X 'newPlace' form
+//  click heart button
+
+
+
+
 
 
 //  ARRAY of OBJECTS containing image links
@@ -80,7 +107,7 @@ const initialCards = [
 
 //-----------------------------------------------
 //-----------------------------------------------
-//  FUNCTION ARE COLLECTED BELOW
+//  FUNCTIONS ARE COLLECTED BELOW
 //-----------------------------------------------
 //-----------------------------------------------
 
@@ -102,12 +129,10 @@ function openPopup(containerElement) {
 //  FUNCTION 'removePic'
 //-----------------------------------------------
 function removePic(evtRemove) {
-  console.log('aaaaa evtRemove', evtRemove);
 const canId = evtRemove.target.id;
 // const cardCanId = canId.charAt(canId.length-1);
 // const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
 const cardToDelete = evtRemove.target.closest('.card-grid__style');
-console.log('bbbbb cardToDelete', cardToDelete);
 cardToDelete.remove();
 }
 
@@ -152,13 +177,11 @@ function closeProfilePopup() {
   const pictureIndex= textId.charAt(textId.length-1);
 
   if (pictureIndex < initialCards.length) {
-  // const zoomElement = document.querySelector("#image-zoom");
-  zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
+   zoomElement.src=`${initialCards[pictureIndex]["link"]}`;
   zoomElement.alt="locationx";
   zoomElement.title=`"${initialCards[pictureIndex]['name']}"`;
   } else {
 
-  // const zoomElement = document.querySelector("#image-zoom");
   zoomElement.src = document.querySelector(`#cardImage${pictureIndex}`).src;
   zoomElement.alt = document.querySelector(`#cardImage${pictureIndex}`).alt;
   zoomElement.id = document.querySelector(`#cardImage${pictureIndex}`).id;
@@ -180,7 +203,6 @@ function closeZoom() {
 function openAddCardPopup(evtNewPlace) {
   document.querySelector('#newPlaceForm').reset();
   const popupTitle = document.querySelector('#place');
-  const popupLink = document.querySelector('#link');
   const containerElement = document.querySelector('#picture-popup-container');
   openPopup(containerElement);
  }
@@ -191,8 +213,7 @@ function openAddCardPopup(evtNewPlace) {
 function  createButton (evtCreate) {
   evtCreate.preventDefault();
   const popupTitle = document.querySelector('#place');
-  const popupLink = document.querySelector('#link');
-  if (popupTitle.value === "" || popupLink.value === "") {
+   if (popupTitle.value === "" || popupLink.value === "") {
   alert("please fill out the form before submitting");
     } else 
   {
@@ -207,8 +228,7 @@ cardTemplate.content.querySelector('li').id = `listElement${cardIndex}`;
   const listElement = cardTemplate.content.querySelector('li');
 
 // card image
-  // const popupLink = document.querySelector('#link');
-  // const popupTitle = document.querySelector('#place');
+   // const popupTitle = document.querySelector('#place');
   cardTemplate.content.querySelector('img').src = ` ${popupLink.value} `;
   cardTemplate.content.querySelector('img').alt = ` "${popupTitle.value}" ` ;
   cardTemplate.content.querySelector('img').id = `cardImage${cardIndex}`;
@@ -277,9 +297,13 @@ function changeHeartColor(anynameEvent) {
 buttonCloseZoomPic.addEventListener('click', closeZoom);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPencil and on buttonSaveProfile
+//  LISTEN for clicks on introButtonPencil
 //-----------------------------------------------
 buttonPencil.addEventListener('click', openProfilePopup);
+
+//-----------------------------------------------
+//  LISTEN for clicks on buttonSaveProfile
+//-----------------------------------------------
 buttonSaveProfile.addEventListener('click', saveProfile);
 
 //-----------------------------------------------
@@ -288,9 +312,13 @@ buttonSaveProfile.addEventListener('click', saveProfile);
 buttonCloseProfile.addEventListener('click', closeProfilePopup);
 
 //-----------------------------------------------
-//  LISTEN for clicks on introButtonPlus and on buttonCreateCard
+//  LISTEN for clicks on introButtonPlus
 //-----------------------------------------------
 buttonPlus.addEventListener('click', openAddCardPopup);
+
+//-----------------------------------------------
+//  LISTEN for clicks on buttonCreateCard
+//-----------------------------------------------
 buttonCreateCard.addEventListener('click', createButton);
 
 //-----------------------------------------------
@@ -306,12 +334,6 @@ for (let i = 0; i < cardGridIcon.length; i++) {
 cardGridIcon[i].addEventListener('click',changeHeartColor);
 }
 
-
-//-----------------------------------------------
-//-----------------------------------------------
-//  TEMPLATES ARE COLLECTED BELOW
-//-----------------------------------------------
-//----------------------------------------------- 
 
 //-----------------------------------------------  
 //  myTEMPLATE TO DRAW INITIAL CARDS
