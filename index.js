@@ -76,6 +76,13 @@ const initialCards = [
 ];
 
 //-----------------------------------------------
+//  DRAW INITIAL CARDS using createCard function
+//-----------------------------------------------
+for (let i = 0; i < initialCards.length; i++) {
+  createCard(initialCards[i]);
+}
+
+//-----------------------------------------------
 //-----------------------------------------------
 //  FUNCTION ARE COLLECTED BELOW
 //-----------------------------------------------
@@ -286,7 +293,7 @@ buttonCreateCard.addEventListener("click", createButton);
 buttonCloseCard.addEventListener("click", closeAddCardPopup);
 
 //************************************* */
-//  add card
+//  FUNCTION - createCard
 //************************************* */
 function createCard(card) {
   const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
@@ -325,13 +332,6 @@ function renderCard(card, container) {
 //  TEMPLATES ARE COLLECTED BELOW
 //-----------------------------------------------
 //-----------------------------------------------
-
-//-----------------------------------------------
-//  myTEMPLATE TO DRAW INITIAL CARDS
-//-----------------------------------------------
-for (let i = 0; i < initialCards.length; i++) {
-  createCard(initialCards[i]);
-}
 
 //-----------------------------------------------
 //  LISTEN - click heart button
