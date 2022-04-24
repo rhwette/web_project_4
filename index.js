@@ -246,7 +246,7 @@ function createCard(card) {
   // set const's
   const imageElement = cardElement.querySelector(".card-grid__picture");
   const titleElement = cardElement.querySelector(".card-grid__text");
-  const heartElement = cardElement.querySelector(".heartSymbol");
+  const heartElement = cardElement.querySelector(".card-grid__icon");
   const canElement = cardElement.querySelector(".card-grid__garbage");
   // const zoomTextElement = document.querySelector(
   //   ".card-grid__picture-zoom-text"
@@ -277,7 +277,8 @@ function createCard(card) {
   });
 
   // add EventListener for heartbutton
-  heartElement.addEventListener("click", () => {
+  heartElement.addEventListener("click", (evt) => {
+    evt.preventDefault();
     console.log("click on heart element");
     console.log("7777 heartElement", heartElement);
     changeHeartColor(heartElement);
@@ -324,11 +325,13 @@ function renderCard(card, container) {
 
 function changeHeartColor(heartToChange) {
   console.log("yyyyy evt", heartToChange);
-
-  if (heartToChange.src === "http://127.0.0.1:5500/images/heart.svg") {
-    heartToChange.src = "images/Union.svg";
+  console.log("ffffff heartToChange.className", heartToChange.className);
+  console.log("ggggggg heartToChange.classList", heartToChange.classList);
+  if (heartToChange.className === "card-grid__icon") {
+    console.log("true");
+    heartToChange.classList.add("card-grid__icon_active");
   } else {
-    heartToChange.src = "images/heart.svg";
+    heartToChange.classList.remove("card-grid__icon_active");
   }
 }
 

@@ -2,15 +2,20 @@
   width: 21px;
   height: 19px;
   margin-right: 15px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: none;
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
+  background-image: url("../../../images/heart.svg");
 }
 
 .card-grid__icon:hover {
-  opacity: .5;
+  opacity: 0.5;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
+
+/* .card-grid__icon:active {
+  background-image: url("../../../images/Union.svg");
+} */
