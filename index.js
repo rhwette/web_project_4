@@ -172,21 +172,14 @@ function openAddCardPopup(evtNewPlace) {
 //-----------------------------------------------
 function createButton(evtCreate) {
   evtCreate.preventDefault();
-  console.log("8888888 evtCreate", evtCreate);
   const popupTitle = document.querySelector("#place");
-  console.log("99999999 popupTitle", popupTitle);
-  console.log("00000 popupTitle.value", popupTitle.value);
-  console.log("11111 popupLink.value", popupLink.value);
-
   if (popupTitle.value === "" || popupLink.value === "") {
     alert("please fill out the form before submitting");
   } else {
     newCardInfo = {};
     newCardInfo.name = popupTitle.value;
     newCardInfo.link = popupLink.value;
-
     const newCardToDraw = createCard(newCardInfo);
-
     closeAddCardPopup();
     return;
   }
@@ -248,25 +241,17 @@ function createCard(card) {
   const titleElement = cardElement.querySelector(".card-grid__text");
   const heartElement = cardElement.querySelector(".card-grid__icon");
   const canElement = cardElement.querySelector(".card-grid__garbage");
-  // const zoomTextElement = document.querySelector(
-  //   ".card-grid__picture-zoom-text"
-  // );
 
   // define elements
   imageElement.src = card.link;
   imageElement.alt = card.name;
   titleElement.innerText = card.name;
-  // titleElement.innerHTML = card.name;
-  // use heartElement from above
-  // use canElement from above
 
   // console.log's
   console.log("2222 imageElement", imageElement);
   console.log("2222 imageElement.src", imageElement.src);
   console.log("3333 imageElement.alt", imageElement.alt);
   console.log("4444 titleElement", titleElement);
-  // console.log("4444 titleElement.innerText", titleElement.innerText);
-  // console.log("4444A zoomTextElement.innerText", zoomTextElement.innerText);
   console.log("5555 heartElement", heartElement);
   console.log("6666 canElement", canElement);
 
@@ -291,17 +276,11 @@ function createCard(card) {
     zoomPic(card);
   });
 
-  // add EventListener for buttonCreateCard
-  // buttonCreateCard.addEventListener("click", () => {
-  //   console.log("card", card);
-  //   createButton(card);
-  // });
   console.log("line 343");
 
   const container = document.querySelector(".card-grid__format");
 
   renderCard(cardElement, container);
-  // document.querySelector(".card-grid__format").appendChild(cardElement);
   console.log("line 345");
 
   return;
@@ -310,14 +289,6 @@ function createCard(card) {
 function renderCard(card, container) {
   container.prepend(card);
 }
-
-//-----------------------------------------------
-//  LISTEN - click heart button
-//-----------------------------------------------
-// const cardGridIcon = document.querySelectorAll(".heartSymbol");
-// for (let i = 0; i < cardGridIcon.length; i++) {
-//   cardGridIcon[i].addEventListener("click", changeHeartColor);
-// }
 
 //-----------------------------------------------
 //  FUNCTION 'changeHeartColor'
@@ -334,12 +305,3 @@ function changeHeartColor(heartToChange) {
     heartToChange.classList.remove("card-grid__icon_active");
   }
 }
-
-// if (
-//   document.getElementById(evt.target.id).src ===
-//   "http://127.0.0.1:5500/images/heart.svg"
-// ) {
-//   document.getElementById(evt.target.id).src = "images/Union.svg";
-// } else {
-//   document.getElementById(evt.target.id).src = "images/heart.svg";
-// }
