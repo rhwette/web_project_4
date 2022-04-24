@@ -78,7 +78,7 @@ const initialCards = [
 //-----------------------------------------------
 //  DRAW INITIAL CARDS using createCard function
 //-----------------------------------------------
-for (let i = 0; i < initialCards.length; i++) {
+for (let i = initialCards.length - 1; i >= 0; i--) {
   createCard(initialCards[i]);
 }
 
@@ -148,13 +148,14 @@ function closeProfilePopup() {
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
-function zoomPic(evtZoom) {
-  // const textId = evtZoom.target.id;
-  // const textId = evtZoom.target.id;
-  console.log("555555evtZoom", evtZoom);
-  console.log("66666evtZoom.link", evtZoom.link);
+function zoomPic(cardInfo) {
+  // const textId = cardInfo.target.id;
+  // const textId = cardInfo.target.id;
+  console.log("555555evtZoom", cardInfo);
+  console.log("66666evtZoom.link", cardInfo.link);
 
-  zoomElement.src = evtZoom.link;
+  zoomElement.src = cardInfo.link;
+  zoomElement.alt = cardInfo.name;
 
   // zoomElement.src = document.querySelector(`#${evtZoom.}`).src;
   console.log("zoomElement", zoomElement.src);
@@ -185,63 +186,78 @@ function openAddCardPopup(evtNewPlace) {
 //-----------------------------------------------
 function createButton(evtCreate) {
   evtCreate.preventDefault();
+  console.log("8888888 evtCreate", evtCreate);
   const popupTitle = document.querySelector("#place");
+  console.log("99999999 popupTitle", popupTitle);
+  console.log("00000 popupTitle.value", popupTitle.value);
+  console.log("11111 popupLink.value", popupLink.value);
+
   if (popupTitle.value === "" || popupLink.value === "") {
     alert("please fill out the form before submitting");
   } else {
-    //--------------------------------------------
-    // DRAW NEW CARD
-    //--------------------------------------------
-    cardIndex = cardIndex + 1;
-    const cardTemplate = document.querySelector("#myTemplate");
+    newCardInfo = {};
+    newCardInfo.name = popupTitle.value;
+    newCardInfo.link = popupLink.value;
 
-    // li element
-    cardTemplate.content.querySelector("li").id = `listElement${cardIndex}`;
-    const listElement = cardTemplate.content.querySelector("li");
+    const newCardToDraw = createCard(newCardInfo);
 
-    // card image
-    // const popupTitle = document.querySelector('#place');
-    cardTemplate.content.querySelector("img").src = ` ${popupLink.value} `;
-    cardTemplate.content.querySelector("img").alt = ` "${popupTitle.value}" `;
-    cardTemplate.content.querySelector("img").id = `cardImage${cardIndex}`;
-
-    // const cardPicture = cardTemplate.content.querySelector('img');
-
-    // card can
-    cardTemplate.content.querySelector(
-      ".canSymbol"
-    ).id = `buttonCardCan${cardIndex}`;
-    // const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
-
-    // card words
-    cardTemplate.content.querySelector("h2").textContent = popupTitle.value;
-    cardTemplate.content.querySelector("h2").id = `cardName${[cardIndex]}`;
-
-    // card heart
-    cardTemplate.content.querySelector(
-      ".heartSymbol"
-    ).id = `buttonHeart${cardIndex}`;
-    cardTemplate.content.querySelector(".heartSymbol").name = "buttonHeart";
-
-    const clone = document.importNode(cardTemplate.content, true);
-    document.querySelector("ul").prepend(clone);
-
-    const currentHeartElement = document.querySelector(
-      `#buttonHeart${cardIndex}`
-    );
-    const currentCanElement = document.querySelector(
-      `#buttonCardCan${cardIndex}`
-    );
-
-    const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
-    currentCanElement.addEventListener("click", removePic);
-    currentHeartElement.addEventListener("click", changeHeartColor);
-    currentCardPicture.addEventListener("click", zoomPic);
-
-    const containerElement = document.querySelector("#picture-popup-container");
-    closePopup(containerElement);
+    closeAddCardPopup();
+    return;
   }
 }
+
+//lines 193 to 244
+// //--------------------------------------------
+// // DRAW NEW CARD
+// //--------------------------------------------
+// cardIndex = cardIndex + 1;
+// const cardTemplate = document.querySelector("#myTemplate");
+
+// // li element
+// cardTemplate.content.querySelector("li").id = `listElement${cardIndex}`;
+// const listElement = cardTemplate.content.querySelector("li");
+
+// // card image
+// // const popupTitle = document.querySelector('#place');
+// cardTemplate.content.querySelector("img").src = ` ${popupLink.value} `;
+// cardTemplate.content.querySelector("img").alt = ` "${popupTitle.value}" `;
+// cardTemplate.content.querySelector("img").id = `cardImage${cardIndex}`;
+
+// // const cardPicture = cardTemplate.content.querySelector('img');
+
+// // card can
+// cardTemplate.content.querySelector(
+//   ".canSymbol"
+// ).id = `buttonCardCan${cardIndex}`;
+// // const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
+
+// // card words
+// cardTemplate.content.querySelector("h2").textContent = popupTitle.value;
+// cardTemplate.content.querySelector("h2").id = `cardName${[cardIndex]}`;
+
+// // card heart
+// cardTemplate.content.querySelector(
+//   ".heartSymbol"
+// ).id = `buttonHeart${cardIndex}`;
+// cardTemplate.content.querySelector(".heartSymbol").name = "buttonHeart";
+
+// const clone = document.importNode(cardTemplate.content, true);
+// document.querySelector("ul").prepend(clone);
+
+// const currentHeartElement = document.querySelector(
+//   `#buttonHeart${cardIndex}`
+// );
+// const currentCanElement = document.querySelector(
+//   `#buttonCardCan${cardIndex}`
+// );
+
+// const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
+// currentCanElement.addEventListener("click", removePic);
+// currentHeartElement.addEventListener("click", changeHeartColor);
+// currentCardPicture.addEventListener("click", zoomPic);
+
+// const containerElement = document.querySelector("#picture-popup-container");
+// closePopup(containerElement);
 
 //-----------------------------------------------
 //  FUNCTION 'closeAddCardPopup'
@@ -302,9 +318,15 @@ function createCard(card) {
   const imageElement = cardElement.querySelector(".card-grid__picture");
   imageElement.src = card.link;
   imageElement.alt = card.name;
+  const titleElement = cardElement.querySelector(".card-grid__text");
+  titleElement.innerText = card.name;
+  // titleElement.innerHTML = card.name;
+
+  console.log("4444 imageElement.src", imageElement.src);
+  console.log("4444 imageElement.alt", imageElement.alt);
 
   // card words
-  cardElement.querySelector("h2").textContent = card.name;
+  // cardElement.querySelector("h2").textContent = card.name;
 
   // add EventListener for buttonCardCan
   const currentCan = cardElement.querySelector(`.card-grid__garbage`);
@@ -318,9 +340,20 @@ function createCard(card) {
     zoomPic(card);
   });
 
-  document.querySelector(".card-grid__format").appendChild(cardElement);
+  // add EventListener for buttonCreateCard
+  // buttonCreateCard.addEventListener("click", () => {
+  //   console.log("card", card);
+  //   createButton(card);
+  // });
+  console.log("line 343");
 
-  return cardElement;
+  const container = document.querySelector(".card-grid__format");
+
+  renderCard(cardElement, container);
+  // document.querySelector(".card-grid__format").appendChild(cardElement);
+  console.log("line 345");
+
+  return;
 }
 
 function renderCard(card, container) {
