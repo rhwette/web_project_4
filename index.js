@@ -83,12 +83,6 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 }
 
 //-----------------------------------------------
-//-----------------------------------------------
-//  FUNCTION ARE COLLECTED BELOW
-//-----------------------------------------------
-//-----------------------------------------------
-
-//-----------------------------------------------
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 function openPopup(containerElement) {
@@ -101,17 +95,6 @@ function openPopup(containerElement) {
 function closePopup(containerElement) {
   containerElement.classList.remove("popup-container_visible");
 }
-
-//-----------------------------------------------
-//  FUNCTION 'removePic'
-//-----------------------------------------------
-// function removePic(evtRemove) {
-//   const canId = evtRemove.target.id;
-//   // const cardCanId = canId.charAt(canId.length-1);
-//   // const cardToDelete = document.querySelector(`#listElement${cardCanId}`);
-//   const cardToDelete = evtRemove.target.closest(".card-grid__style");
-//   cardToDelete.remove();
-// }
 
 //-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
@@ -206,59 +189,6 @@ function createButton(evtCreate) {
   }
 }
 
-//lines 193 to 244
-// //--------------------------------------------
-// // DRAW NEW CARD
-// //--------------------------------------------
-// cardIndex = cardIndex + 1;
-// const cardTemplate = document.querySelector("#myTemplate");
-
-// // li element
-// cardTemplate.content.querySelector("li").id = `listElement${cardIndex}`;
-// const listElement = cardTemplate.content.querySelector("li");
-
-// // card image
-// // const popupTitle = document.querySelector('#place');
-// cardTemplate.content.querySelector("img").src = ` ${popupLink.value} `;
-// cardTemplate.content.querySelector("img").alt = ` "${popupTitle.value}" `;
-// cardTemplate.content.querySelector("img").id = `cardImage${cardIndex}`;
-
-// // const cardPicture = cardTemplate.content.querySelector('img');
-
-// // card can
-// cardTemplate.content.querySelector(
-//   ".canSymbol"
-// ).id = `buttonCardCan${cardIndex}`;
-// // const buttonCardCan = cardTemplate.content.querySelector('.card-grid__garbage');
-
-// // card words
-// cardTemplate.content.querySelector("h2").textContent = popupTitle.value;
-// cardTemplate.content.querySelector("h2").id = `cardName${[cardIndex]}`;
-
-// // card heart
-// cardTemplate.content.querySelector(
-//   ".heartSymbol"
-// ).id = `buttonHeart${cardIndex}`;
-// cardTemplate.content.querySelector(".heartSymbol").name = "buttonHeart";
-
-// const clone = document.importNode(cardTemplate.content, true);
-// document.querySelector("ul").prepend(clone);
-
-// const currentHeartElement = document.querySelector(
-//   `#buttonHeart${cardIndex}`
-// );
-// const currentCanElement = document.querySelector(
-//   `#buttonCardCan${cardIndex}`
-// );
-
-// const currentCardPicture = document.querySelector(`#cardImage${cardIndex}`);
-// currentCanElement.addEventListener("click", removePic);
-// currentHeartElement.addEventListener("click", changeHeartColor);
-// currentCardPicture.addEventListener("click", zoomPic);
-
-// const containerElement = document.querySelector("#picture-popup-container");
-// closePopup(containerElement);
-
 //-----------------------------------------------
 //  FUNCTION 'closeAddCardPopup'
 //-----------------------------------------------
@@ -266,12 +196,6 @@ function closeAddCardPopup() {
   const containerElement = document.querySelector("#picture-popup-container");
   closePopup(containerElement);
 }
-
-//-----------------------------------------------
-//-----------------------------------------------
-//  EVENTLISTENERS ARE COLLECTED BELOW
-//-----------------------------------------------
-//-----------------------------------------------
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
@@ -359,12 +283,6 @@ function createCard(card) {
 function renderCard(card, container) {
   container.prepend(card);
 }
-
-//-----------------------------------------------
-//-----------------------------------------------
-//  TEMPLATES ARE COLLECTED BELOW
-//-----------------------------------------------
-//-----------------------------------------------
 
 //-----------------------------------------------
 //  LISTEN - click heart button
