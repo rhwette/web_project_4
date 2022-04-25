@@ -1,50 +1,51 @@
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
 //    buttonPencil = button to activate "Edit Profile" form
-//    buttonCreateCard = the 'Create' button on 'New Place' Form
-//    buttonSaveProfile = button to 'SAVE' "Edit Profile" form
-//    buttonCloseProfile = 'big X' on 'editProfile' form
-//    buttonCloseCard = 'big X' on 'New Place' form
+//    buttonPlus = button that activates form "New Place"
 //    buttonCardCan = garbage can icon
 //    buttonHeart = "like" icon
-//    buttonPlus = button that activates form "New Place"
-//    buttonCloseZoomPic = 'big X' on 'Zoom Pic'
-//    popupProfileName = the name entered on "Edit Profile" form
-//    popupProfileAboutMe = the occupation entered on "Edit Profile" form
-//    popupLink = card url
-//    popupTitle = card location
-//    profilePopup = "Edit Profile" popup
-//    picturePopup = "New Place" popup
+//    buttonEditProfileSave = button to 'SAVE' "Edit Profile" form
+//    buttonNewPlaceCreate = the 'Create' button on 'New Place' Form
+//    buttonEditProfileClose = 'big X' on 'editProfile' form
+//    buttonNewPlaceClose = 'big X' on 'New Place' form
+//    buttonZoomPicClose = 'big X' on 'Zoom Pic'
+//    formEditProfile = "Edit Profile" popup
+//    formEditProfileName = the name entered on "Edit Profile" form
+//    formEditProfileAboutMe = the occupation entered on "Edit Profile" form
+//    formNewPlace = "New Place" popup
+//    formNewPlaceLink = url for new card image
+//    formNewPlaceTitle = card location
 //    zoomPopup = "Zoom Pic" popup"
-//    imagePopup = "Zoom Pic" popup
 //    nameElement = starting name on page
 //    aboutMeElement = starting occupation on page
 //    zoomElement = card that is zoomed-up
-//    listElement = card object
 //    cardElement = clone of card object
+//    imageElement =image used in Zoom and in createCard
 
 const cardTemplate = document.querySelector("#myTemplate");
 const buttonPencil = document.querySelector(".intro__button-pencil");
-const buttonCreateCard = document.querySelector("#buttonCreateCard");
-const buttonSaveProfile = document.querySelector("#buttonSaveProfile");
-const buttonCloseProfile = document.querySelector("#buttonCloseProfile");
-const buttonCloseCard = document.querySelector("#buttonCloseCard");
+const buttonPlus = document.querySelector(".intro__button-plus");
 const buttonCardCan = cardTemplate.content.querySelector(".card-grid__garbage");
 const buttonHeart = cardTemplate.content.querySelector(".card-grid__icon");
-const buttonPlus = document.querySelector(".intro__button-plus");
-const buttonCloseZoomPic = document.querySelector("#buttonCloseZoomPic");
-const popupProfileName = document.querySelector('input[name ="name"]');
-const popupProfileAboutMe = document.querySelector('input[name = "aboutme"]');
-const popupLink = document.querySelector("#link");
-const popupTitle = document.querySelector("#place");
-const profilePopup = document.querySelector("#person-popup-container");
-const picturePopup = document.querySelector("#picture-popup-container");
+const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
+const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
+const buttonEditProfileClose = document.querySelector(
+  "#buttonEditProfileClose"
+);
+const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
+const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
+const formEditProfile = document.querySelector("#person-popup-container");
+const formEditProfileName = document.querySelector('input[name ="name"]');
+const formEditProfileAboutMe = document.querySelector(
+  'input[name = "aboutme"]'
+);
+const formNewPlace = document.querySelector("#picture-popup-container");
+const formNewPlaceLink = document.querySelector("#link");
+const formNewPlaceTitle = document.querySelector("#place");
 const zoomPopup = document.querySelector("#image-popup-container");
-const imagePopup = document.querySelector("#image-popup-container");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
-const listElement = cardTemplate.content.querySelector(".card-grid__style");
 const imageElement = cardTemplate.content.querySelector("img");
 
 //  ARRAY of OBJECTS containing image links
@@ -100,8 +101,8 @@ function closePopup(containerElement) {
 //  FUNCTION 'openProfilePopup'
 //-----------------------------------------------
 function openProfilePopup() {
-  popupProfileName.value = nameElement.textContent;
-  popupProfileAboutMe.value = aboutMeElement.textContent;
+  formEditProfileName.value = nameElement.textContent;
+  formEditProfileAboutMe.value = aboutMeElement.textContent;
   const containerElement = document.querySelector("#person-popup-container");
   openPopup(containerElement);
 }
@@ -111,21 +112,21 @@ function openProfilePopup() {
 //-----------------------------------------------
 function saveProfile(evtSave) {
   evtSave.preventDefault();
-  if (popupProfileName.value === "" || popupProfileAboutMe.value === "") {
+  if (formEditProfileName.value === "" || formEditProfileAboutMe.value === "") {
     alert("please fill out the form before submitting");
-  } else {
-    nameElement.textContent = popupProfileName.value;
-    aboutMeElement.textContent = popupProfileAboutMe.value;
-    const containerElement = document.querySelector("#person-popup-container");
-    closePopup(containerElement);
+    return;
   }
+  nameElement.textContent = formEditProfileName.value;
+  aboutMeElement.textContent = formEditProfileAboutMe.value;
+  const containerElement = document.querySelector("#person-popup-container");
+  closePopup(containerElement);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closeProfilePopup'
 //-----------------------------------------------
 function closeProfilePopup() {
-  closePopup(profilePopup);
+  closePopup(popupProfile);
 }
 
 //-----------------------------------------------
@@ -155,7 +156,7 @@ function closeZoom() {
 //-----------------------------------------------
 function openAddCardPopup(evtNewPlace) {
   document.querySelector("#newPlaceForm").reset();
-  const popupTitle = document.querySelector("#place");
+  const formNewPlaceTitle = document.querySelector("#place");
   const containerElement = document.querySelector("#picture-popup-container");
   openPopup(containerElement);
 }
@@ -165,13 +166,13 @@ function openAddCardPopup(evtNewPlace) {
 //-----------------------------------------------
 function createButton(evtCreate) {
   evtCreate.preventDefault();
-  const popupTitle = document.querySelector("#place");
-  if (popupTitle.value === "" || popupLink.value === "") {
+  const formNewPlaceTitle = document.querySelector("#place");
+  if (formNewPlaceTitle.value === "" || formNewPlaceLink.value === "") {
     alert("please fill out the form before submitting");
   } else {
     newCardInfo = {};
-    newCardInfo.name = popupTitle.value;
-    newCardInfo.link = popupLink.value;
+    newCardInfo.name = formNewPlaceTitle.value;
+    newCardInfo.link = formNewPlaceLink.value;
     const newCardToDraw = createCard(newCardInfo);
     closeAddCardPopup();
     return;
@@ -247,7 +248,7 @@ function changeHeartColor(heartToChange) {
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-buttonCloseZoomPic.addEventListener("click", closeZoom);
+buttonZoomPicClose.addEventListener("click", closeZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
@@ -255,14 +256,14 @@ buttonCloseZoomPic.addEventListener("click", closeZoom);
 buttonPencil.addEventListener("click", openProfilePopup);
 
 //-----------------------------------------------
-//  LISTEN for clicks on buttonSaveProfile
+//  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
-buttonSaveProfile.addEventListener("click", saveProfile);
+buttonEditProfileSave.addEventListener("click", saveProfile);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
-buttonCloseProfile.addEventListener("click", closeProfilePopup);
+buttonEditProfileClose.addEventListener("click", closeProfilePopup);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus
@@ -270,11 +271,11 @@ buttonCloseProfile.addEventListener("click", closeProfilePopup);
 buttonPlus.addEventListener("click", openAddCardPopup);
 
 //-----------------------------------------------
-//  LISTEN for clicks on buttonCreateCard
+//  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-buttonCreateCard.addEventListener("click", createButton);
+buttonNewPlaceCreate.addEventListener("click", createButton);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
-buttonCloseCard.addEventListener("click", closeAddCardPopup);
+buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
