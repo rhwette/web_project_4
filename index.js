@@ -34,12 +34,16 @@ const buttonEditProfileClose = document.querySelector(
 );
 const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
 const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
-const formEditProfile = document.querySelector("#person-popup-container");
+
+// const formEditProfile = document.querySelector("#person-popup-container");
+const formEditProfile = document.querySelector("#editProfileForm");
+
 const formEditProfileName = document.querySelector('input[name ="name"]');
 const formEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
-const formNewPlace = document.querySelector("#picture-popup-container");
+// const formNewPlace = document.querySelector("#picture-popup-container");
+const formNewPlace = document.querySelector("#newPlaceForm");
 const formNewPlaceLink = document.querySelector("#link");
 const formNewPlaceTitle = document.querySelector("#place");
 const zoomPopup = document.querySelector("#image-popup-container");
@@ -126,7 +130,8 @@ function saveProfile(evtSave) {
 //  FUNCTION 'closeProfilePopup'
 //-----------------------------------------------
 function closeProfilePopup() {
-  closePopup(popupProfile);
+  const containerElement = document.querySelector("#person-popup-container");
+  closePopup(containerElement);
 }
 
 //-----------------------------------------------
@@ -155,7 +160,7 @@ function closeZoom() {
 //  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------
 function openAddCardPopup(evtNewPlace) {
-  document.querySelector("#newPlaceForm").reset();
+  formNewPlace.reset();
   const formNewPlaceTitle = document.querySelector("#place");
   const containerElement = document.querySelector("#picture-popup-container");
   openPopup(containerElement);
@@ -258,7 +263,8 @@ buttonPencil.addEventListener("click", openProfilePopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
-buttonEditProfileSave.addEventListener("click", saveProfile);
+formEditProfile.addEventListener("submit", saveProfile);
+// buttonEditProfileSave.addEventListener("click", saveProfile);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
@@ -273,7 +279,8 @@ buttonPlus.addEventListener("click", openAddCardPopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-buttonNewPlaceCreate.addEventListener("click", createButton);
+// buttonNewPlaceCreate.addEventListener("click", createButton);
+formNewPlace.addEventListener("submit", createButton);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
