@@ -138,7 +138,7 @@ function zoomPic(cardInfo) {
 
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
-  zoomTextElement.innerText = cardInfo.name;
+  zoomTextElement.textContent = cardInfo.name;
 
   const containerElement = document.querySelector("#image-popup-container");
   openPopup(containerElement);
@@ -201,7 +201,7 @@ function createCard(card) {
   // define elements
   imageElement.src = card.link;
   imageElement.alt = card.name;
-  titleElement.innerText = card.name;
+  titleElement.textContent = card.name;
 
   // add EventListener for buttonCardCan
   canElement.addEventListener("click", () => {
