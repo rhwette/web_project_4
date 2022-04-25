@@ -222,8 +222,6 @@ function createCard(card) {
   const container = document.querySelector(".card-grid__format");
 
   renderCard(cardElement, container);
-
-  return;
 }
 
 //************************************* */
@@ -238,11 +236,12 @@ function renderCard(card, container) {
 //-----------------------------------------------
 
 function changeHeartColor(heartToChange) {
-  if (heartToChange.className === "card-grid__icon") {
-    heartToChange.classList.add("card-grid__icon_active");
-  } else {
-    heartToChange.classList.remove("card-grid__icon_active");
-  }
+  heartToChange.classList.toggle("card-grid__icon_active");
+  // if (heartToChange.className === "card-grid__icon") {
+  //   heartToChange.classList.add("card-grid__icon_active");
+  // } else {
+  //   heartToChange.classList.remove("card-grid__icon_active");
+  // }
 }
 
 //-----------------------------------------------
