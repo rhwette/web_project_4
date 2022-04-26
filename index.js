@@ -35,14 +35,12 @@ const buttonEditProfileClose = document.querySelector(
 const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
 const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
 
-// const formEditProfile = document.querySelector("#person-popup-container");
 const formEditProfile = document.querySelector("#editProfileForm");
 
 const formEditProfileName = document.querySelector('input[name ="name"]');
 const formEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
-// const formNewPlace = document.querySelector("#picture-popup-container");
 const formNewPlace = document.querySelector("#newPlaceForm");
 const formNewPlaceLink = document.querySelector("#link");
 const formNewPlaceTitle = document.querySelector("#place");
@@ -91,6 +89,7 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 function openPopup(containerElement) {
+  containerElement.classList.remove("popup-container_invisible");
   containerElement.classList.add("popup-container_visible");
 }
 
@@ -98,8 +97,8 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  // containerElement.classList.remove("popup-container_visible");
   containerElement.classList.add("popup-container_invisible");
+  containerElement.classList.remove("popup-container_visible");
 }
 
 //-----------------------------------------------
@@ -242,11 +241,6 @@ function renderCard(card, container) {
 
 function changeHeartColor(heartToChange) {
   heartToChange.classList.toggle("card-grid__icon_active");
-  // if (heartToChange.className === "card-grid__icon") {
-  //   heartToChange.classList.add("card-grid__icon_active");
-  // } else {
-  //   heartToChange.classList.remove("card-grid__icon_active");
-  // }
 }
 
 //-----------------------------------------------
