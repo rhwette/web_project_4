@@ -6,5 +6,7 @@
   color: #ffffff;
   position: absolute;
   top: 600px;
-  right: 500px;
+  right: 510px;
+  margin: 0;
+  padding-top: 10px;
 }

@@ -1,0 +1,17 @@
+.popup-container_invisible {
+  visibility: visible;
+  /* pointer-events: all; */
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 2s linear;
+  /* animation: closenicely 1s 1; */
+}
+
+/* @keyframes closenicely {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+} */

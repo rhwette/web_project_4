@@ -1,12 +1,18 @@
 .image-popup {
   position: relative;
+  /* background-color: green; */
   background-repeat: no-repeat;
   background-position: center;
   width: 600px;
   height: 600px;
+  border-radius: 10px;
   margin: 0;
   padding: 0;
   z-index: 10;
+  /* visibility: hidden;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: visibility 0.5s linear 3.5s opacity 0.5 linear; */
 }
 
 @media screen and (max-width: 700px) {

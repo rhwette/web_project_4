@@ -98,7 +98,8 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  containerElement.classList.remove("popup-container_visible");
+  // containerElement.classList.remove("popup-container_visible");
+  containerElement.classList.add("popup-container_invisible");
 }
 
 //-----------------------------------------------
@@ -141,11 +142,9 @@ function zoomPic(cardInfo) {
   const zoomTextElement = document.querySelector(
     ".card-grid__picture-zoom-text"
   );
-
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
-
   const containerElement = document.querySelector("#image-popup-container");
   openPopup(containerElement);
 }

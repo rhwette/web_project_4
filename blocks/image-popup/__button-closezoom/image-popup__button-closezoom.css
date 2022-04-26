@@ -1,17 +1,22 @@
 .image-popup__button-closezoom {
   position: absolute;
-  margin:0;
-  margin-left: 600px;
-  margin-top: -600px;
+  margin: 0;
+  top: -40px;
+  right: -40.5px;
   width: 40px;
   height: 40px;
-  background-color: rgb(0,0,0,0);
-  border:none;
+  background-color: rgb(0, 0, 0, 0);
+  border: none;
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-} 
+  /* visibility: hidden;
+  /* visibility: visible; */
+  /* pointer-events: none;
+  opacity: 0.5;
+  transition: visibility 1s linear 0.3s opacity 0.5 linear; */
+}
 
 .image-popup__button-closezoom:hover {
   opacity: 0.6;
@@ -41,4 +46,3 @@
     margin-left: 200px;
   }
 }
-

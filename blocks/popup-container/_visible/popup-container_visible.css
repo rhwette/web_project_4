@@ -1,3 +1,17 @@
-.popup-container_visible{
+.popup-container_visible {
   visibility: visible;
+  /* pointer-events: all; */
+  /* opacity: 1; */
+  /* transition: visibility 0s linear 0.5s, opacity 2s linear; */
+  animation: opennicely 2s;
+}
+
+@keyframes opennicely {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
