@@ -1,9 +1,9 @@
 .popup-container_visible {
   visibility: visible;
-  animation: opennicely 2s;
+  animation: openNicely 2s;
 }
 
-@keyframes opennicely {
+@keyframes openNicely {
   from {
     visibility: hidden;
     opacity: 0;
