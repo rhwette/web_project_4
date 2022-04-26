@@ -28,11 +28,9 @@
 @import url(../blocks/card-grid/card-grid.css);
 @import url(../blocks/card-grid/__format/card-grid__format.css);
 @import url(../blocks/card-grid/__info/card-grid__info.css);
-@import url(../blocks/card-grid/__picture/card-grid__picture.css);
-@import url(../blocks/card-grid/__picture-zoom/card-grid__picture-zoom.css);
-@import url(../blocks/card-grid/__picture-zoom-text/card-grid__picture-zoom-text.css);
 @import url(../blocks/card-grid/__style/card-grid__style.css);
 @import url(../blocks/card-grid/__text/card-grid__text.css);
+@import url(../blocks/card-grid/__picture/card-grid__picture.css);
 @import url(../blocks/card-grid/__icon/card-grid__icon.css);
 @import url(../blocks/card-grid/__icon/_active/card-grid__icon_active.css);
 @import url(../blocks/card-grid/__garbage/card-grid__garbage.css);
@@ -55,3 +53,5 @@
 /* IMAGE POPUP and ZOOM*/
 @import url(../blocks/image-popup/image-popup.css);
 @import url(../blocks/image-popup/__button-closezoom/image-popup__button-closezoom.css);
+@import url(../blocks/image-popup/__picture-zoom/image-popup__picture-zoom.css);
+@import url(../blocks/image-popup/__picture-text/image-popup__picture-text.css);

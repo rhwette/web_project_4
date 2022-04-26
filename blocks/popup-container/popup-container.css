@@ -13,7 +13,6 @@
   justify-content: center;
   box-sizing: border-box;
   visibility: hidden;
-  /* opacity: 0; */
 }
 
 @media screen and (max-width: 320px) {

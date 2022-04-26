@@ -6,7 +6,6 @@
 }
 
 .card-grid__picture:hover {
-  opacity: .5;
+  opacity: 0.5;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
-

@@ -138,9 +138,7 @@ function closeProfilePopup() {
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
 function zoomPic(cardInfo) {
-  const zoomTextElement = document.querySelector(
-    ".card-grid__picture-zoom-text"
-  );
+  const zoomTextElement = document.querySelector(".image-popup__picture-text");
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
