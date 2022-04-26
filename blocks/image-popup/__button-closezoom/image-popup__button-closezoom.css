@@ -11,11 +11,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* visibility: hidden;
-  /* visibility: visible; */
-  /* pointer-events: none;
-  opacity: 0.5;
-  transition: visibility 1s linear 0.3s opacity 0.5 linear; */
 }
 
 .image-popup__button-closezoom:hover {
