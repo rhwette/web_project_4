@@ -2,7 +2,7 @@
 // associate Buttons, Popups and Elements with classes or ID's
 //    buttonPencil = button to activate "Edit Profile" form
 //    buttonPlus = button that activates form "New Place"
-//    buttonCardCan = garbage can icon
+//    buttonCan = garbage can icon
 //    buttonHeart = "like" icon
 //    buttonEditProfileSave = button to 'SAVE' "Edit Profile" form
 //    buttonNewPlaceCreate = the 'Create' button on 'New Place' Form
@@ -25,8 +25,10 @@
 const cardTemplate = document.querySelector("#myTemplate");
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-const buttonCardCan = cardTemplate.content.querySelector(".card-grid__garbage");
-const buttonHeart = cardTemplate.content.querySelector(".card-grid__icon");
+// const buttonCan = cardTemplate.content.querySelector(".card-grid__garbage");
+//  defined in createCard function
+// const buttonHeart = cardTemplate.content.querySelector(".card-grid__icon");
+//  defined in createCard function
 const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
 const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
 const buttonEditProfileClose = document.querySelector(
@@ -197,23 +199,23 @@ function createCard(card) {
   // set const's
   const imageElement = cardElement.querySelector(".card-grid__picture");
   const titleElement = cardElement.querySelector(".card-grid__text");
-  const heartElement = cardElement.querySelector(".card-grid__icon");
-  const canElement = cardElement.querySelector(".card-grid__garbage");
+  const buttonHeart = cardElement.querySelector(".card-grid__icon");
+  const buttonCan = cardElement.querySelector(".card-grid__garbage");
 
   // define elements
   imageElement.src = card.link;
   imageElement.alt = card.name;
   titleElement.textContent = card.name;
 
-  // add EventListener for buttonCardCan
-  canElement.addEventListener("click", () => {
+  // add EventListener for buttonCan
+  buttonCan.addEventListener("click", () => {
     cardElement.remove();
   });
 
-  // add EventListener for heartbutton
-  heartElement.addEventListener("click", (evt) => {
+  // add EventListener for buttonHeart
+  buttonHeart.addEventListener("click", (evt) => {
     evt.preventDefault();
-    changeHeartColor(heartElement);
+    changeHeartColor(buttonHeart);
   });
 
   // add EventListener for zoomPic
