@@ -1,5 +1,5 @@
 .popup-container_invisible {
-  animation: closeNicely 3s;
+  animation: closeNicely 1s;
 }
 
 @keyframes closeNicely {
