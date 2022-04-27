@@ -1,16 +1,5 @@
 .popup-container_visible {
   visibility: visible;
-  animation: openNicely 1s;
-}
-
-@keyframes openNicely {
-  from {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
+  opacity: 1;
+  transition-delay: 0s;
 }

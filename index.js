@@ -91,16 +91,21 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 function openPopup(containerElement) {
-  containerElement.classList.remove("popup-container_invisible");
+  console.log("CCCC enter function openPopup");
+  console.log("DDDD containerElement", containerElement);
+  // containerElement.classList.remove("popup-container_invisible");
   containerElement.classList.add("popup-container_visible");
+  console.log("EEEE containerElement.classList", containerElement.classList);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  containerElement.classList.add("popup-container_invisible");
+  console.log("HHHH containerElement.classList", containerElement.classList);
+  // containerElement.classList.add("popup-container_invisible");
   containerElement.classList.remove("popup-container_visible");
+  console.log("IIII containerElement.classList", containerElement.classList);
 }
 
 //-----------------------------------------------
@@ -158,9 +163,11 @@ function closeZoom() {
 //  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------
 function openAddCardPopup(evtNewPlace) {
+  console.log("AAAA plus was clicked");
   formNewPlace.reset();
   const formNewPlaceTitle = document.querySelector("#place");
   const containerElement = document.querySelector("#picture-popup-container");
+  console.log("BBBB containerElement", containerElement);
   openPopup(containerElement);
 }
 
@@ -187,6 +194,9 @@ function createButton(evtCreate) {
 //-----------------------------------------------
 function closeAddCardPopup() {
   const containerElement = document.querySelector("#picture-popup-container");
+  console.log("GGGG containerElement", containerElement);
+  console.log("FFFF enter function closeAddCardPopup");
+
   closePopup(containerElement);
 }
 
