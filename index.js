@@ -123,10 +123,6 @@ function openProfilePopup() {
 //-----------------------------------------------
 function saveProfile(evtSave) {
   evtSave.preventDefault();
-  if (formEditProfileName.value === "" || formEditProfileAboutMe.value === "") {
-    alert("please fill out the form before submitting");
-    return;
-  }
   nameElement.textContent = formEditProfileName.value;
   aboutMeElement.textContent = formEditProfileAboutMe.value;
   const containerElement = document.querySelector("#person-popup-container");
@@ -177,16 +173,12 @@ function openAddCardPopup(evtNewPlace) {
 function createButton(evtCreate) {
   evtCreate.preventDefault();
   const formNewPlaceTitle = document.querySelector("#place");
-  if (formNewPlaceTitle.value === "" || formNewPlaceLink.value === "") {
-    alert("please fill out the form before submitting");
-  } else {
-    newCardInfo = {};
-    newCardInfo.name = formNewPlaceTitle.value;
-    newCardInfo.link = formNewPlaceLink.value;
-    const newCardToDraw = createCard(newCardInfo);
-    closeAddCardPopup();
-    return;
-  }
+  newCardInfo = {};
+  newCardInfo.name = formNewPlaceTitle.value;
+  newCardInfo.link = formNewPlaceLink.value;
+  const newCardToDraw = createCard(newCardInfo);
+  closeAddCardPopup();
+  return;
 }
 
 //-----------------------------------------------
