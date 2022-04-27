@@ -21,14 +21,13 @@
 //    zoomElement = card that is zoomed-up
 //    cardElement = clone of card object
 //    imageElement =image used in Zoom and in createCard
+//    containerElementPerson = containerElement for "Edit Profile"
+//    containerElementPicture = containerElement for "New Place"
+//    containerElementImage = containerElement for "Zoom Pic"
 
 const cardTemplate = document.querySelector("#myTemplate");
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-// const buttonCan = cardTemplate.content.querySelector(".card-grid__garbage");
-//  defined in createCard function
-// const buttonHeart = cardTemplate.content.querySelector(".card-grid__icon");
-//  defined in createCard function
 const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
 const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
 const buttonEditProfileClose = document.querySelector(
@@ -51,6 +50,13 @@ const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
 const imageElement = cardTemplate.content.querySelector("img");
+const containerElementPerson = document.querySelector(
+  "#person-popup-container"
+);
+const containerElementPicture = document.querySelector(
+  "#picture-popup-container"
+);
+const containerElementImage = document.querySelector("#image-popup-container");
 
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
@@ -91,21 +97,14 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 function openPopup(containerElement) {
-  console.log("CCCC enter function openPopup");
-  console.log("DDDD containerElement", containerElement);
-  // containerElement.classList.remove("popup-container_invisible");
   containerElement.classList.add("popup-container_visible");
-  console.log("EEEE containerElement.classList", containerElement.classList);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  console.log("HHHH containerElement.classList", containerElement.classList);
-  // containerElement.classList.add("popup-container_invisible");
   containerElement.classList.remove("popup-container_visible");
-  console.log("IIII containerElement.classList", containerElement.classList);
 }
 
 //-----------------------------------------------
@@ -114,8 +113,7 @@ function closePopup(containerElement) {
 function openProfilePopup() {
   formEditProfileName.value = nameElement.textContent;
   formEditProfileAboutMe.value = aboutMeElement.textContent;
-  const containerElement = document.querySelector("#person-popup-container");
-  openPopup(containerElement);
+  openPopup(containerElementPerson);
 }
 
 //-----------------------------------------------
@@ -125,16 +123,14 @@ function saveProfile(evtSave) {
   evtSave.preventDefault();
   nameElement.textContent = formEditProfileName.value;
   aboutMeElement.textContent = formEditProfileAboutMe.value;
-  const containerElement = document.querySelector("#person-popup-container");
-  closePopup(containerElement);
+  closePopup(containerElementPerson);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closeProfilePopup'
 //-----------------------------------------------
 function closeProfilePopup() {
-  const containerElement = document.querySelector("#person-popup-container");
-  closePopup(containerElement);
+  closePopup(containerElementPerson);
 }
 
 //-----------------------------------------------
@@ -145,8 +141,7 @@ function zoomPic(cardInfo) {
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
-  const containerElement = document.querySelector("#image-popup-container");
-  openPopup(containerElement);
+  openPopup(containerElementImage);
 }
 //-----------------------------------------------
 //  FUNCTION 'closeZoomPopup'
@@ -159,12 +154,8 @@ function closeZoom() {
 //  FUNCTION 'openAddCardPopup'
 //-----------------------------------------------
 function openAddCardPopup(evtNewPlace) {
-  console.log("AAAA plus was clicked");
   formNewPlace.reset();
-  const formNewPlaceTitle = document.querySelector("#place");
-  const containerElement = document.querySelector("#picture-popup-container");
-  console.log("BBBB containerElement", containerElement);
-  openPopup(containerElement);
+  openPopup(containerElementPicture);
 }
 
 //-----------------------------------------------
@@ -172,7 +163,6 @@ function openAddCardPopup(evtNewPlace) {
 //-----------------------------------------------
 function createButton(evtCreate) {
   evtCreate.preventDefault();
-  const formNewPlaceTitle = document.querySelector("#place");
   newCardInfo = {};
   newCardInfo.name = formNewPlaceTitle.value;
   newCardInfo.link = formNewPlaceLink.value;
@@ -185,11 +175,7 @@ function createButton(evtCreate) {
 //  FUNCTION 'closeAddCardPopup'
 //-----------------------------------------------
 function closeAddCardPopup() {
-  const containerElement = document.querySelector("#picture-popup-container");
-  console.log("GGGG containerElement", containerElement);
-  console.log("FFFF enter function closeAddCardPopup");
-
-  closePopup(containerElement);
+  closePopup(containerElementPicture);
 }
 
 //************************************* */
@@ -259,7 +245,6 @@ buttonPencil.addEventListener("click", openProfilePopup);
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
 formEditProfile.addEventListener("submit", saveProfile);
-// buttonEditProfileSave.addEventListener("click", saveProfile);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
@@ -274,7 +259,6 @@ buttonPlus.addEventListener("click", openAddCardPopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-// buttonNewPlaceCreate.addEventListener("click", createButton);
 formNewPlace.addEventListener("submit", createButton);
 
 //-----------------------------------------------
