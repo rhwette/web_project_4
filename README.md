@@ -25,4 +25,4 @@
 - add hyperlinks to photos to describe locations
 - privacy statement and "contact us" button in footer
 - link to github page....
-  https://github.com/rhwette/web_project_4.git
+  https://rhwette.github.io/web_project_4/
