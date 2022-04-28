@@ -57,6 +57,7 @@ const containerElementPicture = document.querySelector(
   "#picture-popup-container"
 );
 const containerElementImage = document.querySelector("#image-popup-container");
+const containerForImages = document.querySelector(".card-grid__format");
 
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
@@ -87,10 +88,13 @@ const initialCards = [
 ];
 
 //-----------------------------------------------
-//  DRAW INITIAL CARDS using createCard function
+//  Render INITIAL CARDS using renderCard function
 //-----------------------------------------------
 for (let i = initialCards.length - 1; i >= 0; i--) {
-  createCard(initialCards[i]);
+  console.log("AAAA initialCards[i]", initialCards[i]);
+  const currentCard = initialCards[i];
+  // createCard(currentCard, containerForImage);
+  renderCard(currentCard, containerForImages);
 }
 
 //-----------------------------------------------
@@ -108,11 +112,21 @@ function closePopup(containerElement) {
 }
 
 //-----------------------------------------------
+//  FUNCTION 'fillProfileForm'
+//-----------------------------------------------
+function fillProfileForm() {
+  formEditProfileName.value = nameElement.textContent;
+  formEditProfileAboutMe.value = aboutMeElement.textContent;
+  // openProfilePopup();
+}
+
+//-----------------------------------------------
 //  FUNCTION 'openProfilePopup'
 //-----------------------------------------------
 function openProfilePopup() {
-  formEditProfileName.value = nameElement.textContent;
-  formEditProfileAboutMe.value = aboutMeElement.textContent;
+  fillProfileForm();
+  // formEditProfileName.value = nameElement.textContent;
+  // formEditProfileAboutMe.value = aboutMeElement.textContent;
   openPopup(containerElementPerson);
 }
 
@@ -166,7 +180,9 @@ function createButton(evtCreate) {
   newCardInfo = {};
   newCardInfo.name = formNewPlaceTitle.value;
   newCardInfo.link = formNewPlaceLink.value;
-  const newCardToDraw = createCard(newCardInfo);
+  // const newCardToDraw = createCard(newCardInfo);
+  console.log("XXXX newCardInfo", newCardInfo);
+  renderCard(newCardInfo, containerForImages);
   closeAddCardPopup();
   return;
 }
@@ -179,10 +195,12 @@ function closeAddCardPopup() {
 }
 
 //************************************* */
-//  FUNCTION - createCard
+//  FUNCTION - createCard - create cards and assign event listeners
 //************************************* */
 function createCard(card) {
+  console.log("BBBB card", card);
   const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
+  console.log("XXXX cardElement", cardElement);
 
   // set const's
   const imageElement = cardElement.querySelector(".card-grid__picture");
@@ -211,16 +229,26 @@ function createCard(card) {
     zoomPic(card);
   });
 
-  const container = document.querySelector(".card-grid__format");
+  console.log("CCCC cardElement", cardElement);
+  console.log("cccc cardElement.classList", cardElement.classList);
+  console.log("DDDD card", card);
+  // const containerForImages = document.querySelector(".card-grid__format");
+  console.log("EEEE container", containerForImages);
 
-  renderCard(cardElement, container);
+  // renderCard(cardElement, container);
+  return cardElement;
 }
 
 //************************************* */
 //  FUNCTION - render Card
 //************************************* */
 function renderCard(card, container) {
-  container.prepend(card);
+  console.log("FFFF card", card);
+  console.log("GGGG container", container);
+  const cardElement = createCard(card);
+  // console.log("HHHH cardElement", cardElement);
+  console.log("IIII card", card);
+  container.prepend(cardElement);
 }
 
 //-----------------------------------------------
