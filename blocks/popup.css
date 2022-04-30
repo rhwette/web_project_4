@@ -170,7 +170,7 @@
   }
 }
 
-.popup__text {
+.popup__input {
   width: 100%;
   max-width: 358px;
   margin-top: 29.74px;
@@ -186,13 +186,13 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popup__text {
+  .popup__input {
     max-width: 238px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup__text {
+  .popup__input {
     margin: 0;
     margin-bottom: 0;
     margin-left: 0;
