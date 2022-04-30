@@ -1,0 +1,56 @@
+/* VENDOR */
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+/* CONTENT */
+@import url(../blocks/content/content.css);
+
+/* PAGE*/
+@import url(../blocks/page/page.css);
+
+/* HEADER*/
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+/* OVERFLOW */
+@import url(../blocks/block/block.css);
+
+/* INTRO*/
+@import url(../blocks/intro/intro.css);
+@import url(../blocks/intro/__image/intro__image.css);
+@import url(../blocks/intro/__description/intro__description.css);
+@import url(../blocks/intro/__name/intro__name.css);
+@import url(../blocks/intro/__occupation/intro__occupation.css);
+@import url(../blocks/intro/__button-pencil/intro__button-pencil.css);
+@import url(../blocks/intro/__button-plus/intro__button-plus.css);
+
+/* CARD-GRID*/
+@import url(../blocks/card-grid/card-grid.css);
+@import url(../blocks/card-grid/__format/card-grid__format.css);
+@import url(../blocks/card-grid/__info/card-grid__info.css);
+@import url(../blocks/card-grid/__style/card-grid__style.css);
+@import url(../blocks/card-grid/__text/card-grid__text.css);
+@import url(../blocks/card-grid/__picture/card-grid__picture.css);
+@import url(../blocks/card-grid/__icon/card-grid__icon.css);
+@import url(../blocks/card-grid/__icon/_active/card-grid__icon_active.css);
+@import url(../blocks/card-grid/__garbage/card-grid__garbage.css);
+
+/* FOOTER*/
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+
+/* POPUP*/
+@import url(../blocks/popup-container/popup-container.css);
+@import url(../blocks/popup-container/_visible/popup-container_visible.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__button/popup__button.css);
+@import url(../blocks/popup/__button-close/popup__button-close.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__text/popup__text.css);
+
+/* IMAGE POPUP and ZOOM*/
+@import url(../blocks/image-popup/image-popup.css);
+@import url(../blocks/image-popup/__button-closezoom/image-popup__button-closezoom.css);
+@import url(../blocks/image-popup/__picture-zoom/image-popup__picture-zoom.css);
+@import url(../blocks/image-popup/__picture-text/image-popup__picture-text.css);

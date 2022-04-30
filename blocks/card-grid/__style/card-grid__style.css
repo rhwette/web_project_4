@@ -1,0 +1,13 @@
+.card-grid__style {
+  list-style: none;
+  width: 282px;
+  display:flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 650px) {
+  .card-grid__style {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

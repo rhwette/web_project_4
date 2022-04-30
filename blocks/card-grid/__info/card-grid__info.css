@@ -1,0 +1,9 @@
+.card-grid__info{
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}

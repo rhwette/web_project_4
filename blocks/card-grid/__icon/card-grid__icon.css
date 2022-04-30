@@ -1,0 +1,17 @@
+.card-grid__icon {
+  width: 21px;
+  height: 19px;
+  margin-right: 15px;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../images/heart.svg");
+}
+
+.card-grid__icon:hover {
+  opacity: 0.5;
+  cursor: url("../../../images/pointer.svg") 10 0, auto;
+}

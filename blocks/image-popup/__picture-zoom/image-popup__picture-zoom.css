@@ -1,0 +1,32 @@
+.image-popup__picture-zoom {
+  width: 600px;
+  height: 600px;
+}
+
+@media screen and (max-width: 700px) {
+  .image-popup__picture-zoom {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image-popup__picture-zoom {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image-popup__picture-zoom {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-popup__picture-zoom {
+    width: 200px;
+    height: 200px;
+  }
+}
