@@ -273,5 +273,3 @@ formNewPlace.addEventListener("submit", createButton);
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
 buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
-
-console.log(document.forms[0][0].validity.valid);

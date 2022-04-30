@@ -51,8 +51,10 @@
         <button type="button" class="popup__button-close" id="buttonEditProfileClose"><img src="./images/close.svg"
             alt="close symbol" /></button>
         <form name="form" class="popup__form" id="editProfileForm">
-          <input name="name" class="popup__text" type="text" id="name" required />
-          <input name="aboutme" class="popup__text" type="text" id="aboutme" required />
+          <input name="name" class="popup__text" type="text" id="name" required minlength="2" maxlength="40" />
+          <span class="popup__input_error"></span>
+          <input name="aboutme" class="popup__text" type="text" id="aboutme" required minlength="2" maxlength="200" />
+          <span class="popup__input_error"></span>
           <button type="submit" class="popup__button" id="buttonEditProfileSave">Save</button>
         </form>
       </div>
@@ -65,7 +67,8 @@
         <button type="button" class="popup__button-close" id="buttonNewPlaceClose"><img src="./images/close.svg"
             alt="close symbol" /></button>
         <form name="form" class="popup__form" id="newPlaceForm">
-          <input name="place" placeholder="Title" class="popup__text" type="text" id="place" required />
+          <input name="place" placeholder="Title" class="popup__text" type="text" id="place" required minlength="1"
+            maxlength="30" />
           <input name="link" placeholder="Image link" class="popup__text" type="text" id="link" required />
           <button type="submit" class="popup__button" id="buttonNewPlaceCreate">Create</button>
         </form>
