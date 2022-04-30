@@ -91,9 +91,7 @@ const initialCards = [
 //  Render INITIAL CARDS using renderCard function
 //-----------------------------------------------
 for (let i = initialCards.length - 1; i >= 0; i--) {
-  console.log("AAAA initialCards[i]", initialCards[i]);
   const currentCard = initialCards[i];
-  // createCard(currentCard, containerForImage);
   renderCard(currentCard, containerForImages);
 }
 
@@ -117,7 +115,6 @@ function closePopup(containerElement) {
 function fillProfileForm() {
   formEditProfileName.value = nameElement.textContent;
   formEditProfileAboutMe.value = aboutMeElement.textContent;
-  // openProfilePopup();
 }
 
 //-----------------------------------------------
@@ -125,8 +122,6 @@ function fillProfileForm() {
 //-----------------------------------------------
 function openProfilePopup() {
   fillProfileForm();
-  // formEditProfileName.value = nameElement.textContent;
-  // formEditProfileAboutMe.value = aboutMeElement.textContent;
   openPopup(containerElementPerson);
 }
 
@@ -180,8 +175,6 @@ function createButton(evtCreate) {
   newCardInfo = {};
   newCardInfo.name = formNewPlaceTitle.value;
   newCardInfo.link = formNewPlaceLink.value;
-  // const newCardToDraw = createCard(newCardInfo);
-  console.log("XXXX newCardInfo", newCardInfo);
   renderCard(newCardInfo, containerForImages);
   closeAddCardPopup();
   return;
@@ -198,9 +191,7 @@ function closeAddCardPopup() {
 //  FUNCTION - createCard - create cards and assign event listeners
 //************************************* */
 function createCard(card) {
-  console.log("BBBB card", card);
   const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
-  console.log("XXXX cardElement", cardElement);
 
   // set const's
   const imageElement = cardElement.querySelector(".card-grid__picture");
@@ -229,13 +220,6 @@ function createCard(card) {
     zoomPic(card);
   });
 
-  console.log("CCCC cardElement", cardElement);
-  console.log("cccc cardElement.classList", cardElement.classList);
-  console.log("DDDD card", card);
-  // const containerForImages = document.querySelector(".card-grid__format");
-  console.log("EEEE container", containerForImages);
-
-  // renderCard(cardElement, container);
   return cardElement;
 }
 
@@ -243,11 +227,7 @@ function createCard(card) {
 //  FUNCTION - render Card
 //************************************* */
 function renderCard(card, container) {
-  console.log("FFFF card", card);
-  console.log("GGGG container", container);
   const cardElement = createCard(card);
-  // console.log("HHHH cardElement", cardElement);
-  console.log("IIII card", card);
   container.prepend(cardElement);
 }
 
