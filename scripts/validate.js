@@ -52,8 +52,8 @@ const enableValidation = (settings) => {
 enableValidation({
   formSelector: ".popup__form",
   //need to update the classes for inputs
-  // inputSelector: ".popup__input",
-  inputSelector: ".popup__text",
+  inputSelector: ".popup__input",
+  // inputSelector: ".popup__text",
   submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",
