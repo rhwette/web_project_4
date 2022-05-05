@@ -57,6 +57,10 @@
   padding: 0;
 }
 
+.popup__button_disabled {
+  background-color: purple;
+}
+
 .popup__button:hover {
   opacity: 0.8;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
@@ -171,7 +175,8 @@
 }
 
 .popup__input {
-  width: 100%;
+  /* width: 100%; */
+  width: 350px;
   max-width: 358px;
   margin-top: 29.74px;
   padding-bottom: 10px;
@@ -179,10 +184,16 @@
   border-left: hidden;
   border-right: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  /* border-bottom: red 2px solid; */
   outline: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: black;
+}
+
+.popup__input:hover {
+  border: 2px solid rgb(156, 156, 250);
 }
 
 @media screen and (max-width: 500px) {
@@ -201,6 +212,61 @@
     padding-bottom: 9px;
   }
 }
+
+.popup__input_type_error {
+  border: 1px solid red;
+  min-height: 15px;
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+.popup__input_type-name {
+  font-size: 12px;
+  line-height: 15px;
+  border-bottom-color: grey;
+  width: 350px;
+  /* outline: 1px solid blue; */
+  /* border: 1px solid blue; */
+}
+
+/* .popup__input_type-name:hover {
+  border: 2px solid rgb(156, 156, 250);
+} */
+
+.popup__input_type-description {
+  font-size: 12px;
+  line-height: 15px;
+  border-bottom-color: grey;
+  width: 350px;
+}
+
+/* .popup__input_type-description:hover {
+  border: 2px solid rgb(156, 156, 250);
+} */
+
+/* .popup__input-error_active {
+  font-size: 12px;
+  line-height: 15px;
+  color: purple;
+  border: 1px red dotted;
+} */
+
+/* .popup__input_has-error {
+  font-size: 12px;
+  line-height: 15px;
+  border-bottom-color: red;
+} */
+
+/* .popup__error-text {
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  visibility: hidden;
+} */
+
+/* .popup__error-text_visible {
+  visibility: visible;
+} */
 
 .popup__title {
   font-size: 24px;
@@ -236,4 +302,32 @@
     margin-right: 22px;
     margin-top: 25px;
   }
+}
+
+/* .popup__error {
+  outline: 2px red solid;
+} */
+
+/* .popup__error-text {
+  font-size: 12px;
+  line-height: 15px;
+  color: purple;
+  /* visibility: hidden;
+} */
+
+.popup__error_visible {
+  /* display: block; */
+  white-space: normal;
+  /* width: 300px; */
+  /* overflow-wrap: normal; */
+  /* word-wrap: break-word; */
+  /* display: block; */
+  /* width: fit-content; */
+  /* outline: 2px red solid; */
+  line-height: 15px;
+  font-size: 14px;
+  color: red;
+
+  /* border-top: 3px red solid; */
+  /* border-top-color: green; */
 }
