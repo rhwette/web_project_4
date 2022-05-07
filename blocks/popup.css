@@ -190,6 +190,7 @@
   white-space: nowrap;
   overflow: hidden;
   color: black;
+  min-height: 15px;
 }
 
 .popup__input:hover {
@@ -214,15 +215,24 @@
 }
 
 .popup__input_type_error {
-  border: 1px solid red;
-  min-height: 15px;
-  color: red;
-  border-bottom: 1px solid red;
+  /* border: 1px solid #ff0000; */
+  /* border-bottom-color: red; */
+  min-height: 10px;
+  color: #ff0000;
+  margin-top: 15px;
+}
+
+.popup__input_type_error:hover {
+  border: 1px solid #ff0000;
+  border-bottom-color: #ff0000;
+  min-height: 10px;
+  /* color: #ff0000; */
 }
 
 .popup__input_type-name {
   font-size: 12px;
   line-height: 15px;
+  /* border-bottom-color: red; */
   border-bottom-color: grey;
   width: 350px;
   /* outline: 1px solid blue; */

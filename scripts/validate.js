@@ -1,9 +1,7 @@
 const showInputError = (input, formEl, { errorClass, inputErrorClass }) => {
+  // alternative syntax
   // const {errorClass, inputErrorClass} = settings;
   console.log("4444a entering showInputError");
-  // const id = `#${input.id}-error`;
-  // console.log("4444b id=", id);
-  // const errorSpan = formEl.querySelector(id);
   const errorSpan = formEl.querySelector("#" + input.id + "-error");
   console.log("4444c errorSpan=", errorSpan);
   // add error message / class

@@ -43,8 +43,8 @@ const formEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 const formNewPlace = document.querySelector("#newPlaceForm");
-const formNewPlaceLink = document.querySelector("#link");
-const formNewPlaceTitle = document.querySelector("#place");
+const formNewPlaceLink = document.querySelector("#link-input");
+const formNewPlaceTitle = document.querySelector("#place-input");
 const zoomPopup = document.querySelector("#image-popup-container");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
@@ -243,6 +243,11 @@ function changeHeartColor(heartToChange) {
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
 buttonZoomPicClose.addEventListener("click", closeZoom);
+
+//-----------------------------------------------
+//  LISTEN - click on #image-popup-container
+//-----------------------------------------------
+containerElementImage.addEventListener("click", closeZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
