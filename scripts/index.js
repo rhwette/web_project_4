@@ -278,3 +278,12 @@ formNewPlace.addEventListener("submit", createButton);
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
 buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
+
+//-----------------------------------------------
+//  LISTEN - escape key press....close zoom pic
+//-----------------------------------------------
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeZoom();
+  }
+});
