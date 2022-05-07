@@ -245,11 +245,6 @@ function changeHeartColor(heartToChange) {
 buttonZoomPicClose.addEventListener("click", closeZoom);
 
 //-----------------------------------------------
-//  LISTEN - click on #image-popup-container
-//-----------------------------------------------
-containerElementImage.addEventListener("click", closeZoom);
-
-//-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
 //-----------------------------------------------
 buttonPencil.addEventListener("click", openProfilePopup);
@@ -287,3 +282,10 @@ document.addEventListener("keydown", function (event) {
     closeZoom();
   }
 });
+
+//-----------------------------------------------
+//  LISTEN - click on #image-popup-container
+//-----------------------------------------------
+containerElementImage.addEventListener("click", closeZoom);
+containerElementPicture.addEventListener("click", closeAddCardPopup);
+containerElementPerson.addEventListener("click", closeProfilePopup);
