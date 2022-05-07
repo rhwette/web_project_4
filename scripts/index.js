@@ -280,6 +280,8 @@ buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     closeZoom();
+    closeAddCardPopup();
+    closeProfilePopup();
   }
 });
 
