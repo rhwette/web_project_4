@@ -106,8 +106,6 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  // console.log("containerEl", containerElement);
-  // console.log("containerEl.class", containerElement.classList);
   containerElement.classList.remove("popup-container_visible");
 }
 
@@ -291,34 +289,10 @@ document.addEventListener("keydown", function (event) {
 });
 
 //-----------------------------------------------
-//  LISTEN - click on #image-popup-container
-//-----------------------------------------------
-//note: this works fine to close the forms and the zoom
-//   when clicking outside the forms or the zoom
-//   but also closes when clicking inside....
-//   that's no good since we need to interact with the forms
-//   and any clicking inside the form would cause it to close
-// containerElementImage.addEventListener("click", closeZoom);
-// containerElementPicture.addEventListener("click", closeAddCardPopup);
-// containerElementPerson.addEventListener("click", closeProfilePopup);
-
-//-----------------------------------------------
 //  LISTEN - close the forms or the zoom when clicking outside of them
 //-----------------------------------------------
-//  first need to be sure each form and the zoom image have an ID
-//    for Edit Profile form, the id= editProfileForm
-//    for New Place form, the id= newPlaceForm
-//    for the zoom pic 'form', the id = imageZoomForm (this is on the div)
-//
-//  define an array containing the three id's
-// const boxArray = ["editProfileForm", "newPlaceForm"];
 
 // assign containerArray to the containers
-// const containerArray = [
-//   containerElementPerson,
-//   containerElementPicture,
-//   containerElementImage,
-// ];
 const containerArray = [
   containerElementPerson,
   containerElementPicture,
