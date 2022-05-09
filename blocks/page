@@ -6,13 +6,13 @@
   background-color: #000000;
 }
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 980px) {
   .page {
     max-width: 781px;
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
   .page {
     max-width: 320px;
   }
