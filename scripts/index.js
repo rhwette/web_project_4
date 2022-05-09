@@ -277,10 +277,12 @@ buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
 //  LISTEN - escape key press....close zoom pic
 //-----------------------------------------------
 document.addEventListener("keydown", function (event) {
+  const openedPopup = document.querySelector(".popup-container-visible");
   if (event.key === "Escape") {
-    closeZoom();
-    closeAddCardPopup();
-    closeProfilePopup();
+    closePopup(openedPopup);
+    // closeZoom();
+    // closeAddCardPopup();
+    // closeProfilePopup();
     document.removeEventListener("keydown", closeZoom);
     document.removeEventListener("keydown", closeAddCardPopup);
     document.removeEventListener("keydown", closeProfilePopup);
