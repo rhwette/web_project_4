@@ -311,7 +311,9 @@ document.addEventListener("mousedown", function (event) {
       event.target.id != "name-input" &&
       event.target.id != "aboutme-input" &&
       event.target.id != "place-input" &&
-      event.target.id != "link-input"
+      event.target.id != "link-input" &&
+      event.target.id != "buttonEditProfileSave" &&
+      event.target.id != "buttonNewPlaceCreate"
     ) {
       closePopup(containerElement);
     }
