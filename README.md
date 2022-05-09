@@ -10,6 +10,7 @@
 
 ### Technologies
 
+- utilizes additional listeners
 - utilizes Javascript to add interactivity to website
 - utilizes Javascript to add form validation
 - utilizes Templates
