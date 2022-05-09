@@ -3,7 +3,7 @@
 @import url(../vendor/fonts/fonts.css);
 
 /* CONTENT */
-/* @import url(../blocks/content.css); */
+@import url(../blocks/content.css);
 
 /* PAGE*/
 @import url(../blocks/page.css);
