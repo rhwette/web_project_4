@@ -106,6 +106,8 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
+  // console.log("containerEl", containerElement);
+  // console.log("containerEl.class", containerElement.classList);
   containerElement.classList.remove("popup-container_visible");
 }
 
@@ -282,12 +284,62 @@ document.addEventListener("keydown", function (event) {
     closeZoom();
     closeAddCardPopup();
     closeProfilePopup();
+    document.removeEventListener("keydown", closeZoom);
+    document.removeEventListener("keydown", closeAddCardPopup);
+    document.removeEventListener("keydown", closeProfilePopup);
   }
 });
 
 //-----------------------------------------------
 //  LISTEN - click on #image-popup-container
 //-----------------------------------------------
-containerElementImage.addEventListener("click", closeZoom);
-containerElementPicture.addEventListener("click", closeAddCardPopup);
-containerElementPerson.addEventListener("click", closeProfilePopup);
+//note: this works fine to close the forms and the zoom
+//   when clicking outside the forms or the zoom
+//   but also closes when clicking inside....
+//   that's no good since we need to interact with the forms
+//   and any clicking inside the form would cause it to close
+// containerElementImage.addEventListener("click", closeZoom);
+// containerElementPicture.addEventListener("click", closeAddCardPopup);
+// containerElementPerson.addEventListener("click", closeProfilePopup);
+
+//-----------------------------------------------
+//  LISTEN - close the forms or the zoom when clicking outside of them
+//-----------------------------------------------
+//  first need to be sure each form and the zoom image have an ID
+//    for Edit Profile form, the id= editProfileForm
+//    for New Place form, the id= newPlaceForm
+//    for the zoom pic 'form', the id = imageZoomForm (this is on the div)
+//
+//  define an array containing the three id's
+// const boxArray = ["editProfileForm", "newPlaceForm"];
+
+// assign containerArray to the containers
+// const containerArray = [
+//   containerElementPerson,
+//   containerElementPicture,
+//   containerElementImage,
+// ];
+const containerArray = [
+  containerElementPerson,
+  containerElementPicture,
+  containerElementImage,
+];
+// assign boxArray to id's for each form
+const boxArray = ["popupEditProfile", "popupNewPlace", "popupImageZoom"];
+
+document.addEventListener("mousedown", function (event) {
+  for (let i = 0; i < boxArray.length; i++) {
+    let box = document.getElementById(boxArray[i]);
+    let containerElement = containerArray[i];
+    if (
+      event.target != box &&
+      event.target.parentNode != box &&
+      event.target.id != "name-input" &&
+      event.target.id != "aboutme-input" &&
+      event.target.id != "place-input" &&
+      event.target.id != "link-input"
+    ) {
+      closePopup(containerElement);
+    }
+  }
+});

@@ -23,7 +23,7 @@
         <h1 class="intro__name">Jacques Cousteau</h1>
         <p class="intro__occupation">Explorer</p>
       </div>
-      <button type="button" class="intro__button-pencil" title="pencil button"></button>
+      <button type="button" class="intro__button-pencil" id="buttonPencilId" title="pencil button"></button>
       <button type="button" class="intro__button-plus" title="plus button"> </button>
     </section>
 
@@ -46,7 +46,7 @@
 
     <!--POPUP AND FORM for EDIT PROFILE-->
     <div class="popup-container" id="person-popup-container">
-      <div class="popup">
+      <div class="popup" id="popupEditProfile">
         <h2 class="popup__title">Edit Profile</h2>
         <button type="button" class="popup__button-close" id="buttonEditProfileClose"><img src="./images/close.svg"
             alt="close symbol" /></button>
@@ -66,8 +66,8 @@
 
     <!--POPUP AND FORM for NEW PLACE-->
     <div class="popup-container" id="picture-popup-container">
-      <div class="popup">
-        <h2 class="popup__title">New Place</h2>
+      <div class="popup" id="popupNewPlace">
+        <h2 class=" popup__title">New Place</h2>
         <button type="button" class="popup__button-close" id="buttonNewPlaceClose"><img src="./images/close.svg"
             alt="close symbol" /></button>
 
@@ -85,8 +85,8 @@
 
     <!--POPUP AND BUTTON for IMAGE ZOOM-->
     <div class="popup-container" id="image-popup-container">
-      <div class="image-popup">
-        <img class="image-popup__picture-zoom" src="data:," alt="Alternative Text" id="image-zoom" />
+      <div class="image-popup" id="popupImageZoom">
+        <img class=" image-popup__picture-zoom" src="data:," alt="Alternative Text" id="image-zoom" />
         <p class="image-popup__picture-text"></p>;
         <button type="button" class="image-popup__button-closezoom" id="buttonZoomPicClose"><img
             src="./images/close.svg" alt="close symbol" /></button>
