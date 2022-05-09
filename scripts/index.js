@@ -177,7 +177,6 @@ function submitNewPlaceForm(evtCreate) {
   newCardInfo.link = formNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
   closeAddCardPopup();
-  return;
 }
 
 //-----------------------------------------------
