@@ -126,9 +126,9 @@ function openProfilePopup() {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'saveProfile'
+//  FUNCTION 'submitEditProfileForm'
 //-----------------------------------------------
-function saveProfile(evtSave) {
+function submitEditProfileForm(evtSave) {
   evtSave.preventDefault();
   nameElement.textContent = formEditProfileName.value;
   aboutMeElement.textContent = formEditProfileAboutMe.value;
@@ -168,9 +168,9 @@ function openAddCardPopup(evtNewPlace) {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'createButton'
+//  FUNCTION 'submitNewPlaceForm'
 //-----------------------------------------------
-function createButton(evtCreate) {
+function submitNewPlaceForm(evtCreate) {
   evtCreate.preventDefault();
   newCardInfo = {};
   newCardInfo.name = formNewPlaceTitle.value;
@@ -252,7 +252,7 @@ buttonPencil.addEventListener("click", openProfilePopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
-formEditProfile.addEventListener("submit", saveProfile);
+formEditProfile.addEventListener("submit", submitEditProfileForm);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
@@ -267,7 +267,7 @@ buttonPlus.addEventListener("click", openAddCardPopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-formNewPlace.addEventListener("submit", createButton);
+formNewPlace.addEventListener("submit", submitNewPlaceForm);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
