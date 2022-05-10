@@ -6,21 +6,13 @@
   background-color: #000000;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 980px){
-=======
 @media screen and (max-width: 980px) {
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
   .page {
     max-width: 781px;
   }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 320px){
-=======
 @media screen and (max-width: 320px) {
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
   .page {
     max-width: 320px;
   }

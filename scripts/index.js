@@ -126,15 +126,9 @@ function openProfilePopup() {
 }
 
 //-----------------------------------------------
-<<<<<<< HEAD
 //  FUNCTION 'submitEditProfileForm'
 //-----------------------------------------------
 function submitEditProfileForm(evtSave) {
-=======
-//  FUNCTION 'saveProfile'
-//-----------------------------------------------
-function saveProfile(evtSave) {
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
   evtSave.preventDefault();
   nameElement.textContent = formEditProfileName.value;
   aboutMeElement.textContent = formEditProfileAboutMe.value;
@@ -174,25 +168,15 @@ function openAddCardPopup(evtNewPlace) {
 }
 
 //-----------------------------------------------
-<<<<<<< HEAD
 //  FUNCTION 'submitNewPlaceForm'
 //-----------------------------------------------
 function submitNewPlaceForm(evtCreate) {
-=======
-//  FUNCTION 'createButton'
-//-----------------------------------------------
-function createButton(evtCreate) {
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
   evtCreate.preventDefault();
   newCardInfo = {};
   newCardInfo.name = formNewPlaceTitle.value;
   newCardInfo.link = formNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
   closeAddCardPopup();
-<<<<<<< HEAD
-=======
-  return;
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
 }
 
 //-----------------------------------------------
@@ -267,11 +251,7 @@ buttonPencil.addEventListener("click", openProfilePopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
-<<<<<<< HEAD
 formEditProfile.addEventListener("submit", submitEditProfileForm);
-=======
-formEditProfile.addEventListener("submit", saveProfile);
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
@@ -286,11 +266,7 @@ buttonPlus.addEventListener("click", openAddCardPopup);
 //-----------------------------------------------
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-<<<<<<< HEAD
 formNewPlace.addEventListener("submit", submitNewPlaceForm);
-=======
-formNewPlace.addEventListener("submit", createButton);
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
@@ -301,19 +277,12 @@ buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
 //  LISTEN - escape key press....close zoom pic
 //-----------------------------------------------
 document.addEventListener("keydown", function (event) {
-<<<<<<< HEAD
   const openedPopup = document.querySelector(".popup-container-visible");
   if (event.key === "Escape") {
     closePopup(openedPopup);
     // closeZoom();
     // closeAddCardPopup();
     // closeProfilePopup();
-=======
-  if (event.key === "Escape") {
-    closeZoom();
-    closeAddCardPopup();
-    closeProfilePopup();
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
     document.removeEventListener("keydown", closeZoom);
     document.removeEventListener("keydown", closeAddCardPopup);
     document.removeEventListener("keydown", closeProfilePopup);
@@ -343,13 +312,9 @@ document.addEventListener("mousedown", function (event) {
       event.target.id != "name-input" &&
       event.target.id != "aboutme-input" &&
       event.target.id != "place-input" &&
-<<<<<<< HEAD
       event.target.id != "link-input" &&
       event.target.id != "buttonEditProfileSave" &&
       event.target.id != "buttonNewPlaceCreate"
-=======
-      event.target.id != "link-input"
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
     ) {
       closePopup(containerElement);
     }

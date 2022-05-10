@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Project Name: Around the U.S.
 
         Practicum-Yandex, Web-Project 6, Sprint 6, May 7, 2022
@@ -63,4 +61,3 @@ Practicum-Yandex, Web-Project 6, Sprint 6, May 7, 2022
 - privacy statement and "contact us" button in footer
 - link to github page....
   https://rhwette.github.io/web_project_4/
-  > > > > > > > 7eff6c359c7e95fba476e0d3c85631febfe6501e

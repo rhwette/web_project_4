@@ -1,22 +1,4 @@
 .content {
-<<<<<<< HEAD
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-@media screen and (max-width:980px) {
-    .content {
-        max-width: 781px;  
-    }
-}
-
-@media screen and (max-width:320px) {
-    .content {
-        max-width: 320px;  
-    }
-}
-
-=======
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -32,4 +14,15 @@
     max-width: 320px;
   }
 }
->>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
+
+@media screen and (max-width: 980px) {
+  .content {
+    max-width: 781px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content {
+    max-width: 320px;
+  }
+}
