@@ -58,7 +58,11 @@
 }
 
 .popup__button_disabled {
+<<<<<<< HEAD
   background-color: #a8a8a8;
+=======
+  background-color: purple;
+>>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
 }
 
 .popup__button:hover {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* VENDOR */
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
@@ -29,3 +30,36 @@
 
 /* IMAGE POPUP and ZOOM*/
 @import url(../blocks/image-popup.css);
+=======
+/* VENDOR */
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+/* CONTENT */
+@import url(../blocks/content.css);
+
+/* PAGE*/
+@import url(../blocks/page.css);
+
+/* HEADER*/
+@import url(../blocks/header.css);
+
+/* OVERFLOW */
+@import url(../blocks/block.css);
+
+/* INTRO*/
+@import url(../blocks/intro.css);
+
+/* CARD-GRID*/
+@import url(../blocks/card-grid.css);
+
+/* FOOTER*/
+@import url(../blocks/footer.css);
+
+/* POPUP*/
+@import url(../blocks/popup-container.css);
+@import url(../blocks/popup.css);
+
+/* IMAGE POPUP and ZOOM*/
+@import url(../blocks/image-popup.css);
+>>>>>>> 7eff6c359c7e95fba476e0d3c85631febfe6501e
