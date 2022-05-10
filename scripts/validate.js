@@ -26,16 +26,22 @@ const hasValidInputs = (inputList) => {
 };
 
 const toggleButton = (inputList, button, settings) => {
+  console.log(settings.inactiveButtonClass);
+  console.log("button=", button);
+
   if (hasValidInputs(inputList)) {
     button.disabled = false;
+    button.classList.remove(settings.inactiveButtonClass);
   } else {
     button.disabled = true;
+    console.log(button);
+    button.classList.add(settings.inactiveButtonClass);
   }
 };
 
 const setEventListeners = (formEl, settings) => {
   const inputList = [...formEl.querySelectorAll(settings.inputSelector)];
-  const submitButton = formEl.querySelectorAll(settings.submitButtonSelector);
+  const submitButton = formEl.querySelector(settings.submitButtonSelector);
   inputList.forEach((input) => {
     input.addEventListener("input", (evt) => {
       checkInputValidity(formEl, input, settings);

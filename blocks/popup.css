@@ -58,7 +58,7 @@
 }
 
 .popup__button_disabled {
-  background-color: purple;
+  background-color: #a8a8a8;
 }
 
 .popup__button:hover {
