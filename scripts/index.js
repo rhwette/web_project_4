@@ -1,25 +1,27 @@
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
-//    buttonPencil = button to activate "Edit Profile" form
-//    buttonPlus = button that activates form "New Place"
+//    buttonPencil = button to activate "Edit Profile" popup
+//    buttonPlus = button that activates "New Place" popup
 //    buttonCan = garbage can icon
 //    buttonHeart = "like" icon
-//    buttonEditProfileSave = button to 'SAVE' "Edit Profile" form
-//    buttonNewPlaceCreate = the 'Create' button on 'New Place' Form
-//    buttonEditProfileClose = 'big X' on 'editProfile' form
-//    buttonNewPlaceClose = 'big X' on 'New Place' form
-//    buttonZoomPicClose = 'big X' on 'Zoom Pic'
-//    formEditProfile = "Edit Profile" popup
-//    formEditProfileName = the name entered on "Edit Profile" form
-//    formEditProfileAboutMe = the occupation entered on "Edit Profile" form
-//    formNewPlace = "New Place" popup
-//    formNewPlaceLink = url for new card image
-//    formNewPlaceTitle = card location
-//    zoomPopup = "Zoom Pic" popup"
-//    nameElement = starting name on page
-//    aboutMeElement = starting occupation on page
+//    buttonEditProfileSave = the 'SAVE' button on "Edit Profile" popup
+//    buttonNewPlaceCreate = the 'Create' button on 'New Place' popup
+//    buttonEditProfileClose = 'big X' on 'EditProfile' popup
+//    buttonNewPlaceClose = 'big X' on 'New Place' popup
+//    buttonZoomPicClose = 'big X' on 'Zoom Pic' popup
+//    popupEditProfile = "Edit Profile" popup
+//    popupEditProfileName = "Edit Profile" popup name
+//    popupEditProfileAboutMe = "Edit Profile" popup aboutMe
+//    popupNewPlace = "New Place" popup
+//    popupNewPlaceLink = "New Place" popup URL
+//    popupNewPlaceTitle = "New Place" popup location
+//    popupZoom = "Zoom Pic" popup
+//    nameElement = starting name on "EditProfile" popup
+//    aboutMeElement = starting aboutMe on "EditProfile" popup
 //    zoomElement = card that is zoomed-up
+
 //    cardElement = clone of card object
+
 //    imageElement =image used in Zoom and in createCard
 //    containerElementPerson = containerElement for "Edit Profile"
 //    containerElementPicture = containerElement for "New Place"
@@ -36,16 +38,16 @@ const buttonEditProfileClose = document.querySelector(
 const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
 const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
 
-const formEditProfile = document.querySelector("#editProfileForm");
+const popupEditProfile = document.querySelector("#editProfileForm");
 
-const formEditProfileName = document.querySelector('input[name ="name"]');
-const formEditProfileAboutMe = document.querySelector(
+const popupEditProfileName = document.querySelector('input[name ="name"]');
+const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
-const formNewPlace = document.querySelector("#newPlaceForm");
-const formNewPlaceLink = document.querySelector("#link-input");
-const formNewPlaceTitle = document.querySelector("#place-input");
-const zoomPopup = document.querySelector("#image-popup-container");
+const popupNewPlace = document.querySelector("#newPlaceForm");
+const popupNewPlaceLink = document.querySelector("#link-input");
+const popupNewPlaceTitle = document.querySelector("#place-input");
+const popupZoom = document.querySelector("#image-popup-container");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
@@ -111,6 +113,7 @@ function closePopup(containerElement) {
   containerElement.classList.remove("popup-container_visible");
   let addOrRemove = "remove";
   addOrRemoveListener(addOrRemove, containerElement);
+  popup.removeEventListener("mousedown", closePopupWithRemoteClick);
 }
 
 //-----------------------------------------------
@@ -138,35 +141,45 @@ function closeWithEscape(event, container) {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'fillProfileForm'
+//  FUNCTION 'fillPopupEditProfile'
 //-----------------------------------------------
-function fillProfileForm() {
-  formEditProfileName.value = nameElement.textContent;
-  formEditProfileAboutMe.value = aboutMeElement.textContent;
+function fillPopupEditProfile() {
+  popupEditProfileName.value = nameElement.textContent;
+  popupEditProfileAboutMe.value = aboutMeElement.textContent;
 }
 
 //-----------------------------------------------
-//  FUNCTION 'openProfilePopup'
+//  FUNCTION 'openPopupEditProfile'
 //-----------------------------------------------
-function openProfilePopup() {
-  fillProfileForm();
+function openPopupEditProfile() {
+  fillPopupEditProfile();
   openPopup(containerElementPerson);
+  popup.addEventListener("mousedown", closePopupWithRemoteClick);
 }
 
 //-----------------------------------------------
-//  FUNCTION 'submitEditProfileForm'
+//  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
-function submitEditProfileForm(evtSave) {
+function closePopupWithRemoteClick(event) {
+  if (event.target === event.currentTarget) {
+    closePopup(event.target);
+  }
+}
+
+//-----------------------------------------------
+//  FUNCTION 'submitPopupEditProfile'
+//-----------------------------------------------
+function submitPopupEditProfile(evtSave) {
   evtSave.preventDefault();
-  nameElement.textContent = formEditProfileName.value;
-  aboutMeElement.textContent = formEditProfileAboutMe.value;
+  nameElement.textContent = popupEditProfileName.value;
+  aboutMeElement.textContent = popupEditProfileAboutMe.value;
   closePopup(containerElementPerson);
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closeProfilePopup'
+//  FUNCTION 'closePopupEditProfile'
 //-----------------------------------------------
-function closeProfilePopup() {
+function closePopupEditProfile() {
   closePopup(containerElementPerson);
 }
 
@@ -179,39 +192,45 @@ function zoomPic(cardInfo) {
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
   openPopup(containerElementImage);
+  let popup = popupZoom;
+  // popup.addEventListener("mousedown", closePopupWithRemoteClick);
+  popup.addEventListener("mousedown", () => {
+    closePopupWithRemoteClick(popup);
+  });
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closeZoomPopup'
+//  FUNCTION 'closePopupZoom'
 //-----------------------------------------------
-function closeZoom() {
-  closePopup(zoomPopup);
+function closePopupZoom() {
+  closePopup(popupZoom);
 }
 
 //-----------------------------------------------
-//  FUNCTION 'openAddCardPopup'
+//  FUNCTION 'openPopupAddCard'
 //-----------------------------------------------
-function openAddCardPopup(evtNewPlace) {
-  formNewPlace.reset();
+function openPopupAddCard(evtNewPlace) {
+  popupNewPlace.reset();
   openPopup(containerElementPicture);
+  popup.addEventListener("mousedown", closePopupWithRemoteClick);
 }
 
 //-----------------------------------------------
-//  FUNCTION 'submitNewPlaceForm'
+//  FUNCTION 'submitPopupNewPlace'
 //-----------------------------------------------
-function submitNewPlaceForm(evtCreate) {
+function submitPopupNewPlace(evtCreate) {
   evtCreate.preventDefault();
   newCardInfo = {};
-  newCardInfo.name = formNewPlaceTitle.value;
-  newCardInfo.link = formNewPlaceLink.value;
+  newCardInfo.name = popupNewPlaceTitle.value;
+  newCardInfo.link = popupNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
-  closeAddCardPopup();
+  closePopupAddCard();
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closeAddCardPopup'
+//  FUNCTION 'closePopupAddCard'
 //-----------------------------------------------
-function closeAddCardPopup() {
+function closePopupAddCard() {
   closePopup(containerElementPicture);
 }
 
@@ -269,37 +288,37 @@ function changeHeartColor(heartToChange) {
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-buttonZoomPicClose.addEventListener("click", closeZoom);
+buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
 //-----------------------------------------------
-buttonPencil.addEventListener("click", openProfilePopup);
+buttonPencil.addEventListener("click", openPopupEditProfile);
 
 //-----------------------------------------------
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
-formEditProfile.addEventListener("submit", submitEditProfileForm);
+popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
-buttonEditProfileClose.addEventListener("click", closeProfilePopup);
+buttonEditProfileClose.addEventListener("click", closePopupEditProfile);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus
 //-----------------------------------------------
-buttonPlus.addEventListener("click", openAddCardPopup);
+buttonPlus.addEventListener("click", openPopupAddCard);
 
 //-----------------------------------------------
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
-formNewPlace.addEventListener("submit", submitNewPlaceForm);
+popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 
 //-----------------------------------------------
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
-buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
+buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 
 //-----------------------------------------------
 //  LISTEN - escape key press....close zoom pic
@@ -310,29 +329,29 @@ buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
 //-----------------------------------------------
 
 // assign containerArray to the containers
-const containerArray = [
-  containerElementPerson,
-  containerElementPicture,
-  containerElementImage,
-];
+// const containerArray = [
+//   containerElementPerson,
+//   containerElementPicture,
+//   containerElementImage,
+// ];
 // assign boxArray to id's for each form
-const boxArray = ["popupEditProfile", "popupNewPlace", "popupImageZoom"];
+// const boxArray = ["popupEditProfile", "popupNewPlace", "popupImageZoom"];
 
-document.addEventListener("mousedown", function (event) {
-  for (let i = 0; i < boxArray.length; i++) {
-    let box = document.getElementById(boxArray[i]);
-    let containerElement = containerArray[i];
-    if (
-      event.target != box &&
-      event.target.parentNode != box &&
-      event.target.id != "name-input" &&
-      event.target.id != "aboutme-input" &&
-      event.target.id != "place-input" &&
-      event.target.id != "link-input" &&
-      event.target.id != "buttonEditProfileSave" &&
-      event.target.id != "buttonNewPlaceCreate"
-    ) {
-      closePopup(containerElement);
-    }
-  }
-});
+// document.addEventListener("mousedown", function (event) {
+//   for (let i = 0; i < boxArray.length; i++) {
+//     let box = document.getElementById(boxArray[i]);
+//     let containerElement = containerArray[i];
+//     if (
+//       event.target != box &&
+//       event.target.parentNode != box &&
+//       event.target.id != "name-input" &&
+//       event.target.id != "aboutme-input" &&
+//       event.target.id != "place-input" &&
+//       event.target.id != "link-input" &&
+//       event.target.id != "buttonEditProfileSave" &&
+//       event.target.id != "buttonNewPlaceCreate"
+//     ) {
+//       closePopup(containerElement);
+//     }
+//   }
+// });
