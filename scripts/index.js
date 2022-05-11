@@ -100,6 +100,8 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 function openPopup(containerElement) {
   containerElement.classList.add("popup-container_visible");
+  let addOrRemove = "add";
+  addOrRemoveListener(addOrRemove, containerElement);
 }
 
 //-----------------------------------------------
@@ -107,6 +109,32 @@ function openPopup(containerElement) {
 //-----------------------------------------------
 function closePopup(containerElement) {
   containerElement.classList.remove("popup-container_visible");
+  let addOrRemove = "remove";
+  addOrRemoveListener(addOrRemove, containerElement);
+}
+
+//-----------------------------------------------
+//  FUNCTION 'addOrRemoveListener'
+//-----------------------------------------------
+function addOrRemoveListener(status, container) {
+  if (status === "add") {
+    document.addEventListener("keydown", (event) => {
+      closeWithEscape(event, container);
+    });
+  } else {
+    document.removeEventListener("keydown", (event) => {
+      closeWithEscape(event, container);
+    });
+  }
+}
+
+//-----------------------------------------------
+//  FUNCTION 'closeWithEscape'
+//-----------------------------------------------
+function closeWithEscape(event, container) {
+  if (event.key === "Escape") {
+    closePopup(container);
+  }
 }
 
 //-----------------------------------------------
@@ -276,18 +304,6 @@ buttonNewPlaceClose.addEventListener("click", closeAddCardPopup);
 //-----------------------------------------------
 //  LISTEN - escape key press....close zoom pic
 //-----------------------------------------------
-document.addEventListener("keydown", function (event) {
-  const openedPopup = document.querySelector(".popup-container-visible");
-  if (event.key === "Escape") {
-    closePopup(openedPopup);
-    // closeZoom();
-    // closeAddCardPopup();
-    // closeProfilePopup();
-    document.removeEventListener("keydown", closeZoom);
-    document.removeEventListener("keydown", closeAddCardPopup);
-    document.removeEventListener("keydown", closeProfilePopup);
-  }
-});
 
 //-----------------------------------------------
 //  LISTEN - close the forms or the zoom when clicking outside of them
