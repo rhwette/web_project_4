@@ -180,6 +180,7 @@ function zoomPic(cardInfo) {
   zoomTextElement.textContent = cardInfo.name;
   openPopup(containerElementImage);
 }
+
 //-----------------------------------------------
 //  FUNCTION 'closeZoomPopup'
 //-----------------------------------------------
@@ -261,7 +262,6 @@ function renderCard(card, container) {
 //-----------------------------------------------
 //  FUNCTION 'changeHeartColor'
 //-----------------------------------------------
-
 function changeHeartColor(heartToChange) {
   heartToChange.classList.toggle("card-grid__icon_active");
 }
