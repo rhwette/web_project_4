@@ -122,19 +122,19 @@ function closePopup(containerElement) {
 function addOrRemoveListener(status, container) {
   if (status === "add") {
     document.addEventListener("keydown", (event) => {
-      closeWithEscape(event, container);
+      closePopupWithEscape(event, container);
     });
   } else {
     document.removeEventListener("keydown", (event) => {
-      closeWithEscape(event, container);
+      closePopupWithEscape(event, container);
     });
   }
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closeWithEscape'
+//  FUNCTION 'closePopupWithEscape'
 //-----------------------------------------------
-function closeWithEscape(event, container) {
+function closePopupWithEscape(event, container) {
   if (event.key === "Escape") {
     closePopup(container);
   }
