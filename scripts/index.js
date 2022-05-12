@@ -121,11 +121,6 @@ function closePopup(containerElement) {
   console.log("WWWW2 containerElement.classList", containerElement.classList);
   let addOrRemove = "remove";
   addOrRemoveListener(addOrRemove, containerElement);
-  // console.log("2222@closePopup popup=", popup);
-  // let popup = popupZoom;
-  // popup.removeEventListener("mousedown", () => {
-  //   closePopupWithRemoteClick(popup);
-  // });
 }
 
 //-----------------------------------------------
@@ -356,39 +351,3 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
 buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
-
-//-----------------------------------------------
-//  LISTEN - escape key press....close zoom pic
-//-----------------------------------------------
-
-//-----------------------------------------------
-//  LISTEN - close the forms or the zoom when clicking outside of them
-//-----------------------------------------------
-
-// assign containerArray to the containers
-// const containerArray = [
-//   containerElementPerson,
-//   containerElementPicture,
-//   containerElementImage,
-// ];
-// assign boxArray to id's for each form
-// const boxArray = ["popupEditProfile", "popupNewPlace", "popupImageZoom"];
-
-// document.addEventListener("mousedown", function (event) {
-//   for (let i = 0; i < boxArray.length; i++) {
-//     let box = document.getElementById(boxArray[i]);
-//     let containerElement = containerArray[i];
-//     if (
-//       event.target != box &&
-//       event.target.parentNode != box &&
-//       event.target.id != "name-input" &&
-//       event.target.id != "aboutme-input" &&
-//       event.target.id != "place-input" &&
-//       event.target.id != "link-input" &&
-//       event.target.id != "buttonEditProfileSave" &&
-//       event.target.id != "buttonNewPlaceCreate"
-//     ) {
-//       closePopup(containerElement);
-//     }
-//   }
-// });
