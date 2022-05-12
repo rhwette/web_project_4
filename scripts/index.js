@@ -10,9 +10,11 @@
 //    buttonNewPlaceClose = 'big X' on 'New Place' popup
 //    buttonZoomPicClose = 'big X' on 'Zoom Pic' popup
 //    popupEditProfile = "Edit Profile" popup
+//    popupEditProfileAlt = "Edit Profile" popup alternate
 //    popupEditProfileName = "Edit Profile" popup name
 //    popupEditProfileAboutMe = "Edit Profile" popup aboutMe
 //    popupNewPlace = "New Place" popup
+//    popupNewPlaceAlt = "New Place" popup alternate
 //    popupNewPlaceLink = "New Place" popup URL
 //    popupNewPlaceTitle = "New Place" popup location
 //    popupZoom = "Zoom Pic" popup
@@ -39,12 +41,14 @@ const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
 const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
 
 const popupEditProfile = document.querySelector("#editProfileForm");
+const popupEditProfileAlt = document.querySelector("#person-popup-container");
 
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 const popupNewPlace = document.querySelector("#newPlaceForm");
+const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
 const popupZoom = document.querySelector("#image-popup-container");
@@ -110,10 +114,18 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
+  console.log("VVVV enter closePopup");
+  console.log("WWWW0 containerElement", containerElement);
+  console.log("WWWW1 containerElement.classList", containerElement.classList);
   containerElement.classList.remove("popup-container_visible");
+  console.log("WWWW2 containerElement.classList", containerElement.classList);
   let addOrRemove = "remove";
   addOrRemoveListener(addOrRemove, containerElement);
-  popup.removeEventListener("mousedown", closePopupWithRemoteClick);
+  // console.log("2222@closePopup popup=", popup);
+  // let popup = popupZoom;
+  // popup.removeEventListener("mousedown", () => {
+  //   closePopupWithRemoteClick(popup);
+  // });
 }
 
 //-----------------------------------------------
@@ -154,13 +166,26 @@ function fillPopupEditProfile() {
 function openPopupEditProfile() {
   fillPopupEditProfile();
   openPopup(containerElementPerson);
+  // console.log("1111 @openPopupEditProfile popup=", popup);
+  // popup.addEventListener("mousedown", closePopupWithRemoteClick);
+  let popup = popupEditProfileAlt;
+  console.log("3333 @editProfile open popup=", popup);
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
+  popup.addEventListener("mousedown", (event, popup) => {
+    closePopupWithRemoteClick(event, popup);
+  });
+  popup.removeEventListener("mousedown", () => {
+    closePopupWithRemoteClick(popup);
+  });
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
+  console.log("aaaa event", event);
+  console.log("bbbb event.target", event.target);
+  console.log("cccc event.currentTarget", event.currentTarget);
   if (event.target === event.currentTarget) {
     closePopup(event.target);
   }
@@ -193,8 +218,12 @@ function zoomPic(cardInfo) {
   zoomTextElement.textContent = cardInfo.name;
   openPopup(containerElementImage);
   let popup = popupZoom;
+  console.log("3333 @zoom open popup=", popup);
   // popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  popup.addEventListener("mousedown", () => {
+  popup.addEventListener("mousedown", (event, popup) => {
+    closePopupWithRemoteClick(event, popup);
+  });
+  popup.removeEventListener("mousedown", () => {
     closePopupWithRemoteClick(popup);
   });
 }
@@ -212,7 +241,15 @@ function closePopupZoom() {
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
   openPopup(containerElementPicture);
+  let popup = popupNewPlaceAlt;
+  console.log("3333 @editProfile open popup=", popup);
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
+  popup.addEventListener("mousedown", (event, popup) => {
+    closePopupWithRemoteClick(event, popup);
+  });
+  popup.removeEventListener("mousedown", () => {
+    closePopupWithRemoteClick(popup);
+  });
 }
 
 //-----------------------------------------------
