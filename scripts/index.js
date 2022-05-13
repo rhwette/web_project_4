@@ -106,7 +106,7 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 function openPopup(containerElement) {
   containerElement.classList.add("popup-container_visible");
-  let addOrRemove = "add";
+  const addOrRemove = "add";
   addOrRemoveListener(addOrRemove, containerElement);
 }
 
@@ -114,12 +114,8 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  console.log("VVVV enter closePopup");
-  console.log("WWWW0 containerElement", containerElement);
-  console.log("WWWW1 containerElement.classList", containerElement.classList);
   containerElement.classList.remove("popup-container_visible");
-  console.log("WWWW2 containerElement.classList", containerElement.classList);
-  let addOrRemove = "remove";
+  const addOrRemove = "remove";
   addOrRemoveListener(addOrRemove, containerElement);
 }
 
@@ -161,10 +157,7 @@ function fillPopupEditProfile() {
 function openPopupEditProfile() {
   fillPopupEditProfile();
   openPopup(containerElementPerson);
-  // console.log("1111 @openPopupEditProfile popup=", popup);
-  // popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  let popup = popupEditProfileAlt;
-  console.log("3333 @editProfile open popup=", popup);
+  const popup = popupEditProfileAlt;
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
   popup.addEventListener("mousedown", (event, popup) => {
     closePopupWithRemoteClick(event, popup);
@@ -178,9 +171,6 @@ function openPopupEditProfile() {
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
-  console.log("aaaa event", event);
-  console.log("bbbb event.target", event.target);
-  console.log("cccc event.currentTarget", event.currentTarget);
   if (event.target === event.currentTarget) {
     closePopup(event.target);
   }
@@ -212,8 +202,7 @@ function zoomPic(cardInfo) {
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
   openPopup(containerElementImage);
-  let popup = popupZoom;
-  console.log("3333 @zoom open popup=", popup);
+  const popup = popupZoom;
   // popup.addEventListener("mousedown", closePopupWithRemoteClick);
   popup.addEventListener("mousedown", (event, popup) => {
     closePopupWithRemoteClick(event, popup);
@@ -236,8 +225,7 @@ function closePopupZoom() {
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
   openPopup(containerElementPicture);
-  let popup = popupNewPlaceAlt;
-  console.log("3333 @editProfile open popup=", popup);
+  const popup = popupNewPlaceAlt;
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
   popup.addEventListener("mousedown", (event, popup) => {
     closePopupWithRemoteClick(event, popup);
