@@ -115,7 +115,10 @@ function openPopup(containerElement, popup) {
   console.log("AAAA3 containerElement.classList", containerElement.classList);
   console.log("BBBB2 popup", popup);
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  document.addEventListener("keydown", closePopupWithEscape);
+  // document.addEventListener("keydown", closePopupWithEscape);
+  document.addEventListener("keydown", (event) => {
+    closePopupWithEscape(event, containerElement);
+  });
 
   //   popup.addEventListener("mousedown", (event, popup) => {
   //   closePopupWithRemoteClick(event, popup);
@@ -124,9 +127,7 @@ function openPopup(containerElement, popup) {
   // popup.addEventListener("mousedown", (event, popup) => {
   //   closePopupWithRemoteClick(event, popup);
   // });
-  // document.addEventListener("keydown", (event) => {
-  //   closePopupWithEscape(event, containerElement);
-  // });
+
   // popup.addEventListener("mousedown", closePopupWithRemoteClick);
   // popup.addEventListener("mousedown", (event, popup) => {
   //   closePopupWithRemoteClick(event, popup);
@@ -148,7 +149,14 @@ function closePopup(containerElement) {
   console.log("CCCC3 containerElement.classList", containerElement.classList);
   console.log("DDDD2 popup", popup);
   popup.removeEventListener("mousedown", closePopupWithRemoteClick);
+  document.removeEventListener("keydown", (event) => {
+    closePopupWithEscape(event, containerElement);
+  });
   console.log("DDDD4 listener removed");
+
+  // document.addEventListener("keydown", (event) => {
+  //   closePopupWithEscape(event, containerElement);
+  // });
 
   // popup.removeEventListener("mousedown", () => {
   //   closePopupWithRemoteClick(popup);
@@ -158,27 +166,26 @@ function closePopup(containerElement) {
   // popup.removeEventListener("mousedown", (event, popup) => {
   //   closePopupWithRemoteClick(event, popup);
   // });
-  // document.removeEventListener("keydown", (event) => {
-  //   closePopupWithEscape(event, containerElement);
-  // });
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithEscape'
 //-----------------------------------------------
-function closePopupWithEscape(event) {
+function closePopupWithEscape(event, containerElement) {
+  console.log("zzzz containerElement", containerElement);
   console.log("mmmm event", event);
   console.log("nnnn event.target", event.target);
   console.log("nnnn2 event.currentTarget", event.currentTarget);
   console.log("oooo event.key", event.key);
   const target = event.target;
   console.log("pppp target", target);
-  const parent = target.parentElement;
-  console.log("wwww parent", parent);
+  // const parent = target.parentNode;
+  // console.log("wwww parent", parent);
   if (event.key === "Escape") {
-    const openedPopup = document.querySelector(".popup-container");
-    console.log("vvvv openedPopup", openedPopup);
-    closePopup(openedPopup);
+    // const openedPopup = document.querySelector(".popup-container");
+    // console.log("vvvv openedPopup", openedPopup);
+    // closePopup(openedPopup);
+    closePopup(containerElement);
   }
 }
 
