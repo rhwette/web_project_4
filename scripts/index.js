@@ -105,86 +105,32 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 
-// openPopup(containerElementImage, popup);
-
 function openPopup(containerElement, popup) {
-  console.log("AAAA1 containerElement", containerElement);
-  console.log("AAAA2 containerElement.classList", containerElement.classList);
-  console.log("BBBB1 popup", popup);
   containerElement.classList.add("popup-container_visible");
-  console.log("AAAA3 containerElement.classList", containerElement.classList);
-  console.log("BBBB2 popup", popup);
   popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  // document.addEventListener("keydown", closePopupWithEscape);
   document.addEventListener("keydown", (event) => {
     closePopupWithEscape(event, containerElement);
   });
-
-  //   popup.addEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
-
-  // popup.addEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
-
-  // popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  // popup.addEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
-  // popup.removeEventListener("mousedown", () => {
-  //   closePopupWithRemoteClick(popup);
-  // });
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  console.log("CCCC1 containerElement", containerElement);
-  console.log("CCCC2 containerElement.classList", containerElement.classList);
   const popup = containerElement;
-  console.log("DDDD1 popup", popup);
   containerElement.classList.remove("popup-container_visible");
-  console.log("CCCC3 containerElement.classList", containerElement.classList);
-  console.log("DDDD2 popup", popup);
   popup.removeEventListener("mousedown", closePopupWithRemoteClick);
   document.removeEventListener("keydown", (event) => {
     closePopupWithEscape(event, containerElement);
   });
-  console.log("DDDD4 listener removed");
-
-  // document.addEventListener("keydown", (event) => {
-  //   closePopupWithEscape(event, containerElement);
-  // });
-
-  // popup.removeEventListener("mousedown", () => {
-  //   closePopupWithRemoteClick(popup);
-  // });
-
-  // document.removeEventListener("keydown", closePopupWithEscape);
-  // popup.removeEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithEscape'
 //-----------------------------------------------
 function closePopupWithEscape(event, containerElement) {
-  console.log("zzzz containerElement", containerElement);
-  console.log("mmmm event", event);
-  console.log("nnnn event.target", event.target);
-  console.log("nnnn2 event.currentTarget", event.currentTarget);
-  console.log("oooo event.key", event.key);
   const target = event.target;
-  console.log("pppp target", target);
-  // const parent = target.parentNode;
-  // console.log("wwww parent", parent);
   if (event.key === "Escape") {
-    // const openedPopup = document.querySelector(".popup-container");
-    // console.log("vvvv openedPopup", openedPopup);
-    // closePopup(openedPopup);
     closePopup(containerElement);
   }
 }
@@ -193,11 +139,7 @@ function closePopupWithEscape(event, containerElement) {
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
-  console.log("IIII event", event);
-  console.log("JJJJ event.target", event.target);
-  console.log("KKKK event.currentTarget", event.currentTarget);
   const popup = event.target;
-  console.log("LLLL popup", popup);
   if (event.target === event.currentTarget) {
     closePopup(event.target, popup);
   }
@@ -227,10 +169,7 @@ function submitPopupEditProfile(evtSave) {
   evtSave.preventDefault();
   nameElement.textContent = popupEditProfileName.value;
   aboutMeElement.textContent = popupEditProfileAboutMe.value;
-  console.log("GGGGcontainerElementPerson", containerElementPerson);
   const popup = popupEditProfileAlt;
-  console.log("HHHH popup", popup);
-  // closePopup(containerElementPerson, popup);
   closePopup(containerElementPerson);
 }
 
@@ -238,10 +177,7 @@ function submitPopupEditProfile(evtSave) {
 //  FUNCTION 'closePopupEditProfile'
 //-----------------------------------------------
 function closePopupEditProfile() {
-  console.log("EEEEcontainerElementPerson", containerElementPerson);
   const popup = popupEditProfileAlt;
-  console.log("FFFF popup", popup);
-  // closePopup(containerElementPerson, popup);
   closePopup(containerElementPerson);
 }
 
@@ -253,17 +189,8 @@ function zoomPic(cardInfo) {
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
-  // const popup = popupZoom;
   const popup = containerElementImage;
-  console.log("xxxx containerElementImage", containerElementImage);
-  console.log("yyyy popup", popup);
   openPopup(containerElementImage, popup);
-  // popup.addEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
-  // popup.removeEventListener("mousedown", () => {
-  //   closePopupWithRemoteClick(popup);
-  // });
 }
 
 //-----------------------------------------------
@@ -279,16 +206,7 @@ function closePopupZoom() {
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
   const popup = popupNewPlaceAlt;
-  console.log("ssss popup", popup);
-  console.log("tttt containerElementPicture", containerElementPicture);
   openPopup(containerElementPicture, popup);
-  // popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  // popup.addEventListener("mousedown", (event, popup) => {
-  //   closePopupWithRemoteClick(event, popup);
-  // });
-  // popup.removeEventListener("mousedown", () => {
-  //   closePopupWithRemoteClick(popup);
-  // });
 }
 
 //-----------------------------------------------
