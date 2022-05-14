@@ -1,5 +1,4 @@
 const showInputError = (input, formEl, { errorClass, inputErrorClass }) => {
-  // const errorElement = formEl.querySelector("#" + input.id + "-error");
   const errorElement = formEl.querySelector(`#${input.id}-error`);
   errorElement.textContent = input.validationMessage;
   errorElement.classList.add(errorClass);
