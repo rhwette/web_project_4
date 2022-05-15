@@ -10,11 +10,11 @@
 
 ### Technologies
 
-- utilizes additional listeners
+- utilizes additional listeners with 'click', 'mousedown' and 'keydown'
 - utilizes Javascript to add interactivity to website
 - utilizes Javascript to add form validation
 - utilizes Templates
-- utilizes BEM file structure
+- utilizes flat BEM file structure
 - media at-rules at several breakpoints facilitate responsiveness
 - flexbox assist with positioning
 - images compressed using https://tinypng.com/
@@ -26,6 +26,9 @@
 - change grid photos
 - add hyperlinks to photos to describe locations
 - privacy statement and "contact us" button in footer
+- to make the page more general purpose....
+-     add capability to change cousteau picture
+-     add capability to change page title
 - link to github page....
   https://rhwette.github.io/web_project_4/
   =======

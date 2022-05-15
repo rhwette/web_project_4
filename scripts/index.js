@@ -10,20 +10,16 @@
 //    buttonNewPlaceClose = 'big X' on 'New Place' popup
 //    buttonZoomPicClose = 'big X' on 'Zoom Pic' popup
 //    popupEditProfile = "Edit Profile" popup
-//    popupEditProfileAlt = "Edit Profile" popup alternate
 //    popupEditProfileName = "Edit Profile" popup name
 //    popupEditProfileAboutMe = "Edit Profile" popup aboutMe
 //    popupNewPlace = "New Place" popup
 //    popupNewPlaceAlt = "New Place" popup alternate
 //    popupNewPlaceLink = "New Place" popup URL
 //    popupNewPlaceTitle = "New Place" popup location
-//    popupZoom = "Zoom Pic" popup
 //    nameElement = starting name on "EditProfile" popup
 //    aboutMeElement = starting aboutMe on "EditProfile" popup
 //    zoomElement = card that is zoomed-up
-
 //    cardElement = clone of card object
-
 //    imageElement =image used in Zoom and in createCard
 //    containerElementPerson = containerElement for "Edit Profile"
 //    containerElementPicture = containerElement for "New Place"
@@ -39,10 +35,7 @@ const buttonEditProfileClose = document.querySelector(
 );
 const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
 const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
-
 const popupEditProfile = document.querySelector("#editProfileForm");
-const popupEditProfileAlt = document.querySelector("#person-popup-container");
-
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
@@ -51,7 +44,6 @@ const popupNewPlace = document.querySelector("#newPlaceForm");
 const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
-const popupZoom = document.querySelector("#image-popup-container");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const zoomElement = document.querySelector("#image-zoom");
@@ -95,6 +87,7 @@ const initialCards = [
 
 //-----------------------------------------------
 //  Render INITIAL CARDS using renderCard function
+//    use i-- to reverse order of images
 //-----------------------------------------------
 for (let i = initialCards.length - 1; i >= 0; i--) {
   const currentCard = initialCards[i];
@@ -104,34 +97,28 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
-
-function openPopup(containerElement, popup) {
+function openPopup(containerElement) {
   containerElement.classList.add("popup-container_visible");
-  popup.addEventListener("mousedown", closePopupWithRemoteClick);
-  document.addEventListener("keydown", (event) => {
-    closePopupWithEscape(event, containerElement);
-  });
+  containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
+  document.addEventListener("keydown", closePopupWithEscape);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
-  const popup = containerElement;
   containerElement.classList.remove("popup-container_visible");
-  popup.removeEventListener("mousedown", closePopupWithRemoteClick);
-  document.removeEventListener("keydown", (event) => {
-    closePopupWithEscape(event, containerElement);
-  });
+  containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
+  document.removeEventListener("keydown", closePopupWithEscape);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithEscape'
 //-----------------------------------------------
-function closePopupWithEscape(event, containerElement) {
-  const target = event.target;
+function closePopupWithEscape(event) {
   if (event.key === "Escape") {
-    closePopup(containerElement);
+    const openedPopup = document.querySelector(".popup-container_visible");
+    closePopup(openedPopup);
   }
 }
 
@@ -139,9 +126,8 @@ function closePopupWithEscape(event, containerElement) {
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
-  const popup = event.target;
   if (event.target === event.currentTarget) {
-    closePopup(event.target, popup);
+    closePopup(event.target);
   }
 }
 
@@ -150,8 +136,7 @@ function closePopupWithRemoteClick(event) {
 //-----------------------------------------------
 function openPopupEditProfile() {
   fillPopupEditProfile();
-  const popup = popupEditProfileAlt;
-  openPopup(containerElementPerson, popup);
+  openPopup(containerElementPerson);
 }
 
 //-----------------------------------------------
@@ -169,7 +154,6 @@ function submitPopupEditProfile(evtSave) {
   evtSave.preventDefault();
   nameElement.textContent = popupEditProfileName.value;
   aboutMeElement.textContent = popupEditProfileAboutMe.value;
-  const popup = popupEditProfileAlt;
   closePopup(containerElementPerson);
 }
 
@@ -177,7 +161,6 @@ function submitPopupEditProfile(evtSave) {
 //  FUNCTION 'closePopupEditProfile'
 //-----------------------------------------------
 function closePopupEditProfile() {
-  const popup = popupEditProfileAlt;
   closePopup(containerElementPerson);
 }
 
@@ -189,15 +172,14 @@ function zoomPic(cardInfo) {
   zoomElement.src = cardInfo.link;
   zoomElement.alt = cardInfo.name;
   zoomTextElement.textContent = cardInfo.name;
-  const popup = containerElementImage;
-  openPopup(containerElementImage, popup);
+  openPopup(containerElementImage);
 }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupZoom'
 //-----------------------------------------------
 function closePopupZoom() {
-  closePopup(popupZoom);
+  closePopup(containerElementImage);
 }
 
 //-----------------------------------------------
@@ -205,8 +187,7 @@ function closePopupZoom() {
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
-  const popup = popupNewPlaceAlt;
-  openPopup(containerElementPicture, popup);
+  openPopup(containerElementPicture);
 }
 
 //-----------------------------------------------
