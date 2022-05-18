@@ -294,3 +294,8 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 //  LISTEN - click on big X 'newPlace' form
 //-----------------------------------------------
 buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
+
+// stuff for proj 7
+
+// const editFormValidator = new FormValidator(settings, editForm );
+// const addFormValidator = new FormValidator(settings, addForm );
