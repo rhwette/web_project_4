@@ -5,7 +5,7 @@ const showInputError = (
   { errorClass, inputErrorClass }
 ) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  input.classList.add(inputErrorClass);
+  inputElement.classList.add(inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(errorClass);
 };
@@ -40,7 +40,7 @@ const hasValidInputs = (inputList) => {
   });
 };
 
-const toggleButton = (inputList, buttonElement, inactiveButtonClass) => {
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
   if (hasValidInputs(inputList)) {
     buttonElement.classList.add(inactiveButtonClass);
     buttonElement.disabled = true;

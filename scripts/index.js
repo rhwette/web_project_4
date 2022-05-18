@@ -1,3 +1,5 @@
+// import FormValidator from "./FormValidator.js";
+
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
 //    buttonPencil = button to activate "Edit Profile" popup
@@ -13,7 +15,10 @@
 //    popupEditProfileName = "Edit Profile" popup name
 //    popupEditProfileAboutMe = "Edit Profile" popup aboutMe
 //    popupNewPlace = "New Place" popup
+
+// delete Alt
 //    popupNewPlaceAlt = "New Place" popup alternate
+
 //    popupNewPlaceLink = "New Place" popup URL
 //    popupNewPlaceTitle = "New Place" popup location
 //    nameElement = starting name on "EditProfile" popup
@@ -41,7 +46,9 @@ const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 const popupNewPlace = document.querySelector("#newPlaceForm");
+
 const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
+
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
 const nameElement = document.querySelector(".intro__name");
@@ -295,7 +302,22 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 //-----------------------------------------------
 buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 
-// stuff for proj 7
+//-----------------------------------------------
+//  VALIDATION
+//-----------------------------------------------
+// const validationSettings = {
+//   inputSelector: ".popup__input",
+//   submitButtonSelector: ".popup__button",
+//   inactiveButtonClass: "popup__button_disabled",
+//   inputErrorClass: "popup__input_type_error",
+//   errorClass: "popup__error_visible",
+// };
 
-// const editFormValidator = new FormValidator(settings, editForm );
-// const addFormValidator = new FormValidator(settings, addForm );
+// const editFormElement = containerElementPerson.querySelector(".popup__form");
+// const addFormElement = containerElementPicture.querySelector(".popup__form");
+
+// const editFormValidator = new FormValidator(
+//   validationSettings,
+//   editFormElement
+// );
+// const addFormValidator = new FormValidator(validationSettings, addFormElement);
