@@ -1,4 +1,4 @@
-// import FormValidator from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -305,24 +305,24 @@ buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 //-----------------------------------------------
 //  VALIDATION
 //-----------------------------------------------
-// const validationSettings = {
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: ".popup__button",
-//   inactiveButtonClass: "popup__button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "popup__error_visible",
-// };
+const validationSettings = {
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
 
-// const editFormElement = containerElementPerson.querySelector(".popup__form");
-// console.log("aaaa editFormElement", editFormElement);
-// const addFormElement = containerElementPicture.querySelector(".popup__form");
-// console.log("bbbb addFormElement", addFormElement);
-// const editFormValidator = new FormValidator(
-//   validationSettings,
-//   editFormElement
-// );
-// editFormValidator.enableValidation();
-// console.log("cccc editFormValidator", editFormValidator);
-// const addFormValidator = new FormValidator(validationSettings, addFormElement);
-// addFormValidator.enableValidation();
-// console.log("dddd addFormValidator", addFormValidator);
+const editFormElement = containerElementPerson.querySelector(".popup__form");
+console.log("aaaa editFormElement", editFormElement);
+const addFormElement = containerElementPicture.querySelector(".popup__form");
+console.log("bbbb addFormElement", addFormElement);
+const editFormValidator = new FormValidator(
+  validationSettings,
+  editFormElement
+);
+editFormValidator.enableValidation();
+console.log("cccc editFormValidator", editFormValidator);
+const addFormValidator = new FormValidator(validationSettings, addFormElement);
+addFormValidator.enableValidation();
+console.log("dddd addFormValidator", addFormValidator);
