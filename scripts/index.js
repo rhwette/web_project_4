@@ -314,10 +314,15 @@ buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 // };
 
 // const editFormElement = containerElementPerson.querySelector(".popup__form");
+// console.log("aaaa editFormElement", editFormElement);
 // const addFormElement = containerElementPicture.querySelector(".popup__form");
-
+// console.log("bbbb addFormElement", addFormElement);
 // const editFormValidator = new FormValidator(
 //   validationSettings,
 //   editFormElement
 // );
+// editFormValidator.enableValidation();
+// console.log("cccc editFormValidator", editFormValidator);
 // const addFormValidator = new FormValidator(validationSettings, addFormElement);
+// addFormValidator.enableValidation();
+// console.log("dddd addFormValidator", addFormValidator);
