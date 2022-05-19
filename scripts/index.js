@@ -202,7 +202,8 @@ function openPopupAddCard(evtNewPlace) {
 //-----------------------------------------------
 function submitPopupNewPlace(evtCreate) {
   evtCreate.preventDefault();
-  newCardInfo = {};
+  const newCardInfo = {};
+  console.log("5555 newCardInfo", newCardInfo);
   newCardInfo.name = popupNewPlaceTitle.value;
   newCardInfo.link = popupNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
