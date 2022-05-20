@@ -1,4 +1,6 @@
+// import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
+import Card from "./CardAJ.js";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -92,6 +94,16 @@ const initialCards = [
   },
 ];
 
+//************************************* */
+//  FUNCTION - render Card
+//************************************* */
+const renderCard = (data, container) => {
+  // const cardElement = createCard(data);
+  console.log("render");
+  const cardElement = new Card(data, "#myTemplate").createCard();
+  container.prepend(cardElement);
+};
+
 //-----------------------------------------------
 //  Render INITIAL CARDS using renderCard function
 //    use i-- to reverse order of images
@@ -174,13 +186,13 @@ function closePopupEditProfile() {
 //-----------------------------------------------
 //  FUNCTION 'zoomPic'
 //-----------------------------------------------
-function zoomPic(cardInfo) {
-  const zoomTextElement = document.querySelector(".image-popup__picture-text");
-  zoomElement.src = cardInfo.link;
-  zoomElement.alt = cardInfo.name;
-  zoomTextElement.textContent = cardInfo.name;
-  openPopup(containerElementImage);
-}
+// function zoomPic(cardInfo) {
+//   const zoomTextElement = document.querySelector(".image-popup__picture-text");
+//   zoomElement.src = cardInfo.link;
+//   zoomElement.alt = cardInfo.name;
+//   zoomTextElement.textContent = cardInfo.name;
+//   openPopup(containerElementImage);
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupZoom'
@@ -221,13 +233,13 @@ function closePopupAddCard() {
 //  FUNCTION - createCard - create cards and assign event listeners
 //************************************* */
 function createCard(card) {
-  const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
-
-  // set const's
-  const imageElement = cardElement.querySelector(".card-grid__picture");
-  const titleElement = cardElement.querySelector(".card-grid__text");
+  // const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
+  const cardElement = cardTemplate.cloneNode(true);
   const buttonHeart = cardElement.querySelector(".card-grid__icon");
   const buttonCan = cardElement.querySelector(".card-grid__garbage");
+  const imageElement = cardElement.querySelector(".card-grid__picture");
+
+  const titleElement = cardElement.querySelector(".card-grid__text");
 
   // define elements
   imageElement.src = card.link;
@@ -235,20 +247,20 @@ function createCard(card) {
   titleElement.textContent = card.name;
 
   // add EventListener for buttonCan
-  buttonCan.addEventListener("click", () => {
-    cardElement.remove();
-  });
+  // buttonCan.addEventListener("click", () => {
+  //   cardElement.remove();
+  // });
 
   // add EventListener for buttonHeart
-  buttonHeart.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    changeHeartColor(buttonHeart);
-  });
+  // buttonHeart.addEventListener("click", (evt) => {
+  //   evt.preventDefault();
+  //   changeHeartColor(buttonHeart);
+  // });
 
   // add EventListener for zoomPic
-  imageElement.addEventListener("click", () => {
-    zoomPic(card);
-  });
+  // imageElement.addEventListener("click", () => {
+  //   zoomPic(card);
+  // });
 
   return cardElement;
 }
@@ -256,22 +268,30 @@ function createCard(card) {
 //************************************* */
 //  FUNCTION - render Card
 //************************************* */
-function renderCard(card, container) {
-  const cardElement = createCard(card);
-  container.prepend(cardElement);
-}
+// const renderCard = (data, container) => {
+//   console.log("render");
+//   const cardElement = new Card(data, "#myTemplate");
+//   container.prepend(cardElement);
+// };
+// function renderCard(card, container) {
+//   const cardSelector = cardTemplate;
+//   console.log("MMMM cardSelector", cardSelector);
+//   const cardSpecial = new Card(card, cardSelector);
+//   const cardElement = createCard(card);
+//   container.prepend(cardElement);
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'changeHeartColor'
 //-----------------------------------------------
-function changeHeartColor(heartToChange) {
-  heartToChange.classList.toggle("card-grid__icon_active");
-}
+// function changeHeartColor(heartToChange) {
+//   heartToChange.classList.toggle("card-grid__icon_active");
+// }
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-buttonZoomPicClose.addEventListener("click", closePopupZoom);
+// buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil

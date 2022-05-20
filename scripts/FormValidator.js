@@ -70,7 +70,7 @@ class FormValidator {
     }
   }
 
-  setEventListeners() {
+  _setEventListeners() {
     this._inputList = Array.from(
       this._form.querySelectorAll(this._inputSelector)
     );
@@ -97,8 +97,9 @@ class FormValidator {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-
-    this.setEventListeners();
+    console.log("AAAA this = ", this);
+    // this.setEventListeners();
+    this._setEventListeners();
     // setEventListeners(this._form, rest);
   }
 }
