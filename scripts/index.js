@@ -1,5 +1,5 @@
 // import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+// import FormValidator from "./FormValidator.js";
 import Card from "./CardAJ.js";
 
 //-----------------------------------------------
@@ -99,8 +99,9 @@ const initialCards = [
 //************************************* */
 const renderCard = (data, container) => {
   // const cardElement = createCard(data);
-  console.log("render");
+  console.log("index.js FUNCTION render  ");
   const cardElement = new Card(data, "#myTemplate").createCard();
+  console.log("draw each pic");
   container.prepend(cardElement);
 };
 
@@ -290,7 +291,7 @@ function changeHeartColor(heartToChange) {
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-// buttonZoomPicClose.addEventListener("click", closePopupZoom);
+buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
@@ -334,15 +335,15 @@ const validationSettings = {
 };
 
 const editFormElement = containerElementPerson.querySelector(".popup__form");
-console.log("aaaa editFormElement", editFormElement);
+// console.log("aaaa editFormElement", editFormElement);
 const addFormElement = containerElementPicture.querySelector(".popup__form");
-console.log("bbbb addFormElement", addFormElement);
-const editFormValidator = new FormValidator(
-  validationSettings,
-  editFormElement
-);
-editFormValidator.enableValidation();
-console.log("cccc editFormValidator", editFormValidator);
-const addFormValidator = new FormValidator(validationSettings, addFormElement);
-addFormValidator.enableValidation();
-console.log("dddd addFormValidator", addFormValidator);
+// console.log("bbbb addFormElement", addFormElement);
+// const editFormValidator = new FormValidator(
+//   validationSettings,
+//   editFormElement
+// );
+// editFormValidator.enableValidation();
+// console.log("cccc editFormValidator", editFormValidator);
+// const addFormValidator = new FormValidator(validationSettings, addFormElement);
+// addFormValidator.enableValidation();
+// console.log("dddd addFormValidator", addFormValidator);
