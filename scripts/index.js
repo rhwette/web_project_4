@@ -1,6 +1,5 @@
-// import Card from "./Card.js";
-// import FormValidator from "./FormValidator.js";
-import Card from "./CardAJ.js";
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -335,15 +334,15 @@ const validationSettings = {
 };
 
 const editFormElement = containerElementPerson.querySelector(".popup__form");
-// console.log("aaaa editFormElement", editFormElement);
+console.log("aaaa editFormElement", editFormElement);
 const addFormElement = containerElementPicture.querySelector(".popup__form");
-// console.log("bbbb addFormElement", addFormElement);
-// const editFormValidator = new FormValidator(
-//   validationSettings,
-//   editFormElement
-// );
-// editFormValidator.enableValidation();
-// console.log("cccc editFormValidator", editFormValidator);
-// const addFormValidator = new FormValidator(validationSettings, addFormElement);
-// addFormValidator.enableValidation();
-// console.log("dddd addFormValidator", addFormValidator);
+console.log("bbbb addFormElement", addFormElement);
+const editFormValidator = new FormValidator(
+  validationSettings,
+  editFormElement
+);
+editFormValidator.enableValidation();
+console.log("cccc editFormValidator", editFormValidator);
+const addFormValidator = new FormValidator(validationSettings, addFormElement);
+addFormValidator.enableValidation();
+console.log("dddd addFormValidator", addFormValidator);
