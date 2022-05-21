@@ -8,12 +8,6 @@ class FormValidator {
     this._form = formElement;
   }
   _showInputError(formElement, inputElement, errorMessage) {
-    console.log("3333a formElement", formElement);
-    console.log("3333b inputElement", inputElement);
-    console.log("3333c errorMessage", errorMessage);
-    console.log("3333d errorclass", this._errorClass);
-    console.log("3333e inputErrorClass", this._inputErrorClass);
-
     const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -21,11 +15,6 @@ class FormValidator {
   }
 
   _hideInputError(formElement, inputElement, errorMessage) {
-    console.log("4444a formElement", formElement);
-    console.log("4444b inputElement", inputElement);
-    console.log("4444c errorMessage", errorMessage);
-    console.log("4444d errorclass", this._errorClass);
-    console.log("4444e inputErrorClass", this._inputErrorClass);
     const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.textContent = "";
@@ -49,17 +38,7 @@ class FormValidator {
   }
 
   _checkInputValidity(formElement, inputElement) {
-    console.log("2222a formElement", formElement);
-    console.log("2222b inputElement", inputElement);
-    // console.log("2222c enums", enums);
-
     if (!inputElement.validity.valid) {
-      console.log("2222d formElement", formElement);
-      console.log("2222e inputElement", inputElement);
-      console.log("2222ee inputElement.validity", inputElement.validity);
-      // console.log("2222f enums", enums);
-      console.log("2222g message", inputElement.validationMessage);
-
       this._showInputError(
         formElement,
         inputElement,
@@ -74,14 +53,8 @@ class FormValidator {
     this._inputList = Array.from(
       this._form.querySelectorAll(this._inputSelector)
     );
-    console.log("1111c inputList", this._inputList);
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
-    console.log("1111d buttonElement", this._buttonElement);
     this._inputList.forEach((inputElement) => {
-      console.log("1111e inputElement", inputElement);
-      console.log("1111f formElement", this._form);
-      // console.log("1111g rest", rest);
-
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(this._form, inputElement);
         this._toggleButtonState(
@@ -97,10 +70,7 @@ class FormValidator {
     this._form.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    console.log("AAAA this = ", this);
-    // this.setEventListeners();
     this._setEventListeners();
-    // setEventListeners(this._form, rest);
   }
 }
 

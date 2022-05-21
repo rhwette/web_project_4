@@ -16,10 +16,6 @@ import Card from "./Card.js";
 //    popupEditProfileName = "Edit Profile" popup name
 //    popupEditProfileAboutMe = "Edit Profile" popup aboutMe
 //    popupNewPlace = "New Place" popup
-
-// delete Alt
-//    popupNewPlaceAlt = "New Place" popup alternate
-
 //    popupNewPlaceLink = "New Place" popup URL
 //    popupNewPlaceTitle = "New Place" popup location
 //    nameElement = starting name on "EditProfile" popup
@@ -97,10 +93,7 @@ const initialCards = [
 //  FUNCTION - render Card
 //************************************* */
 const renderCard = (data, container) => {
-  // const cardElement = createCard(data);
-  console.log("index.js FUNCTION render  ");
   const cardElement = new Card(data, "#myTemplate").createCard();
-  console.log("draw each pic");
   container.prepend(cardElement);
 };
 
@@ -184,17 +177,6 @@ function closePopupEditProfile() {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'zoomPic'
-//-----------------------------------------------
-// function zoomPic(cardInfo) {
-//   const zoomTextElement = document.querySelector(".image-popup__picture-text");
-//   zoomElement.src = cardInfo.link;
-//   zoomElement.alt = cardInfo.name;
-//   zoomTextElement.textContent = cardInfo.name;
-//   openPopup(containerElementImage);
-// }
-
-//-----------------------------------------------
 //  FUNCTION 'closePopupZoom'
 //-----------------------------------------------
 function closePopupZoom() {
@@ -215,7 +197,6 @@ function openPopupAddCard(evtNewPlace) {
 function submitPopupNewPlace(evtCreate) {
   evtCreate.preventDefault();
   const newCardInfo = {};
-  console.log("5555 newCardInfo", newCardInfo);
   newCardInfo.name = popupNewPlaceTitle.value;
   newCardInfo.link = popupNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
@@ -228,69 +209,6 @@ function submitPopupNewPlace(evtCreate) {
 function closePopupAddCard() {
   closePopup(containerElementPicture);
 }
-
-//************************************* */
-//  FUNCTION - createCard - create cards and assign event listeners
-//************************************* */
-function createCard(card) {
-  // const cardElement = cardTemplate.content.firstElementChild.cloneNode(true);
-  const cardElement = cardTemplate.cloneNode(true);
-  const buttonHeart = cardElement.querySelector(".card-grid__icon");
-  const buttonCan = cardElement.querySelector(".card-grid__garbage");
-  const imageElement = cardElement.querySelector(".card-grid__picture");
-  const titleElement = cardElement.querySelector(".card-grid__text");
-
-  // define elements
-  imageElement.src = card.link;
-  imageElement.alt = card.name;
-  titleElement.textContent = card.name;
-
-  // add EventListener for buttonCan
-  // buttonCan.addEventListener("click", () => {
-  //   cardElement.remove();
-  // });
-
-  // add EventListener for buttonHeart
-  // buttonHeart.addEventListener("click", (evt) => {
-  //   evt.preventDefault();
-  //   changeHeartColor(buttonHeart);
-  // });
-
-  // add EventListener for zoomPic
-  // imageElement.addEventListener("click", () => {
-  //   zoomPic(card);
-  // });
-
-  return cardElement;
-}
-
-//************************************* */
-//  FUNCTION - render Card
-//************************************* */
-// const renderCard = (data, container) => {
-//   console.log("render");
-//   const cardElement = new Card(data, "#myTemplate");
-//   container.prepend(cardElement);
-// };
-// function renderCard(card, container) {
-//   const cardSelector = cardTemplate;
-//   console.log("MMMM cardSelector", cardSelector);
-//   const cardSpecial = new Card(card, cardSelector);
-//   const cardElement = createCard(card);
-//   container.prepend(cardElement);
-// }
-
-//-----------------------------------------------
-//  FUNCTION 'changeHeartColor'
-//-----------------------------------------------
-function changeHeartColor(heartToChange) {
-  heartToChange.classList.toggle("card-grid__icon_active");
-}
-
-//-----------------------------------------------
-//  LISTEN - click on big X zoomPic
-//-----------------------------------------------
-buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
@@ -306,7 +224,7 @@ popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 //  LISTEN - click on big X 'editProfile' form
 //-----------------------------------------------
 buttonEditProfileClose.addEventListener("click", closePopupEditProfile);
-
+//
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus
 //-----------------------------------------------
@@ -334,15 +252,11 @@ const validationSettings = {
 };
 
 const editFormElement = containerElementPerson.querySelector(".popup__form");
-console.log("aaaa editFormElement", editFormElement);
 const addFormElement = containerElementPicture.querySelector(".popup__form");
-console.log("bbbb addFormElement", addFormElement);
 const editFormValidator = new FormValidator(
   validationSettings,
   editFormElement
 );
 editFormValidator.enableValidation();
-console.log("cccc editFormValidator", editFormValidator);
 const addFormValidator = new FormValidator(validationSettings, addFormElement);
 addFormValidator.enableValidation();
-console.log("dddd addFormValidator", addFormValidator);
