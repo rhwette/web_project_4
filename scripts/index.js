@@ -238,7 +238,6 @@ function createCard(card) {
   const buttonHeart = cardElement.querySelector(".card-grid__icon");
   const buttonCan = cardElement.querySelector(".card-grid__garbage");
   const imageElement = cardElement.querySelector(".card-grid__picture");
-
   const titleElement = cardElement.querySelector(".card-grid__text");
 
   // define elements
@@ -284,9 +283,9 @@ function createCard(card) {
 //-----------------------------------------------
 //  FUNCTION 'changeHeartColor'
 //-----------------------------------------------
-// function changeHeartColor(heartToChange) {
-//   heartToChange.classList.toggle("card-grid__icon_active");
-// }
+function changeHeartColor(heartToChange) {
+  heartToChange.classList.toggle("card-grid__icon_active");
+}
 
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
