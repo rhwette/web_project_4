@@ -211,6 +211,11 @@ function closePopupAddCard() {
 }
 
 //-----------------------------------------------
+//  LISTEN - click on big X zoomPic
+//-----------------------------------------------
+buttonZoomPicClose.addEventListener("click", closePopupZoom);
+
+//-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
 //-----------------------------------------------
 buttonPencil.addEventListener("click", openPopupEditProfile);
