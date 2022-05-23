@@ -1,12 +1,6 @@
 class Utils {
   constructor() {}
 
-  //-----------------------------------------------
-  //  set CONST's
-  //-----------------------------------------------
-  // const containerForImages = document.querySelector(".card-grid__format");
-  // const zoomElement = document.querySelector("#image-zoom");
-
   // -----------------------------------------------
   //  FUNCTION 'openPopup'
   // -----------------------------------------------

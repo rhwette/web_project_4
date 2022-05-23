@@ -182,14 +182,6 @@ function closePopupEditProfile() {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closePopupZoom'
-//-----------------------------------------------
-// function closePopupZoom() {
-//   console.log("INDEX JS FUNCTION CLOSEPOPUPZOOM");
-//   closePopup(containerElementImage);
-// }
-
-//-----------------------------------------------
 //  FUNCTION 'openPopupAddCard'
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
@@ -215,11 +207,6 @@ function submitPopupNewPlace(evtCreate) {
 function closePopupAddCard() {
   closePopup(containerElementPicture);
 }
-
-//-----------------------------------------------
-//  LISTEN - click on big X zoomPic
-//-----------------------------------------------
-// buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil

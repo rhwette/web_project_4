@@ -1,51 +1,8 @@
 //-----------------------------------------------
 //  set CONST's
 //-----------------------------------------------
-// const containerForImages = document.querySelector(".card-grid__format");
 const containerElementImage = document.querySelector("#image-popup-container");
-// const containerElementImage = document.querySelector("#popupImageZoom");
 console.log("1111 containerElementImage =", containerElementImage);
-// const imageElement = cardTemplate.content.querySelector("img");
-// console.log("BBBB imageElement", imageElement);
-// const zoomElement = document.querySelector("#image-zoom");
-const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
-
-//-----------------------------------------------
-//  FUNCTION 'openPopup'
-//-----------------------------------------------
-// function openPopup(containerElement) {
-//   containerElement.classList.add("popup-container_visible");
-//   containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
-//   document.addEventListener("keydown", closePopupWithEscape);
-// }
-
-//-----------------------------------------------
-//  FUNCTION 'closePopup'
-//-----------------------------------------------
-// function closePopup(containerElement) {
-//   containerElement.classList.remove("popup-container_visible");
-//   containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
-//   document.removeEventListener("keydown", closePopupWithEscape);
-// }
-
-//-----------------------------------------------
-//  FUNCTION 'closePopupWithEscape'
-//-----------------------------------------------
-// function closePopupWithEscape(event) {
-//   if (event.key === "Escape") {
-//     const openedPopup = document.querySelector(".popup-container_visible");
-//     closePopup(openedPopup);
-//   }
-// }
-
-//-----------------------------------------------
-//  FUNCTION 'closePopupWithRemoteClick'
-//-----------------------------------------------
-// function closePopupWithRemoteClick(event) {
-//   if (event.target === event.currentTarget) {
-//     closePopup(event.target);
-//   }
-// }
 
 import Utils from "./Utils.js";
 
@@ -74,7 +31,6 @@ class Card {
     console.log("aaaaHANDLEZOOM this", this);
     console.log("bbbbHANDLEZOOM this.link", this._link);
     console.log("ccccHANDLEZOOM this.link", this._name);
-    // console.log("dddd1HANDLEZOOM containerElementImage", containerElementImage);
     document.getElementById("image-zoom").src = this._link;
     document.getElementById("image-zoom").alt = this._name;
     document.querySelector(".image-popup__picture-text").textContent =
@@ -89,8 +45,6 @@ class Card {
 
   _handleClosePopupZoom() {
     console.log("UTIL JS FUNCTION CLOSEPOPUPZOOM");
-    // this._utilities.closePopup(containerElementImage);
-    // this._closePopup(containerElementImage);
     this._utilities.closePopup(containerElementImage);
   }
 
