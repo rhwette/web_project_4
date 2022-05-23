@@ -70,10 +70,6 @@ class Card {
     console.log("3333eLISTENER this._element", this._element);
 
     //  add EventListener for click on big X zoomPic
-    //  note: both work
-    // document
-    //   .getElementById("buttonZoomPicClose")
-    //   .addEventListener("click", this._handleClosePopupZoom.bind(this));
     this._containerElementImage
       .querySelector("#buttonZoomPicClose")
       .addEventListener("click", this._handleClosePopupZoom.bind(this));
