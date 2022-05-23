@@ -1,4 +1,5 @@
 import FormValidator from "./FormValidator.js";
+import Utils from "./Utils.js";
 import Card from "./Card.js";
 
 //-----------------------------------------------
@@ -36,7 +37,7 @@ const buttonEditProfileClose = document.querySelector(
   "#buttonEditProfileClose"
 );
 const buttonNewPlaceClose = document.querySelector("#buttonNewPlaceClose");
-const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
+// const buttonZoomPicClose = document.querySelector("#buttonZoomPicClose");
 const popupEditProfile = document.querySelector("#editProfileForm");
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
@@ -110,6 +111,7 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
 function openPopup(containerElement) {
+  console.log("INDEX JS FUNCTION OPENPOPUP");
   containerElement.classList.add("popup-container_visible");
   containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
   document.addEventListener("keydown", closePopupWithEscape);
@@ -119,6 +121,7 @@ function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 function closePopup(containerElement) {
+  console.log("INDEX JS FUNCTION CLOSEPOPUP");
   containerElement.classList.remove("popup-container_visible");
   containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
   document.removeEventListener("keydown", closePopupWithEscape);
@@ -129,6 +132,7 @@ function closePopup(containerElement) {
 //-----------------------------------------------
 function closePopupWithEscape(event) {
   if (event.key === "Escape") {
+    console.log("INDEX JS FUNCTION CLOSEPOPUPWITHESCAPE");
     const openedPopup = document.querySelector(".popup-container_visible");
     closePopup(openedPopup);
   }
@@ -138,6 +142,7 @@ function closePopupWithEscape(event) {
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
+  console.log("INDEX JS FUNCTION CLOSEPOPUPWITHREMOTCLICK");
   if (event.target === event.currentTarget) {
     closePopup(event.target);
   }
@@ -179,9 +184,10 @@ function closePopupEditProfile() {
 //-----------------------------------------------
 //  FUNCTION 'closePopupZoom'
 //-----------------------------------------------
-function closePopupZoom() {
-  closePopup(containerElementImage);
-}
+// function closePopupZoom() {
+//   console.log("INDEX JS FUNCTION CLOSEPOPUPZOOM");
+//   closePopup(containerElementImage);
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'openPopupAddCard'
@@ -213,7 +219,7 @@ function closePopupAddCard() {
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-buttonZoomPicClose.addEventListener("click", closePopupZoom);
+// buttonZoomPicClose.addEventListener("click", closePopupZoom);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
