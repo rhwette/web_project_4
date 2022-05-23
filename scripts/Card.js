@@ -1,9 +1,3 @@
-//-----------------------------------------------
-//  set CONST's
-//-----------------------------------------------
-const containerElementImage = document.querySelector("#image-popup-container");
-console.log("1111 containerElementImage =", containerElementImage);
-
 import Utils from "./Utils.js";
 
 class Card {
@@ -12,6 +6,9 @@ class Card {
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._utilities = new Utils();
+    this._containerElementImage = document.querySelector(
+      "#image-popup-container"
+    );
   }
 
   _getTemplate() {
@@ -35,8 +32,11 @@ class Card {
     document.getElementById("image-zoom").alt = this._name;
     document.querySelector(".image-popup__picture-text").textContent =
       this._name;
-    console.log("dddd2HANDLEZOOM containerElementImage", containerElementImage);
-    this._utilities.openPopup(containerElementImage);
+    console.log(
+      "dddd2HANDLEZOOM containerElementImage",
+      this._containerElementImage
+    );
+    this._utilities.openPopup(this._containerElementImage);
   }
 
   _handleHeart() {
@@ -45,7 +45,7 @@ class Card {
 
   _handleClosePopupZoom() {
     console.log("UTIL JS FUNCTION CLOSEPOPUPZOOM");
-    this._utilities.closePopup(containerElementImage);
+    this._utilities.closePopup(this._containerElementImage);
   }
 
   _setEventListeners() {
@@ -74,7 +74,7 @@ class Card {
     // document
     //   .getElementById("buttonZoomPicClose")
     //   .addEventListener("click", this._handleClosePopupZoom.bind(this));
-    containerElementImage
+    this._containerElementImage
       .querySelector("#buttonZoomPicClose")
       .addEventListener("click", this._handleClosePopupZoom.bind(this));
   }

@@ -12,24 +12,13 @@ class Utils {
     );
 
     containerElement.classList.add("popup-container_visible");
-    // console.log(
-    //   "UTIL JS FUNCTION OPENPOPUP -- after classList add = ",
-    //   containerElement
-    // );
+
     containerElement.addEventListener(
       "mousedown",
       this.closePopupWithRemoteClick
     );
-    // console.log(
-    //   "UTIL JS FUNCTION OPENPOPUP -- after EVLISTENER mousedown  ",
-    //   containerElement
-    // );
-    document.addEventListener("keydown", this.closePopupWithEscape);
 
-    // console.log(
-    //   "UTIL JS FUNCTION OPENPOPUP -- after EVLISTENER keydown  ",
-    //   containerElement
-    // );
+    document.addEventListener("keydown", this.closePopupWithEscape);
   }
 
   //-----------------------------------------------
@@ -53,8 +42,6 @@ class Utils {
     if (event.key === "Escape") {
       const openedPopup = document.querySelector(".popup-container_visible");
       console.log("openedPopup", openedPopup);
-      // this.closePopup(openedPopup);
-      // closePopup(openedPopup);
       openedPopup.classList.remove("popup-container_visible");
     }
   }
@@ -69,7 +56,6 @@ class Utils {
     if (event.target === event.currentTarget) {
       const openedPopup = document.querySelector(".popup-container_visible");
       console.log("openedPopup", openedPopup);
-      // this.closePopup(event.target);
       openedPopup.classList.remove("popup-container_visible");
     }
   }
