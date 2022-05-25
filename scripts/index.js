@@ -1,7 +1,11 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
-import Utils from "./Utils.js";
-// import {openPopup}  from "./Utils.js";
+import { openPopup, closePopup } from "./Utils.js";
+// import Utils from "./Utils.js";
+// import { openPopup } from "./Utils.js";
+// import { closePopup } from "./Utils.js";
+// import { closePopupWithRemoteClick } from "./Utils.js";
+// import { closePopupWithEscape } from "./Utils.js";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -111,67 +115,67 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 //  FUNCTION 'openPopup'
 //-----------------------------------------------
-function openPopup(containerElement) {
-  console.log("99a INDEX.JS FUNCTION OPENPOPUP");
-  console.log(
-    "99b INDEX.JS FUNCTION OPENPOPUP - containerElement =",
-    containerElement
-  );
-  containerElement.classList.add("popup-container_visible");
-  console.log(
-    "99c INDEX.JS FUNCTION OPENPOPUP - containerElement =",
-    containerElement
-  );
-  console.log("99d INDEX.JS FUNCTION OPENPOPUP - LISTEN FOR ESCAPE =");
+// function openPopup(containerElement) {
+//   console.log("99a INDEX.JS FUNCTION OPENPOPUP");
+//   console.log(
+//     "99b INDEX.JS FUNCTION OPENPOPUP - containerElement =",
+//     containerElement
+//   );
+//   containerElement.classList.add("popup-container_visible");
+//   console.log(
+//     "99c INDEX.JS FUNCTION OPENPOPUP - containerElement =",
+//     containerElement
+//   );
+//   console.log("99d INDEX.JS FUNCTION OPENPOPUP - LISTEN FOR ESCAPE =");
 
-  containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
-  document.addEventListener("keydown", closePopupWithEscape);
-  console.log(
-    "99e INDEX.JS FUNCTION OPENPOPUP - containerElement =",
-    containerElement
-  );
-}
+//   containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
+//   document.addEventListener("keydown", closePopupWithEscape);
+//   console.log(
+//     "99e INDEX.JS FUNCTION OPENPOPUP - containerElement =",
+//     containerElement
+//   );
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
-function closePopup(containerElement) {
-  console.log(
-    "AAAA INDEX.JS FUNCTION CLOSEPOPUP - containerElement =",
-    containerElement
-  );
-  containerElement.classList.remove("popup-container_visible");
-  console.log(
-    "BBBB INDEX.JS FUNCTION CLOSEPOPUP - containerElement.classList =",
-    containerElement.classList
-  );
-  containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
-  document.removeEventListener("keydown", closePopupWithEscape);
-}
+// function closePopup(containerElement) {
+//   console.log(
+//     "AAAA INDEX.JS FUNCTION CLOSEPOPUP - containerElement =",
+//     containerElement
+//   );
+//   containerElement.classList.remove("popup-container_visible");
+//   console.log(
+//     "BBBB INDEX.JS FUNCTION CLOSEPOPUP - containerElement.classList =",
+//     containerElement.classList
+//   );
+//   containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
+//   document.removeEventListener("keydown", closePopupWithEscape);
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithEscape'
 //-----------------------------------------------
-function closePopupWithEscape(event) {
-  console.log("222 Index JS FUNCTION CLOSEPOPUPWITHESCAPE");
-  if (event.key === "Escape") {
-    console.log("222b event.key", event.key);
-    const openedPopup = document.querySelector(".popup-container_visible");
-    console.log("222d openedPopup", openedPopup);
-    if (openedPopup) {
-      closePopup(openedPopup);
-    }
-  }
-}
+// function closePopupWithEscape(event) {
+//   console.log("222 Index JS FUNCTION CLOSEPOPUPWITHESCAPE");
+//   if (event.key === "Escape") {
+//     console.log("222b event.key", event.key);
+//     const openedPopup = document.querySelector(".popup-container_visible");
+//     console.log("222d openedPopup", openedPopup);
+//     if (openedPopup) {
+//       closePopup(openedPopup);
+//     }
+//   }
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'closePopupWithRemoteClick'
 //-----------------------------------------------
-function closePopupWithRemoteClick(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(event.target);
-  }
-}
+// function closePopupWithRemoteClick(event) {
+//   if (event.target === event.currentTarget) {
+//     closePopup(event.target);
+//   }
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'openPopupEditProfile'

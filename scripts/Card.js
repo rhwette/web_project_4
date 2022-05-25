@@ -1,11 +1,12 @@
-import Utils from "./Utils.js";
+// import Utils from "./Utils.js";
+import { openPopup, closePopup } from "./Utils.js";
 
 class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
-    this._utilities = new Utils();
+    // this._utilities = new Utils();
     this._containerElementImage = document.querySelector(
       "#image-popup-container"
     );
@@ -29,7 +30,7 @@ class Card {
     document.getElementById("image-zoom").alt = this._name;
     document.querySelector(".image-popup__picture-text").textContent =
       this._name;
-    this._utilities.openPopup(this._containerElementImage);
+    openPopup(this._containerElementImage);
   }
 
   _handleHeart() {
@@ -38,7 +39,7 @@ class Card {
 
   _handleClosePopupZoom() {
     console.log("2222, handleClosePopupZoom");
-    this._utilities.closePopup(this._containerElementImage);
+    closePopup(this._containerElementImage);
   }
 
   _setEventListeners() {
