@@ -24,6 +24,7 @@ class Card {
   }
 
   _handleZoom() {
+    console.log("11 CARD.JS FUNCTION handleZoom");
     document.getElementById("image-zoom").src = this._link;
     document.getElementById("image-zoom").alt = this._name;
     document.querySelector(".image-popup__picture-text").textContent =
@@ -36,6 +37,7 @@ class Card {
   }
 
   _handleClosePopupZoom() {
+    console.log("2222, handleClosePopupZoom");
     this._utilities.closePopup(this._containerElementImage);
   }
 
@@ -54,11 +56,14 @@ class Card {
     this._element
       .querySelector("img")
       .addEventListener("click", this._handleZoom.bind(this));
+    console.log("00 CARD.JS EVENTLISTENER for ZoomPic");
 
     //  add EventListener for click on big X zoomPic
     this._containerElementImage
       .querySelector("#buttonZoomPicClose")
       .addEventListener("click", this._handleClosePopupZoom.bind(this));
+    // console.log("0000 eventListener on buttonzoompicclose");
+    // console.log("1111 click on big X zoompic");
   }
 
   createCard() {
