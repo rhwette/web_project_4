@@ -143,18 +143,8 @@ function closePopupEditProfile() {
 //  FUNCTION 'openPopupAddCard'
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
-  console.log("66a INDEX.JS FUNCTION OPENPOPUPADDCARD");
-  console.log(
-    "66b INDEX.JS FUNCTION OPENPOPUPADDCARD - popupNewPlace =",
-    popupNewPlace
-  );
-
   popupNewPlace.reset();
   openPopup(containerElementPicture);
-  console.log(
-    "66c INDEX.JS FUNCTION OPENPOPUPADDCARD - popupNewPlace =",
-    popupNewPlace
-  );
 }
 
 //-----------------------------------------------
