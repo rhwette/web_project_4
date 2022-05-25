@@ -4,6 +4,7 @@ class Utils {
   // -----------------------------------------------
   //  FUNCTION 'openPopup'
   // -----------------------------------------------
+  // export const openPopup = function(containerElement) {
   openPopup(containerElement) {
     console.log("22 UTILS.JS FUNCTION OPENPOPUP");
     containerElement.classList.add("popup-container_visible");
@@ -51,12 +52,12 @@ class Utils {
         "55e UTILS.JS FUNCTION CLOSEPOPUPWITHESCAPE - openedPopup.classList =",
         openedPopup.classList
       );
+      document.removeEventListener("keydown", this.closePopupWithEscape);
+      openedPopup.classList.remove("popup-container_visible");
       console.log(
         "55f UTILS.JS FUNCTION CLOSEPOPUPWITHESCAPE - openedPopup.classList =",
         openedPopup.classList
       );
-      document.removeEventListener("keydown", this.closePopupWithEscape);
-      openedPopup.classList.remove("popup-container_visible");
       // console.log("55g should go to closePopup");
       // closePopup(openedPopup);
     }

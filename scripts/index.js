@@ -1,6 +1,7 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
 import Utils from "./Utils.js";
+// import {openPopup}  from "./Utils.js";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -157,7 +158,9 @@ function closePopupWithEscape(event) {
     console.log("222b event.key", event.key);
     const openedPopup = document.querySelector(".popup-container_visible");
     console.log("222d openedPopup", openedPopup);
-    closePopup(openedPopup);
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
   }
 }
 
