@@ -45,51 +45,51 @@
     </section>
 
     <!--POPUP AND FORM for EDIT PROFILE-->
-    <div class="popup-container" id="person-popup-container">
-      <div class="popup" id="popupEditProfile">
-        <h2 class="popup__title">Edit Profile</h2>
-        <button type="button" class="popup__button-close" id="buttonEditProfileClose"><img src="./images/close.svg"
-            alt="close symbol" /></button>
+    <div class="popup" id="person-popup-container">
+      <div class="popup__container" id="popupEditProfile">
+        <h2 class="popup__container_title">Edit Profile</h2>
+        <button type="button" class="popup__container_button-close" id="buttonEditProfileClose"><img
+            src="./images/close.svg" alt="close symbol" /></button>
         <form name="formEditProfile" class="popup__form" id="editProfileForm">
-          <input name="name" class="popup__input popup__input_type-name " type="text" id="name-input" required
-            minlength="2" maxlength="40" />
+          <input name="name" class="popup__container_input popup__container_input_type-name " type="text"
+            id="name-input" required minlength="2" maxlength="40" />
           <!-- add span tag to control error messages -->
           <span id="name-input-error"></span>
-          <input name="aboutme" class="popup__input popup__input_type-description " type="text" id="aboutme-input"
-            required minlength="2" maxlength="200" />
+          <input name="aboutme" class="popup__container_input popup__container_input_type-description " type="text"
+            id="aboutme-input" required minlength="2" maxlength="200" />
           <!-- add span tag to control error messages -->
           <span id="aboutme-input-error"></span>
-          <button type="submit" class="popup__button " id="buttonEditProfileSave">Save</button>
+          <button type="submit" class="popup__container_button " id="buttonEditProfileSave">Save</button>
         </form>
       </div>
     </div>
 
     <!--POPUP AND FORM for NEW PLACE-->
-    <div class="popup-container" id="picture-popup-container">
-      <div class="popup" id="popupNewPlace">
-        <h2 class=" popup__title">New Place</h2>
-        <button type="button" class="popup__button-close" id="buttonNewPlaceClose"><img src="./images/close.svg"
-            alt="close symbol" /></button>
+    <div class="popup" id="picture-popup-container">
+      <div class="popup__container" id="popupNewPlace">
+        <h2 class=" popup__container_title">New Place</h2>
+        <button type="button" class="popup__container_button-close" id="buttonNewPlaceClose"><img
+            src="./images/close.svg" alt="close symbol" /></button>
 
         <form name="formNewPlace" class="popup__form" id="newPlaceForm">
-          <input name="place" placeholder="Title" class="popup__input popup__input_type-place" type="text"
-            id="place-input" required minlength="1" maxlength="30" />
+          <input name="place" placeholder="Title" class="popup__container_input popup__container_input_type-place"
+            type="text" id="place-input" required minlength="1" maxlength="30" />
           <span id="place-input-error"></span>
-          <input name="link" placeholder="Image URL" class="popup__input popup__input_type-link" type="url"
-            id="link-input" required />
+          <input name="link" placeholder="Image URL" class="popup__container_input popup__container_input_type-link"
+            type="url" id="link-input" required />
           <span id="link-input-error"></span>
-          <button type="submit" class="popup__button " id="buttonNewPlaceCreate">Create</button>
+          <button type="submit" class="popup__container_button " id="buttonNewPlaceCreate">Create</button>
         </form>
       </div>
     </div>
 
     <!--POPUP AND BUTTON for IMAGE ZOOM-->
-    <div class="popup-container" id="image-popup-container">
+    <div class="popup" id="image-popup-container">
       <div class="image-popup" id="popupImageZoom">
         <img class=" image-popup__picture-zoom" src="data:," alt=" " id="image-zoom" />
         <p class="image-popup__picture-text"></p>;
-        <button type="button" class="popup__button-close" id="buttonZoomPicClose"><img src="./images/close.svg"
-            alt="close symbol" /></button>
+        <button type="button" class="popup__container_button-close" id="buttonZoomPicClose"><img
+            src="./images/close.svg" alt="close symbol" /></button>
       </div>
     </div>
   </main>

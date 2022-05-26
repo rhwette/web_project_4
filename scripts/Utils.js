@@ -2,7 +2,7 @@
 //  FUNCTION 'openPopup'
 // -----------------------------------------------
 export function openPopup(containerElement) {
-  containerElement.classList.add("popup-container_visible");
+  containerElement.classList.add("popup_visible");
   containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
   document.addEventListener("keydown", closePopupWithEscape);
 }
@@ -11,7 +11,7 @@ export function openPopup(containerElement) {
 //  FUNCTION 'closePopup'
 //-----------------------------------------------
 export function closePopup(containerElement) {
-  containerElement.classList.remove("popup-container_visible");
+  containerElement.classList.remove("popup_visible");
   containerElement.removeEventListener("mousedown", closePopupWithRemoteClick);
   document.removeEventListener("keydown", closePopupWithEscape);
 }
@@ -21,7 +21,7 @@ export function closePopup(containerElement) {
 //-----------------------------------------------
 function closePopupWithEscape(event) {
   if (event.key === "Escape") {
-    const openedPopup = document.querySelector(".popup-container_visible");
+    const openedPopup = document.querySelector(".popup_visible");
     closePopup(openedPopup);
   }
 }
@@ -31,7 +31,7 @@ function closePopupWithEscape(event) {
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
   if (event.target === event.currentTarget) {
-    const openedPopup = document.querySelector(".popup-container_visible");
+    const openedPopup = document.querySelector(".popup_visible");
     closePopup(openedPopup);
   }
 }

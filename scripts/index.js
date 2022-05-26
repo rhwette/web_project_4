@@ -8,8 +8,14 @@ import { openPopup, closePopup } from "./Utils.js";
 //    buttonPlus = button that activates "New Place" popup
 //    buttonCan = garbage can icon
 //    buttonHeart = "like" icon
+
+// turn off
 //    buttonEditProfileSave = the 'SAVE' button on "Edit Profile" popup
+// turn off
+// turn off
 //    buttonNewPlaceCreate = the 'Create' button on 'New Place' popup
+// turn off
+
 //    buttonEditProfileClose = 'big X' on 'EditProfile' popup
 //    buttonNewPlaceClose = 'big X' on 'New Place' popup
 //    buttonZoomPicClose = 'big X' on 'Zoom Pic' popup
@@ -21,18 +27,23 @@ import { openPopup, closePopup } from "./Utils.js";
 //    popupNewPlaceTitle = "New Place" popup location
 //    nameElement = starting name on "EditProfile" popup
 //    aboutMeElement = starting aboutMe on "EditProfile" popup
+// turn off
 //    zoomElement = card that is zoomed-up
+// turn off
 //    cardElement = clone of card object
+// turn off
 //    imageElement =image used in Zoom and in createCard
+// turn off
 //    containerElementPerson = containerElement for "Edit Profile"
 //    containerElementPicture = containerElement for "New Place"
 //    containerElementImage = containerElement for "Zoom Pic"
-
-const cardTemplate = document.querySelector("#myTemplate");
+// turn off
+// const cardTemplate = document.querySelector("#myTemplate");
+// turn off
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
-const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
+// const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
+// const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
 const buttonEditProfileClose = document.querySelector(
   "#buttonEditProfileClose"
 );
@@ -45,14 +56,14 @@ const popupEditProfileAboutMe = document.querySelector(
 );
 const popupNewPlace = document.querySelector("#newPlaceForm");
 
-const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
+// const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
 
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
-const zoomElement = document.querySelector("#image-zoom");
-const imageElement = cardTemplate.content.querySelector("img");
+// const zoomElement = document.querySelector("#image-zoom");
+// const imageElement = cardTemplate.content.querySelector("img");
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
 );
@@ -213,11 +224,11 @@ buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 //  VALIDATION
 //-----------------------------------------------
 const validationSettings = {
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
+  inputSelector: ".popup__container_input",
+  submitButtonSelector: ".popup__container_button",
+  inactiveButtonClass: "popup__container_button-disabled",
+  inputErrorClass: "popup__container_input_type-error",
+  errorClass: "popup__container_error-visible",
 };
 
 const editFormElement = containerElementPerson.querySelector(".popup__form");
