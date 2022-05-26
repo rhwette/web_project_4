@@ -1,13 +1,14 @@
 import { openPopup, closePopup } from "./Utils.js";
+const containerElementImage = document.querySelector("#image-popup-container");
+const imageZoom = document.getElementById("image-zoom");
+const imageZoomText = document.querySelector(".image-popup__picture-text");
 
 class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
-    this._containerElementImage = document.querySelector(
-      "#image-popup-container"
-    );
+    this._containerElementImage = containerElementImage;
   }
 
   _getTemplate() {
@@ -23,19 +24,14 @@ class Card {
   }
 
   _handleZoom() {
-    document.getElementById("image-zoom").src = this._link;
-    document.getElementById("image-zoom").alt = this._name;
-    document.querySelector(".image-popup__picture-text").textContent =
-      this._name;
+    imageZoom.src = this._link;
+    imageZoom.alt = this._name;
+    imageZoomText.textContent = this._name;
     openPopup(this._containerElementImage);
   }
 
-  _handleHeart() {
-    this.classList.toggle("card-grid__icon_active");
-  }
-
-  _handleClosePopupZoom() {
-    closePopup(this._containerElementImage);
+  _handleHeart(event) {
+    event.target.classList.toggle("card-grid__icon_active");
   }
 
   _setEventListeners() {
@@ -53,17 +49,15 @@ class Card {
     this._element
       .querySelector("img")
       .addEventListener("click", this._handleZoom.bind(this));
-
-    //  add EventListener for click on big X zoomPic
-    this._containerElementImage
-      .querySelector("#buttonZoomPicClose")
-      .addEventListener("click", this._handleClosePopupZoom.bind(this));
   }
 
   createCard() {
     this._element = this._getTemplate();
-    this._element.querySelector(".card-grid__picture").src = this._link;
-    this._element.querySelector(".card-grid__text").textContent = this._name;
+    const cardGridPicture = this._element.querySelector(".card-grid__picture");
+    const cardGridText = this._element.querySelector(".card-grid__text");
+    cardGridPicture.src = this._link;
+    cardGridPicture.alt = this._name;
+    cardGridText.textContent = this._name;
     this._setEventListeners();
     return this._element;
   }

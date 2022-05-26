@@ -22,8 +22,7 @@ export function closePopup(containerElement) {
 function closePopupWithEscape(event) {
   if (event.key === "Escape") {
     const openedPopup = document.querySelector(".popup-container_visible");
-    document.removeEventListener("keydown", this.closePopupWithEscape);
-    openedPopup.classList.remove("popup-container_visible");
+    closePopup(openedPopup);
   }
 }
 
@@ -33,6 +32,6 @@ function closePopupWithEscape(event) {
 function closePopupWithRemoteClick(event) {
   if (event.target === event.currentTarget) {
     const openedPopup = document.querySelector(".popup-container_visible");
-    openedPopup.classList.remove("popup-container_visible");
+    closePopup(openedPopup);
   }
 }
