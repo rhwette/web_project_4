@@ -192,25 +192,6 @@ function closePopupAddCard() {
   closePopup(containerElementPicture);
 }
 
-//-----------------------------------------------
-//  LISTEN - click on big X zoomPic
-//-----------------------------------------------
-// buttonZoomPicClose.addEventListener("click", closePopupZoom);
-
-//-----------------------------------------------
-//  LISTEN - click on big X 'editProfile' form
-//-----------------------------------------------
-// buttonEditProfileClose.addEventListener("click", closePopupEditProfile);
-
-//-----------------------------------------------
-//  LISTEN - click on big X 'newPlace' form
-//-----------------------------------------------
-// buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
-
-//-----------------------------------------------
-//  LISTEN - click on big X on editProfile, on newPlace, on zoomPic forms
-//-----------------------------------------------
-
 closeButtons.forEach((button) => {
   const closestPopup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(closestPopup));
@@ -239,7 +220,9 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 //-----------------------------------------------
 //  VALIDATION
 //-----------------------------------------------
-const validationSettings = {
+
+const config = {
+  formSelector: ".popup__form",
   inputSelector: ".popup__container_input",
   submitButtonSelector: ".popup__container_button",
   inactiveButtonClass: "popup__container_button-disabled",
@@ -247,12 +230,41 @@ const validationSettings = {
   errorClass: "popup__container_error-visible",
 };
 
-const editFormElement = containerElementPerson.querySelector(".popup__form");
-const addFormElement = containerElementPicture.querySelector(".popup__form");
-const editFormValidator = new FormValidator(
-  validationSettings,
-  editFormElement
-);
-editFormValidator.enableValidation();
-const addFormValidator = new FormValidator(validationSettings, addFormElement);
-addFormValidator.enableValidation();
+// const editFormElement = containerElementPerson.querySelector(".popup__form");
+// console.log("bbbb editFormElement", editFormElement);
+// const addFormElement = containerElementPicture.querySelector(".popup__form");
+// console.log("bbbb addFormElement", addFormElement);
+
+const formValidators = {};
+console.log("0000 formValidators = ", formValidators);
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  console.log("1111a config =", config);
+  console.log("1111b config.inputSelector", config.inputSelector);
+  console.log("1111c config.formSelector", config.formSelector);
+  console.log("1111d formList =", formList);
+  formList.forEach((formElement) => {
+    console.log("2222a formElement =", formElement);
+    const validator = new FormValidator(config, formElement);
+    console.log("2222b validator =", validator);
+    const formName = formElement.getAttribute("name");
+    console.log("2222c formName = ", formName);
+    formValidators[formName] = validator;
+    console.log("2222d formValidators[formName] = ", formValidators[formName]);
+    validator.enableValidation();
+    console.log("2222e config = ", config);
+  });
+};
+
+enableValidation(config);
+
+// const editFormValidator = new FormValidator(
+//   validationSettings,
+//   editFormElement
+// );
+// console.log("cccc editFormValidator", editFormValidator);
+
+// editFormValidator.enableValidation();
+
+// const addFormValidator = new FormValidator(validationSettings, addFormElement);
+// addFormValidator.enableValidation();
