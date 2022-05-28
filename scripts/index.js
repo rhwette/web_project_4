@@ -163,6 +163,9 @@ function closePopupZoom() {
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
+  // the following 2 lines will disable the "create' button
+  // const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
+  // buttonNewPlaceCreate.disabled = true;
   openPopup(containerElementPicture);
 }
 
