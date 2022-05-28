@@ -40,6 +40,7 @@ import { openPopup, closePopup } from "./Utils.js";
 // turn off
 // const cardTemplate = document.querySelector("#myTemplate");
 // turn off
+//    closeButtons = one of the three buttons that close a form or a zoom pic
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
 // const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
@@ -72,6 +73,9 @@ const containerElementPicture = document.querySelector(
 );
 const containerElementImage = document.querySelector("#image-popup-container");
 const containerForImages = document.querySelector(".card-grid__format");
+const closeButtons = document.querySelectorAll(
+  ".popup__container_button-close"
+);
 
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
@@ -191,7 +195,26 @@ function closePopupAddCard() {
 //-----------------------------------------------
 //  LISTEN - click on big X zoomPic
 //-----------------------------------------------
-buttonZoomPicClose.addEventListener("click", closePopupZoom);
+// buttonZoomPicClose.addEventListener("click", closePopupZoom);
+
+//-----------------------------------------------
+//  LISTEN - click on big X 'editProfile' form
+//-----------------------------------------------
+// buttonEditProfileClose.addEventListener("click", closePopupEditProfile);
+
+//-----------------------------------------------
+//  LISTEN - click on big X 'newPlace' form
+//-----------------------------------------------
+// buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
+
+//-----------------------------------------------
+//  LISTEN - click on big X on editProfile, on newPlace, on zoomPic forms
+//-----------------------------------------------
+
+closeButtons.forEach((button) => {
+  const closestPopup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(closestPopup));
+});
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPencil
@@ -204,11 +227,6 @@ buttonPencil.addEventListener("click", openPopupEditProfile);
 popupEditProfile.addEventListener("submit", submitPopupEditProfile);
 
 //-----------------------------------------------
-//  LISTEN - click on big X 'editProfile' form
-//-----------------------------------------------
-buttonEditProfileClose.addEventListener("click", closePopupEditProfile);
-//
-//-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus
 //-----------------------------------------------
 buttonPlus.addEventListener("click", openPopupAddCard);
@@ -217,11 +235,6 @@ buttonPlus.addEventListener("click", openPopupAddCard);
 //  LISTEN for clicks on buttonNewPlaceCreate
 //-----------------------------------------------
 popupNewPlace.addEventListener("submit", submitPopupNewPlace);
-
-//-----------------------------------------------
-//  LISTEN - click on big X 'newPlace' form
-//-----------------------------------------------
-buttonNewPlaceClose.addEventListener("click", closePopupAddCard);
 
 //-----------------------------------------------
 //  VALIDATION
