@@ -143,6 +143,14 @@ function submitPopupNewPlace(evtCreate) {
   newCardInfo.name = popupNewPlaceTitle.value;
   newCardInfo.link = popupNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
+  closePopupAddCard();
+}
+
+//-----------------------------------------------
+//  FUNCTION 'closePopupAddCard'
+//-----------------------------------------------
+function closePopupAddCard() {
+  closePopup(containerElementPicture);
 }
 
 closeButtons.forEach((button) => {
