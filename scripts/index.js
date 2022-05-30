@@ -8,14 +8,6 @@ import { openPopup, closePopup } from "./Utils.js";
 //    buttonPlus = button that activates "New Place" popup
 //    buttonCan = garbage can icon
 //    buttonHeart = "like" icon
-
-// turn off
-//    buttonEditProfileSave = the 'SAVE' button on "Edit Profile" popup
-// turn off
-// turn off
-//    buttonNewPlaceCreate = the 'Create' button on 'New Place' popup
-// turn off
-
 //    buttonEditProfileClose = 'big X' on 'EditProfile' popup
 //    buttonNewPlaceClose = 'big X' on 'New Place' popup
 //    buttonZoomPicClose = 'big X' on 'Zoom Pic' popup
@@ -27,24 +19,14 @@ import { openPopup, closePopup } from "./Utils.js";
 //    popupNewPlaceTitle = "New Place" popup location
 //    nameElement = starting name on "EditProfile" popup
 //    aboutMeElement = starting aboutMe on "EditProfile" popup
-// turn off
-//    zoomElement = card that is zoomed-up
-// turn off
 //    cardElement = clone of card object
-// turn off
-//    imageElement =image used in Zoom and in createCard
-// turn off
 //    containerElementPerson = containerElement for "Edit Profile"
 //    containerElementPicture = containerElement for "New Place"
 //    containerElementImage = containerElement for "Zoom Pic"
-// turn off
-// const cardTemplate = document.querySelector("#myTemplate");
-// turn off
 //    closeButtons = one of the three buttons that close a form or a zoom pic
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-// const buttonEditProfileSave = document.querySelector("#buttonEditProfileSave");
-// const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
+
 const buttonEditProfileClose = document.querySelector(
   "#buttonEditProfileClose"
 );
@@ -56,15 +38,10 @@ const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 const popupNewPlace = document.querySelector("#newPlaceForm");
-
-// const popupNewPlaceAlt = document.querySelector("#picture-popup-container");
-
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
-// const zoomElement = document.querySelector("#image-zoom");
-// const imageElement = cardTemplate.content.querySelector("img");
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
 );
@@ -127,6 +104,8 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 function openPopupEditProfile() {
   fillPopupEditProfile();
+  console.log(formValidators);
+  formValidators["formEditProfile"]._resetValidation();
   openPopup(containerElementPerson);
 }
 
@@ -167,9 +146,7 @@ function closePopupZoom() {
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
-  // the following 2 lines will disable the "create' button
-  // const buttonNewPlaceCreate = document.querySelector("#buttonNewPlaceCreate");
-  // buttonNewPlaceCreate.disabled = true;
+  formValidators["formNewPlace"]._resetValidation();
   openPopup(containerElementPicture);
 }
 
@@ -230,41 +207,15 @@ const config = {
   errorClass: "popup__container_error-visible",
 };
 
-// const editFormElement = containerElementPerson.querySelector(".popup__form");
-// console.log("bbbb editFormElement", editFormElement);
-// const addFormElement = containerElementPicture.querySelector(".popup__form");
-// console.log("bbbb addFormElement", addFormElement);
-
 const formValidators = {};
-console.log("0000 formValidators = ", formValidators);
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
-  console.log("1111a config =", config);
-  console.log("1111b config.inputSelector", config.inputSelector);
-  console.log("1111c config.formSelector", config.formSelector);
-  console.log("1111d formList =", formList);
   formList.forEach((formElement) => {
-    console.log("2222a formElement =", formElement);
     const validator = new FormValidator(config, formElement);
-    console.log("2222b validator =", validator);
     const formName = formElement.getAttribute("name");
-    console.log("2222c formName = ", formName);
     formValidators[formName] = validator;
-    console.log("2222d formValidators[formName] = ", formValidators[formName]);
     validator.enableValidation();
-    console.log("2222e config = ", config);
   });
 };
 
 enableValidation(config);
-
-// const editFormValidator = new FormValidator(
-//   validationSettings,
-//   editFormElement
-// );
-// console.log("cccc editFormValidator", editFormValidator);
-
-// editFormValidator.enableValidation();
-
-// const addFormValidator = new FormValidator(validationSettings, addFormElement);
-// addFormValidator.enableValidation();
