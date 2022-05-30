@@ -103,8 +103,7 @@ for (let i = initialCards.length - 1; i >= 0; i--) {
 //-----------------------------------------------
 function openPopupEditProfile() {
   fillPopupEditProfile();
-  console.log(formValidators);
-  formValidators["formEditProfile"]._resetValidation();
+  formValidators["formEditProfile"].resetValidation();
   openPopup(containerElementPerson);
 }
 
@@ -127,25 +126,11 @@ function submitPopupEditProfile(evtSave) {
 }
 
 //-----------------------------------------------
-//  FUNCTION 'closePopupEditProfile'
-//-----------------------------------------------
-function closePopupEditProfile() {
-  closePopup(containerElementPerson);
-}
-
-//-----------------------------------------------
-//  FUNCTION 'closePopupZoom'
-//-----------------------------------------------
-function closePopupZoom() {
-  closePopup(containerElementImage);
-}
-
-//-----------------------------------------------
 //  FUNCTION 'openPopupAddCard'
 //-----------------------------------------------
 function openPopupAddCard(evtNewPlace) {
   popupNewPlace.reset();
-  formValidators["formNewPlace"]._resetValidation();
+  formValidators["formNewPlace"].resetValidation();
   openPopup(containerElementPicture);
 }
 
@@ -158,14 +143,6 @@ function submitPopupNewPlace(evtCreate) {
   newCardInfo.name = popupNewPlaceTitle.value;
   newCardInfo.link = popupNewPlaceLink.value;
   renderCard(newCardInfo, containerForImages);
-  closePopupAddCard();
-}
-
-//-----------------------------------------------
-//  FUNCTION 'closePopupAddCard'
-//-----------------------------------------------
-function closePopupAddCard() {
-  closePopup(containerElementPicture);
 }
 
 closeButtons.forEach((button) => {

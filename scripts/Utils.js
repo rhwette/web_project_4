@@ -31,7 +31,6 @@ function closePopupWithEscape(event) {
 //-----------------------------------------------
 function closePopupWithRemoteClick(event) {
   if (event.target === event.currentTarget) {
-    const openedPopup = document.querySelector(".popup_visible");
-    closePopup(openedPopup);
+    closePopup(event.target);
   }
 }
