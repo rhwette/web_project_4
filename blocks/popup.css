@@ -69,7 +69,7 @@
   }
 }
 
-.popup__container_button {
+.popup__container-button {
   outline: none;
   border: none;
   background-color: #000000;
@@ -89,23 +89,23 @@
   padding: 0;
 }
 
-.popup__container_button-disabled {
+.popup__container-button-disabled {
   background-color: #a8a8a8;
 }
 
-.popup__container_button:hover {
+.popup__container-button:hover {
   opacity: 0.8;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__container_button {
+  .popup__container-button {
     max-width: 238px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container_button {
+  .popup__container-button {
     min-height: 46px;
     font-size: 14px;
     line-height: 16.948px;
@@ -116,7 +116,7 @@
   }
 }
 
-.popup__container_button-close {
+.popup__container-button-close {
   position: absolute;
   top: -40px;
   right: -40px;
@@ -127,13 +127,13 @@
   border: none;
 }
 
-.popup__container_button-close:hover {
+.popup__container-button-close:hover {
   opacity: 0.6;
   cursor: url("../../../images/pointer.svg") 10 0, auto;
 }
 
 @media screen and (max-width: 650px) {
-  .popup__container_button-close {
+  .popup__container-button-close {
     width: 35px;
     height: 35px;
   }
@@ -189,7 +189,7 @@
   }
 }
 
-.popup__container_input {
+.popup__container-input {
   width: 350px;
   max-width: 358px;
   margin-top: 29.74px;
@@ -206,18 +206,18 @@
   min-height: 15px;
 }
 
-.popup__container_input:hover {
+.popup__container-input:hover {
   border: 2px solid rgb(156, 156, 250);
 }
 
 @media screen and (max-width: 500px) {
-  .popup__container_input {
+  .popup__container-input {
     max-width: 238px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container_input {
+  .popup__container-input {
     margin: 0;
     margin-bottom: 0;
     margin-left: 0;
@@ -227,33 +227,33 @@
   }
 }
 
-.popup__container_input_type-error {
+.popup__container-input-type-error {
   min-height: 10px;
   color: #ff0000;
   margin-top: 15px;
 }
 
-.popup__container_input_type-error:hover {
+.popup__container-input-type-error:hover {
   border: 1px solid #ff0000;
   border-bottom-color: #ff0000;
   min-height: 10px;
 }
 
-.popup__container_input_type-name {
+.popup__container-input-type-name {
   font-size: 12px;
   line-height: 15px;
   border-bottom-color: #808080;
   width: 350px;
 }
 
-.popup__container_input_type-description {
+.popup__container-input-type-description {
   font-size: 12px;
   line-height: 15px;
   border-bottom-color: #808080;
   width: 350px;
 }
 
-.popup__container_title {
+.popup__container-title {
   font-size: 24px;
   line-height: 29.05px;
   font-weight: 900;
@@ -266,19 +266,19 @@
 }
 
 @media screen and (max-width: 650px) {
-  .popup__container_title {
+  .popup__container-title {
     margin-left: 22px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .popup__container_title {
+  .popup__container-title {
     margin-left: 22px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container_title {
+  .popup__container-title {
     width: 238px;
     font-size: 18px;
     line-height: 21.78px;
@@ -289,7 +289,7 @@
   }
 }
 
-.popup__container_error-visible {
+.popup__container-error-visible {
   white-space: normal;
   line-height: 15px;
   font-size: 14px;

@@ -26,7 +26,6 @@ import { openPopup, closePopup } from "./Utils.js";
 //    closeButtons = one of the three buttons that close a form or a zoom pic
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-
 const buttonEditProfileClose = document.querySelector(
   "#buttonEditProfileClose"
 );
@@ -51,7 +50,7 @@ const containerElementPicture = document.querySelector(
 const containerElementImage = document.querySelector("#image-popup-container");
 const containerForImages = document.querySelector(".card-grid__format");
 const closeButtons = document.querySelectorAll(
-  ".popup__container_button-close"
+  ".popup__container-button-close"
 );
 
 //  ARRAY of OBJECTS containing image links
@@ -200,11 +199,11 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 
 const config = {
   formSelector: ".popup__form",
-  inputSelector: ".popup__container_input",
-  submitButtonSelector: ".popup__container_button",
-  inactiveButtonClass: "popup__container_button-disabled",
-  inputErrorClass: "popup__container_input_type-error",
-  errorClass: "popup__container_error-visible",
+  inputSelector: ".popup__container-input",
+  submitButtonSelector: ".popup__container-button",
+  inactiveButtonClass: "popup__container-button-disabled",
+  inputErrorClass: "popup__container-input-type-error",
+  errorClass: "popup__container-error-visible",
 };
 
 const formValidators = {};
