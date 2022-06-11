@@ -1,0 +1,111 @@
+<!-- project 8 starts here -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+  <title>Around the U.S.</title>
+  <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
+  <script defer src="main.js"></script>
+</head>
+
+<body class="page">
+  <!--HEADER-->
+  <header class="header">
+    <!--LOGO-->
+    <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Around the US" title="logo" />
+  </header>
+
+  <main class="content">
+    <!--INTRO-->
+    <section class="intro">
+      <img class="intro__image" src="<%=require('./images/jacques-cousteau.jpg')%>" alt="jacques cousteau"
+        title="cousteau" />
+      <div class="intro__description">
+        <h1 class="intro__name">Jacques Cousteau</h1>
+        <p class="intro__occupation">Explorer</p>
+      </div>
+      <button type="button" class="intro__button-pencil" id="buttonPencilId" title="pencil button"></button>
+      <button type="button" class="intro__button-plus" title="plus button"> </button>
+    </section>
+
+    <!--myTEMPLATE TO DRAW INITIAL AND NEW CARDS-->
+    <section class="card-grid">
+      <ul class="card-grid__format">
+        <template id="myTemplate">
+          <li class="card-grid__style">
+            <img id="cardImage" class="card-grid__picture " src=" " alt=" " />
+            <!-- <button type="button" class="card-grid__garbage" id="cardCan"><img class="canSymbol"
+                src="<%=require('./images/garbage.png')%>" alt="garbage symbol" /></button> -->
+            <button type="button" class="card-grid__garbage" id="cardCan"></button>
+            <div class="card-grid__info">
+              <h2 class="card-grid__text block" id="cardName"></h2>
+              <button type="button" class="card-grid__icon" id="heartButton"></button>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </section>
+
+    <!--POPUP AND FORM for EDIT PROFILE-->
+    <div class="popup" id="person-popup-container">
+      <div class="popup__container" id="popupEditProfile">
+        <h2 class="popup__container-title">Edit Profile</h2>
+        <button type="button" class="popup__container-button-close" id="buttonEditProfileClose"><img
+            src="<%=require('./images/close.svg')%>" alt="close symbol" /></button>
+        <form name="formEditProfile" class="popup__form" id="editProfileForm">
+          <input name="name" class="popup__container-input popup__container-input-type-name " type="text"
+            id="name-input" required minlength="2" maxlength="40" />
+          <!-- add span tag to control error messages -->
+          <span id="name-input-error"></span>
+          <input name="aboutme" class="popup__container-input popup__container-input-type-description " type="text"
+            id="aboutme-input" required minlength="2" maxlength="200" />
+          <!-- add span tag to control error messages -->
+          <span id="aboutme-input-error"></span>
+          <button type="submit" class="popup__container-button " id="buttonEditProfileSave">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!--POPUP AND FORM for NEW PLACE-->
+    <div class="popup" id="picture-popup-container">
+      <div class="popup__container" id="popupNewPlace">
+        <h2 class=" popup__container-title">New Place</h2>
+        <button type="button" class="popup__container-button-close" id="buttonNewPlaceClose"><img
+            src="<%=require('./images/close.svg')%>" alt="close symbol" /></button>
+
+        <form name="formNewPlace" class="popup__form" id="newPlaceForm">
+          <input name="place" placeholder="Title" class="popup__container-input popup__container-input-type-place"
+            type="text" id="place-input" required minlength="1" maxlength="30" />
+          <span id="place-input-error"></span>
+          <input name="link" placeholder="Image URL" class="popup__container-input popup__container-input-type-link"
+            type="url" id="link-input" required />
+          <span id="link-input-error"></span>
+          <button type="submit" class="popup__container-button " id="buttonNewPlaceCreate">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <!--POPUP AND BUTTON for IMAGE ZOOM-->
+    <div class="popup" id="image-popup-container">
+      <div class="image-popup" id="popupImageZoom">
+        <img class=" image-popup__picture-zoom" src="data:," alt=" " id="image-zoom" />
+        <p class="image-popup__picture-text"></p>;
+        <button type="button" class="popup__container-button-close" id="buttonZoomPicClose"><img
+            src="<%=require('./images/close.svg')%>" alt="close symbol" /></button>
+      </div>
+    </div>
+  </main>
+
+  <!--FOOTER-->
+  <footer class="footer">
+    <p class="footer__text">&copy;2021 Around The U.S.</p>
+  </footer>
+
+  <!--JAVASCRIPT-->
+  <!-- <script type="module" src="./components/index.js"></script> -->
+
+</body>
+
+</html>
