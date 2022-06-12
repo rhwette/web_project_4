@@ -53,7 +53,7 @@ const containerForImages = document.querySelector(".card-grid__format");
 const closeButtons = document.querySelectorAll(
   ".popup__container-button-close"
 );
-
+console.log("TESTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
   {
