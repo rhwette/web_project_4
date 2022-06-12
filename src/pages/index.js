@@ -1,7 +1,7 @@
-import FormValidator from "./components/FormValidator.js";
-import Card from "./components/Card.js";
-import { openPopup, closePopup } from "./components/Utils.js";
-import "./styles/index.css";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
+import { openPopup, closePopup } from "../components/Utils.js";
+import "./index.css";
 
 //-----------------------------------------------
 // associate Buttons, Popups and Elements with classes or ID's
@@ -53,7 +53,6 @@ const containerForImages = document.querySelector(".card-grid__format");
 const closeButtons = document.querySelectorAll(
   ".popup__container-button-close"
 );
-console.log("TESTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 //  ARRAY of OBJECTS containing image links
 const initialCards = [
   {
