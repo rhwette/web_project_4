@@ -1,9 +1,13 @@
+# NOTES regarding section class
+
+1. to make the display of 6 images work need the following....index.js, section.js, constants.js.....
+
 # NOTES regarding webpack and steps to make it work.
 
 1. in babel.config.js.....needed to use 'targets' instead of 'target' this allowed to get past the error
 2. after 'npm run build' the dist folder contains hash and the other files as it should
 3. converted all css to a single file 'index.css'...no use of @import, just straight css
-4. created a new folder in 'src' called 'pages', added 'index.css' to 'pages'
+4. created a new folder in 'src' called 'pages', added 'index.css' and 'index.js' to 'pages'
 5. changed path for images from ../../../images to ../images
 6. moved garbage can icon from index.html to a background-image in css
 
