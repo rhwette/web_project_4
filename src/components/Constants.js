@@ -28,6 +28,13 @@ export const initialCards = [
 ];
 
 export const selectors = {
-  cardSection: "card-grid",
-  cardTemplate: ".card-grid__format",
+  cardSection: "card-grid__format",
+  cardTemplate: "#myTemplate",
 };
+
+console.log("000 CONSTANTS initial cards =", initialCards);
+console.log("000 CONSTANTS.JS selectors.cardSection = ", selectors.cardSection);
+console.log(
+  "000 CONSTANTS.JS selectors.cardTemplate = ",
+  selectors.cardTemplate
+);

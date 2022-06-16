@@ -9,9 +9,9 @@ import Section from "../components/Section";
 // import PopupWithForm from "../components/PopupWithForm";
 // import UserInfo from "../components/UserInfo";
 
-console.log("initialCards =", initialCards);
-console.log("selectors.cardSection = ", selectors.cardSection);
-console.log("selectors.cardTemplate = ", selectors.cardTemplate);
+console.log("111 INDEX.JS initialCards =", initialCards);
+console.log("111 INDEX.JS selectors.cardSection = ", selectors.cardSection);
+console.log("111 INDEX.JS selectors.cardTemplate = ", selectors.cardTemplate);
 
 // create all instances of classes
 
@@ -19,13 +19,18 @@ console.log("selectors.cardTemplate = ", selectors.cardTemplate);
 
 const CardSection = new Section(
   {
+    data: initialCards,
     renderer: (item) => {
       const cardElement = new Card(item, selectors.cardTemplate);
-      CardSection.addItem(cardElement, createCard());
+      const createdCard = cardElement.createCard();
+      // const cardTemplate = cardElement.createCard;
+      CardSection.addItem(createdCard);
     },
   },
   selectors.cardSection
 );
+console.log("111 INDEX.JS CardSection = ", CardSection);
+// console.log("111 INDEX.JS CardTemplate = ", CardTemplate);
 
 // initialize instances - draw the 6 images
 CardSection.renderItems(initialCards);
