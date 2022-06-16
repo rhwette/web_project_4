@@ -4,6 +4,7 @@ import "./index.css";
 import { initialCards, selectors } from "../components/constants";
 import Card from "../components/Card";
 import Section from "../components/Section";
+import PopupWithImage from "../components/PopupWithImage";
 // import FormValidator from "../components/FormValidator";
 // import PopupWithImage from "../components/PopupWithImage";
 // import PopupWithForm from "../components/PopupWithForm";
@@ -17,6 +18,8 @@ console.log("111a INDEX.JS selectors.cardTemplate = ", selectors.cardTemplate);
 // create all instances of classes
 
 // begin with Section class
+
+const imageZoomPopup = new PopupWithImage("previewPopup");
 
 const CardSection = new Section(
   {

@@ -10,6 +10,7 @@ class Card {
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._containerElementImage = containerElementImage;
+    // this._handleImageClick = handleImageClick;
   }
 
   _getTemplate() {
