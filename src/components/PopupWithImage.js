@@ -3,10 +3,13 @@ import Popup from "./Popup";
 
 class PopupWithImage extends Popup {
   open({ link, name }) {
-    this._popupElement.querySelector(".popup__caption").textContent = name;
-    const image = this._popupElement.querySelector(".popup__image");
+    this._popupElement.querySelector(".image-popup__picture-text").textContent =
+      name;
+    const image = this._popupElement.querySelector(
+      ".image-popup__picture-zoom"
+    );
     image.src = link;
-    image.alt = `xxxx ${name}`;
+    image.alt = ` ${name}`;
     super.open();
   }
 }

@@ -30,12 +30,6 @@ export const initialCards = [
 export const selectors = {
   cardSection: "card-grid__format",
   cardTemplate: "#myTemplate",
-  popupSelector: "popup",
+  previewPopup: "image-popup",
+  // or use an id instead
 };
-
-console.log("000 CONSTANTS initial cards =", initialCards);
-console.log("000 CONSTANTS.JS selectors.cardSection = ", selectors.cardSection);
-console.log(
-  "000 CONSTANTS.JS selectors.cardTemplate = ",
-  selectors.cardTemplate
-);
