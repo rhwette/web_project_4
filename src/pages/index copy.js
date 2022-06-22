@@ -58,19 +58,19 @@ const closeButtons = document.querySelectorAll(
 //************************************* */
 //  FUNCTION - render Card
 //************************************* */
-const renderCard = (data, container) => {
-  const cardElement = new Card(data, "#myTemplate").createCard();
-  container.prepend(cardElement);
-};
+// const renderCard = (data, container) => {
+//   const cardElement = new Card(data, "#myTemplate").createCard();
+//   container.prepend(cardElement);
+// };
 
 //-----------------------------------------------
 //  Render INITIAL CARDS using renderCard function
 //    use i-- to reverse order of images
 //-----------------------------------------------
-for (let i = initialCards.length - 1; i >= 0; i--) {
-  const currentCard = initialCards[i];
-  renderCard(currentCard, containerForImages);
-}
+// for (let i = initialCards.length - 1; i >= 0; i--) {
+//   const currentCard = initialCards[i];
+//   renderCard(currentCard, containerForImages);
+// }
 
 //-----------------------------------------------
 //  FUNCTION 'openPopupEditProfile'

@@ -29,7 +29,12 @@ export const initialCards = [
 
 export const selectors = {
   cardSection: "card-grid__format",
-  cardTemplate: "#myTemplate",
-  previewPopup: "image-popup",
+  // cardTemplate: "#myTemplate",
+  cardTemplate: "myTemplate",
+  previewPopup: "#image-popup-container",
+  // previewPopup: "popup",
+  // previewPopup: "image-popup",
+  // previewPopup: "image-popup__picture-zoom",
   // or use an id instead
 };
+console.log("000 CONSTANTS.JS selectors", selectors);

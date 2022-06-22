@@ -1,23 +1,28 @@
-// import { openPopup, closePopup } from "./Utils.js";
-import { openPopup } from "./Utils.js";
+import { openPopup, closePopup } from "./Utils.js";
+// import { openPopup } from "./Utils.js";
 const containerElementImage = document.querySelector("#image-popup-container");
 const imageZoom = document.getElementById("image-zoom");
 const imageZoomText = document.querySelector(".image-popup__picture-text");
 
 class Card {
-  constructor(data, cardSelector) {
+  constructor({ data, handleZoom }, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._containerElementImage = containerElementImage;
     // this._handleImageClick = handleImageClick;
+    this._handleZoom = handleZoom;
   }
 
   _getTemplate() {
+    console.log("ZZZZ ", this._cardSelector);
     const cardElement = document
-      .querySelector(this._cardSelector)
+      .querySelector(`#${this._cardSelector}`)
+
       .content.querySelector(".card-grid__style")
       .cloneNode(true);
+    console.log("ffff codument =", document);
+    console.log("ZZZZ card Element=", cardElement);
     return cardElement;
   }
 
@@ -25,12 +30,12 @@ class Card {
     this.parentElement.remove();
   }
 
-  _handleZoom() {
-    imageZoom.src = this._link;
-    imageZoom.alt = this._name;
-    imageZoomText.textContent = this._name;
-    openPopup(this._containerElementImage);
-  }
+  // _handleZoom() {
+  //   imageZoom.src = this._link;
+  //   imageZoom.alt = this._name;
+  //   imageZoomText.textContent = this._name;
+  //   openPopup(this._containerElementImage);
+  // }
 
   _handleHeart(event) {
     event.target.classList.toggle("card-grid__icon_active");

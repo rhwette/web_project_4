@@ -1,3 +1,24 @@
+# NOTES regarding popup and popupWithImage class
+
+1. in webpack.config change 'main' to 'index'
+
+2. in CARD.JS
+   line 8 change card constructor to include function 'handlezoom' note: handlezoom is not actually used, it is a placeholder for a renderer function or method
+   line 18 change doc.qs to template literal
+   line 28 comment out handlezoom
+
+3. CONSTANTS.JS
+   cardSection: "card-grid\_\_format'
+   cardTemplate: 'myTemplate'
+   note: use template literal to insert '#' for ID
+
+4. POPUP.JS
+   change doc.qs to `.${popupSelector}`
+   add .bind(this) to both addEventListeners
+
+5. POPUPWITHIMAGE.JS
+   change to export by name
+
 # NOTES regarding section class
 
 1. to make the display of 6 images work need the following....index.js, section.js, constants.js.....

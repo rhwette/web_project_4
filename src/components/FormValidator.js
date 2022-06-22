@@ -73,4 +73,5 @@ class FormValidator {
   }
 }
 
+console.log("555 FORMVALIDATOR.JS end FormValidator");
 export default FormValidator;

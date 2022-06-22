@@ -5,6 +5,10 @@ export default class Section {
     this._renderedItems = data;
     this._renderer = renderer;
     this._container = document.querySelector(`.${containerSelector}`);
+    console.log("AAA0 SECTION data =", data);
+    console.log("AAA1 SECTION this._renderedItems =", this._renderedItems);
+    console.log("AAA2 SECTION this._renderer =", this._renderer);
+    console.log("AAA3 SECTION this._container = ", this._container);
   }
 
   renderItems() {
