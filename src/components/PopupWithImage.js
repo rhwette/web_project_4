@@ -1,10 +1,8 @@
-//JH version
 import Popup from "./Popup";
 
 export default class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    // this.open();
   }
   open({ link, name }) {
     this._popupElement.querySelector(".image-popup__picture-text").textContent =
@@ -17,5 +15,3 @@ export default class PopupWithImage extends Popup {
     super.open();
   }
 }
-
-// export default PopupWithImage;

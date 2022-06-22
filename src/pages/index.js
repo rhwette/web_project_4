@@ -13,27 +13,6 @@ import FormValidator from "../components/FormValidator";
 
 // begin with Section class
 
-// console.log("111a INDEX.JS selectors.previewPopup= ", selectors.previewPopup);
-// const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
-// console.log("111b INDEX.JS imageZoomPopup=", imageZoomPopup);
-
-// const CardSection = new Section(
-//   {
-//     data: initialCards,
-//     renderer: (item) => {
-//       console.log(
-//         "111c INDEX.JS selectors.cardTemplate = ",
-//         selectors.cardTemplate
-//       );
-//       console.log("111d INDEX.JS cardElement=", cardElement);
-//       const cardElement = new Card(item, selectors.cardTemplate);
-//       const createdCard = cardElement.createCard();
-//       CardSection.addItem(createdCard);
-//     },
-//   },
-//   selectors.cardSection
-// );
-
 const CardNew = new Section(
   {
     data: initialCards,
@@ -47,7 +26,6 @@ const CardNew = new Section(
         },
         selectors.cardTemplate
       );
-      console.log("dddd", selectors.cardSection);
       CardNew.addItem(cardElement.createCard());
     },
   },

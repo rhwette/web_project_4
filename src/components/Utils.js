@@ -2,10 +2,6 @@
 //  FUNCTION 'openPopup'
 // -----------------------------------------------
 export function openPopup(containerElement) {
-  console.log(
-    "BBB UTILS.JS FUNCTION OPENPOPUP containerElement=",
-    containerElement
-  );
   containerElement.classList.add("popup_visible");
   containerElement.addEventListener("mousedown", closePopupWithRemoteClick);
   document.addEventListener("keydown", closePopupWithEscape);
