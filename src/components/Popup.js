@@ -25,6 +25,7 @@ class Popup {
   }
 
   _closePopupWithEscape(event) {
+    console.log("esc");
     event.preventDefault();
 
     if (event.which === ESC_KEYCODE) {
@@ -33,7 +34,9 @@ class Popup {
   }
 
   _closePopupWithRemoteClick(event) {
+    console.log("click");
     if (event.target === event.currentTarget) {
+      // this.close();
       this.close(event.target);
     }
   }
@@ -42,7 +45,8 @@ class Popup {
     this._popupElement.addEventListener("click", (event) => {
       if (
         event.target.classList.contains("popup") ||
-        event.target.classList.contains("popup_visible")
+        event.target.classList.contains("popup_visible") ||
+        this._popupElement.querySelector(".popup__container-button-close")
       ) {
         this.close();
       }
