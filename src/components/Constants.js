@@ -31,4 +31,7 @@ export const selectors = {
   cardSection: "card-grid__format",
   cardTemplate: "myTemplate",
   previewPopup: "#image-popup-container",
+  profilePopup: "#person-popup-container",
 };
+console.log("0000a CONSTANTS selectors.previewPopup =", selectors.previewPopup);
+console.log("0000b CONSTANTS selectors.profilePopup =", selectors.profilePopup);
