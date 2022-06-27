@@ -32,6 +32,8 @@ export const selectors = {
   cardTemplate: "myTemplate",
   previewPopup: "#image-popup-container",
   profilePopup: "#person-popup-container",
+  placePopup: "#picture-popup-container",
 };
 console.log("0000a CONSTANTS selectors.previewPopup =", selectors.previewPopup);
 console.log("0000b CONSTANTS selectors.profilePopup =", selectors.profilePopup);
+console.log("0000c CONSTANTS selectors.placePopup =", selectors.placePopup);
