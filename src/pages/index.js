@@ -42,13 +42,13 @@ const CardNew = new Section(
 // }
 console.log("1111d INDEX.JS just before call to NEW CLASS");
 const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
+const editProfilePopup = new PopupWithForm(selectors.profilePopup);
 const newPlacePopup = new PopupWithForm(selectors.placePopup);
-// const editProfilePopup = new PopupWithForm(selectors.profilePopup);
 console.log("1111e INDEX.JS just after call to NEW CLASS");
 
 // draw the 6 images using the method 'renderItems' from the Section class
 CardNew.renderItems(initialCards);
 imageZoomPopup.setEventListeners();
+editProfilePopup.setEventListeners();
 newPlacePopup.setEventListeners();
-// editProfilePopup.setEventListeners();
 console.log("1111f INDEX.JS after EVLs");

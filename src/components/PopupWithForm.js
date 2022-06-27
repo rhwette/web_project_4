@@ -43,9 +43,9 @@ export default class PopupWithForm extends Popup {
       this.popupSelector
     );
 
-    if (this._popupSelector === selectors.profilePopup) {
+    if (this.popupSelector === selectors.profilePopup) {
       buttonPencil.addEventListener("click", this.open.bind(this));
-    } else if (this._popupSelector === selectors.placePopup) {
+    } else {
       buttonPlus.addEventListener("click", this.open.bind(this));
     }
   }

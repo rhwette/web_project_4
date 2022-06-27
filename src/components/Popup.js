@@ -1,4 +1,6 @@
 import { ESC_KEYCODE } from "./Constants";
+const buttonPencil = document.querySelector(".intro__button-pencil");
+const buttonPlus = document.querySelector(".intro__button-plus");
 
 class Popup {
   constructor(popupSelector) {
@@ -36,6 +38,9 @@ class Popup {
       this._closePopupWithRemoteClick
     );
     document.removeEventListener("keydown", this._closePopupWithEscape);
+    buttonPencil.removeEventListener("click", this.open.bind(this));
+
+    buttonPlus.removeEventListener("click", this.open.bind(this));
   }
 
   _closePopupWithEscape(event) {
