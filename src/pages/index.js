@@ -1,5 +1,4 @@
 import "./index.css";
-console.log("1111a INDEX.JS ");
 // import all the classes
 import { initialCards, selectors } from "../components/Constants";
 import Card from "../components/Card";
@@ -12,9 +11,6 @@ import PopupWithForm from "../components/PopupWithForm";
 // create all instances of classes
 
 // begin with Section class
-console.log("1111b INDEX.JS initialCards = ", initialCards);
-console.log("1111c INDEX.JS selectors= ", selectors);
-
 const CardNew = new Section(
   {
     data: initialCards,
@@ -40,15 +36,13 @@ const CardNew = new Section(
 //   aboutMeElement.textContent = popupEditProfileAboutMe.value;
 //   closePopup(containerElementPerson);
 // }
-console.log("1111d INDEX.JS just before call to NEW CLASS");
+
 const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
 const editProfilePopup = new PopupWithForm(selectors.profilePopup);
 const newPlacePopup = new PopupWithForm(selectors.placePopup);
-console.log("1111e INDEX.JS just after call to NEW CLASS");
 
 // draw the 6 images using the method 'renderItems' from the Section class
 CardNew.renderItems(initialCards);
 imageZoomPopup.setEventListeners();
 editProfilePopup.setEventListeners();
 newPlacePopup.setEventListeners();
-console.log("1111f INDEX.JS after EVLs");
