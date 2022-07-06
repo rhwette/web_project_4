@@ -1,5 +1,4 @@
 import { openPopup, closePopup } from "./Utils.js";
-// import { openPopup } from "./Utils.js";
 const containerElementImage = document.querySelector("#image-popup-container");
 const imageZoom = document.getElementById("image-zoom");
 const imageZoomText = document.querySelector(".image-popup__picture-text");

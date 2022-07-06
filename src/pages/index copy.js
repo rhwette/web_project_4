@@ -141,6 +141,7 @@ buttonPencil.addEventListener("click", openPopupEditProfile);
 //  LISTEN for clicks on buttonEditProfileSave
 //-----------------------------------------------
 popupEditProfile.addEventListener("submit", submitPopupEditProfile);
+popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 
 //-----------------------------------------------
 //  LISTEN for clicks on introButtonPlus
@@ -156,24 +157,24 @@ popupNewPlace.addEventListener("submit", submitPopupNewPlace);
 //  VALIDATION
 //-----------------------------------------------
 
-const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__container-input",
-  submitButtonSelector: ".popup__container-button",
-  inactiveButtonClass: "popup__container-button-disabled",
-  inputErrorClass: "popup__container-input-type-error",
-  errorClass: "popup__container-error-visible",
-};
+// const config = {
+//   formSelector: ".popup__form",
+//   inputSelector: ".popup__container-input",
+//   submitButtonSelector: ".popup__container-button",
+//   inactiveButtonClass: "popup__container-button-disabled",
+//   inputErrorClass: "popup__container-input-type-error",
+//   errorClass: "popup__container-error-visible",
+// };
 
-const formValidators = {};
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector));
-  formList.forEach((formElement) => {
-    const validator = new FormValidator(config, formElement);
-    const formName = formElement.getAttribute("name");
-    formValidators[formName] = validator;
-    validator.enableValidation();
-  });
-};
+// const formValidators = {};
+// const enableValidation = (config) => {
+//   const formList = Array.from(document.querySelectorAll(config.formSelector));
+//   formList.forEach((formElement) => {
+//     const validator = new FormValidator(config, formElement);
+//     const formName = formElement.getAttribute("name");
+//     formValidators[formName] = validator;
+//     validator.enableValidation();
+//   });
+// };
 
-enableValidation(config);
+// enableValidation(config);
