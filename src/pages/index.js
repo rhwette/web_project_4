@@ -3,6 +3,7 @@ import "./index.css";
 import { initialCards, selectors } from "../components/Constants";
 import Card from "../components/Card";
 import Section from "../components/Section";
+import Popup from "../components/Section";
 import PopupWithImage from "../components/PopupWithImage";
 import FormValidator from "../components/FormValidator";
 import PopupWithForm from "../components/PopupWithForm";
@@ -28,12 +29,29 @@ const CardNew = new Section(
 );
 
 const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
+// const editProfilePopup = new PopupWithForm({
+//   popupSelector: selectors.profilePopup,
+//   handleFormSubmit: () => {
+//     console.log("test");
+//   },
+// });
+
 const editProfilePopup = new PopupWithForm({
   popupSelector: selectors.profilePopup,
-  handleFormSubmit: () => {
-    console.log("test");
+  handleFormSubmit: (evtSave) => {
+    evtSave.preventDefault();
+    nameElement.textContent = popupEditProfileName.value;
+    aboutMeElement.textContent = popupEditProfileAboutMe.value;
+    close();
   },
 });
+// function submitPopupEditProfile(evtSave) {
+//   evtSave.preventDefault();
+//   nameElement.textContent = popupEditProfileName.value;
+//   aboutMeElement.textContent = popupEditProfileAboutMe.value;
+//   closePopup(containerElementPerson);
+// }
+
 const newPlacePopup = new PopupWithForm({
   popupSelector: selectors.placePopup,
   handleFormSubmit: () => {
@@ -45,6 +63,7 @@ const newPlacePopup = new PopupWithForm({
 CardNew.renderItems(initialCards);
 imageZoomPopup.setEventListeners();
 editProfilePopup.setEventListeners();
+editProfilePopup._getInputValues();
 newPlacePopup.setEventListeners();
 
 //-----------------------------------------------
