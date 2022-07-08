@@ -7,8 +7,19 @@ const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
+console.log("zzzz1 CONSTS popupEditProfileName=", popupEditProfileName);
+console.log("zzzz2 CONSTS popupEditProfileAboutMe=", popupEditProfileAboutMe);
+
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
+console.log("zzzz3a CONSTS nameElement=", nameElement);
+console.log("zzzz3b CONSTS nameElement.textContent=", nameElement.textContent);
+console.log("zzzz4a CONSTS aboutMeElement=", aboutMeElement);
+console.log(
+  "zzzz4b CONSTS aboutMeElement.textContent=",
+  aboutMeElement.textContent
+);
+
 // these two consts below are not being used
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
@@ -63,9 +74,9 @@ export default class PopupWithForm extends Popup {
         "BBBB5 GETINPUTVALUES inputObject[input.name] =",
         inputObject[input.name]
       );
+      console.log("BBBB6 GETINPUTVALUES inputObject =", inputObject);
     });
 
-    console.log("BBBB6 GETINPUTVALUES inputObject =", inputObject);
     return inputObject;
   }
 
@@ -91,19 +102,6 @@ export default class PopupWithForm extends Popup {
     super.open();
   }
 
-  // submitPopupEditProfile(evtSave) {
-  // console.log("DDDD1 SUBMITPOPUPEDITPROFILE enter");
-  // evtSave.preventDefault();
-  //the two lines below should cause new name and occupation to be displayed
-  //  on the page after editProfileForm is saved
-  // nameElement.textContent = popupEditProfileName.value;
-  // aboutMeElement.textContent = popupEditProfileAboutMe.value;
-  //something wrong with the close....error message says
-  //  scripts may close only the windows that were opened by them
-  //  what's that supposed to mean??
-  // close();
-  // }
-
   handleFormSubmit(evtSave) {
     console.log("DDDD1111 SUBMITPOPUPEDITPROFILE enter");
     evtSave.preventDefault();
@@ -117,24 +115,25 @@ export default class PopupWithForm extends Popup {
     const newCardInfo = {};
     newCardInfo.name = popupNewPlaceTitle.value;
     newCardInfo.link = popupNewPlaceLink.value;
-    // renderCard(newCardInfo, containerForImages);
-    // closePopupAddCard();
     this.close();
   }
 
   setEventListeners() {
     if (this.popupSelector === selectors.profilePopup) {
+      console.log(
+        "GGGG1 SETEVENTLISTENERS this.popupSelector= ",
+        this.popupSelector
+      );
+      console.log(
+        "GGGG2 SETEVENTLISTENERS selectors.profilePopup= ",
+        selectors.profilePopup
+      );
+
       buttonPencil.addEventListener("click", this.open.bind(this));
       //add the listener for the save button here
     } else {
       buttonPlus.addEventListener("click", this.open.bind(this));
     }
-
-    // this._popupElement.addEventListener("submit", () => {
-    //   this._handleFormSubmit(this._getInputValues());
-    //   this.close();
-    // });
-    // super.setEventListeners();
   }
 
   close() {
