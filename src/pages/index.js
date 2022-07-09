@@ -9,6 +9,23 @@ import FormValidator from "../components/FormValidator";
 import PopupWithForm from "../components/PopupWithForm";
 import UserInfo from "../components/UserInfo";
 
+const nameElement = document.querySelector(".intro__name");
+const aboutMeElement = document.querySelector(".intro__occupation");
+
+const popupEditProfileName = document.querySelector('input[name ="name"]');
+const popupEditProfileAboutMe = document.querySelector(
+  'input[name = "aboutme"]'
+);
+
+// const popupForm = popupElement.querySelector(".popup__form");
+
+const containerElementPerson = document.querySelector(
+  "#person-popup-container"
+);
+const containerElementPicture = document.querySelector(
+  "#picture-popup-container"
+);
+
 const CardNew = new Section(
   {
     data: initialCards,
@@ -42,7 +59,8 @@ const editProfilePopup = new PopupWithForm({
     evtSave.preventDefault();
     nameElement.textContent = popupEditProfileName.value;
     aboutMeElement.textContent = popupEditProfileAboutMe.value;
-    close();
+    // close();
+    // this.close();
   },
 });
 // function submitPopupEditProfile(evtSave) {

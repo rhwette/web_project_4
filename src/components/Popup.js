@@ -32,7 +32,7 @@ class Popup {
   }
 
   _closePopupWithEscape(event) {
-    event.preventDefault();
+    // event.preventDefault();
     if (event.which === ESC_KEYCODE) {
       this.close();
     }
