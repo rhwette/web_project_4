@@ -3,6 +3,8 @@ import { selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
 
+console.log("popupEditProfile=", popupEditProfile);
+
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
@@ -21,18 +23,13 @@ const containerElementPicture = document.querySelector(
 export default class PopupWithForm extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
     super(popupSelector);
-
     this.popupSelector = popupSelector;
-
     this.popupEditProfileName = document.querySelector('input[name ="name"]');
-
     this.popupEditProfileAboutMe = document.querySelector(
       'input[name = "aboutme"]'
     );
-
     // this._form = document.querySelector(".popup__form");
     this._popupForm = this._popupElement.querySelector(".popup__form");
-
     this._handleFormSubmit = handleFormSubmit;
   }
 
@@ -94,23 +91,27 @@ export default class PopupWithForm extends Popup {
         "GGGG1 SETEVENTLISTENERS this.popupSelector= ",
         this.popupSelector
       );
+      console.log("POPUPWITHFORM using buttonPencil");
       buttonPencil.addEventListener("click", this.open.bind(this));
       //add the listener for the save button here
     } else {
+      console.log("POPUPWITHFORM using buttonPlus");
       buttonPlus.addEventListener("click", this.open.bind(this));
     }
     // popupEditProfile.addEventListener("submit", submitPopupEditProfile);
+    // popupEditProfile.addEventListener("click", this.close.bind(this));
+    // super.setEventListeners();
 
     popupEditProfile.addEventListener(
       "submit",
       this._handleFormSubmit.bind(this)
     );
 
-    // this.close();
-    // popupNewPlace.addEventListener("submit", submitPopupNewPlace);
+    // this.close.bind(this);
   }
 
   close() {
+    console.log("inside close popupwithform");
     this._popupForm.reset();
     buttonPencil.removeEventListener("click", this.open.bind(this));
 

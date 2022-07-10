@@ -3,7 +3,7 @@ import "./index.css";
 import { initialCards, selectors } from "../components/Constants";
 import Card from "../components/Card";
 import Section from "../components/Section";
-import Popup from "../components/Section";
+import Popup from "../components/Popup";
 import PopupWithImage from "../components/PopupWithImage";
 import FormValidator from "../components/FormValidator";
 import PopupWithForm from "../components/PopupWithForm";
@@ -17,14 +17,15 @@ const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 
-// const popupForm = popupElement.querySelector(".popup__form");
-
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
 );
 const containerElementPicture = document.querySelector(
   "#picture-popup-container"
 );
+
+const popupElement = document.querySelector(".popup__container");
+console.log("popupElement=", popupElement);
 
 const CardNew = new Section(
   {
@@ -59,10 +60,17 @@ const editProfilePopup = new PopupWithForm({
     evtSave.preventDefault();
     nameElement.textContent = popupEditProfileName.value;
     aboutMeElement.textContent = popupEditProfileAboutMe.value;
-    // close();
+    console.log("popElement=", popupElement);
+    // popupElement.classList.remove("popup_visible");
+    console.log("this=", this);
+    // this(popupElement);
+    // editProfilePopup.close();
+    console.log("editProfilePopup=", editProfilePopup);
     // this.close();
+    editProfilePopup.close();
   },
 });
+
 // function submitPopupEditProfile(evtSave) {
 //   evtSave.preventDefault();
 //   nameElement.textContent = popupEditProfileName.value;

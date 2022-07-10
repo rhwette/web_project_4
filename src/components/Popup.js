@@ -2,7 +2,8 @@ import { ESC_KEYCODE } from "./Constants";
 import { initialCards, selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-
+const popupElement = document.querySelector(".popup__container");
+console.log("popupElement=", popupElement);
 class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(`${popupSelector}`);
@@ -23,7 +24,7 @@ class Popup {
 
   close() {
     this._popupElement.classList.remove("popup_visible");
-    this.buttonX.removeEventListener("click", this.close.bind(this));
+    // this.buttonX.removeEventListener("click", this.close.bind(this));
     this._popupElement.removeEventListener(
       "mousedown",
       this._closePopupWithRemoteClick
