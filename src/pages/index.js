@@ -16,6 +16,8 @@ const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
+const popupNewPlaceLink = document.querySelector("#link-input");
+const popupNewPlaceTitle = document.querySelector("#place-input");
 
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
@@ -26,6 +28,9 @@ const containerElementPicture = document.querySelector(
 
 const popupElement = document.querySelector(".popup__container");
 console.log("popupElement=", popupElement);
+
+const containerForImages = document.querySelector(".card-grid__format");
+const newCardPopup = new PopupWithImage(selectors.placePopup);
 
 const CardNew = new Section(
   {
@@ -54,6 +59,21 @@ const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
 //   },
 // });
 
+const newPlacePopup = new PopupWithForm({
+  popupSelector: selectors.placePopup,
+  handleFormSubmit: () => {
+    const newCardInfo = {};
+    formValidators["formNewPlace"].resetValidation();
+    newCardInfo.name = popupNewPlaceTitle.value;
+    newCardInfo.link = popupNewPlaceLink.value;
+    console.log("newCardInfo=", newCardInfo);
+    console.log("test2");
+
+    renderCard(newCardInfo, containerForImages);
+    newPlacePopup.close();
+  },
+});
+
 const editProfilePopup = new PopupWithForm({
   popupSelector: selectors.profilePopup,
   handleFormSubmit: (evtSave) => {
@@ -61,29 +81,33 @@ const editProfilePopup = new PopupWithForm({
     nameElement.textContent = popupEditProfileName.value;
     aboutMeElement.textContent = popupEditProfileAboutMe.value;
     console.log("popElement=", popupElement);
-    // popupElement.classList.remove("popup_visible");
     console.log("this=", this);
-    // this(popupElement);
-    // editProfilePopup.close();
     console.log("editProfilePopup=", editProfilePopup);
-    // this.close();
     editProfilePopup.close();
   },
 });
 
-// function submitPopupEditProfile(evtSave) {
-//   evtSave.preventDefault();
-//   nameElement.textContent = popupEditProfileName.value;
-//   aboutMeElement.textContent = popupEditProfileAboutMe.value;
-//   closePopup(containerElementPerson);
-// }
+//************************************* */
+//  FUNCTION - render Card
+//************************************* */
 
-const newPlacePopup = new PopupWithForm({
-  popupSelector: selectors.placePopup,
-  handleFormSubmit: () => {
-    console.log("test2");
-  },
-});
+const renderCard = (data, container) => {
+  console.log("data=", data);
+  console.log("data.name=", data.name);
+  console.log("data.link=", data.link);
+  console.log("container=", container);
+  const cardElement = new Card(
+    {
+      data,
+      handleZoom: () => {
+        newCardPopup.open(data);
+      },
+    },
+    selectors.cardTemplate
+  );
+  console.log("cardElement=", cardElement);
+  container.prepend(cardElement.createCard());
+};
 
 // draw the 6 images using the method 'renderItems' from the Section class
 CardNew.renderItems(initialCards);
@@ -105,14 +129,22 @@ const config = {
 };
 
 const formValidators = {};
+console.log("1111 formValidators=", formValidators);
 const enableValidation = (config) => {
+  console.log("2222 config=", config);
   const formList = Array.from(document.querySelectorAll(config.formSelector));
+  console.log("3333 formList=", formList);
   formList.forEach((formElement) => {
+    console.log("4444 config=", config);
+    console.log("5555 formElement=", formElement);
+
     const validator = new FormValidator(config, formElement);
+    console.log("6666 validator=", validator);
     const formName = formElement.getAttribute("name");
+    console.log("7777 formName=", formName);
     formValidators[formName] = validator;
+    console.log("8888 formValidators[formName] =", formValidators[formName]);
     validator.enableValidation();
   });
 };
-
 enableValidation(config);

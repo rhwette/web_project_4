@@ -3,14 +3,17 @@ import { selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
 
-console.log("popupEditProfile=", popupEditProfile);
-
+const popupEditProfile = document.querySelector("#editProfileForm");
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
+
+const popupNewPlace = document.querySelector("#newPlaceForm");
+const popupNewPlaceLink = document.querySelector("#link-input");
+const popupNewPlaceTitle = document.querySelector("#place-input");
 
 // these two consts below are not being used
 const containerElementPerson = document.querySelector(
@@ -28,6 +31,8 @@ export default class PopupWithForm extends Popup {
     this.popupEditProfileAboutMe = document.querySelector(
       'input[name = "aboutme"]'
     );
+    this.popupNewPlaceLink = document.querySelector("#link-input");
+    this.popupNewPlaceTitle = document.querySelector("#place-input");
     // this._form = document.querySelector(".popup__form");
     this._popupForm = this._popupElement.querySelector(".popup__form");
     this._handleFormSubmit = handleFormSubmit;
@@ -57,6 +62,7 @@ export default class PopupWithForm extends Popup {
     // editProfile Form
     this.popupEditProfileName.value = nameElement.textContent;
     this.popupEditProfileAboutMe.value = aboutMeElement.textContent;
+
     console.log(
       "EEEE3 OPEN this.popupEditProfileName.value=",
       this.popupEditProfileName.value
@@ -65,7 +71,7 @@ export default class PopupWithForm extends Popup {
       "EEEE3 OPEN this.popupEditProfileAboutMe.value=",
       this.popupEditProfileAboutMe.value
     );
-
+    popupNewPlace.reset();
     super.open();
   }
   //move this function to index.js
@@ -77,13 +83,13 @@ export default class PopupWithForm extends Popup {
   //   this.close();
   // }
   //move this function to index.js
-  _submitPopupNewPlace(evtCreate) {
-    evtCreate.preventDefault();
-    const newCardInfo = {};
-    newCardInfo.name = popupNewPlaceTitle.value;
-    newCardInfo.link = popupNewPlaceLink.value;
-    this.close();
-  }
+  // _submitPopupNewPlace(evtCreate) {
+  //   evtCreate.preventDefault();
+  //   const newCardInfo = {};
+  //   newCardInfo.name = popupNewPlaceTitle.value;
+  //   newCardInfo.link = popupNewPlaceLink.value;
+  //   this.close();
+  // }
 
   setEventListeners() {
     if (this.popupSelector === selectors.profilePopup) {
@@ -102,10 +108,28 @@ export default class PopupWithForm extends Popup {
     // popupEditProfile.addEventListener("click", this.close.bind(this));
     // super.setEventListeners();
 
-    popupEditProfile.addEventListener(
-      "submit",
-      this._handleFormSubmit.bind(this)
-    );
+    if (this.popupSelector === selectors.profilePopup) {
+      console.log(
+        "HHHH1 SETEVENTLISTENERS this.popupSelector= ",
+        this.popupSelector
+      );
+      popupEditProfile.addEventListener(
+        "submit",
+        this._handleFormSubmit.bind(this)
+      );
+    } else {
+      popupNewPlace.addEventListener(
+        "submit",
+        this._handleFormSubmit.bind(this)
+      );
+    }
+
+    // popupEditProfile.addEventListener(
+    //   "submit",
+    //   this._handleFormSubmit.bind(this)
+    // );
+
+    // popupNewPlace.addEventListener("submit", this._handleFormSubmit.bind(this));
 
     // this.close.bind(this);
   }
