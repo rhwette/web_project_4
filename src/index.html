@@ -1,4 +1,3 @@
-<!-- project 8 starts here -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
   <title>Around the U.S.</title>
-  <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
-  <!-- <script defer src="main.js"></script> -->
 </head>
 
 <body class="page">
@@ -36,8 +33,6 @@
         <template id="myTemplate">
           <li class="card-grid__style">
             <img id="cardImage" class="card-grid__picture " src=" " alt=" " />
-            <!-- <button type="button" class="card-grid__garbage" id="cardCan"><img class="canSymbol"
-                src="<%=require('./images/garbage.png')%>" alt="garbage symbol" /></button> -->
             <button type="button" class="card-grid__garbage" id="cardCan"></button>
             <div class="card-grid__info">
               <h2 class="card-grid__text block" id="cardName"></h2>
@@ -57,11 +52,9 @@
         <form name="formEditProfile" class="popup__form" id="editProfileForm">
           <input name="name" class="popup__container-input popup__container-input-type-name " type="text"
             id="name-input" required minlength="2" maxlength="40" />
-          <!-- add span tag to control error messages -->
           <span id="name-input-error"></span>
           <input name="aboutme" class="popup__container-input popup__container-input-type-description " type="text"
             id="aboutme-input" required minlength="2" maxlength="200" />
-          <!-- add span tag to control error messages -->
           <span id="aboutme-input-error"></span>
           <button type="submit" class="popup__container-button " id="buttonEditProfileSave">Save</button>
         </form>
@@ -74,7 +67,6 @@
         <h2 class=" popup__container-title">New Place</h2>
         <button type="button" class="popup__container-button-close" id="buttonNewPlaceClose"><img
             src="<%=require('./images/close.svg')%>" alt="close symbol" /></button>
-
         <form name="formNewPlace" class="popup__form" id="newPlaceForm">
           <input name="place" placeholder="Title" class="popup__container-input popup__container-input-type-place"
             type="text" id="place-input" required minlength="1" maxlength="30" />
@@ -102,9 +94,6 @@
   <footer class="footer">
     <p class="footer__text">&copy;2021 Around The U.S.</p>
   </footer>
-
-  <!--JAVASCRIPT-->
-  <!-- <script type="module" src="./components/index.js"></script> -->
 
 </body>
 
