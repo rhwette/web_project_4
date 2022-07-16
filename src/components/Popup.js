@@ -3,7 +3,6 @@ import { initialCards, selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
 const popupElement = document.querySelector(".popup__container");
-console.log("popupElement=", popupElement);
 class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(`${popupSelector}`);
