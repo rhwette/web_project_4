@@ -71,8 +71,6 @@ const editProfilePopup = new PopupWithForm({
   popupSelector: selectors.profilePopup,
   handleFormSubmit: (evtSave) => {
     evtSave.preventDefault();
-    console.log("AAAAXXXX nameElement=", nameElement);
-
     editProfilePopup.close();
   },
 });

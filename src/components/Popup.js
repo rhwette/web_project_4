@@ -1,5 +1,6 @@
 import { ESC_KEYCODE } from "./Constants";
-import { initialCards, selectors } from "../components/Constants";
+// the line below is not used
+// import { initialCards, selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
 const popupElement = document.querySelector(".popup__container");
@@ -23,7 +24,6 @@ class Popup {
 
   close() {
     this._popupElement.classList.remove("popup_visible");
-    // this.buttonX.removeEventListener("click", this.close.bind(this));
     this._popupElement.removeEventListener(
       "mousedown",
       this._closePopupWithRemoteClick
@@ -32,9 +32,9 @@ class Popup {
   }
 
   _closePopupWithEscape(event) {
+    //the preventDefault below prevents typing into the forms
     // event.preventDefault();
     if (event.which === ESC_KEYCODE) {
-      this.close();
     }
   }
 

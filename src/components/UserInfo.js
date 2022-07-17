@@ -12,15 +12,28 @@ export default class UserInfo {
   }
 
   getUserInfo() {
-    newObj = {
+    console.log("enter getUserInfo method");
+    const newObj = {
       userName: nameElement.textContent,
       userJob: aboutMeElement.textContent,
     };
+    console.log("newObj=", newObj);
+    console.log("newObj.userName=", newObj.userName);
     return newObj;
   }
 
   setUserInfo() {
-    this.nameElement.textContent = this.popupEditProfileName.value;
-    this.aboutMeElement.textContent = this.popupEditProfileAboutMe.value;
+    console.log("enter setUserInfo method");
+    const newNewObj = {
+      // note the two lines below didnt work
+      // userNameNew: nameElement.textContent,
+      // userJobNew: aboutMeElement.textContent,
+      userNameNew: popupEditProfileName.value,
+      userJobNew: popupEditProfileAboutMe.value,
+    };
+    console.log("popupEditProfileName.value=", popupEditProfileName.value);
+    console.log("newNewObj=", newNewObj);
+    console.log("newNewObj.userNameNew=", newNewObj.userNameNew);
+    return newNewObj;
   }
 }
