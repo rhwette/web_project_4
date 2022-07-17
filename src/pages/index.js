@@ -7,21 +7,15 @@ import FormValidator from "../components/FormValidator";
 import PopupWithForm from "../components/PopupWithForm";
 import UserInfo from "../components/UserInfo";
 
-// assign consts that will pull out the starting entries
 const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
-
-// the two consts below go over to UserInfo.js
-// assign consts for editProfileForm entries
 const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
 
-// assign consts for newPlaceForm entries
 const popupNewPlaceLink = document.querySelector("#link-input");
 const popupNewPlaceTitle = document.querySelector("#place-input");
-
 const containerElementPerson = document.querySelector(
   "#person-popup-container"
 );
@@ -74,10 +68,6 @@ const editProfilePopup = new PopupWithForm({
     editProfilePopup.close();
   },
 });
-
-//************************************* */
-//  FUNCTION - render Card
-//************************************* */
 
 const renderCard = (data, container) => {
   const cardElement = new Card(

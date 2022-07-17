@@ -1,9 +1,7 @@
 import Popup from "./Popup";
-// the line below is not used
-// import { initialCards, selectors } from "../components/Constants";
-
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
+
 export default class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
