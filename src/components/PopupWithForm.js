@@ -8,9 +8,19 @@ const nameElement = document.querySelector(".intro__name");
 const aboutMeElement = document.querySelector(".intro__occupation");
 const popupNewPlace = document.querySelector("#newPlaceForm");
 
+// handleFormSubmit: () => {
+//   const newCardInfo = {};
+//   formValidators["formNewPlace"].resetValidation();
+//   newCardInfo.name = popupNewPlaceTitle.value;
+//   newCardInfo.link = popupNewPlaceLink.value;
+//   renderCard(newCardInfo, containerForImages);
+//   newPlacePopup.close();
+// },
+
 export default class PopupWithForm extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
     super(popupSelector);
+
     this.popupSelector = popupSelector;
     this.popupEditProfile = document.querySelector("#editProfileForm");
     this.popupEditProfileName = document.querySelector('input[name ="name"]');
@@ -30,13 +40,16 @@ export default class PopupWithForm extends Popup {
   _getInputValues() {
     const inputs = this._popupForm.querySelectorAll(".popup__container-input");
     const inputObject = {};
+    console.log("inputs", inputs);
     inputs.forEach((input) => {
       inputObject[input.name] = input.value;
     });
     return inputObject;
   }
 
-  open() {
+  open(evt) {
+    console.log("evt", evt);
+    evt.preventDefault();
     const saveVariableOriginal = this.newInfo.getUserInfo();
     this.popupEditProfileName.value = saveVariableOriginal.userName;
     this.popupEditProfileAboutMe.value = saveVariableOriginal.userJob;

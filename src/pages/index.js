@@ -24,52 +24,12 @@ const containerElementPicture = document.querySelector(
 );
 const popupElement = document.querySelector(".popup__container");
 const containerForImages = document.querySelector(".card-grid__format");
+
 const newCardPopup = new PopupWithImage(selectors.placePopup);
 
-const CardNew = new Section(
-  {
-    data: initialCards,
-    renderer: (data) => {
-      const cardElement = new Card(
-        {
-          data,
-          handleZoom: () => {
-            imageZoomPopup.open(data);
-          },
-        },
-        selectors.cardTemplate
-      );
-      CardNew.addItem(cardElement.createCard());
-    },
-  },
-  selectors.cardSection
-);
-
-const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
-
-// this PopupWithForm class is for the placePopup
-const newPlacePopup = new PopupWithForm({
-  popupSelector: selectors.placePopup,
-  handleFormSubmit: () => {
-    const newCardInfo = {};
-    formValidators["formNewPlace"].resetValidation();
-    newCardInfo.name = popupNewPlaceTitle.value;
-    newCardInfo.link = popupNewPlaceLink.value;
-    renderCard(newCardInfo, containerForImages);
-    newPlacePopup.close();
-  },
-});
-
-// this PopupWithForm class is for the profilePopup
-const editProfilePopup = new PopupWithForm({
-  popupSelector: selectors.profilePopup,
-  handleFormSubmit: (evtSave) => {
-    evtSave.preventDefault();
-    editProfilePopup.close();
-  },
-});
-
-const renderCard = (data, container) => {
+// create a renderCard method and then use in 3 places below
+// rewrite below using a renderCard method
+const renderCard = (data) => {
   const cardElement = new Card(
     {
       data,
@@ -79,10 +39,67 @@ const renderCard = (data, container) => {
     },
     selectors.cardTemplate
   );
-  container.prepend(cardElement.createCard());
+  // container.prepend(cardElement.createCard());
+  cardsSection.addItem(cardElement.createCard());
 };
 
-CardNew.renderItems(initialCards);
+const cardsSection = new Section(
+  {
+    data: initialCards,
+    renderer: renderCard,
+    // renderer: (data) => {
+    //   const cardElement = new Card(
+    //     {
+    //       data,
+    //       handleZoom: () => {
+    //         imageZoomPopup.open(data);
+    //       },
+    //     },
+    //     selectors.cardTemplate
+    //   );
+    //   cardsSection.addItem(cardElement.createCard());
+    // },
+  },
+  selectors.cardSection
+);
+
+const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
+
+// use renderCard method here also
+const newPlacePopup = new PopupWithForm({
+  popupSelector: selectors.placePopup,
+  handleFormSubmit: () => {
+    const newCardInfo = newPlacePopup._getInputValues();
+    formValidators["formNewPlace"].resetValidation();
+    // newCardInfo.name = popupNewPlaceTitle.value;
+    // newCardInfo.link = popupNewPlaceLink.value;
+    renderCard(newCardInfo);
+    newPlacePopup.close();
+  },
+});
+
+const editProfilePopup = new PopupWithForm({
+  popupSelector: selectors.profilePopup,
+  handleFormSubmit: () => {
+    // evtSave.preventDefault();
+    editProfilePopup.close();
+  },
+});
+
+// const renderCard = (data, container) => {
+//   const cardElement = new Card(
+//     {
+//       data,
+//       handleZoom: () => {
+//         newCardPopup.open(data);
+//       },
+//     },
+//     selectors.cardTemplate
+//   );
+//   container.prepend(cardElement.createCard());
+// };
+
+cardsSection.renderItems(initialCards);
 imageZoomPopup.setEventListeners();
 newPlacePopup.setEventListeners();
 editProfilePopup.setEventListeners();

@@ -35,6 +35,7 @@ class Popup {
     //the preventDefault below prevents typing into the forms
     // event.preventDefault();
     if (event.which === ESC_KEYCODE) {
+      this.close(event.target);
     }
   }
 
