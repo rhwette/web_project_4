@@ -1,5 +1,6 @@
 import Popup from "./Popup";
-import { selectors } from "../components/Constants";
+// import { selectors } from "../components/Constants";
+import { selectors } from "../utils/constants";
 import UserInfo from "../components/UserInfo";
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");

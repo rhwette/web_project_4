@@ -1,5 +1,5 @@
 import "./index.css";
-import { initialCards, selectors } from "../components/Constants";
+import { initialCards, selectors } from "../utils/constants";
 import Card from "../components/Card";
 import Section from "../components/Section";
 import PopupWithImage from "../components/PopupWithImage";

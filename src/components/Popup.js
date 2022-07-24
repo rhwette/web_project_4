@@ -1,4 +1,5 @@
-import { ESC_KEYCODE } from "./Constants";
+//import { ESC_KEYCODE } from "./Constants";
+import { ESC_KEYCODE } from "../utils/constants";
 // the line below is not used
 // import { initialCards, selectors } from "../components/Constants";
 const buttonPencil = document.querySelector(".intro__button-pencil");
