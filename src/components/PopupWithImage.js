@@ -7,11 +7,15 @@ export default class PopupWithImage extends Popup {
     super(popupSelector);
   }
   open({ link, name }) {
+    console.log("link=", link);
+    console.log("name=", name);
+    console.log("this._popupelement=", this._popupElement);
     this._popupElement.querySelector(".image-popup__picture-text").textContent =
       name;
     const image = this._popupElement.querySelector(
       ".image-popup__picture-zoom"
     );
+    console.log("image=", image);
 
     image.src = link;
     image.alt = ` ${name}`;

@@ -50,6 +50,7 @@ export default class PopupWithForm extends Popup {
   open(evt) {
     console.log("evt", evt);
     evt.preventDefault();
+    // formValidators["formNewPlace"].resetValidation();
     const saveVariableOriginal = this.newInfo.getUserInfo();
     this.popupEditProfileName.value = saveVariableOriginal.userName;
     this.popupEditProfileAboutMe.value = saveVariableOriginal.userJob;

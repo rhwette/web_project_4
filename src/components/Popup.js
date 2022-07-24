@@ -7,6 +7,8 @@ const popupElement = document.querySelector(".popup__container");
 class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(`${popupSelector}`);
+    console.log("popupSelector=", popupSelector);
+    console.log("this._popupElement inside of popup class", this._popupElement);
   }
 
   open() {

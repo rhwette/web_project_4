@@ -25,7 +25,7 @@ const containerElementPicture = document.querySelector(
 const popupElement = document.querySelector(".popup__container");
 const containerForImages = document.querySelector(".card-grid__format");
 
-const newCardPopup = new PopupWithImage(selectors.placePopup);
+const newCardPopup = new PopupWithImage(selectors.previewPopup);
 
 // create a renderCard method and then use in 3 places below
 // rewrite below using a renderCard method
@@ -64,13 +64,14 @@ const cardsSection = new Section(
 );
 
 const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
+console.log("imageZoomPopup=", imageZoomPopup);
 
 // use renderCard method here also
 const newPlacePopup = new PopupWithForm({
   popupSelector: selectors.placePopup,
   handleFormSubmit: () => {
     const newCardInfo = newPlacePopup._getInputValues();
-    formValidators["formNewPlace"].resetValidation();
+    // formValidators["formNewPlace"].resetValidation();
     // newCardInfo.name = popupNewPlaceTitle.value;
     // newCardInfo.link = popupNewPlaceLink.value;
     renderCard(newCardInfo);
