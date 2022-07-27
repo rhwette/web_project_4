@@ -28,7 +28,9 @@ export const initialCards = [
 ];
 
 export const selectors = {
-  cardSection: "card-grid__format",
+  //FEEDBACK SECTION line 5...the cardSection should have '.'
+  // cardSection: "card-grid__format",
+  cardSection: ".card-grid__format",
   cardTemplate: "myTemplate",
   previewPopup: "#image-popup-container",
   profilePopup: "#person-popup-container",

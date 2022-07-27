@@ -33,10 +33,11 @@ export default class PopupWithForm extends Popup {
     this._popupForm = this._popupElement.querySelector(".popup__form");
 
     // FEEDBACK PWF line 56....bind in the constructor then reuse
-    //   cant get the syntax right....leave it alone
-    this._handleFormSubmit = handleFormSubmit;
-    // this._handleFormSubmit = this._handleFormSubmit.bind(this);
-    // this._handleFormSubmit = this._handleFormSubmit.bind;
+    //'this._handleFormSubmit' is just a variable
+    // 'handleFormSubmit' is a function
+    // 'handleFormSubmit()' is a function that is invoked
+    // to bind the variable to the function do this...
+    this._handleFormSubmit = handleFormSubmit.bind(this);
 
     //  FEEDBACK PWF line 24 .. change name from newInfo to userInfo
     //   move this to index.js
@@ -68,17 +69,15 @@ export default class PopupWithForm extends Popup {
       popupEditProfile.addEventListener(
         "submit",
         //FEEDBACK PWF line 56....bind the method in the constructor
-        //   can't get it to work
-        // this._handleFormSubmit
-        this._handleFormSubmit.bind(this)
+        //  then use it here
+        this._handleFormSubmit
       );
     } else {
       popupNewPlace.addEventListener(
         "submit",
         //FEEDBACK PWF line 56....bind the method in the constructor
-        //   can't get it to work
-        // this._handleFormSubmit
-        this._handleFormSubmit.bind(this)
+        //  then use it here
+        this._handleFormSubmit
       );
     }
     //  formValidators not defined????
