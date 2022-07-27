@@ -541,6 +541,7 @@
   margin-top: 25.75px;
   margin-bottom: 7px;
   margin-left: 3.75px;
+  /* margin-right: 0px; */
   grid-area: name;
   max-width: 373px;
   text-overflow: ellipsis;

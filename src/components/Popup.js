@@ -1,7 +1,8 @@
 //import { ESC_KEYCODE } from "./Constants";
 import { ESC_KEYCODE } from "../utils/constants";
 // the line below is not used
-// import { initialCards, selectors } from "../components/Constants";
+// import { initialCards, selectors } from "../utils/constants";
+
 //FEEDBACK POPUP (line 4) .. remove 3 unused declarations below
 //  POPUP is a 'general' class and should not use specific elements
 // const buttonPencil = document.querySelector(".intro__button-pencil");
@@ -22,11 +23,14 @@ class Popup {
     //  bind the methods in the constructor and reuse them in both open() and close()
     this.close = this.close.bind(this);
     this._closePopupWithRemoteClick =
+      //5555555555555555555
       this._closePopupWithRemoteClick.bind(this);
+    //55555555555555555555555
     this._closePopupWithEscape = this._closePopupWithEscape.bind(this);
   }
 
   open() {
+    console.log("open in popup");
     this._popupElement.classList.add("popup_visible");
     // FEEDBACK POPUP.js ..line 14  use a better name,
     //    try buttonClose instead of buttonx
@@ -80,17 +84,17 @@ class Popup {
     }
   }
 
-  setEventListeners() {
-    this._popupElement.addEventListener("click", (event) => {
-      if (
-        event.target.classList.contains("popup") ||
-        event.target.classList.contains("popup_visible") ||
-        this._popupElement.querySelector(".popup__container-button-close")
-      ) {
-        this.close();
-      }
-    });
-  }
+  // setEventListeners() {
+  //   this._popupElement.addEventListener("click", (event) => {
+  //     if (
+  //       event.target.classList.contains("popup") ||
+  //       event.target.classList.contains("popup_visible") ||
+  //       this._popupElement.querySelector(".popup__container-button-close")
+  //     ) {
+  //       this.close();
+  //     }
+  //   });
+  // }
 }
 
 export default Popup;
