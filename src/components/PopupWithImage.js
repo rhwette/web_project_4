@@ -1,5 +1,5 @@
 import Popup from "./Popup";
-//FEEDBACK PWI ... remove the two consts below
+//FEEDBACK PWI  Line 2... remove the two consts below
 //  they are not used in PWI
 // const buttonPencil = document.querySelector(".intro__button-pencil");
 // const buttonPlus = document.querySelector(".intro__button-plus");

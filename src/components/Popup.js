@@ -61,6 +61,8 @@ class Popup {
   //   document.addEventListener("keydown", this._closePopupWithEscape.bind(this));
   // }
 
+  // FEEDBACK POPUP line 32 .. remove all the added listeners here
+  //   including the close button
   close() {
     this._popupElement.classList.remove("popup_visible");
     this._popupElement.removeEventListener(
@@ -68,6 +70,7 @@ class Popup {
       this._closePopupWithRemoteClick
     );
     document.removeEventListener("keydown", this._closePopupWithEscape);
+    this.buttonClose.removeEventListener("click", this.close);
   }
 
   _closePopupWithEscape(event) {
@@ -80,10 +83,14 @@ class Popup {
 
   _closePopupWithRemoteClick(event) {
     if (event.target === event.currentTarget) {
-      this.close(event.target);
+      // FEEDBACK POPUP line 43.  this.close has no arguments
+      // this.close(event.target);
+      this.close();
     }
   }
 
+  // FEEDBACK POPUP line 47 .. the setEventListener method is not needed here
+  //  all the listeners have been added when a popup was opened
   // setEventListeners() {
   //   this._popupElement.addEventListener("click", (event) => {
   //     if (

@@ -40,7 +40,8 @@ export default class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit.bind(this);
 
     //  FEEDBACK PWF line 24 .. change name from newInfo to userInfo
-    //   move this to index.js
+    //     also don't create class instances inside other classes
+    //     instead, move this to index.js
     // this.userInfo = new UserInfo(
     //   this.popupEditProfileName,
     //   this.popupEditProfileAboutMe
@@ -93,8 +94,8 @@ export default class PopupWithForm extends Popup {
   // FEEDBACK PWF line 46 ... remove setEventListener method
   //...add 'submit' Listener when open a popup above and
   //   remove submit Listener when close a popup below
-  // FEEDBACK PWF line 48 ... move the click listeners to index.js
 
+  // FEEDBACK PWF line 48 ... move the CLICK listeners to index.js
   // setEventListeners() {
   // if (this.popupSelector === selectors.profilePopup) {
   //   buttonPencil.addEventListener("click", this.open.bind(this));
@@ -132,19 +133,20 @@ export default class PopupWithForm extends Popup {
     super.close();
     popupEditProfile.removeEventListener(
       "submit",
+
       //FEEDBACK PWF line 56....bind the method in the constructor
-      //   can't get it to work
-      // this._handleFormSubmit
-      this._handleFormSubmit.bind(this)
+      //  then use it here
+      this._handleFormSubmit
+      // this._handleFormSubmit.bind(this)
     );
     popupNewPlace.removeEventListener(
       "submit",
       //FEEDBACK PWF line 56....bind the method in the constructor
-      //   can't get it to work
-      // this._handleFormSubmit
-      this._handleFormSubmit.bind(this)
+      //  then use it here
+      this._handleFormSubmit
+      // this._handleFormSubmit.bind(this)
     );
     // FEEDBACK PWF line 78  .. reset is needed, but not working like this
-    // this._popupForm.reset();
+    this._popupForm.reset();
   }
 }
