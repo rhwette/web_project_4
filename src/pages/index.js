@@ -11,7 +11,7 @@ import UserInfo from "../components/UserInfo";
 //    but for now leave these active in PWF or it wont work
 const buttonPencil = document.querySelector(".intro__button-pencil");
 const buttonPlus = document.querySelector(".intro__button-plus");
-const popupEditProfile = document.querySelector("#editProfileForm");
+// const popupEditProfile = document.querySelector("#editProfileForm");
 
 // const nameElement = document.querySelector(".intro__name");
 // const aboutMeElement = document.querySelector(".intro__occupation");
@@ -57,8 +57,9 @@ const containerForImages = document.querySelector(".card-grid__format");
 
 const newCardPopup = new PopupWithImage(selectors.previewPopup);
 
-// create a renderCard method and then use in 3 places below
-// rewrite below using a renderCard method
+//FEEDBACK INDEX.JS line 32
+// create a renderCard method and then use below
+// rewrite the call to SECTION below using a renderCard method
 const renderCard = (data) => {
   const cardElement = new Card(
     {
@@ -69,13 +70,18 @@ const renderCard = (data) => {
     },
     selectors.cardTemplate
   );
+  // FEEDBACK INDEX line 82 .. use Section class for adding new elements
+  //    'cardsSection' is defined below where it is set = new Section
+  //    also, dont use container.prepend
   // container.prepend(cardElement.createCard());
   cardsSection.addItem(cardElement.createCard());
 };
-
+// FEEDBACK INDEX line 29...use better name like 'cardsSection'
+//   instead of cardNew
 const cardsSection = new Section(
   {
     data: initialCards,
+    //FEEDBACK INDEX.JS line 32..use the function 'renderCard' here
     renderer: renderCard,
     // renderer: (data) => {
     //   const cardElement = new Card(
@@ -96,11 +102,19 @@ const cardsSection = new Section(
 const imageZoomPopup = new PopupWithImage(selectors.previewPopup);
 console.log("imageZoomPopup=", imageZoomPopup);
 
-// use renderCard method here also
+// FEEDBACK INDEX.JS line 32 use the function 'renderCard' here
+// FEEDBACK INDEX.JS line 53 handleFormSubmit should accept input values
+//   as an argument and use them to create new card
+//   ?????not sure this is right....i dont see where input values are used
+//     as argument...check definition of arrow function, maybe the
+//     arguments are implied in the destructuring ??
 const newPlacePopup = new PopupWithForm({
   popupSelector: selectors.placePopup,
   handleFormSubmit: () => {
     const newCardInfo = newPlacePopup._getInputValues();
+    //FEEDBACK INDEX line 89... disable submit button
+    //  before opening place popup.
+    //  Use resetValidation method of the corresponding form validator to do that
     formValidators["formNewPlace"].resetValidation();
     // newCardInfo.name = popupNewPlaceTitle.value;
     // newCardInfo.link = popupNewPlaceLink.value;
@@ -113,6 +127,8 @@ const editProfilePopup = new PopupWithForm({
   popupSelector: selectors.profilePopup,
   handleFormSubmit: () => {
     console.log("newCardInfo=");
+    // FEEDBACK INDEX.JS line 67 move the prevent.default
+    //    to PWF before calling submit handler
     //  NOTE...preventDefault below does not allow editProfile to submit
     // evtSave.preventDefault();
     // FEEDBACK PWF line 67...fill profile info in
