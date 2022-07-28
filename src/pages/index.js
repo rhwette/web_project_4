@@ -26,9 +26,15 @@ const popupEditProfileName = document.querySelector('input[name ="name"]');
 const popupEditProfileAboutMe = document.querySelector(
   'input[name = "aboutme"]'
 );
+
 // FEEDBACK PWF line 24.. move class instance from PWF to index.js
 //  then use it here inside index.js instead of in PWF
-const userInfo = new UserInfo(popupEditProfileName, popupEditProfileAboutMe);
+console.log("INDEX.JS popupEditProfileName=", popupEditProfileName);
+console.log("INDEX.JS popupEditProfileAboutMe", popupEditProfileAboutMe);
+//  FEEDBACK USERINFO line 9..use 'selectors' object from CONSTANTS
+//    as argument in new UserInfo(selectors) below
+// const userInfo = new UserInfo(popupEditProfileName, popupEditProfileAboutMe);
+const userInfo = new UserInfo(selectors);
 console.log("userInfo=", userInfo);
 
 // FEEDBACK PWF line 41...fill .values in index.js
@@ -107,14 +113,33 @@ const editProfilePopup = new PopupWithForm({
   popupSelector: selectors.profilePopup,
   handleFormSubmit: () => {
     console.log("newCardInfo=");
+    //  NOTE...preventDefault below does not allow editProfile to submit
     // evtSave.preventDefault();
-    const saveVariableNew = userInfo.setUserInfo();
-    nameElement.textContent = saveVariableNew.userNameNew;
-    aboutMeElement.textContent = saveVariableNew.userJobNew;
+    // FEEDBACK PWF line 67...fill profile info in
+    //   the handleFormSubmit for editProfile Popup
+    // const saveVariableNew = userInfo.setUserInfo();
+    // nameElement.textContent = saveVariableNew.userNameNew;
+    // aboutMeElement.textContent = saveVariableNew.userJobNew;
+    // FEEDBACK line 9 use userInfo.setUserInfo to populate profile form
+    //    'this.' will not work ??
+    //    instead use 'editProfilePopup'
+    //     NOTE.. 'popupEditProfileName' and 'popupEditProfileAboutMe'
+    //      are defined above here in INDEX
+    //     NOTE..  'userInfo' variable is defined above when it is
+    //         assigned to the class 'new UserInfo'
+    //
+    userInfo.setUserInfo(
+      editProfilePopup.popupEditProfileName.value,
+      editProfilePopup.popupEditProfileAboutMe.value
+    );
     editProfilePopup.close();
   },
 });
 
+// add button listeners here.
+// FEEDBACK PWF line 48 ..  move the button listeners over here
+//   instead of in PWF.....note that instead of "this"
+//   use the constant that is assigned to the new PWF object
 buttonPencil.addEventListener(
   "click",
   editProfilePopup.open.bind(editProfilePopup)

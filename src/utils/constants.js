@@ -35,4 +35,8 @@ export const selectors = {
   previewPopup: "#image-popup-container",
   profilePopup: "#person-popup-container",
   placePopup: "#picture-popup-container",
+  //FEEDBACK USERINFO line 9  UserInfo must take selectors as constructor arguments
+  //  need to define the two selectors here
+  nameSelector: ".intro__name",
+  aboutMeSelector: ".intro__occupation",
 };
